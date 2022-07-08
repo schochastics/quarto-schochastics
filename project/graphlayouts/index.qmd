@@ -22,6 +22,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/graphlayouts">GITHUB</a></button>
+<button type="button" class="btn btn-outline-success"><a href="http://graphlayouts.schochastics.net/">PKGDOWN</a></button>
 
 The package implements the following algorithms:
 

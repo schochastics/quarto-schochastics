@@ -10,6 +10,9 @@ toc: true
 priority: 10
 ---
 
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/rokemon">GITHUB</a></button>
+
+
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

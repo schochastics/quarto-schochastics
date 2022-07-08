@@ -8,9 +8,9 @@ title-block-style: none
 toc: true
 priority: 7
 ---
-<p style="text-align:center;">
-<img src="featured-hex.png" width="50%">
-</p>
+
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/mbojan/rgraph6">GITHUB</a></button>
+
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(

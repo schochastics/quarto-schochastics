@@ -10,6 +10,10 @@ toc: true
 priority: 6
 ---
 
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/signnet">GITHUB</a></button>
+<button type="button" class="btn btn-outline-success"><a href="http://signnet.schochastics.net/">PKGDOWN</a></button>
+
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

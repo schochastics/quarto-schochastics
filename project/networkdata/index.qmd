@@ -9,6 +9,11 @@ title-block-style: none
 toc: true
 priority: 3
 ---
+
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/networkdata">GITHUB</a></button>
+<button type="button" class="btn btn-outline-success"><a href="http://networkdata.schochastics.net/">PKGDOWN</a></button>
+
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

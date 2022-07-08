@@ -16,6 +16,10 @@ toc: true
 priority: 2
 ---
 
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/netrankr">GITHUB</a></button>
+<button type="button" class="btn btn-outline-success"><a href="http://netrankr.schochastics.net/">PKGDOWN</a></button>
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

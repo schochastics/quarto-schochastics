@@ -17,6 +17,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/netUtils">GITHUB</a></button>
+
 
 netUtils is a collection of tools for network analysis that may not deserve a package on their own and/or are missing from other network packages.
 
