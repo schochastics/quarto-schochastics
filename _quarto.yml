@@ -1,0 +1,58 @@
+project:
+  type: website
+
+website:
+  site-url: "https://mr.schochastics.net"
+  title: "schochastics"
+  favicon: "static/favicon.png"
+  twitter-card:
+    creator: "@schochastics"
+    site: "@schochastics"
+    description: "I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R."
+    image: "static/img/avatar.png"
+    card-style: "summary"
+  search: false
+  highlight-style: monochrome
+  opengraph: 
+    site-name: schochastics
+    description: "I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R."
+    image: "static/img/avatar.png"
+  navbar:
+    logo: "static/logo.png"
+    title: false
+    background: primary
+    right:
+      - href: publications/index.qmd
+        text: Publications
+      - href: http://blog.schochastics.net
+        text: Blog
+      - href: project/index.qmd
+        text: Projects
+      - href: material/index.qmd
+        text: Material
+      - href: about/index.qmd
+        text: About me
+  page-footer:
+    left: "© 2022 David Schoch"
+    right:
+      - icon: twitter
+        href: https://twitter.com/schochastics
+      - icon: github
+        href: https://github.com/schochastics
+      - text: <i class="ai ai-google-scholar" role="img"></i>
+        href: https://scholar.google.de/citations?user=MFlgHdcAAAAJ&hl=en
+      - text: <i class="ai ai-orcid" role="img"></i>
+        href: https://orcid.org/0000-0003-2952-4812
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - custom.scss
+    css: 
+      - styles.css
+      - academicons.css
+    toc: true
+
+
+

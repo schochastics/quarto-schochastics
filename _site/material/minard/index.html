@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.644">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Schoch">
+<meta name="dcterms.date" content="2021-02-24">
+<meta name="description" content="Recreating Minard’s Statistical Graphics with Modern Data in R">
+
+<title>schochastics - The Minard System in R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../../static/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../academicons.css">
+<meta name="twitter:title" content="schochastics - The Minard System in R">
+<meta name="twitter:description" content="Recreating Minard’s Statistical Graphics with Modern Data in R">
+<meta name="twitter:image" content="https://mr.schochastics.net/static/img/avatar.png">
+<meta name="twitter:creator" content="@schochastics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="2500">
+<meta name="twitter:image-width" content="2500">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <img src="../../static/logo.png" alt="">
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://blog.schochastics.net">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../project/index.html">Projects</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../material/index.html">Material</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about/index.html">About me</a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ports-in-france-i" id="toc-ports-in-france-i" class="nav-link active" data-scroll-target="#ports-in-france-i">(11) Ports in France I</a></li>
+  <li><a href="#english-coal-exports-i" id="toc-english-coal-exports-i" class="nav-link" data-scroll-target="#english-coal-exports-i">(14) English Coal Exports I</a></li>
+  <li><a href="#meat-sent-to-paris" id="toc-meat-sent-to-paris" class="nav-link" data-scroll-target="#meat-sent-to-paris">(21) Meat Sent to Paris</a></li>
+  <li><a href="#ports-in-france-ii" id="toc-ports-in-france-ii" class="nav-link" data-scroll-target="#ports-in-france-ii">(24) Ports in France II</a></li>
+  <li><a href="#cargo-ports-in-europe" id="toc-cargo-ports-in-europe" class="nav-link" data-scroll-target="#cargo-ports-in-europe">(25) Cargo Ports in Europe</a></li>
+  <li><a href="#cargo-ports-of-the-globe" id="toc-cargo-ports-of-the-globe" class="nav-link" data-scroll-target="#cargo-ports-of-the-globe">(34) Cargo Ports of the Globe</a></li>
+  <li><a href="#global-migrants" id="toc-global-migrants" class="nav-link" data-scroll-target="#global-migrants">(38) Global Migrants</a></li>
+  <li><a href="#english-coal-exports-ii" id="toc-english-coal-exports-ii" class="nav-link" data-scroll-target="#english-coal-exports-ii">(41) English Coal Exports II</a></li>
+  <li><a href="#post-offices-in-paris" id="toc-post-offices-in-paris" class="nav-link" data-scroll-target="#post-offices-in-paris">(48) Post Offices in Paris</a></li>
+  <li><a href="#french-wine-exports" id="toc-french-wine-exports" class="nav-link" data-scroll-target="#french-wine-exports">(50) French Wine Exports</a></li>
+  <li><a href="#english-coal-exports-iii" id="toc-english-coal-exports-iii" class="nav-link" data-scroll-target="#english-coal-exports-iii">(53) English Coal Exports III</a></li>
+  <li><a href="#global-coal-production" id="toc-global-coal-production" class="nav-link" data-scroll-target="#global-coal-production">(54) Global Coal Production</a></li>
+  <li><a href="#napoleons-campaign" id="toc-napoleons-campaign" class="nav-link" data-scroll-target="#napoleons-campaign">(60) Napoleon’s Campaign</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header">
+<h1 class="title display-7">The Minard System in R</h1>
+<p class="subtitle lead">Minard’s Statistical Graphics with Modern Data in R</p>
+
+<p class="author">David Schoch</p>
+
+<p class="date">2021-02-24</p>
+</header>
+
+<button type="button" class="btn btn-outline-success">
+<a href="https://github.com/schochastics/minard">Code</a>
+</button>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Minard.png/800px-Minard.png" class="img-fluid"></p>
+<p>If you are into data viz, then I am pretty sure that you have seen the chart above before. E. Tufte once declared this to be “the best statistical graphic ever drawn”.</p>
+<p>What you might not know is that its creator, <a href="https://en.wikipedia.org/wiki/Charles_Joseph_Minard">Charles Joseph Minard</a>, made far more significant contributions in the field of information graphics. Especially with his flow maps. <a href="https://twitter.com/srendgen">Sandra Rendgen</a> dedicated a book, “The Minard System”, which shows 61 maps and plots that Minard produced during his lifetime. The book is really inspiring and I can only recommend it. One cold winter day in early 2021, I decided to try to recreate some of Minards work with R. I was particularly interested in his <a href="https://heritage.ecoledesponts.fr/ark:/12148/btv1b104811770.r=Minard?rk=300430;4">flow maps</a>. This was also actually the starting point for me to develop the R package <code>edgebundle</code>. I had the ambitious goal to reproduce as many of his 61 drawings as possible and thus far managed to do 13.</p>
+<section id="ports-in-france-i" class="level2">
+<h2 class="anchored" data-anchor-id="ports-in-france-i">(11) Ports in France I</h2>
+<p><a href="viz_11.png"><img src="viz_11.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/011-maritime_ports_france">Code</a></p>
+</section>
+<section id="english-coal-exports-i" class="level2">
+<h2 class="anchored" data-anchor-id="english-coal-exports-i">(14) English Coal Exports I</h2>
+<p><a href="viz_14.png"><img src="viz_14.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/014-english_coal_1987">Code</a></p>
+</section>
+<section id="meat-sent-to-paris" class="level2">
+<h2 class="anchored" data-anchor-id="meat-sent-to-paris">(21) Meat Sent to Paris</h2>
+<p><a href="viz_21.png"><img src="viz_21.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/021-meat_to_paris">Code</a></p>
+</section>
+<section id="ports-in-france-ii" class="level2">
+<h2 class="anchored" data-anchor-id="ports-in-france-ii">(24) Ports in France II</h2>
+<p><a href="viz_24.png"><img src="viz_24.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/024-maritime_ports_france_2">Code</a></p>
+</section>
+<section id="cargo-ports-in-europe" class="level2">
+<h2 class="anchored" data-anchor-id="cargo-ports-in-europe">(25) Cargo Ports in Europe</h2>
+<p><a href="viz_25.png"><img src="viz_25.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/025-cargo_ports_eu">Code</a></p>
+</section>
+<section id="cargo-ports-of-the-globe" class="level2">
+<h2 class="anchored" data-anchor-id="cargo-ports-of-the-globe">(34) Cargo Ports of the Globe</h2>
+<p><a href="viz_34.png"><img src="viz_34.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/034-global_ports">Code</a></p>
+</section>
+<section id="global-migrants" class="level2">
+<h2 class="anchored" data-anchor-id="global-migrants">(38) Global Migrants</h2>
+<p><a href="viz_38.png"><img src="viz_38.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/038-migrants_globe">Code</a></p>
+</section>
+<section id="english-coal-exports-ii" class="level2">
+<h2 class="anchored" data-anchor-id="english-coal-exports-ii">(41) English Coal Exports II</h2>
+<p><a href="viz_41.png"><img src="viz_41.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/041-english_coal_1997">Code</a></p>
+</section>
+<section id="post-offices-in-paris" class="level2">
+<h2 class="anchored" data-anchor-id="post-offices-in-paris">(48) Post Offices in Paris</h2>
+<p><a href="viz_48.png"><img src="viz_48.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/048-post_office_paris">Code</a></p>
+</section>
+<section id="french-wine-exports" class="level2">
+<h2 class="anchored" data-anchor-id="french-wine-exports">(50) French Wine Exports</h2>
+<p><a href="viz_50.png"><img src="viz_50.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/050-french_wine">Code</a></p>
+</section>
+<section id="english-coal-exports-iii" class="level2">
+<h2 class="anchored" data-anchor-id="english-coal-exports-iii">(53) English Coal Exports III</h2>
+<p><a href="viz_53.png"><img src="viz_53.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/053-english_coal_2017">Code</a></p>
+</section>
+<section id="global-coal-production" class="level2">
+<h2 class="anchored" data-anchor-id="global-coal-production">(54) Global Coal Production</h2>
+<p><a href="viz_54.png"><img src="viz_54.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/054-coal_production">Code</a></p>
+</section>
+<section id="napoleons-campaign" class="level2">
+<h2 class="anchored" data-anchor-id="napoleons-campaign">(60) Napoleon’s Campaign</h2>
+<p><a href="viz_60.png"><img src="viz_60.png" width="100%"></a></p>
+<p><a href="https://github.com/schochastics/minard/tree/master/060-napoleon_russia">Code</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© 2022 David Schoch</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/schochastics">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/schochastics">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.de/citations?user=MFlgHdcAAAAJ&amp;hl=en"><i class="ai ai-google-scholar" role="img"></i></a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://orcid.org/0000-0003-2952-4812"><i class="ai ai-orcid" role="img"></i></a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

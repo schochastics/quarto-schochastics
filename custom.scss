@@ -1,0 +1,35 @@
+/*-- scss:defaults --*/
+$body-bg: #333333 !default;
+$body-color: #9EEBCF;
+$link-color: white;
+$font-family-sans-serif: 'IBM Plex Sans';
+$font-family-monospace: 'IBM Plex Sans';
+
+$navbar-bg: #333333;
+$navbar-fg: #9EEBCF;
+$navbar-hl: #9EEBCF;
+
+/*-- scss:rules --*/
+@font-face {
+    font-family: 'Nova Square';
+    src: url('static/fonts/novasquare-regular-webfont.woff2') format('woff2'),
+         url('static/fonts/novasquare-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('static/fonts/IBMPlexSans-Regular.woff2') format('woff2'),
+        url('static/fonts/IBMPlexSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (min-width: 56em) {
+  html {
+    font-size: 1.1em;
+  }
+}
+

@@ -1,0 +1,130 @@
+---
+pagetitle: "David Schoch"
+page-layout: custom
+toc: false
+css: index.css
+socials:
+  twitter: schochastics
+shortcodes:
+  - socials.lua
+listing: 
+  - id: projects
+    max-description-length: 500
+    fields: [image,title,description]
+    contents: 
+      - project/graphlayouts
+      - project/netrankr
+      - project/snahelper
+    type: default
+    image-align: left
+    sort: "priority asc"
+  - id: material
+    max-description-length: 500
+    fields: [image,title,description]
+    contents: 
+      - material/netVizR
+      - material/netAnaR
+      - material/tidynetAnaR
+    type: default
+    image-align: left
+    sort: "priority asc"
+  - id: publication
+    max-description-length: 500
+    fields: [image,title,description,date]
+    contents: 
+    - publications/astroturfing_around_the_world
+    - publications/centrality_correlation
+    - publications/centrality_lethality
+    - publications/hypergraph_carib_attacks
+    - publications/inout_centrality
+    - publications/jap_centrality
+    - publications/multiplexity_multigraph
+    - publications/polcomm_astroturfing
+    - publications/political_astroturf_korea
+    - publications/prob_central
+    - publications/proj_signed2mode
+    - publications/reconceptualizing_centrality
+    - publications/scirep_astroturfing
+    - publications/social_stratification
+    type: default
+    image-align: left
+    max-items: 3
+    sort: "date desc"
+---
+
+
+:::: {.columns}
+
+::: {.column .col-v-center width="15%"}
+:::
+
+::: {.column .col-v-center width="35%"}
+![](static/img/avatar.png)
+:::
+
+::: {.column .col-v-center width="35%"}
+
+# David Schoch
+
+::: {.david-intro}
+
+:::{.socials}
+{{< twitter schochastics >}}
+{{< github schochastics >}}
+{{< scholar MFlgHdcAAAAJ >}}
+{{< orcid 0000-0003-2952-4812 >}}
+:::
+
+I’m the team lead for “Transparent Social Analytics” in the Department for Computational Social Science at [GESIS](https://www.gesis.org/en/institute/departments/computational-social-science) and 
+I develop tools in [R](https://r-project.org/).
+
+:::{.about-link}
+[ABOUT ME](about/)
+:::
+
+:::
+:::
+
+::: {.column .col-v-center width="15%"}
+:::
+
+::::
+
+::::{.columns}
+
+::: {.column .col-v-center width="20%"}
+:::
+
+::: {.column .col-v-center width="60%"}
+
+## Selected Open Source Material
+:::{#material}
+:::
+
+::: {.all-link}
+[all open source material](material/)
+:::
+
+
+## Selected Projects
+:::{#projects}
+:::
+
+::: {.all-link}
+[all projects](project/)
+:::
+
+## Last Publications
+:::{#publication}
+:::
+
+::: {.all-link}
+[all publications](publications/)
+:::
+
+:::
+
+::: {.column .col-v-center width="20%"}
+:::
+
+::::

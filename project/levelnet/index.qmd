@@ -1,0 +1,13 @@
+---
+author: David Schoch
+date: "2019-04-04"
+Description: Analyzing two mode networks and their porjections
+title: levelnet
+subtitle: Analyzing two mode networks and their projections
+image: featured-hex.png
+title-block-style: none
+toc: true
+priority: 12
+---
+
+package is in an early stage

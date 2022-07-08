@@ -1,0 +1,23 @@
+---
+title: "Publications"
+listing:
+  contents: 
+    - astroturfing_around_the_world
+    - centrality_correlation
+    - centrality_lethality
+    - hypergraph_carib_attacks
+    - inout_centrality
+    - jap_centrality
+    - multiplexity_multigraph
+    - polcomm_astroturfing
+    - political_astroturf_korea
+    - prob_central
+    - proj_signed2mode
+    - reconceptualizing_centrality
+    - scirep_astroturfing
+    - social_stratification
+    - us_congress
+  type: default
+  image-align: left
+  sort: "date desc"
+---

@@ -1,0 +1,172 @@
+/* css styles */
+div.sourceCode{
+  background-color: black;
+}
+
+
+h1,h2,h3,h4{
+  font-family: 'Nova Square';
+}
+
+.listing-title{
+  color: white;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+pre{
+  border: 1px solid white;
+  color: var(--navbar-fg);
+  padding: 5px 5px 5px 5px;
+}
+
+code{
+  color: var(--navbar-fg);
+}
+
+/* inline code */
+.post-body>p>code{
+  background-color: rgba(255,255,255,.1);
+}
+
+a.btn-links:hover{
+  background-color: rgba(255,255,255,.1)!important;
+}
+
+.habout{
+  font-size: 3rem;
+  font-family: 'Nova Square';
+  font-weight: 700;
+}
+
+h1,h2,h4{
+  font-weight: 700;
+}
+
+h4.f4{
+  font-size: 1.75rem;
+}
+
+h1.f3{
+  font-weight: 700;
+}
+
+/* navbar kink */
+@media screen and (min-width: 999px) {
+  .navbar .navbar-nav .nav-link {
+    color: #9EEBCF;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+  .navbar .navbar-nav .nav-link:hover {
+    color: #9EEBCF;
+  }
+  .navbar .navbar-nav .nav-item {
+    position: relative;
+  }
+  .navbar .navbar-nav .nav-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #ffd700;
+    width: 0%;
+    content: "";
+    height: 1px;
+    transition: all 0.5s;
+  }
+  
+.navbar .navbar-nav .nav-item:hover::after {
+    width: 100%;
+  }
+}
+
+.navbar-brand>img {
+    max-height: 48px;
+    width: auto;
+    padding-right: 6px;
+}
+
+.nav-footer a{
+  color: #9EEBCF;
+}
+
+.active {
+  border-bottom: 1px solid #ffd700;
+}
+
+.navbar-brand {
+    position: relative;
+    width: 170px;
+    left: 15px;
+    background-size: contain;
+}
+
+/*footer*/
+.nav-footer{
+  border-top: 0px !important;
+}
+
+/*buttons*/
+
+.btn-outline-success{
+  border-color: #9EEBCF;
+  background-color: transparent;
+}
+
+.btn-outline-success:hover{
+  border-color: white;
+  background-color: #666666;
+}
+
+.btn-outline-success a{
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* grid cards */
+.card-body{
+  background-color: #333333;
+}
+
+.card-img-top{
+  background-color: #333333;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.borderless{
+  background-color: #333333;
+}
+
+.quarto-grid-item img.thumbnail-image {
+    object-fit: contain;
+}
+
+.thumbnail-image:hover{
+  opacity:75%;
+}
+
+.center{
+   text-align: center;
+}
+
+div.column.col-v-center{
+   vertical-align: middle;
+}
+
+.home-title{
+  font-size: 2em;
+}
+
+.socials{
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+}
+
+.socials a{
+  color: #9EEBCF;
+  margin-left: 0.5em;
+}

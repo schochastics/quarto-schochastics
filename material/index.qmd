@@ -1,0 +1,30 @@
+---
+title: "Open Source Material"
+page-layout: full
+listing:
+  categories: true
+  id: material
+  max-description-length: 500
+  image-height: "250px"	
+  fields: [image,title,description]
+  contents: 
+    - 30daymapchallenge
+    - galaxies
+    - minard
+    - netAnaR
+    - netVizR
+    - tidynetAnaR
+  type: default
+  image-align: right
+  sort: "priority asc"
+  grid-item-border: false
+  
+---
+
+:::{.center}
+Tutorial material and other open source projects
+:::
+
+
+:::{#material}
+:::

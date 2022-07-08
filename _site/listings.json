@@ -1,0 +1,75 @@
+[
+  {
+    "listing": "/project/index.html",
+    "items": [
+      "/project/graphlayouts/index.html",
+      "/project/netrankr/index.html",
+      "/project/networkdata/index.html",
+      "/project/snahelper/index.html",
+      "/project/edgebundle/index.html",
+      "/project/signnet/index.html",
+      "/project/rgraph6/index.html",
+      "/project/roughnet/index.html",
+      "/project/roughsf/index.html",
+      "/project/rokemon/index.html",
+      "/project/netUtils/index.html",
+      "/project/levelnet/index.html"
+    ]
+  },
+  {
+    "listing": "/publications/index.html",
+    "items": [
+      "/publications/inout_centrality/index.html",
+      "/publications/scirep_astroturfing/index.html",
+      "/publications/multiplexity_multigraph/index.html",
+      "/publications/us_congress/index.html",
+      "/publications/proj_signed2mode/index.html",
+      "/publications/astroturfing_around_the_world/index.html",
+      "/publications/polcomm_astroturfing/index.html",
+      "/publications/jap_centrality/index.html",
+      "/publications/social_stratification/index.html",
+      "/publications/prob_central/index.html",
+      "/publications/hypergraph_carib_attacks/index.html",
+      "/publications/centrality_correlation/index.html",
+      "/publications/political_astroturf_korea/index.html",
+      "/publications/reconceptualizing_centrality/index.html",
+      "/publications/centrality_lethality/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/project/graphlayouts/index.html",
+      "/project/netrankr/index.html",
+      "/project/snahelper/index.html",
+      "/material/netVizR/index.html",
+      "/material/netAnaR/index.html",
+      "/material/tidynetAnaR/index.html",
+      "/publications/inout_centrality/index.html",
+      "/publications/scirep_astroturfing/index.html",
+      "/publications/multiplexity_multigraph/index.html",
+      "/publications/proj_signed2mode/index.html",
+      "/publications/astroturfing_around_the_world/index.html",
+      "/publications/polcomm_astroturfing/index.html",
+      "/publications/jap_centrality/index.html",
+      "/publications/social_stratification/index.html",
+      "/publications/prob_central/index.html",
+      "/publications/hypergraph_carib_attacks/index.html",
+      "/publications/centrality_correlation/index.html",
+      "/publications/political_astroturf_korea/index.html",
+      "/publications/reconceptualizing_centrality/index.html",
+      "/publications/centrality_lethality/index.html"
+    ]
+  },
+  {
+    "listing": "/material/index.html",
+    "items": [
+      "/material/netVizR/index.html",
+      "/material/netAnaR/index.html",
+      "/material/tidynetAnaR/index.html",
+      "/material/30daymapchallenge/index.html",
+      "/material/minard/index.html",
+      "/material/galaxies/index.html"
+    ]
+  }
+]

@@ -1,0 +1,968 @@
+[
+  {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "schochastics",
+    "section": "",
+    "text": "👋 Hi, I’m David Schoch"
+  },
+  {
+    "objectID": "about/index.html#more-about-me",
+    "href": "about/index.html#more-about-me",
+    "title": "schochastics",
+    "section": "more about me",
+    "text": "more about me\nBefore joining GESIS, I was a Presidential Fellow at the University of Manchester in the Department of Sociology, affiliated with the The Mitchell Centre for Social Network Analysis.\nI received my PhD in Computer Science at the University of Konstanz as a fellow of the Graduate School of Decision Sciences. I also have a diploma in business mathematics from Karlsruhe Institute of Technology."
+  },
+  {
+    "objectID": "about/index.html#research-interests",
+    "href": "about/index.html#research-interests",
+    "title": "schochastics",
+    "section": "research interests",
+    "text": "research interests\nMy main research interests lie in the field of (social) network analysis. I have made technical and methodological contributions to topics such as network centrality, signed networks, and two-mode networks.\nI am also actively involved in research around political astroturfing on social media.\nSee my publications for all my scientific output."
+  },
+  {
+    "objectID": "about/index.html#soccerverse",
+    "href": "about/index.html#soccerverse",
+    "title": "schochastics",
+    "section": "soccerverse",
+    "text": "soccerverse\nIn an effort to combine a hobby with work, I created the football analytics website soccerverse together with some former colleagues. The project includes a world ranking of football clubs, close to the one FIFA uses for national teams. I developed most of my data science and R skills with this project, including scraping and cleaning data (i.e. collecting football results from various sources) and using the tidyverse to analyse the data.\nPart of the data is available on github."
+  },
+  {
+    "objectID": "about/index.html#science-slam",
+    "href": "about/index.html#science-slam",
+    "title": "schochastics",
+    "section": "science slam",
+    "text": "science slam\nI am a semi-active Science slammer, mostly slamming about networks and disinformation on social media. Some of my slams can be found on youtube (all in german)."
+  },
+  {
+    "objectID": "project/rokemon/index.html",
+    "href": "project/rokemon/index.html",
+    "title": "rokemon",
+    "section": "",
+    "text": "An R package to create Pokemon inspired ggplots. It also comes with dataset of 801 Pokemon with 41 different features (Gotta analyze’em all!)."
+  },
+  {
+    "objectID": "project/rokemon/index.html#overview",
+    "href": "project/rokemon/index.html#overview",
+    "title": "rokemon",
+    "section": "Overview",
+    "text": "Overview\nFor more details and examples see next sections.\nData\n\npokemon: Data frame containing attributes and stats of 801 Pokemon.\n\nFunctions\n\ngghealth(): HP bar inspired Bar charts.\npoke_pie(): create pie charts from color distribution of Pokemon sprites.\n\nThemes\n\ntheme_rocket(): Team Rocket theme\ntheme_gameboy() and theme_gba(): classic Gameboy and Gameboy Advanced themes\ntheme_status(): inspired by Pokemon status bar\ntheme_mystic(), theme_valor(), theme_instinct(): Pokemon Go teams theme; work well with annotate_pogo()\nscale_color_poketype() and scale_fill_poketype(): Provides colors, if Pokemon types are mapped to color/fill\n\nPokemon Palettes\n\npoke_pal(): color palettes created from Pokemon sprites\ndisplay_poke_pal(): view a Pokemon color palette"
+  },
+  {
+    "objectID": "project/rokemon/index.html#install",
+    "href": "project/rokemon/index.html#install",
+    "title": "rokemon",
+    "section": "Install",
+    "text": "Install\nThe developer version can be obtained from github.\n\n#install.packages(\"devtools\")\ndevtools::install_github(\"schochastics/Rokemon\")\n\n\nlibrary(Rokemon)\nlibrary(tidyverse)\n\ndata(pokemon)"
+  },
+  {
+    "objectID": "project/rokemon/index.html#themes",
+    "href": "project/rokemon/index.html#themes",
+    "title": "rokemon",
+    "section": "Themes",
+    "text": "Themes\nThe package includes several themes for ggplot.\n\nTheme Rocket\n(See what I did there…)\n\nggplot(pokemon,aes(attack,defense))+\n  geom_point(col = \"grey\")+\n  theme_rocket()+\n  labs(x = \"Jessy\",y = \"James\",\n       title = \"Theme Rocket\",\n       subtitle = \"blast off at the speed of light!\",\n       caption = \"meowth that's right\")\n\n\n\n\n\n\n\n\n\n\nGamyboy theme\nIf you want to get nostalgic.\n\nggplot(pokemon,aes(attack,defense))+\n  geom_point(shape = 15,col = \"#006400\",size=2)+\n  theme_gameboy()+\n  labs(title = \"Classic Gameboy Theme\")\n\n\n\n\n\n\n\n\n\nggplot(pokemon,aes(attack,defense))+\n  geom_point(shape = 15,col = \"#27408B\",size=2)+\n  theme_gba()+\n  labs(title = \"Gameboy Advanced Theme\")\n\n\n\n\n\n\n\n\n\n\nStatus theme and HP bar chart\nA theme inspired by HP bar in older Pokemon games. The theme is used in gghealth, a function that plots bar charts in HP bar style.\n\npokemon[1:10,] %>% \n  gghealth(\"name\",\"base_total\",init.size = 5)+\n  labs(x=\"\",y=\"Stats Total\")\n\n\n\n\n\n\n\n\n\n\nPokemon Go\nAnnotate your plots with the logo of your favorite Pokémon Go team.\n\n\np1 <- pokemon %>%\n  dplyr::filter(type1==\"water\") %>%\n  ggplot(aes(defense,attack))+geom_point()+annotate_pogo(team = \"mystic\")+theme_mystic()+\n  labs(title=\"Team Mystic\",subtitle=\"Water Pokemon\")\n\np2 <- pokemon %>%\n  dplyr::filter(type1==\"fire\") %>%\n  ggplot(aes(defense,attack))+geom_point()+annotate_pogo(team = \"valor\")+theme_valor()+\n  labs(title=\"Team Valor\",subtitle=\"Fire Pokemon\")\n\np3 <- pokemon %>%\n  dplyr::filter(type1==\"electric\") %>%\n  ggplot(aes(defense,attack))+geom_point()+annotate_pogo(team = \"instinct\")+theme_instinct()+\n  labs(title=\"Team Instinct\",subtitle=\"Electric Pokemon\")\n\ngridExtra::grid.arrange(grobs=list(p1,p2,p3),ncol=3)"
+  },
+  {
+    "objectID": "project/rokemon/index.html#poke-pie",
+    "href": "project/rokemon/index.html#poke-pie",
+    "title": "rokemon",
+    "section": "Poke Pie",
+    "text": "Poke Pie\nCreate pie charts of the color distribution of Pokemon sprites. Download all sprites, for example from here.\n\n#basic usage\npoke_pie(path_to_sprites,pokemon_name)\n\n\nThe function is a reimplementation of this code, which was posted on reddit a while ago."
+  },
+  {
+    "objectID": "project/rokemon/index.html#color-palettes",
+    "href": "project/rokemon/index.html#color-palettes",
+    "title": "rokemon",
+    "section": "Color Palettes",
+    "text": "Color Palettes\nThe package also includes color palettes, which were automatically generated from all 801 pokemon sprites.\n\npoke_pal(name,n)\ndisplay_poke_pal(name)\n\n\nAdditionally there is also a palette Pokemon Types, used by scale_color_poketype() and scale_fill_poketype(). \nI did not check all Pokemon palettes, so there may well be some meaningless ones. A better alternative would be to use the dedicated package palettetown. See the github repo for help.\n\ninstall.packages('palettetown')"
+  },
+  {
+    "objectID": "project/rokemon/index.html#fonts",
+    "href": "project/rokemon/index.html#fonts",
+    "title": "rokemon",
+    "section": "Fonts",
+    "text": "Fonts\nThe package uses an old school gameboy font for some of its themes, which can be download here.\nIn order to use the font in R you need the extrafont package.\n\n#install.packages(\"extrafont\")\nextrafont::font_import() #only run ones\nextrafont::loadfonts()\n\nAlternatively, you can use the function import_pokefont().\n\nimport_pokefont()"
+  },
+  {
+    "objectID": "project/rokemon/index.html#example-use-of-data",
+    "href": "project/rokemon/index.html#example-use-of-data",
+    "title": "rokemon",
+    "section": "Example use of data",
+    "text": "Example use of data\nUsing theme_rocket() to create an effectiveness table of Pokemon types.\n\npokemon %>%\n  distinct(type1,.keep_all=TRUE) %>%\n  select(defender = type1,against_bug:against_water) %>%\n  gather(attacker,effect,against_bug:against_water) %>%\n  mutate(attacker = str_replace_all(attacker,\"against_\",\"\"))  %>%\n  ggplot(aes(y=attacker,x=defender,fill=factor(effect)))+\n  geom_tile()+\n  geom_text(aes(label=ifelse(effect!=1,effect,\"\")))+\n  scale_fill_manual(values=c(\"#8B1A1A\", \"#CD2626\", \"#EE2C2C\", \"#FFFFFF\", \"#00CD00\", \"#008B00\"))+\n  theme_rocket(legend.position=\"none\")+\n  labs(title=\"Effectiveness Table\")\n\n\n\n\n\n\n\n\nUsing Pokemon type colors\n\nggplot(pokemon,aes(defense,attack))+\n  geom_point(aes(col=type1))+\n  scale_color_poketype()+\n  theme_bw()"
+  },
+  {
+    "objectID": "project/rokemon/index.html#addendum",
+    "href": "project/rokemon/index.html#addendum",
+    "title": "rokemon",
+    "section": "Addendum",
+    "text": "Addendum\n\nLogo created by ZeroDawn0D\nPogo Logos downloaded here\nPokémon data download from Kaggle, originally scraped from serebii.net\nSprites for poke_pie can be found here"
+  },
+  {
+    "objectID": "project/signnet/index.html",
+    "href": "project/signnet/index.html",
+    "title": "signnet",
+    "section": "",
+    "text": "The package provides methods to analyse signed networks (i.e. networks with both positive and negative ties)."
+  },
+  {
+    "objectID": "project/signnet/index.html#installation",
+    "href": "project/signnet/index.html#installation",
+    "title": "signnet",
+    "section": "Installation",
+    "text": "Installation\nYou can install the released version of signnet from CRAN with:\n\ninstall.packages(\"signnet\")\n\nThe development version from is available with:\n\n# install.packages(\"devtools\")\ndevtools::install_github(\"schochastics/signnet\")"
+  },
+  {
+    "objectID": "project/signnet/index.html#structural-balance-and-triads",
+    "href": "project/signnet/index.html#structural-balance-and-triads",
+    "title": "signnet",
+    "section": "Structural Balance and Triads",
+    "text": "Structural Balance and Triads\nThe principles underlying structural balance are based on a theory in social psychology dating back to the work of Heider in the 1940s, which was generalized and extended to graphs by Cartwright and Harary in the 1950s. In its simplest form, it is defined via triangles. A triangle is balanced if all ties are positive (“the friend of a friend is a friend”) or only one tie is positive (“the enemy of my enemy is my friend”). The remaining configurations are said to be unbalanced.\n\nA network is balanced if i.a., it can be partitioned into two vertex subsets, such that intra-group edges are all positive and inter-group edges are all negative. Determining this is easy, but measuring a degree of balancedness (i.e. how close is a network to be balanced?) is not. The package, so far, implements three methods to calculate balance scores. All are defined such that a value of one indicates perfect balance and zero perfect unbalance. Though for intermediate networks, results may vary significantly. Check this paper by Samin Aref (and his other work) for more details.\n\nlibrary(igraph)\nlibrary(signnet)\ndata(\"tribes\")\n\nbalance_score(tribes,method = \"triangles\")\n#> [1] 0.867647\nbalance_score(tribes,method = \"walk\")\n#> [1] 0.357576\nbalance_score(tribes,method = \"frustration\")\n#> [1] 0.758621\n\nFor directed signed networks, triad_census_signed() can be used to compute the count for all 138 non-isomorphic signed triads."
+  },
+  {
+    "objectID": "project/roughsf/index.html",
+    "href": "project/roughsf/index.html",
+    "title": "roughsf",
+    "section": "",
+    "text": "Using the java script library rough.js to draw sketchy, hand-drawn-like maps"
+  },
+  {
+    "objectID": "project/roughsf/index.html#installation",
+    "href": "project/roughsf/index.html#installation",
+    "title": "roughsf",
+    "section": "Installation",
+    "text": "Installation\nYou can install the developers version of roughsf with:\n\n# install.packages(\"remotes\")\nremotes::install_github(\"schochastics/roughsf\")"
+  },
+  {
+    "objectID": "project/roughsf/index.html#usage",
+    "href": "project/roughsf/index.html#usage",
+    "title": "roughsf",
+    "section": "Usage",
+    "text": "Usage\nroughsf() takes a list of sf objects as input. The layers are drawn in order as they appear in the list. MULTI* geometries are not supported and should be casted beforehand. Aesthetics need to be specified explicitly as columns in the sf objects.\nThe following attributes are supported for POLYGONS:\n\nfill fill color\ncolor stroke color\nstroke stroke size\nfillstyle one of “hachure”, “solid”, “zigzag”, “cross-hatch”, “dots”, “dashed”, “zigzag-line”\nfillweight thickness of fillstyle (between 0 and 1)\nhachureangle angle of hachure lines\nhachuregap gap between two hachure lines\n\nThe following attributes are supported for LINESTRINGS:\n\ncolor stroke color\nstroke stroke size\n\nThe following attributes are supported for POINTS:\n\ncolor color of point\nsize size of point\nlabel label to be added (optional)\nlabel_pos position of label relative to point: (c)enter, (n)orth, (e)ast, (s)outh, (w)est (optional)\n\nDefault values are used if one of the attributes is not found.\nValues need to be specified explicitly and cannot be inferred from other columns (This needs to be done in a preparatory step)\n\nlibrary(sf)\nger <- rnaturalearth::ne_countries(scale = \"medium\", country = \"Germany\", returnclass = \"sf\")\nger <- st_cast(ger, \"POLYGON\")\nger$fill <- \"#CD2626\"\nger$stroke <- 2\nger$fillweight <- 0.5\n\n# MULTIPOLYGON (and also MULTILINESTRING) are not supported\nger <- st_cast(ger, \"POLYGON\")\n\ncities <- data.frame(name = c(\"Berlin\", \"Munich\", \"Hamburg\", \"Cologne\"))\ncities$geometry <- st_sfc(\n  st_point(c(13.4, 52.5200)), st_point(c(11.582, 48.1351)),\n  st_point(c(9.9937, 53.5511)), st_point(c(6.9603, 50.9375))\n)\ncities <- st_sf(cities)\nst_crs(cities) <- \"+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0\"\ncities$size <- 15\ncities$color <- \"#000000\"\ncities$label <- cities$name\ncities$label_pos <- \"e\"\n\nroughsf::roughsf(list(ger, cities),\n                 title = \"Sketchy Map of Germany\", caption = \"drawn by @schochastics\",\n                 title_font = \"48px Pristina\", font = \"30px Pristina\", caption_font = \"30px Pristina\",\n                 roughness = 1, bowing = 1, simplification = 1,\n                 width = 800, height = 1000, \n)\n\n\nPlots can be saved as png with the save_roughsf() function."
+  },
+  {
+    "objectID": "project/edgebundle/index.html",
+    "href": "project/edgebundle/index.html",
+    "title": "edgebundle",
+    "section": "",
+    "text": "GITHUB\nAn R package that implements several edge bundling/flow and metro map algorithms. So far it includes\n(The API is not very opinionated yet and may change in future releases.)"
+  },
+  {
+    "objectID": "project/edgebundle/index.html#installation",
+    "href": "project/edgebundle/index.html#installation",
+    "title": "edgebundle",
+    "section": "Installation",
+    "text": "Installation\nThe package is available on CRAN.\n\ninstall.packages(\"edgebundle\")\n\nThe developer version can be installed with\n\n# install.packages(\"remotes\")\nremotes::install_github(\"schochastics/edgebundle\")\n\nNote that edgebundle imports reticulate and uses a pretty big python library (datashader).\n\nlibrary(edgebundle)\nlibrary(igraph)"
+  },
+  {
+    "objectID": "project/edgebundle/index.html#edge-bundling",
+    "href": "project/edgebundle/index.html#edge-bundling",
+    "title": "edgebundle",
+    "section": "Edge bundling",
+    "text": "Edge bundling\nThe expected input of each edge bundling function is a graph (igraph/network or tbl_graph object) and a node layout.\nAll functions return a data frame of points along the edges of the network that can be plotted with {{ggplot2}} using geom_path() or geom_bezier() for edge_bundle_stub().\n\nlibrary(igraph)\ng <- graph_from_edgelist(\n  matrix(c(1,12,2,11,3,10,4,9,5,8,6,7),ncol=2,byrow = T),F)\nxy <- cbind(c(rep(0,6),rep(1,6)),c(1:6,1:6))\n\nfbundle <- edge_bundle_force(g,xy,compatibility_threshold = 0.1)\nhead(fbundle)\n#>            x       y     index group\n#> 1 0.00000000 1.00000 0.0000000     1\n#> 2 0.00611816 1.19977 0.0303030     1\n#> 3 0.00987237 1.29767 0.0606061     1\n#> 4 0.01929293 1.52427 0.0909091     1\n#> 5 0.02790686 1.68643 0.1212121     1\n#> 6 0.03440142 1.81285 0.1515152     1\n\nThe result can be visualized as follows.\n\nlibrary(ggplot2)\n\nggplot(fbundle) +\n  geom_path(aes(x, y, group = group, col = as.factor(group)), \n            size = 2, show.legend = FALSE) +\n  geom_point(data = as.data.frame(xy), aes(V1, V2), size = 5) +\n  theme_void()\n\n\n\n\n\n\n\n\n# simple edge-path bundling example\ng <- graph_from_edgelist(matrix(c(1, 2, 1, 6, 1, 4, 2, 3, 3, 4, 4, 5, 5, 6), \n                                ncol = 2, byrow = TRUE), FALSE)\nxy <- cbind(c(0, 10, 25, 40, 50, 50), c(0, 15, 25, 15, 0, -10))\nres <- edge_bundle_path(g, xy, max_distortion = 2, weight_fac = 2, segments = 50)\n\nggplot() +\n  geom_path(data = res, aes(x, y, group = group, col = as.factor(group)), \n            size = 2, show.legend = FALSE) +\n  geom_point(data = as.data.frame(xy), aes(V1, V2), size = 5) +\n  scale_color_manual(values = c(\"grey66\", \"firebrick3\", \"firebrick3\", rep(\"grey66\", 4))) +\n  theme_void()\n\n\n\n\n\n\n\n\nFor edge_bundle_stub(), you need geom_bezier() from the package {{ggforce}}.\n\nlibrary(ggforce)\ng <- graph.star(10, \"undirected\")\n\nxy <- matrix(c(\n  0, 0,\n  cos(90 * pi / 180), sin(90 * pi / 180),\n  cos(80 * pi / 180), sin(80 * pi / 180),\n  cos(70 * pi / 180), sin(70 * pi / 180),\n  cos(330 * pi / 180), sin(330 * pi / 180),\n  cos(320 * pi / 180), sin(320 * pi / 180),\n  cos(310 * pi / 180), sin(310 * pi / 180),\n  cos(210 * pi / 180), sin(210 * pi / 180),\n  cos(200 * pi / 180), sin(200 * pi / 180),\n  cos(190 * pi / 180), sin(190 * pi / 180)\n), ncol = 2, byrow = TRUE)\n\nsbundle <- edge_bundle_stub(g, xy, beta = 90)\n\nggplot(sbundle) +\n  geom_bezier(aes(x, y, group = group), size = 1.5, col = \"grey66\") +\n  geom_point(data = as.data.frame(xy), aes(V1, V2), size = 5) +\n  theme_void()\n\n\n\n\n\n\n\n\nThe typical edge bundling benchmark uses a dataset on us flights, which is included in the package.\n\ng <- us_flights\nxy <- cbind(V(g)$longitude, V(g)$latitude)\nverts <- data.frame(x = V(g)$longitude, y = V(g)$latitude)\n\nfbundle <- edge_bundle_force(g, xy, compatibility_threshold = 0.6)\nsbundle <- edge_bundle_stub(g, xy)\nhbundle <- edge_bundle_hammer(g, xy, bw = 0.7, decay = 0.5)\npbundle <- edge_bundle_path(g, xy, max_distortion = 12, weight_fac = 2, segments = 50)\n\nstates <- map_data(\"state\")\n\n\np1 <- ggplot() +\n  geom_polygon(data = states, aes(long, lat, group = group), \n               col = \"white\", size = 0.1, fill = NA) +\n  geom_path(data = fbundle, aes(x, y, group = group), \n            col = \"#9d0191\", size = 0.05) +\n  geom_path(data = fbundle, aes(x, y, group = group), \n            col = \"white\", size = 0.005) +\n  geom_point(data = verts, aes(x, y), \n             col = \"#9d0191\", size = 0.25) +\n  geom_point(data = verts, aes(x, y), \n             col = \"white\", size = 0.25, alpha = 0.5) +\n  geom_point(data = verts[verts$name != \"\", ], \n             aes(x, y), col = \"white\", size = 3, alpha = 1) +\n  labs(title = \"Force Directed Edge Bundling\") +\n  ggraph::theme_graph(background = \"black\") +\n  theme(plot.title = element_text(color = \"white\"))\n\np2 <- ggplot() +\n  geom_polygon(data = states, aes(long, lat, group = group), \n               col = \"white\", size = 0.1, fill = NA) +\n  geom_path(data = hbundle, aes(x, y, group = group), \n            col = \"#9d0191\", size = 0.05) +\n  geom_path(data = hbundle, aes(x, y, group = group), \n            col = \"white\", size = 0.005) +\n  geom_point(data = verts, aes(x, y), \n             col = \"#9d0191\", size = 0.25) +\n  geom_point(data = verts, aes(x, y), \n             col = \"white\", size = 0.25, alpha = 0.5) +\n  geom_point(data = verts[verts$name != \"\", ], aes(x, y), \n             col = \"white\", size = 3, alpha = 1) +\n  labs(title = \"Hammer Edge Bundling\") +\n  ggraph::theme_graph(background = \"black\") +\n  theme(plot.title = element_text(color = \"white\"))\n\nalpha_fct <- function(x, b = 0.01, p = 5, n = 20) {\n  (1 - b) * (2 / (n - 1))^p * abs(x - (n - 1) / 2)^p + b\n}\n\np3 <- ggplot() +\n  geom_polygon(data = states, aes(long, lat, group = group), \n               col = \"white\", size = 0.1, fill = NA) +\n  ggforce::geom_bezier(\n    data = sbundle, aes(x, y,\n      group = group,\n      alpha = alpha_fct(..index.. * 20)\n    ), n = 20,\n    col = \"#9d0191\", size = 0.1, show.legend = FALSE\n  ) +\n  ggforce::geom_bezier(\n    data = sbundle, aes(x, y,\n      group = group,\n      alpha = alpha_fct(..index.. * 20)\n    ), n = 20,\n    col = \"white\", size = 0.01, show.legend = FALSE\n  ) +\n  geom_point(data = verts, aes(x, y), \n             col = \"#9d0191\", size = 0.25) +\n  geom_point(data = verts, aes(x, y), \n             col = \"white\", size = 0.25, alpha = 0.5) +\n  geom_point(data = verts[verts$name != \"\", ], aes(x, y), \n             col = \"white\", size = 3, alpha = 1) +\n  labs(title = \"Stub Edge Bundling\") +\n  ggraph::theme_graph(background = \"black\") +\n  theme(plot.title = element_text(color = \"white\"))\n\np4 <- ggplot() +\n  geom_polygon(data = states, aes(long, lat, group = group), \n               col = \"white\", size = 0.1, fill = NA) +\n  geom_path(data = pbundle, aes(x, y, group = group), \n            col = \"#9d0191\", size = 0.05) +\n  geom_path(data = pbundle, aes(x, y, group = group), \n            col = \"white\", size = 0.005) +\n  geom_point(data = verts, aes(x, y), \n             col = \"#9d0191\", size = 0.25) +\n  geom_point(data = verts, aes(x, y), \n             col = \"white\", size = 0.25, alpha = 0.5) +\n  geom_point(data = verts[verts$name != \"\", ], aes(x, y), \n             col = \"white\", size = 3, alpha = 1) +\n  labs(title = \"Edge-Path Bundling\") +\n  ggraph::theme_graph(background = \"black\") +\n  theme(plot.title = element_text(color = \"white\"))\n\np1\np2\np3\np4"
+  },
+  {
+    "objectID": "project/edgebundle/index.html#flow-maps",
+    "href": "project/edgebundle/index.html#flow-maps",
+    "title": "edgebundle",
+    "section": "Flow maps",
+    "text": "Flow maps\nA flow map is a type of thematic map that represent movements. It may thus be considered a hybrid of a map and a flow diagram. The package so far implements a spatial one-to-many flow layout algorithm using triangulation and approximate Steiner trees.\nThe function tnss_tree() expects a one-to-many flow network (i.e. a weighted star graph), a layout for the nodes and a set of dummy nodes created with tnss_dummies().\n\nlibrary(ggraph)\nxy <- cbind(state.center$x,state.center$y)[!state.name%in%c(\"Alaska\",\"Hawaii\"),]\nxy_dummy <- tnss_dummies(xy,4)\ngtree <- tnss_tree(cali2010,xy,xy_dummy,4,gamma = 0.9)\n\nggraph(gtree,\"manual\",x=V(gtree)$x,y=V(gtree)$y)+\n  geom_polygon(data=us,aes(long,lat,group=group),fill=\"#FDF8C7\",col=\"black\")+\n  geom_edge_link(aes(width=flow,col=sqrt((xy[root,1]-..x..)^2 + (xy[root,2]-..y..)^2)),\n                 lineend = \"round\",show.legend = FALSE)+\n  scale_edge_width(range=c(0.5,4),trans=\"sqrt\")+\n  scale_edge_color_gradient(low=\"#cc0000\",high = \"#0000cc\")+\n  geom_node_point(aes(filter=tnss==\"leaf\"),size=1)+\n  geom_node_point(aes(filter=(name==\"California\")),size=5,shape=22,fill=\"#cc0000\")+\n  theme_graph()+\n  labs(title=\"Migration from California (2010) - Flow map\")\n\n\n\n\n\n\n\n\n\n\nTo smooth the tree, use tnss_smooth(). Note that this changes the object type and you need to visualize it with {{ggplot2}} rather than {{ggraph}}.\n\nsmooth_df <- tnss_smooth(gtree,bw=5,n=20)\n\nggplot()+\n  geom_polygon(data=us,aes(long,lat,group=group),fill=\"#FDF8C7\",col=\"black\")+\n  geom_path(data = smooth_df,aes(x,y,group=destination,size=flow),\n            lineend = \"round\",col=\"firebrick3\",alpha=1)+\n  theme_void()+\n  scale_size(range=c(0.5,3),guide = \"none\")+\n  labs(title=\"Migration from California (2010) - Flow map smoothed\")"
+  },
+  {
+    "objectID": "project/edgebundle/index.html#metro-maps",
+    "href": "project/edgebundle/index.html#metro-maps",
+    "title": "edgebundle",
+    "section": "Metro Maps",
+    "text": "Metro Maps\nMetro map(-like) graph drawing follow certain rules, such as octilinear edges. The algorithm implemented in the packages uses hill-climbing to optimize several features desired in a metro map. The package includes the metro map of Berlin as an example.\n\n\n# the algorithm has problems with parallel edges\ng <- simplify(metro_berlin)\nxy <- cbind(V(g)$lon,V(g)$lat)*100\n\n# the algorithm is not very stable. try playing with the parameters\nxy_new <- metro_multicriteria(g,xy,l = 2,gr = 0.5,w = c(100,100,1,1,100),bsize = 35)\n\n# geographic layout\nggraph(metro_berlin,\"manual\",x=xy[,1],y=xy[,2])+\n  geom_edge_link0(aes(col=route_I_counts),edge_width=2,show.legend = FALSE)+\n  geom_node_point(shape=21,col=\"white\",fill=\"black\",size=3,stroke=0.5)\n\n#schematic layout\nggraph(metro_berlin,\"manual\",x=xy_new[,1],y=xy_new[,2])+\n  geom_edge_link0(aes(col=route_I_counts),edge_width=2,show.legend = FALSE)+\n  geom_node_point(shape=21,col=\"white\",fill=\"black\",size=3,stroke=0.5)+\n  theme_graph()+\n  labs(title = \"Subway Network Berlin\")"
+  },
+  {
+    "objectID": "project/edgebundle/index.html#disclaimer",
+    "href": "project/edgebundle/index.html#disclaimer",
+    "title": "edgebundle",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nEdge bundling is able to produce neat looking network visualizations. However, they do not necessarily enhance readability. After experimenting with several methods, it became quite evident that the algorithms are very sensitive to the parameter settings (and often really only work in the showcase examples…). Consult the original literature (if they even provide any guidelines) or experiment yourself and do not expect any miracles."
+  },
+  {
+    "objectID": "project/networkdata/index.html",
+    "href": "project/networkdata/index.html",
+    "title": "networkdata",
+    "section": "",
+    "text": "The package contains a large variety of different network datasets (all in igraph format). So far, it includes datsets from the following repositories:\nThe package includes 982 datasets containing 2257 networks.\nA list of all datasets can be obtained with\nFeel free to add your own dataset via a pull request"
+  },
+  {
+    "objectID": "project/networkdata/index.html#installation",
+    "href": "project/networkdata/index.html#installation",
+    "title": "networkdata",
+    "section": "Installation",
+    "text": "Installation\nDue to the nature of the package (only data, no functions), the package will not go to CRAN at any point. However, the package is available via drat (If you are looking for stable builds of the package). With drat, you can install and upgrade non-CRAN packages directly from R using the standard install.packages() and update.packages() functions.\n\n# install.packages(\"drat\")\ndrat::addRepo(\"schochastics\")\ninstall.packages(\"networkdata\")\n\nThe developer version can be installed with:\n\n#install.packages(\"remotes\")\nremotes::install_github(\"schochastics/networkdata\")\n\nThe required space for the package is ~22MB, given that it includes a lot of data."
+  },
+  {
+    "objectID": "project/networkdata/index.html#notes",
+    "href": "project/networkdata/index.html#notes",
+    "title": "networkdata",
+    "section": "Notes",
+    "text": "Notes\n\nPlease report any missing sources/references for datasets.\nMany datasets were automatically assembled and may thus contain errors (not all were manually checked). If you spot any, please report them. Check the original sources for any inconsistencies if you want to use the data in an academic paper."
+  },
+  {
+    "objectID": "project/graphlayouts/index.html",
+    "href": "project/graphlayouts/index.html",
+    "title": "graphlayouts",
+    "section": "",
+    "text": "The package implements the following algorithms:"
+  },
+  {
+    "objectID": "project/graphlayouts/index.html#install",
+    "href": "project/graphlayouts/index.html#install",
+    "title": "graphlayouts",
+    "section": "Install",
+    "text": "Install\n\n# dev version\nremotes::install_github(\"schochastics/graphlayouts\")\n\n#CRAN\ninstall.packages(\"graphlayouts\")"
+  },
+  {
+    "objectID": "project/graphlayouts/index.html#stress-majorization",
+    "href": "project/graphlayouts/index.html#stress-majorization",
+    "title": "graphlayouts",
+    "section": "Stress Majorization",
+    "text": "Stress Majorization\nThis example is a bit of a special case since it exploits some weird issues in igraph.\n\nlibrary(igraph)   \nlibrary(ggraph)   \nlibrary(graphlayouts)\n\nset.seed(666)\npa <- sample_pa(1000,1,1,directed = F)\n\nggraph(pa,layout = \"nicely\")+\n  geom_edge_link0(width=0.2,colour=\"grey\")+\n  geom_node_point(col=\"black\",size=0.3)+\n  theme_graph()\n\n\n\n\n\n\n\n\nggraph(pa,layout=\"stress\")+\n  geom_edge_link0(width=0.2,colour=\"grey\")+\n  geom_node_point(col=\"black\",size=0.3)+\n  theme_graph()\n\n\n\n\n\n\n\n\nStress majorization also works for networks with several components. It relies on a bin packing algorithm to efficiently put the components in a rectangle, rather than a circle.\n\nset.seed(666)\ng <- disjoint_union(\n  sample_pa(10,directed = F),\n  sample_pa(20,directed = F),\n  sample_pa(30,directed = F),\n  sample_pa(40,directed = F),\n  sample_pa(50,directed = F),\n  sample_pa(60,directed = F),\n  sample_pa(80,directed = F)\n)\n\nggraph(g,layout = \"nicely\") +\n  geom_edge_link0() +\n  geom_node_point() +\n  theme_graph()\n\n\n\n\n\n\n\n\nggraph(g, layout = \"stress\",bbox = 40) +\n  geom_edge_link0() +\n  geom_node_point() +\n  theme_graph()"
+  },
+  {
+    "objectID": "project/graphlayouts/index.html#backbone-layout",
+    "href": "project/graphlayouts/index.html#backbone-layout",
+    "title": "graphlayouts",
+    "section": "Backbone Layout",
+    "text": "Backbone Layout\nBackbone layouts are helpful for drawing hairballs.\n\nset.seed(665)\n#create network with a group structure\ng <- sample_islands(9,40,0.4,15)\ng <- simplify(g)\nV(g)$grp <- as.character(rep(1:9,each=40))\n\nggraph(g,layout = \"stress\")+\n  geom_edge_link0(colour=rgb(0,0,0,0.5),width=0.1)+\n  geom_node_point(aes(col=grp))+\n  scale_color_brewer(palette = \"Set1\")+\n  theme_graph()+\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\nThe backbone layout helps to uncover potential group structures based on edge embeddedness and puts more emphasis on this structure in the layout.\n\nbb <- layout_as_backbone(g,keep=0.4)\nE(g)$col <- F\nE(g)$col[bb$backbone] <- T\n\nggraph(g,layout=\"manual\",x=bb$xy[,1],y=bb$xy[,2])+\n  geom_edge_link0(aes(col=col),width=0.1)+\n  geom_node_point(aes(col=grp))+\n  scale_color_brewer(palette = \"Set1\")+\n  scale_edge_color_manual(values=c(rgb(0,0,0,0.3),rgb(0,0,0,1)))+\n  theme_graph()+\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "project/graphlayouts/index.html#radial-layout-with-focal-node",
+    "href": "project/graphlayouts/index.html#radial-layout-with-focal-node",
+    "title": "graphlayouts",
+    "section": "Radial Layout with Focal Node",
+    "text": "Radial Layout with Focal Node\nThe function layout_with_focus() creates a radial layout around a focal node. All nodes with the same distance from the focal node are on the same circle.\n\nlibrary(igraphdata)\nlibrary(patchwork)\ndata(\"karate\")\n\np1 <- ggraph(karate,layout = \"focus\",focus = 1) +\n  draw_circle(use = \"focus\",max.circle = 3)+\n  geom_edge_link0(edge_color=\"black\",edge_width=0.3)+\n  geom_node_point(aes(fill=as.factor(Faction)),size=2,shape=21)+\n  scale_fill_manual(values=c(\"#8B2323\", \"#EEAD0E\"))+\n  theme_graph()+\n  theme(legend.position = \"none\")+\n  coord_fixed()+\n  labs(title= \"Focus on Mr. Hi\")\n\np2 <- ggraph(karate,layout = \"focus\",focus = 34) +\n  draw_circle(use = \"focus\",max.circle = 4)+\n  geom_edge_link0(edge_color=\"black\",edge_width=0.3)+\n  geom_node_point(aes(fill=as.factor(Faction)),size=2,shape=21)+\n  scale_fill_manual(values=c(\"#8B2323\", \"#EEAD0E\"))+\n  theme_graph()+\n  theme(legend.position = \"none\")+\n  coord_fixed()+\n  labs(title= \"Focus on John A.\")\n\np1+p2"
+  },
+  {
+    "objectID": "project/graphlayouts/index.html#radial-centrality-layout",
+    "href": "project/graphlayouts/index.html#radial-centrality-layout",
+    "title": "graphlayouts",
+    "section": "Radial Centrality Layout",
+    "text": "Radial Centrality Layout\nThe function layout_with_centrality creates a radial layout around the node with the highest centrality value. The further outside a node is, the more peripheral it is.\n\nlibrary(igraphdata)\nlibrary(patchwork)\ndata(\"karate\")\n\nbc <- betweenness(karate)\np1 <- ggraph(karate,layout = \"centrality\", centrality = bc, tseq = seq(0,1,0.15)) +\n  draw_circle(use = \"cent\") +\n  annotate_circle(bc,format=\"\",pos=\"bottom\") +\n  geom_edge_link0(edge_color=\"black\",edge_width=0.3)+\n  geom_node_point(aes(fill=as.factor(Faction)),size=2,shape=21)+\n  scale_fill_manual(values=c(\"#8B2323\", \"#EEAD0E\"))+\n  theme_graph()+\n  theme(legend.position = \"none\")+\n  coord_fixed()+\n  labs(title=\"betweenness centrality\")\n\n\ncc <- closeness(karate)\np2 <- ggraph(karate,layout = \"centrality\", centrality = cc, tseq = seq(0,1,0.2)) +\n  draw_circle(use = \"cent\") +\n  annotate_circle(cc,format=\"scientific\",pos=\"bottom\") +\n  geom_edge_link0(edge_color=\"black\",edge_width=0.3)+\n  geom_node_point(aes(fill=as.factor(Faction)),size=2,shape=21)+\n  scale_fill_manual(values=c(\"#8B2323\", \"#EEAD0E\"))+\n  theme_graph()+\n  theme(legend.position = \"none\")+\n  coord_fixed()+\n  labs(title=\"closeness centrality\")\n\np1+p2"
+  },
+  {
+    "objectID": "project/graphlayouts/index.html#large-graphs",
+    "href": "project/graphlayouts/index.html#large-graphs",
+    "title": "graphlayouts",
+    "section": "Large graphs",
+    "text": "Large graphs\ngraphlayouts implements two algorithms for visualizing large networks (<100k nodes). layout_with_pmds() is similar to layout_with_mds() but performs the multidimensional scaling only with a small number of pivot nodes. Usually, 50-100 are enough to obtain similar results to the full MDS.\nlayout_with_sparse_stress() performs stress majorization only with a small number of pivots (~50-100). The runtime performance is inferior to pivotMDS but the quality is far superior.\nA comparison of runtimes and layout quality can be found in the wiki\ntl;dr: both layout algorithms appear to be faster than the fastest igraph algorithm layout_with_drl().\nBelow are two examples of layouts generated for large graphs using layout_with_sparse_stress()\n A retweet network with 18k nodes and 61k edges\n A co-citation network with 12k nodes and 68k edges"
+  },
+  {
+    "objectID": "project/levelnet/index.html",
+    "href": "project/levelnet/index.html",
+    "title": "levelnet",
+    "section": "",
+    "text": "package is in an early stage"
+  },
+  {
+    "objectID": "project/netrankr/index.html",
+    "href": "project/netrankr/index.html",
+    "title": "netrankr",
+    "section": "",
+    "text": "The literature is flooded with centrality indices and new ones are introduced on a regular basis. Although there exist several theoretical and empirical guidelines on when to use certain indices, there still exists plenty of ambiguity in the concept of network centrality. To date, network centrality is nothing more than applying indices to a network.\nThe only degree of freedom is the choice of index. The package comes with an Rstudio addin (index_builder()), which allows to build or choose from more than 20 different indices. Blindly (ab)using this function is highly discouraged!\nThe netrankr package is based on the idea that centrality is more than a conglomeration of indices. Decomposing them in a series of microsteps offers the possibility to gradually add ideas about centrality, without succumbing to trial-and-error approaches. Further, it allows for alternative assessment methods which can be more general than the index-driven approach.\nThe new approach is centered around the concept of positions, which are defined as the relations and potential attributes of a node in a network. The aggregation of the relations leads to the definition of indices. However, positions can also be compared via positional dominance, leading to partial centrality rankings and the option to calculate probabilistic centrality rankings.\nFor a more detailed theoretical background, consult the Literature at the end of this page.\n\n\n\nTo install from CRAN:\n\n install.packages(\"netrankr\")\n\nTo install the developer version from github:\n\n#install.packages(\"devtools\")\ndevtools::install_github(\"schochastics/netrankr\")\n\n\n\n\n\nThis example briefly explains some of the functionality of the package and the difference to an index driven approach. For a more realistic application see the use case vignette.\nWe work with the following small graph.\n\nlibrary(igraph)\nlibrary(netrankr)\ng <- graph.empty(n = 11,directed = FALSE)\ng <- add_edges(g,c(1,11,2,4,3,5,3,11,4,8,5,9,5,11,6,7,6,8,\n                    6,10,6,11,7,9,7,10,7,11,8,9,8,10,9,10))\n\n\n\n\n\n\n\n\n\n\nSay we are interested in the most central node of the graph and simply compute some standard centrality scores with the igraph package. Defining centrality indices in the netrankr package is explained in the centrality indices vignette.\n\ncent_scores <- data.frame(\n   degree = degree(g),\n   betweenness = round(betweenness(g),4),\n   closeness = round(closeness(g),4),\n   eigenvector = round(eigen_centrality(g)$vector,4),\n   subgraph = round(subgraph_centrality(g),4))\n# What are the most central nodes for each index?\napply(cent_scores,2,which.max)\n#>      degree betweenness   closeness eigenvector    subgraph \n#>          11           8           6           7          10\n\n\n\n\n\n\n\n\n\n\nAs you can see, each index assigns the highest value to a different vertex.\nA more general assessment starts by calculating the neighborhood inclusion preorder.\n\nP <- neighborhood_inclusion(g)\nP\n#>    1 2 3 4 5 6 7 8 9 10 11\n#> 1  0 0 1 0 1 1 1 0 0  0  1\n#> 2  0 0 0 1 0 0 0 1 0  0  0\n#> 3  0 0 0 0 1 0 0 0 0  0  1\n#> 4  0 0 0 0 0 0 0 0 0  0  0\n#> 5  0 0 0 0 0 0 0 0 0  0  0\n#> 6  0 0 0 0 0 0 0 0 0  0  0\n#> 7  0 0 0 0 0 0 0 0 0  0  0\n#> 8  0 0 0 0 0 0 0 0 0  0  0\n#> 9  0 0 0 0 0 0 0 0 0  0  0\n#> 10 0 0 0 0 0 0 0 0 0  0  0\n#> 11 0 0 0 0 0 0 0 0 0  0  0\n\nSchoch & Brandes (2016) showed that \\(N(u) \\subseteq N[v]\\) (i.e. P[u,v]=1) implies \\(c(u) \\leq c(v)\\) for centrality indices \\(c\\), which are defined via specific path algebras. These include many of the well-known measures like closeness (and variants), betweenness (and variants) as well as many walk-based indices (eigenvector and subgraph centrality, total communicability,…).\nNeighborhood-inclusion defines a partial ranking on the set of nodes. Each ranking that is in accordance with this partial ranking yields a proper centrality ranking. Each of these ranking can thus potentially be the outcome of a centrality index.\nUsing rank intervals, we can examine the minimal and maximal possible rank of each node. The bigger the intervals are, the more freedom exists for indices to rank nodes differently.\n\nplot(rank_intervals(P),cent_scores = cent_scores,ties.method=\"average\")\n\n\n\n\n\n\n\n\nThe potential ranks of nodes are not uniformly distributed in the intervals. To get the exact probabilities, the function exact_rank_prob() can be used.\n\nres <- exact_rank_prob(P)\nres\n#> Number of possible centrality rankings:  739200 \n#> Equivalence Classes (max. possible): 11 (11)\n#> - - - - - - - - - - \n#> Rank Probabilities (rows:nodes/cols:ranks)\n#>            1         2         3         4         5         6         7\n#> 1  0.5454545 0.2727273 0.1212121 0.0454545 0.0129870 0.0021645 0.0000000\n#> 2  0.2727273 0.2181818 0.1696970 0.1272727 0.0909091 0.0606061 0.0363636\n#> 3  0.0000000 0.1636364 0.2181818 0.2090909 0.1688312 0.1190476 0.0727273\n#> 4  0.0000000 0.0272727 0.0515152 0.0727273 0.0909091 0.1060606 0.1181818\n#> 5  0.0000000 0.0000000 0.0181818 0.0454545 0.0753247 0.1034632 0.1272727\n#> 6  0.0000000 0.0545455 0.0848485 0.1000000 0.1064935 0.1086580 0.1090909\n#> 7  0.0000000 0.0545455 0.0848485 0.1000000 0.1064935 0.1086580 0.1090909\n#> 8  0.0000000 0.0272727 0.0515152 0.0727273 0.0909091 0.1060606 0.1181818\n#> 9  0.0909091 0.0909091 0.0909091 0.0909091 0.0909091 0.0909091 0.0909091\n#> 10 0.0909091 0.0909091 0.0909091 0.0909091 0.0909091 0.0909091 0.0909091\n#> 11 0.0000000 0.0000000 0.0181818 0.0454545 0.0753247 0.1034632 0.1272727\n#>            8          9        10        11\n#> 1  0.0000000 0.00000000 0.0000000 0.0000000\n#> 2  0.0181818 0.00606061 0.0000000 0.0000000\n#> 3  0.0363636 0.01212121 0.0000000 0.0000000\n#> 4  0.1272727 0.13333333 0.1363636 0.1363636\n#> 5  0.1454545 0.15757576 0.1636364 0.1636364\n#> 6  0.1090909 0.10909091 0.1090909 0.1090909\n#> 7  0.1090909 0.10909091 0.1090909 0.1090909\n#> 8  0.1272727 0.13333333 0.1363636 0.1363636\n#> 9  0.0909091 0.09090909 0.0909091 0.0909091\n#> 10 0.0909091 0.09090909 0.0909091 0.0909091\n#> 11 0.1454545 0.15757576 0.1636364 0.1636364\n#> - - - - - - - - - - \n#> Relative Rank Probabilities (row ranked lower than col)\n#>           1         2        3        4        5        6        7        8\n#> 1  0.000000 0.6666667 1.000000 0.952381 1.000000 1.000000 1.000000 0.952381\n#> 2  0.333333 0.0000000 0.666667 1.000000 0.916667 0.833333 0.833333 1.000000\n#> 3  0.000000 0.3333333 0.000000 0.797619 1.000000 0.750000 0.750000 0.797619\n#> 4  0.047619 0.0000000 0.202381 0.000000 0.559524 0.440476 0.440476 0.500000\n#> 5  0.000000 0.0833333 0.000000 0.440476 0.000000 0.375000 0.375000 0.440476\n#> 6  0.000000 0.1666667 0.250000 0.559524 0.625000 0.000000 0.500000 0.559524\n#> 7  0.000000 0.1666667 0.250000 0.559524 0.625000 0.500000 0.000000 0.559524\n#> 8  0.047619 0.0000000 0.202381 0.500000 0.559524 0.440476 0.440476 0.000000\n#> 9  0.142857 0.2500000 0.357143 0.625000 0.678571 0.571429 0.571429 0.625000\n#> 10 0.142857 0.2500000 0.357143 0.625000 0.678571 0.571429 0.571429 0.625000\n#> 11 0.000000 0.0833333 0.000000 0.440476 0.500000 0.375000 0.375000 0.440476\n#>           9       10       11\n#> 1  0.857143 0.857143 1.000000\n#> 2  0.750000 0.750000 0.916667\n#> 3  0.642857 0.642857 1.000000\n#> 4  0.375000 0.375000 0.559524\n#> 5  0.321429 0.321429 0.500000\n#> 6  0.428571 0.428571 0.625000\n#> 7  0.428571 0.428571 0.625000\n#> 8  0.375000 0.375000 0.559524\n#> 9  0.000000 0.500000 0.678571\n#> 10 0.500000 0.000000 0.678571\n#> 11 0.321429 0.321429 0.000000\n#> - - - - - - - - - - \n#> Expected Ranks (higher values are better)\n#>       1       2       3       4       5       6       7       8       9      10 \n#> 1.71429 3.00000 4.28571 7.50000 8.14286 6.85714 6.85714 7.50000 6.00000 6.00000 \n#>      11 \n#> 8.14286 \n#> - - - - - - - - - - \n#> SD of Rank Probabilities\n#>        1        2        3        4        5        6        7        8 \n#> 0.958315 1.897367 1.724967 2.539685 2.159932 2.721794 2.721794 2.539685 \n#>        9       10       11 \n#> 3.162278 3.162278 2.159932 \n#> - - - - - - - - - -\n\nFor the graph g we can therefore come up with 739,200 indices that would rank the nodes differently.\nrank.prob contains the probabilities for each node to occupy a certain rank. For instance, the probability for each node to be the most central one is as follows.\n\nround(res$rank.prob[ ,11],2)\n#>    1    2    3    4    5    6    7    8    9   10   11 \n#> 0.00 0.00 0.00 0.14 0.16 0.11 0.11 0.14 0.09 0.09 0.16\n\nrelative.rank contains the relative rank probabilities. An entry relative.rank[u,v] indicates how likely it is that v is more central than u.\n\n# How likely is it, that 6 is more central than 3?\nround(res$relative.rank[3,6],2)\n#> [1] 0.75\n\nexpected.ranks contains the expected centrality ranks for all nodes. They are derived on the basis of rank.prob.\n\nround(res$expected.rank,2)\n#>    1    2    3    4    5    6    7    8    9   10   11 \n#> 1.71 3.00 4.29 7.50 8.14 6.86 6.86 7.50 6.00 6.00 8.14\n\nThe higher the value, the more central a node is expected to be.\nNote: The set of rankings grows exponentially in the number of nodes and the exact calculation becomes infeasible quite quickly and approximations need to be used. Check the benchmark results for guidelines.\n\n\n\n\nnetrankr is based on a series of papers that appeared in recent years. If you want to learn more about the theoretical background of the package, consult the following literature:\n\nSchoch, David. (2018). Centrality without Indices: Partial rankings and rank Probabilities in networks. Social Networks, 54, 50-60.(link)\n\n\nSchoch, David & Valente, Thomas W., & Brandes, Ulrik. (2017). Correlations among centrality indices and a class of uniquely ranked graphs. Social Networks, 50, 46-54.(link)\n\n\nSchoch, David & Brandes, Ulrik. (2016). Re-conceptualizing centrality in social networks. European Journal of Appplied Mathematics, 27(6), 971–985. (link)\n\n\nBrandes, Ulrik. (2016). Network Positions. Methodological Innovations, 9, 2059799116630650. (link)"
+  },
+  {
+    "objectID": "project/index.html",
+    "href": "project/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "graphlayouts\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetworkdata\n\n\nThe package contains a large collection of network dataset with different context. This includes social networks, animal networks and movie networks. All datasets are in ‘igraph’ format.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\n\n\n\n\nedgebundle\n\n\nImplements several algorithms for bundling edges in networks and flow and metro map layouts. This includes force directed edge bundling, a flow algorithm based on Steiner trees and a multicriteria optimization method for metro map layouts.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet\n\n\nImplements methods for the analysis of signed networks. This includes several measures for structural balance, blockmodeling algorithms, various centrality indices, and projections of signed two-mode networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrgraph6\n\n\nThis package implements several methods to encode networks as Encode network data as strings of printable ASCII characters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughnet\n\n\nVisualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughsf\n\n\nDraw maps using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like maps.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrokemon\n\n\nThis package implements several themes for ggplot to bring your data into the world of Pokemon.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetUtils\n\n\nProvides a collection of network analytic (convenience) functions, missing in other standard packages. This includes forms of dyad and triad census with attributes and equivalence measures. All functions are build upon igraph\n\n\n\n\n\n\n\n\n\n\n\n\n\nlevelnet\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "project/snahelper/index.html",
+    "href": "project/snahelper/index.html",
+    "title": "snahelper",
+    "section": "",
+    "text": "snahelper provides a set RStudio Addin for social network analysis. The main addin is the SNAhelper which provides a simple GUI to do common network analytic tasks and visualize a network with ggraph.\nThe second addin, called Netbuilder allows you to quickly build small networks with a small “canvas” to draw on. The network can be exported as an igraph object at the end of the session by clicking on “Done”.\nThe third addin Netreader is meant to facilitated the import of raw network data. It provides a GUI to easily read network and attribute data and combine them to an igraph object. The underlying code of the import procedure is shown at the end. This should help users to learn importing data themselves.\nThe fourth addin Componentlayouter allows to layout networks with several components manually by placing them on an empty canvas. Components can also be rotated and resized. After finishing the session, the layout is saved as x and y vertex attributes."
+  },
+  {
+    "objectID": "project/snahelper/index.html#quick-look-at-the-snahelper",
+    "href": "project/snahelper/index.html#quick-look-at-the-snahelper",
+    "title": "snahelper",
+    "section": "Quick look at the SNAhelper",
+    "text": "Quick look at the SNAhelper\n\nCode to reproduce the used network.\n\nlibrary(tidyverse)\nlibrary(igraph)\nurl <- \"https://raw.githubusercontent.com/evelinag/StarWars-social-network/master/networks/starwars-full-interactions-allCharacters.json\"\ndf <- jsonlite::fromJSON(url)\n\ndf$nodes$id <- 1:nrow(df$nodes)\ndf$nodes$display <- df$nodes$name\ndf$nodes$name <- df$nodes$id-1\ng <- graph_from_data_frame(df$links,directed = F,vertices = df$nodes)\n\nV(g)$name <- V(g)$display\n\ng <- remove.vertex.attribute(g,\"id\")\ng <- remove.vertex.attribute(g,\"display\")\ng <- delete.vertices(g,which(degree(g)==0))\n\nV(g)$display <- ifelse(V(g)$value>75,V(g)$name,\"\")\nV(g)$colour <- ifelse(V(g)$display==\"\",NA,V(g)$display)\n\ng"
+  },
+  {
+    "objectID": "project/snahelper/index.html#quick-look-at-the-netreader",
+    "href": "project/snahelper/index.html#quick-look-at-the-netreader",
+    "title": "snahelper",
+    "section": "Quick look at the Netreader",
+    "text": "Quick look at the Netreader\nNetreader should be pretty selfexplanatory. The first two tabs allow you to import raw data (edges and attributes). Make sure to specify file delimiters, etc. according to the shown preview.\n\nUsing the Netreader should comes with a learning effect (hopefully). The last tab shows the R code to produce the network with the chosen data without using the Addin. \nThe network will be saved in your global environment once you click “Done”."
+  },
+  {
+    "objectID": "project/snahelper/index.html#quick-look-at-the-netbuilder",
+    "href": "project/snahelper/index.html#quick-look-at-the-netbuilder",
+    "title": "snahelper",
+    "section": "Quick look at the Netbuilder",
+    "text": "Quick look at the Netbuilder"
+  },
+  {
+    "objectID": "project/snahelper/index.html#quick-look-at-the-componentlayouter",
+    "href": "project/snahelper/index.html#quick-look-at-the-componentlayouter",
+    "title": "snahelper",
+    "section": "Quick look at the Componentlayouter",
+    "text": "Quick look at the Componentlayouter\n\nHighlight an igraph object in your script and selcet the Componentlayouter from the RStudio addin menu. Components are added by clicking on the canvas and can be resized/rotated and re-positioned using the buttons at the bottom. The final layout is stored as x and y coordinates in the igraph object."
+  },
+  {
+    "objectID": "project/snahelper/index.html#installation",
+    "href": "project/snahelper/index.html#installation",
+    "title": "snahelper",
+    "section": "Installation",
+    "text": "Installation\n\n# developer version\n#install.packages(remotes)\nremotes::install_github(\"schochastics/snahelper\")\n\n#CRAN version\ninstall.packages(\"snahelper\")\n\nTo work properly, you also need graphlayouts, which adds new layout algorithms.\n\ninstall.packages(\"graphlayouts\")"
+  },
+  {
+    "objectID": "project/snahelper/index.html#usage-of-snahelper",
+    "href": "project/snahelper/index.html#usage-of-snahelper",
+    "title": "snahelper",
+    "section": "Usage of SNAhelper",
+    "text": "Usage of SNAhelper\nTo use the main addin, simply highlight a network in your script and select SNAhelper from the Addin dropdown menu."
+  },
+  {
+    "objectID": "project/snahelper/index.html#interface",
+    "href": "project/snahelper/index.html#interface",
+    "title": "snahelper",
+    "section": "Interface",
+    "text": "Interface\n\nLayout\nThe layout tab allows you to choose from all implemented algorithms in igraph and some layouts from graphlayouts. The default is a stress based layout and also the recommended choice. In the tweak section you can move individual nodes around. Choose the node from the dropdown menu and click on its new position in the plot.\n\n\n\nNode Attribute Manager\nThe Node Attribute Manager shows all existing node attributes in a sortable table. In addition, you can calculate some new ones (centrality and clustering). The functions automatically choose the right version of indices, depending if the network is directed/weighted/undirected/unweighted.\n\n\n\nNodes\nThis is where you can style your nodes. You can either do it manually, by choosing a color/size for all nodes together, or based on an attribute.\n\n\n\nEdge Attribute Manager\nSame as Node Attribute Manager but for edges. So far only shows existing edge attributes.\n\n\n\nEdges\nYou can style your edges here. snahelper automatically detects if your network is directed and adds arrows if the network is directed. The other options are similar to the nodes tab. The snahelper automatically chooses the appropriate edge geom. If multiple edges are present, it uses geom_edge_parallel0(). Otherwise geom_edge_link0().\n\n\n\nResult\nThe result tab shows the network in its full size. If you are satisfied with the results, hit the Done button and the R code to produce the plot is automatically inserted in your script. Or you can directly save the result as a png file."
+  },
+  {
+    "objectID": "project/rgraph6/index.html",
+    "href": "project/rgraph6/index.html",
+    "title": "rgraph6",
+    "section": "",
+    "text": "(Main Author and maintainer: Michal Bojanowski)"
+  },
+  {
+    "objectID": "project/netUtils/index.html",
+    "href": "project/netUtils/index.html",
+    "title": "netUtils",
+    "section": "",
+    "text": "netUtils is a collection of tools for network analysis that may not deserve a package on their own and/or are missing from other network packages."
+  },
+  {
+    "objectID": "project/netUtils/index.html#installation",
+    "href": "project/netUtils/index.html#installation",
+    "title": "netUtils",
+    "section": "Installation",
+    "text": "Installation\nYou can install the development version of netUtils with:\n\n# install.packages(\"remotes\")\nremotes::install_github(\"schochastics/netUtils\")"
+  },
+  {
+    "objectID": "project/netUtils/index.html#functions",
+    "href": "project/netUtils/index.html#functions",
+    "title": "netUtils",
+    "section": "Functions",
+    "text": "Functions\n(The functions listed below are just a sample of the available methods)\nmost functions only support igraph objects\nhelper/convenience functions\nbiggest_component() extract the biggest connected component of a network.\ndelete_isolates() delete vertices with degree zero.\nbipartite_from_data_frame() create a two mode network from a data frame.\nclique_vertex_mat() compute the clique vertex matrix\ngraph_cartesian() computes the Cartesian product of two graphs\ngraph_direct() computes the direct (or tensor) product of graphs\nmethods\ngraph_kpartite() create a random k-partite network. \n triad_census_attr() calculate triad census with vertex attributes. \nstructural_equivalence() finds structurally equivalent vertices. \ncore_periphery() to fit a discrete core periphery model. \nsample_coreseq() creates a random graph with given coreness sequence. \nfast_clique() to calculate cliques with MACE (sometimes faster than igraph) \nsample_pa_homophilic() to create a preferential attachment graph with two groups of nodes"
+  },
+  {
+    "objectID": "project/roughnet/index.html",
+    "href": "project/roughnet/index.html",
+    "title": "roughnet",
+    "section": "",
+    "text": "Using the java script library rough.js to draw sketchy, hand-drawn-like networks.\n(Checkout ggrough for turning general ggplot objects into sketchy drawings)"
+  },
+  {
+    "objectID": "project/roughnet/index.html#installation",
+    "href": "project/roughnet/index.html#installation",
+    "title": "roughnet",
+    "section": "Installation",
+    "text": "Installation\nYou can install the developers version of roughnet with:\n\n# install.packages(\"remotes\")\nremotes::install_github(\"schochastics/roughnet\")"
+  },
+  {
+    "objectID": "project/roughnet/index.html#example",
+    "href": "project/roughnet/index.html#example",
+    "title": "roughnet",
+    "section": "Example",
+    "text": "Example\nThe package currently only works with {{igraph}} objects by setting styling elements as vertex/edge attributes.\n\nlibrary(roughnet)\nlibrary(igraph)\n\ng <- make_graph(\"Zachary\")\nV(g)$shape <- \"circle\"\nV(g)$shape[c(1,34)] <- \"rectangle\"\nV(g)$fill <- c(\"#E41A1C\", \"#377EB8\", \"#4DAF4A\", \"#984EA3\")[membership(cluster_louvain(g))]\nV(g)$fillstyle <- c(\"hachure\", \"zigzag\", \"cross-hatch\", \"dots\")[membership(cluster_louvain(g))]\nV(g)$color <- \"black\"\nV(g)$size <- 30\nV(g)$stroke <- 2\nE(g)$color <- \"#AEAEAE\"\nroughnet(g,width = 960,height = 600)\n\n\nYou can save the plot with the function save_roughnet() (needs {{pagedown}} to be installed.)\n\n# install.packages(\"pagedown\")\np <- roughnet(g,width = 960,height = 600)\nsave_roughnet(p,\"karate.png\")"
+  },
+  {
+    "objectID": "project/roughnet/index.html#extended-example",
+    "href": "project/roughnet/index.html#extended-example",
+    "title": "roughnet",
+    "section": "Extended Example",
+    "text": "Extended Example\nThe package also allows to place labels in or around vertices and implements some custom vertex shapes.\n\n# install.packages(c(\"signnet\",\"graphlayouts\"))\nlibrary(signnet)\nlibrary(graphlayouts)\nlibrary(dplyr)\n\ndata(\"avatar\") # Allies/Enemies relations in Avatar: The Last Airbender\n\nmain <- induced_subgraph(avatar,which(V(avatar)$main)) #only use the main characters\n\n#calculate layout\nw <- ifelse(E(main)$sign==1,3,1)\nxy <- layout_with_stress(main,weights = 1/w)\n\nV(main)$x <- xy[,1]\nV(main)$y <- xy[,2]\n\nV(main)$fill <- case_when(V(main)$affiliation==\"earth kingdom\"~\"#8B6914\",\n                          V(main)$affiliation==\"fire nation\"~\"#CD2626\",\n                          V(main)$affiliation==\"water tribe\"~\"white\",\n                          V(main)$affiliation==\"air nomad\"~\"#98F5FF\",\n                       TRUE~\"grey\"\n)\n\nV(main)$color <- case_when(V(main)$affiliation==\"earth kingdom\"~\"#8B6914\",\n                          V(main)$affiliation==\"fire nation\"~\"#CD2626\",\n                          V(main)$affiliation==\"water tribe\"~\"#1874CD\",\n                          V(main)$affiliation==\"air nomad\"~\"#98F5FF\",\n                          TRUE~\"grey\"\n)\n\nV(main)$shape <- case_when(V(main)$affiliation==\"earth kingdom\"~\"earth\",\n                           V(main)$affiliation==\"fire nation\"~\"fire\",\n                           V(main)$affiliation==\"water tribe\"~\"water\",\n                           V(main)$affiliation==\"air nomad\"~\"air\",\n                           TRUE~\"circle\"\n)\n\n\nE(main)$width <- ifelse(E(main)$sign==1,1.2,0.3)\nE(main)$color <- ifelse(E(main)$sign==1,\"#228B22\",\"#CD3278\")\nV(main)$label <- V(main)$name\n# position labels in the (c)enter of the vertex or (n)orth, (e)ast, (s)outh, or (w)est of it \nV(main)$pos <- c(\"n\",\"s\",\"s\",\"s\",\"s\",\"e\",\"n\",\"e\",\"s\",\"n\") \n\nroughnet(main, width = 600, height=600, font = \"30px Herculanum\")"
+  },
+  {
+    "objectID": "publications/prob_central/index.html",
+    "href": "publications/prob_central/index.html",
+    "title": "Centrality without indices: Partial rankings and rank probabilities in networks",
+    "section": "",
+    "text": "journal"
+  },
+  {
+    "objectID": "publications/prob_central/index.html#abstract",
+    "href": "publications/prob_central/index.html#abstract",
+    "title": "Centrality without indices: Partial rankings and rank probabilities in networks",
+    "section": "Abstract",
+    "text": "Abstract\nWe present an alternative approach to assess centrality in networks which does not rely on traditional indices. The work is based on neighborhood-inclusion, a partial ranking inducing relation of nodes, which was shown to be preserved by many existing centrality indices. As such, it can serve as the shared basis for centrality in networks. We argue that evaluating this partial ranking by itself allows for a generic assessment of centrality, avoiding several pitfalls that can arise when indices are applied. Additionally, we illustrate how to derive further partial rankings and introduce some probabilistic methods to, among others, compute expected centrality ranks of nodes.\nSocial Networks, 54:50-60"
+  },
+  {
+    "objectID": "publications/reconceptualizing_centrality/index.html",
+    "href": "publications/reconceptualizing_centrality/index.html",
+    "title": "Re-conceptualizing centrality in social networks",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/reconceptualizing_centrality/index.html#abstract",
+    "href": "publications/reconceptualizing_centrality/index.html#abstract",
+    "title": "Re-conceptualizing centrality in social networks",
+    "section": "Abstract",
+    "text": "Abstract\nIn the social sciences, networks are used to represent relationships between social actors, be they individuals or aggregates. The structural importance of these actors is assessed in terms of centrality indices which are commonly defined as graph invariants. Many such indices have been proposed, but there is no unifying theory of centrality. Previous attempts at axiomatic characterization have been focused on particular indices, and the conceptual frameworks that have been proposed alternatively do not lend themselves to mathematical treatment. We show that standard centrality indices, although seemingly distinct, can in fact be expressed in a common framework based on path algebras. Since, as a consequence, all of these indices preserve the neighbourhood-inclusion pre-order, the latter provides a conceptually clear criterion for the definition of centrality indices.\nEuropean Journal of Applied Mathematics, 27(6):971-985"
+  },
+  {
+    "objectID": "publications/astroturfing_around_the_world/index.html",
+    "href": "publications/astroturfing_around_the_world/index.html",
+    "title": "Political Astroturfing around the world",
+    "section": "",
+    "text": "poster"
+  },
+  {
+    "objectID": "publications/astroturfing_around_the_world/index.html#abstract",
+    "href": "publications/astroturfing_around_the_world/index.html#abstract",
+    "title": "Political Astroturfing around the world",
+    "section": "Abstract",
+    "text": "Abstract\nComparison of 8 disinformation campaigns on twitter\nAPSA 2019 (poster)"
+  },
+  {
+    "objectID": "publications/proj_signed2mode/index.html",
+    "href": "publications/proj_signed2mode/index.html",
+    "title": "Projecting Signed Two-Mode Networks",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/proj_signed2mode/index.html#abstract",
+    "href": "publications/proj_signed2mode/index.html#abstract",
+    "title": "Projecting Signed Two-Mode Networks",
+    "section": "Abstract",
+    "text": "Abstract\nSigned two-mode networks have so far predominantly been analysed using blockmodeling techniques. In this work, we put forward the idea of projecting such networks onto its modes. Two projection methods are introduced which allow the application of known dichotomization tool for weighted networks to obtain a simple signed network. It turns out, however, that resulting networks may contain ambivalent ties, defined as conjunctions of positive and negative ties. We show that this requires the reformulation of matrices related to the network and introduce the complex adjacency and Laplacian matrix. These matrices are used to prove some properties related to balance theory including ambivalence.\nMathematical Sociology 45 (1), 37-50"
+  },
+  {
+    "objectID": "publications/centrality_correlation/index.html",
+    "href": "publications/centrality_correlation/index.html",
+    "title": "Correlations among centrality indices and a class of uniquely ranked graphs",
+    "section": "",
+    "text": "journal"
+  },
+  {
+    "objectID": "publications/centrality_correlation/index.html#abstract",
+    "href": "publications/centrality_correlation/index.html#abstract",
+    "title": "Correlations among centrality indices and a class of uniquely ranked graphs",
+    "section": "Abstract",
+    "text": "Abstract\nVarious centrality indices have been proposed to capture different aspects of structural importance but relations among them are largely unexplained. The most common strategy appears to be the pairwise comparison of centrality indices via correlation. While correlation between centralities is often read as an inherent property of the indices, we argue that it is confounded by network structure in a systematic way. In fact, correlations may be even more indicative of network structure than of relationships between indices. This has substantial implications for the interpretation of centrality effects as it implies that competing explanations embodied in different indices cannot be separated from each other if the network structure is close to a certain generalization of star graphs.\nSocial Networks, 50:46-54"
+  },
+  {
+    "objectID": "publications/multiplexity_multigraph/index.html",
+    "href": "publications/multiplexity_multigraph/index.html",
+    "title": "Multiplexity analysis of networks using multigraph representations",
+    "section": "",
+    "text": "oa journal"
+  },
+  {
+    "objectID": "publications/multiplexity_multigraph/index.html#abstract",
+    "href": "publications/multiplexity_multigraph/index.html#abstract",
+    "title": "Multiplexity analysis of networks using multigraph representations",
+    "section": "Abstract",
+    "text": "Abstract\nMultivariate networks comprising several compositional and structural variables can be represented as multigraphs by various forms of aggregations based on vertex attributes. We propose a framework to perform exploratory and confirmatory multiplexity analysis of aggregated multigraphs in order to find relevant associations between vertex and edge attributes. The exploration is performed by comparing frequencies of the different edges within and between aggregated vertex categories, while the confirmatory analysis is performed using derived complexity or multiplexity statistics under different random multigraph models. These statistics are defined by the distribution of edge multiplicities and provide information on the covariation and dependencies of different edges given vertex attributes. The presented approach highlights the need to further analyse and model structural dependencies with respect to edge entrainment. We illustrate the approach by applying it on a well known multivariate network dataset which has previously been analysed in the context of multiplexity."
+  },
+  {
+    "objectID": "publications/centrality_lethality/index.html",
+    "href": "publications/centrality_lethality/index.html",
+    "title": "Centrality as a Predictor of Lethal Proteins: Performance and Robustness",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/centrality_lethality/index.html#abstract",
+    "href": "publications/centrality_lethality/index.html#abstract",
+    "title": "Centrality as a Predictor of Lethal Proteins: Performance and Robustness",
+    "section": "Abstract",
+    "text": "Abstract\nThe Centrality-Lethality Hypothesis states that proteins with a higher degree centrality are more likely to be lethal, i.e. proteins involved in more interactions are more likely to cause death when knocked off. This proposition gave rise to several new investigations in which stronger associations were obtained for other centrality measures. Most of this previous work focused on the well known protein-interaction network of Saccharomyces cerevisiae. In a recent study, however, it was found that degree and betweenness of lethal proteins is significantly above average across 20 different protein-interaction networks. Closeness centrality, on the other hand, did not perform as well. We replicate this study and show that the reported results are due largely to a misapplication of closeness to disconnected networks. A more suitable variant actually turns out to be a better predictor than betweenness and degree in most of the networks. Worse, we find that despite the different theoretical explanations they offer, the performance ranking of centrality indices varies across networks and depends on the somewhat arbitrary derivation of binary network data from unreliable measurements. Our results suggest that the celebrated hypothesis is not supported by data.\nIn MMB & DFT 2014: 11"
+  },
+  {
+    "objectID": "publications/polcomm_astroturfing/index.html",
+    "href": "publications/polcomm_astroturfing/index.html",
+    "title": "Political Astroturfing on Twitter: How to Coordinate a Disinformation Campaign",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/polcomm_astroturfing/index.html#abstract",
+    "href": "publications/polcomm_astroturfing/index.html#abstract",
+    "title": "Political Astroturfing on Twitter: How to Coordinate a Disinformation Campaign",
+    "section": "Abstract",
+    "text": "Abstract\nPolitical astroturfing, a centrally coordinated disinformation campaign in which participants pretend to be ordinary citizens acting independently, has the potential to influence electoral outcomes and other forms of political behavior. Yet, it is hard to evaluate the scope and effectiveness of political astroturfing without ground truth information, such as the verified identity of its agents and instigators. In this paper, we study the South Korean National Information Service’s (NIS) disinformation campaign during the presidential election in 2012, taking advantage of a list of campaign accounts published in court proceedings. Features that best distinguish these accounts from regular users in contemporaneously collected Twitter data are traces left by coordination among astroturfing agents, instead of the individual account characteristics typically used in related approaches such as social bot detection. We develop a methodology that exploits these distinct empirical patterns to identify additional likely astroturfing accounts and validate this detection strategy by analyzing their messages and current account status. However, an analysis relying on Twitter influence metrics shows that the known and suspect NIS accounts only had a limited impact on political social media discussions. By using the principal-agent framework to analyze one of the earliest revealed instances of political astroturfing, we improve on extant methodological approaches to detect disinformation campaigns and ground them more firmly in social science theory.\nPolitical Communication 37 (2), 256-280"
+  },
+  {
+    "objectID": "publications/hypergraph_carib_attacks/index.html",
+    "href": "publications/hypergraph_carib_attacks/index.html",
+    "title": "Hypergraph Representations: A Study of Carib Attacks on Colonial Forces, 1509-1700",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/hypergraph_carib_attacks/index.html#abstract",
+    "href": "publications/hypergraph_carib_attacks/index.html#abstract",
+    "title": "Hypergraph Representations: A Study of Carib Attacks on Colonial Forces, 1509-1700",
+    "section": "Abstract",
+    "text": "Abstract\nNetwork data consisting of recorded historical events can be represented as hypergraphs where the ties or events can connect any number of nodes or event related attributes. In this paper, we perform a centrality analysis of a directed hypergraph representing attacks by indigenous peoples from the Lesser Antilles on European colonial settlements, 1509–1700. The results of central attacks with respect to attacked colonial force, member of attack alliances, and year and location of attack are discussed and compared to a non-relational exploratory analysis of the data. This comparison points to the importance of a mixed methods approach to enhance the analysis and to obtain a complementary understanding of a network study.\nJournal of Historical Network Research, 1(1)"
+  },
+  {
+    "objectID": "publications/social_stratification/index.html",
+    "href": "publications/social_stratification/index.html",
+    "title": "Social Stratification from Networks of Leveling Ties",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/social_stratification/index.html#abstract",
+    "href": "publications/social_stratification/index.html#abstract",
+    "title": "Social Stratification from Networks of Leveling Ties",
+    "section": "Abstract",
+    "text": "Abstract\nSocial networks can be made of various kinds of ties, but (often implicit) assumptions embodied in network-analytic tools do not necessarily apply to all of them. Centrality indices, or instance, build on the assumption that it is always beneficial to add more ties. While it has been noted that networks of ties with a negative sentiment require different concepts of centrality, we here highlight ties that are neither positive nor negative to have, but an indication of commonality. This is exemplified by the derivation of socio-economic status from networks that indicate common class membership.\nIn International Conference on Complex Networks and their Applications"
+  },
+  {
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Martin Everett & David Schoch\n\n\nCentrality indices such as β-centrality, Katz status, and Hubbell’s index are commonly generalized to directed networks by relating the in-centrality of nodes to the in-centrality of their in-neighbors and equivalently so for out-centrality. This paper proposes an extension of Bonacich’s β-centrality…\n\n\n\n\n\n\nMar 27, 2022\n\n\n\n\n\n\n  \n\n\n\n\n\nDavid Schoch, Franziska B Keller, Sebastian Stier & JungHwan Yang\n\n\nOnline political astroturfing—hidden information campaigns in which a political actor mimics genuine citizen behavior by incentivizing agents to spread information online—has become prevalent on social media. Such inauthentic information campaigns threaten to undermine the Internet’s promise to more equitable participation in public debates. We argue that the logic of social behavior within the campaign bureaucracy and principal–agent problems lead to detectable activity patterns among the campaign’s social media accounts…\n\n\n\n\n\n\nMar 17, 2022\n\n\n\n\n\n\n  \n\n\n\n\n\nTermeh Shafie & David Schoch\n\n\nMultivariate networks comprising several compositional and structural variables can be represented as multigraphs by various forms of aggregations based on vertex attributes. We propose a framework to perform exploratory and confirmatory multiplexity analysis of aggregated multigraphs in order to find relevant associations between vertex and edge attributes…\n\n\n\n\n\n\nSep 30, 2021\n\n\n\n\n\n\n  \n\n\n\n\n\nDavid Schoch & Ulrik Brandes\n\n\nScaling techniques such as the well known NOMINATE position political actors in a low dimensional space to represent the similarity or dissimilarity of their political orientation based on roll-call voting patterns. Starting from the same kind of data we propose an alternative, discrete, representation that replaces positions (points and distances) with niches (boxes and overlap)…\n\n\n\n\n\n\nOct 15, 2020\n\n\n\n\n\n\n  \n\n\n\n\n\nDavid Schoch\n\n\nSigned two-mode networks have so far predominantly been analysed using blockmodeling techniques. In this work, we put forward the idea of projecting such networks onto its modes. Two projection methods are introduced which allow the application of known dichotomization tool for weighted networks to obtain a simple signed network…\n\n\n\n\n\n\nJan 10, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFranziska B Keller, David Schoch, Sebastian Stier & JungHwan Yang\n\n\nComparison of 8 disinformation campaigns on twitter\n\n\n\n\n\n\nAug 26, 2019\n\n\n\n\n\n\n  \n\n\n\n\n\nFranziska B Keller, David Schoch, Sebastian Stier & JungHwan Yang\n\n\nPolitical astroturfing, a centrally coordinated disinformation campaign in which participants pretend to be ordinary citizens acting independently, has the potential to influence electoral outcomes and other forms of political behavior. Yet, it is hard to evaluate the scope and effectiveness of political astroturfing without ground truth information, such as the verified identity of its agents and instigators. In this paper, we study the South Korean National Information Service’s (NIS) disinformation campaign during the presidential election in 2012…\n\n\n\n\n\n\nJul 28, 2019\n\n\n\n\n\n\n  \n\n\n\n\n\nLaura F Bringmann, Timon Elmer, Sacha Epskamp, Robert W Krause, David Schoch, Marieke Wichers, Johanna TW Wigman & Eveline Snippe\n\n\nCentrality indices are a popular tool to analyze structural aspects of psychological networks. As centrality indices were originally developed in the context of social networks, it is unclear to what extent these indices are suitable in a psychological network context. In this article we critically examine several issues with the use of the most popular centrality indices in psychological networks…\n\n\n\n\n\n\nJul 27, 2019\n\n\n\n\n\n\n  \n\n\n\n\n\nDavid Schoch & Ulrik Brandes\n\n\nSocial networks can be made of various kinds of ties, but (often implicit) assumptions embodied in network-analytic tools do not necessarily apply to all of them. Centrality indices, or instance, build on the assumption that it is always beneficial to add more ties. While it has been noted that networks of ties with a negative sentiment require different concepts of centrality…\n\n\n\n\n\n\nDec 14, 2018\n\n\n\n\n\n\n  \n\n\n\n\n\nDavid Schoch\n\n\nWe present an alternative approach to assess centrality in networks which does not rely on traditional indices. The work is based on neighborhood-inclusion, a partial ranking inducing relation of nodes, which was shown to be preserved by many existing centrality indices. As such, it can serve as the shared basis for centrality in networks…\n\n\n\n\n\n\nJan 3, 2018\n\n\n\n\n\n\n  \n\n\n\n\n\nTermeh Shafie, David Schoch Jimmy Mans, Corinne Hofman & Ulrik Brandes\n\n\nNetwork data consisting of recorded historical events can be represented as hypergraphs where the ties or events can connect any number of nodes or event related attributes. In this paper, we perform a centrality analysis of a directed hypergraph representing attacks by indigenous peoples from the Lesser Antilles on European colonial settlements, 1509–1700…\n\n\n\n\n\n\nNov 1, 2017\n\n\n\n\n\n\n  \n\n\n\n\n\nDavid Schoch, Thomas Valente & Ulrik Brandes\n\n\nVarious centrality indices have been proposed to capture different aspects of structural importance but relations among them are largely unexplained. The most common strategy appears to be the pairwise comparison of centrality indices via correlation. While correlation between centralities is often read as an inherent property of the indices, we argue that it is confounded by network structure in a systematic way…\n\n\n\n\n\n\nJul 15, 2017\n\n\n\n\n\n\n  \n\n\n\n\n\nFranziska B Keller, David Schoch, Sebastian Stier & JungHwan Yang\n\n\nThis project investigates political astroturfing, i.e. hidden propaganda by powerful political actors aimed at mimicking grassroots activity, on social media. We focus on Twitter accounts used by the South Korean secret service to influence the 2012 presidential elections in favor of the eventual winner, Park Geun-hye…\n\n\n\n\n\n\nMay 3, 2017\n\n\n\n\n\n\n  \n\n\n\n\n\nDavid Schoch & Ulrik Brandes\n\n\nIn the social sciences, networks are used to represent relationships between social actors, be they individuals or aggregates. The structural importance of these actors is assessed in terms of centrality indices which are commonly defined as graph invariants. Many such indices have been proposed, but there is no unifying theory of centrality. Previous attempts at axiomatic characterization have been focused on particular indices, and the conceptual frameworks that have been proposed alternatively do not lend themselves to mathematical treatment…\n\n\n\n\n\n\nDec 15, 2016\n\n\n\n\n\n\n  \n\n\n\n\n\nDavid Schoch & Ulrik Brandes\n\n\nThe Centrality-Lethality Hypothesis states that proteins with a higher degree centrality are more likely to be lethal, i.e. proteins involved in more interactions are more likely to cause death when knocked off. This proposition gave rise to several new investigations in which stronger associations were obtained for other centrality measures. Most of this previous work focused on the well known protein-interaction network of Saccharomyces cerevisiae…\n\n\n\n\n\n\nDec 29, 2014\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "publications/political_astroturf_korea/index.html",
+    "href": "publications/political_astroturf_korea/index.html",
+    "title": "How to Manipulate Social Media: Analyzing Political Astroturfing Using Ground Truth Data from South Korea",
+    "section": "",
+    "text": "journal"
+  },
+  {
+    "objectID": "publications/political_astroturf_korea/index.html#abstract",
+    "href": "publications/political_astroturf_korea/index.html#abstract",
+    "title": "How to Manipulate Social Media: Analyzing Political Astroturfing Using Ground Truth Data from South Korea",
+    "section": "Abstract",
+    "text": "Abstract\nThis project investigates political astroturfing, i.e. hidden propaganda by powerful political actors aimed at mimicking grassroots activity, on social media. We focus on Twitter accounts used by the South Korean secret service to influence the 2012 presidential elections in favor of the eventual winner, Park Geun-hye. Two independent cluster analyses based on activity patterns of the Twitter accounts and textual features of tweets reliably reveal that there are three groups of NIS accounts, including one group that engages mostly in retweeting, and another group focused on posting news articles with a link. We show that these groups reflect different strategic agendas and correspond to several secret service agents identified in the court documents. We argue that these patterns of coordinated tweeting are consistent with predictions derived from principal-agent theory, and should therefore appear in other astroturfing campaigns as well.\nIn Eleventh International AAAI Conference on Web and Social Media"
+  },
+  {
+    "objectID": "publications/inout_centrality/index.html",
+    "href": "publications/inout_centrality/index.html",
+    "title": "An extended family of measures for directed networks",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/inout_centrality/index.html#abstract",
+    "href": "publications/inout_centrality/index.html#abstract",
+    "title": "An extended family of measures for directed networks",
+    "section": "Abstract",
+    "text": "Abstract\nCentrality indices such as β-centrality, Katz status, and Hubbell’s index are commonly generalized to directed networks by relating the in-centrality of nodes to the in-centrality of their in-neighbors and equivalently so for out-centrality. This paper proposes an extension of Bonacich’s β-centrality and related measures for directed networks where the in-centrality of a node depends on the out-centrality of their in-neighbors and their out-centrality on the in-centrality of their out- neighbors. The so defined indices extend hubs and authorities in the same way as β-centrality generalizes eigenvector centrality. Several technical results are presented including the extension of the range of permissible β parameters to negative values, similar to traditional β- centrality.\nSocial Networks 70:334-340, 2022"
+  },
+  {
+    "objectID": "publications/scirep_astroturfing/index.html",
+    "href": "publications/scirep_astroturfing/index.html",
+    "title": "Coordination patterns reveal online political astroturfing across the world",
+    "section": "",
+    "text": "oa journal"
+  },
+  {
+    "objectID": "publications/scirep_astroturfing/index.html#abstract",
+    "href": "publications/scirep_astroturfing/index.html#abstract",
+    "title": "Coordination patterns reveal online political astroturfing across the world",
+    "section": "Abstract",
+    "text": "Abstract\nOnline political astroturfing—hidden information campaigns in which a political actor mimics genuine citizen behavior by incentivizing agents to spread information online—has become prevalent on social media. Such inauthentic information campaigns threaten to undermine the Internet’s promise to more equitable participation in public debates. We argue that the logic of social behavior within the campaign bureaucracy and principal–agent problems lead to detectable activity patterns among the campaign’s social media accounts. Our analysis uses a network-based methodology to identify such coordination patterns in all campaigns contained in the largest publicly available database on astroturfing published by Twitter. On average, 74% of the involved accounts in each campaign engaged in a simple form of coordination that we call co-tweeting and co-retweeting. Comparing the astroturfing accounts to various systematically constructed comparison samples, we show that the same behavior is negligible among the accounts of regular users that the campaigns try to mimic. As its main substantive contribution, the paper demonstrates that online political astroturfing consistently leaves similar traces of coordination, even across diverse political and country contexts and different time periods. The presented methodology is a reliable first step for detecting astroturfing campaigns.\nScientific Reports 12, 4572"
+  },
+  {
+    "objectID": "publications/us_congress/index.html",
+    "href": "publications/us_congress/index.html",
+    "title": "Legislators’ roll-call voting behavior increasingly corresponds to intervals in the political spectrum",
+    "section": "",
+    "text": "oa journal"
+  },
+  {
+    "objectID": "publications/us_congress/index.html#abstract",
+    "href": "publications/us_congress/index.html#abstract",
+    "title": "Legislators’ roll-call voting behavior increasingly corresponds to intervals in the political spectrum",
+    "section": "Abstract",
+    "text": "Abstract\nScaling techniques such as the well known NOMINATE position political actors in a low dimensional space to represent the similarity or dissimilarity of their political orientation based on roll-call voting patterns. Starting from the same kind of data we propose an alternative, discrete, representation that replaces positions (points and distances) with niches (boxes and overlap). In the one-dimensional case, this corresponds to replacing the left-to-right ordering of points on the real line with an interval order. As it turns out, this seemingly simplistic one-dimensional model is sufficient to represent the similarity of roll-call votes by U.S. senators in recent years. In a historic context, however, low dimensionality represents the exception which stands in contrast to what is suggested by scaling techniques.\nScientific Reports 10 (1), 1-9"
+  },
+  {
+    "objectID": "publications/jap_centrality/index.html",
+    "href": "publications/jap_centrality/index.html",
+    "title": "What do centrality measures measure in psychological networks?",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/jap_centrality/index.html#abstract",
+    "href": "publications/jap_centrality/index.html#abstract",
+    "title": "What do centrality measures measure in psychological networks?",
+    "section": "Abstract",
+    "text": "Abstract\nCentrality indices are a popular tool to analyze structural aspects of psychological networks. As centrality indices were originally developed in the context of social networks, it is unclear to what extent these indices are suitable in a psychological network context. In this article we critically examine several issues with the use of the most popular centrality indices in psychological networks: degree, betweenness, and closeness centrality. We show that problems with centrality indices discussed in the social network literature also apply to the psychological networks. Assumptions underlying centrality indices, such as presence of a flow and shortest paths, may not correspond with a general theory of how psychological variables relate to one another. Furthermore, the assumptions of node distinctiveness and node exchangeability may not hold in psychological networks. We conclude that, for psychological networks, betweenness and closeness centrality seem especially unsuitable as measures of node importance. We therefore suggest three ways forward: (a) using centrality measures that are tailored to the psychological network context, (b) reconsidering existing measures of importance used in statistical models underlying psychological networks, and (c) discarding the concept of node centrality entirely. Foremost, we argue that one has to make explicit what one means when one states that a node is central, and what assumptions the centrality measure of choice entails, to make sure that there is a match between the process under study and the centrality measure that is used.\nJournal of Abnormal Psychology 128 (8), 892"
+  },
+  {
+    "objectID": "attribution.html",
+    "href": "attribution.html",
+    "title": "Fine Print",
+    "section": "",
+    "text": "Made with Hugo Apéro, which is based on Blogophonic by Formspree. Powered by blogdown and built by Hugo."
+  },
+  {
+    "objectID": "attribution.html#license",
+    "href": "attribution.html#license",
+    "title": "Fine Print",
+    "section": "License",
+    "text": "License\nMy blog posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.\n\n\n\nUnless otherwise specified, code presented in blog posts are released under the MIT license."
+  },
+  {
+    "objectID": "index.html#selected-open-source-material",
+    "href": "index.html#selected-open-source-material",
+    "title": "schochastics",
+    "section": "Selected Open Source Material",
+    "text": "Selected Open Source Material\n\n\n\n\n  \n\n\n\n\nNetwork Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n \n\n\n\n\nNo matching items\n\n\n\nall open source material"
+  },
+  {
+    "objectID": "index.html#selected-projects",
+    "href": "index.html#selected-projects",
+    "title": "schochastics",
+    "section": "Selected Projects",
+    "text": "Selected Projects\n\n\n\n\n  \n\n\n\n\ngraphlayouts\n\n\nAn R package for network visualization\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nnetrankr\n\n\nAn R package for network centrality\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nsnahelper\n\n\nRstudio addins for network analysis\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n \n\n\n\n\nNo matching items\n\n\n\nall projects"
+  },
+  {
+    "objectID": "index.html#last-publications",
+    "href": "index.html#last-publications",
+    "title": "schochastics",
+    "section": "Last Publications",
+    "text": "Last Publications\n\n\n\n\n  \n\n\n\n\nAn extended family of measures for directed networks\n\n\nMartin Everett & David Schoch\n\n\nCentrality indices such as β-centrality, Katz status, and Hubbell’s index are commonly generalized to directed networks by relating the in-centrality of nodes to the in-centrality of their in-neighbors and equivalently so for out-centrality. This paper proposes an extension of Bonacich’s β-centrality…\n\n\n\n\n\n\nMar 27, 2022\n\n\n\n\n\n\n  \n\n\n\n\nCoordination patterns reveal online political astroturfing across the world\n\n\nDavid Schoch, Franziska B Keller, Sebastian Stier & JungHwan Yang\n\n\nOnline political astroturfing—hidden information campaigns in which a political actor mimics genuine citizen behavior by incentivizing agents to spread information online—has become prevalent on social media. Such inauthentic information campaigns threaten to undermine the Internet’s promise to more equitable participation in public debates. We argue that the logic of social behavior within the campaign bureaucracy and principal–agent problems lead to detectable activity patterns among the…\n\n\n\n\n\n\nMar 17, 2022\n\n\n\n\n\n\n  \n\n\n\n\nMultiplexity analysis of networks using multigraph representations\n\n\nTermeh Shafie & David Schoch\n\n\nMultivariate networks comprising several compositional and structural variables can be represented as multigraphs by various forms of aggregations based on vertex attributes. We propose a framework to perform exploratory and confirmatory multiplexity analysis of aggregated multigraphs in order to find relevant associations between vertex and edge attributes…\n\n\n\n\n\n\nSep 30, 2021\n\n\n\n\n\n\nNo matching items\n\n\n\nall publications"
+  },
+  {
+    "objectID": "material/netVizR/index.html",
+    "href": "material/netVizR/index.html",
+    "title": "Network Visualizations in R",
+    "section": "",
+    "text": "Most network analytic tasks are fairly easy to do in R. But when it comes to visualizing networks, R may lack behind some standalone software tools. Not because it is not possible to produce nice figures, but rather because it requires some time to obtain pleasing results. Just take a look at the default output when plotting a network with the plot() function.\n\n\n\n\nlibrary(networkdata)\ndata(\"got\")\n\ngotS1 <- got[[1]]\nplot(gotS1)\n\n\n\n\nIt is definitely possible to produce nice figures with the igraph package (Check out this wonderful tutorial), yet it may take some time to familiarize yourself with the syntax. Additionally, most of the layout algorithms of igraph are non-deterministic. This means that running the same plot call twice may produce different results.\nIn this tutorial, you will learn the basics of ggraph, the “ggplot2 of networks”, together with the graphlayouts package, which introduces additional useful layout algorithms to R. Arguably, using ggraph is not really easier than igraph. But once the underlying principle of the grammar of graphics is understood, you’ll see that it is actually quite intuitive to work with.\n\n\nTo run all the code in this tutorial, you need to install and load several packages.\n\ninstall.packages(c(\"igraph\", \"graphlayouts\", \"ggraph\",\"ggforce\"))\ndevtools::install_github(\"schochastics/networkdata\")\n\nMake sure you have at least the version given below. Some of the examples may not be backward compatible.\n\npackageVersion(\"igraph\")\n\n[1] '1.3.1'\n\npackageVersion(\"graphlayouts\")\n\n[1] '0.8.0'\n\npackageVersion(\"ggraph\")\n\n[1] '2.0.5'\n\npackageVersion(\"networkdata\")\n\n[1] '0.1.11'\n\npackageVersion(\"ggforce\")\n\n[1] '0.3.3'\n\n\nigraph is mostly used for its data structures and graphlayouts and ggraph for visualizations. The networkdata package contains a huge amount of example network data that always comes in handy for learning new visualization techniques.\n\nlibrary(igraph)\nlibrary(ggraph)\nlibrary(graphlayouts)\nlibrary(ggforce)\n\n\n\n\nIt is always a good idea to take a quick look at your network before starting any analysis. This can be done with the function autograph() from the ggraph package.\n\nautograph(gotS1)\n\n\n\n\nautograph() allows you to specify node/edge colours too but it really is only meant to give you a quick overview without writing a massive amount of code. Think of it as the plot() function for ggraph\nBefore we continue, we add some more node attributes to the GoT network that can be used during visualization.\n\n# define a custom color palette\ngot_palette <- c(\n  \"#1A5878\", \"#C44237\", \"#AD8941\", \"#E99093\",\n  \"#50594B\", \"#8968CD\", \"#9ACD32\"\n)\n\n# compute a clustering for node colors\nV(gotS1)$clu <- as.character(membership(cluster_louvain(gotS1)))\n\n# compute degree as node size\nV(gotS1)$size <- degree(gotS1)"
+  },
+  {
+    "objectID": "material/netVizR/index.html#layout",
+    "href": "material/netVizR/index.html#layout",
+    "title": "Network Visualizations in R",
+    "section": "Layout",
+    "text": "Layout\n\nggraph(gotS1, layout = \"stress\")\n\nThe first step is to compute a layout. The layout parameter specifies the algorithm to use. The “stress” layout is part of the graphlayouts package and is always a safe choice since it is deterministic and produces nice layouts for almost any graph. I would recommend to use it as your default choice. Other algorithms for, e.g., concentric layouts and clustered networks are described further down in this tutorial. For the sake of completeness, here is a list of layout algorithms of igraph.\n\nc(\n  \"layout_with_dh\", \"layout_with_drl\", \"layout_with_fr\",\n  \"layout_with_gem\", \"layout_with_graphopt\", \"layout_with_kk\",\n  \"layout_with_lgl\", \"layout_with_mds\", \"layout_with_sugiyama\",\n  \"layout_as_bipartite\", \"layout_as_star\", \"layout_as_tree\"\n)\n\nTo use them, you just need the last part of the name.\n\nggraph(gotS1, layout = \"dh\") +\n  ...\n\nNote that there technically is no right or wrong choice. All layout algorithms are in a sense arbitrary since we can choose x and y coordinates freely (compare this to ordinary data!). It is all mostly about aesthetics.\nYou can also precompute the layout with the create_layout() function. This makes sense in cases where the calculation of the layout takes very long and you want to play around with other visual aspects.\n\ngotS1_layout <- create_layout(gotS1 = \"stress\")\n\nggraph(gotS1_layout) +\n  ..."
+  },
+  {
+    "objectID": "material/netVizR/index.html#edges",
+    "href": "material/netVizR/index.html#edges",
+    "title": "Network Visualizations in R",
+    "section": "Edges",
+    "text": "Edges\n\ngeom_edge_link0(aes(width = weight), edge_colour = \"grey66\")\n\nThe second layer specifies how to draw the edges. Edges can be drawn in many different ways as the list below shows.\n\nc(\n  \"geom_edge_arc\", \"geom_edge_arc0\", \"geom_edge_arc2\", \"geom_edge_density\",\n  \"geom_edge_diagonal\", \"geom_edge_diagonal0\", \"geom_edge_diagonal2\",\n  \"geom_edge_elbow\", \"geom_edge_elbow0\", \"geom_edge_elbow2\", \"geom_edge_fan\",\n  \"geom_edge_fan0\", \"geom_edge_fan2\", \"geom_edge_hive\", \"geom_edge_hive0\",\n  \"geom_edge_hive2\", \"geom_edge_link\", \"geom_edge_link0\", \"geom_edge_link2\",\n  \"geom_edge_loop\", \"geom_edge_loop0\"\n)\n\nYou can do a lot of fancy things with these geoms but for a standard network plot, you should always stick with geom_edge_link0 since it simply draws a straight line between the endpoints. Some tools draw curved edges by default. While this may add some artistic value, it reduces readability. Always go with straight lines! If your network has multiple edges between two nodes, then you can switch to geom_edge_parallel().\nIn case you are wondering what the “0” stands for: The standard geom_edge_link() draws 100 dots on each edge compared to only two dots (the endpoints) in geom_edge_link0(). This is done to allow, e.g., gradients along the edge.\n\n\n\n\n\nYou can reproduce this figure by substituting\n\ngeom_edge_link(aes(edge_alpha = ..index..), edge_colour = \"black\")\n\nin the code above.\nThe drawback of using geom_edge_link() is that the time to render the plot increases and so does the size of the file if you export the plot (example) Typically, you do not need gradients along an edge. Hence, geom_edge_link0() should be your default choice to draw edges.\nWithin geom_edge_link0, you can specify the appearance of the edge, either by mapping edge attributes to aesthetics or setting them globally for the graph. Mapping attributes to aesthetics is done within aes(). In the example, we map the edge width to the edge attribute “weight”. ggraph then automatically scales the edge width according to the attribute. The colour of all edges is globally set to “grey66”.\nThe following aesthetics can be used within geom_edge_link0 either within aes() or globally:\n\nedge_colour (colour of the edge)\nedge_width (width of the edge)\nedge_linetype (linetype of the edge, defaults to “solid”)\nedge_alpha (opacity; a value between 0 and 1)\n\nggraph does not automatically draw arrows if your graph is directed. You need to do this manually using the arrow parameter.\n\ngeom_edge_link0(aes(...), ...,\n  arrow = arrow(\n    angle = 30, length = unit(0.15, \"inches\"),\n    ends = \"last\", type = \"closed\"\n  )\n)\n\nThe default arrowhead type is “open”, yet “closed” usually has a nicer appearance."
+  },
+  {
+    "objectID": "material/netVizR/index.html#nodes",
+    "href": "material/netVizR/index.html#nodes",
+    "title": "Network Visualizations in R",
+    "section": "Nodes",
+    "text": "Nodes\n\ngeom_node_point(aes(fill = clu, size = size), shape = 21) +\n  geom_node_text(aes(filter = size >= 26, label = name), family = \"serif\")\n\nOn top of the edge layer, we draw the node layer. Always draw the node layer above the edge layer. Otherwise, edges will be visible on top of nodes. There are slightly less geoms available for nodes.\n\nc(\n  \"geom_node_arc_bar\", \"geom_node_circle\", \"geom_node_label\",\n  \"geom_node_point\", \"geom_node_text\", \"geom_node_tile\", \"geom_node_treemap\"\n)\n\nThe most important ones here are geom_node_point() to draw nodes as simple geometric objects (circles, squares,…) and geom_node_text() to add node labels. You can also use geom_node_label(), but this draws labels within a box.\nThe mapping of node attributes to aesthetics is similar to edge attributes. In the example code, we map the fill attribute of the node shape to the “clu” attribute, which holds the result of a clustering, and the size of the nodes to the attribute “size”. The shape of the node is globally set to 21.\nThe figure below shows all possible shapes that can be used for the nodes. \nPersonally, I prefer “21” since it draws a border around the nodes. If you prefer another shape, say “19”, you have to be aware of several things. To change the color of shapes 1-20, you need to use the colour parameter. For shapes 21-25 you need to use fill. The colour parameter only controls the border for these cases.\nThe following aesthetics can be used within geom_node_point() either within aes() or globally:\n\nalpha (opacity; a value between 0 and 1)\ncolour (colour of shapes 0-20 and border colour for 21-25)\nfill (fill colour for shape 21-25)\nshape (node shape; a value between 0 and 25)\nsize (size of node)\nstroke (size of node border)\n\nFor geom_node_text(), there are a lot more options available, but the most important once are:\n\nlabel (attribute to be displayed as node label)\ncolour (text colour)\nfamily (font to be used)\nsize (font size)\n\nNote that we also used a filter within aes() of geom_node_text(). The filter parameter allows you to specify a rule for when to apply the aesthetic mappings. The most frequent use case is for node labels (but can also be used for edges or nodes). In the example, we only display the node label if the size attribute is larger than 26."
+  },
+  {
+    "objectID": "material/netVizR/index.html#scales",
+    "href": "material/netVizR/index.html#scales",
+    "title": "Network Visualizations in R",
+    "section": "Scales",
+    "text": "Scales\n\nscale_fill_manual(values = got_palette) +\n  scale_edge_width_continuous(range = c(0.2, 3)) +\n  scale_size_continuous(range = c(1, 6))\n\nThe scale_* functions are used to control aesthetics that are mapped within aes(). You do not necessarily need to set them, since ggraph can take care of it automatically.\n\nggraph(gotS1, layout = \"stress\") +\n  geom_edge_link0(aes(edge_width = weight), edge_colour = \"grey66\") +\n  geom_node_point(aes(fill = clu, size = size), shape = 21) +\n  geom_node_text(aes(filter = size >= 26, label = name), family = \"serif\") +\n  theme_graph() +\n  theme(legend.position = \"none\")\n\n\n\n\nWhile the node fill and size seem reasonable, the edges are a little too thick. In general, it is always a good idea to add a scale_* for each aesthetic within aes().\nWhat kind of scale_* function you need depends on the aesthetic and on the type of attribute you are mapping. Generally, scale functions are structured like this:\nscale_<aes>_<variable type>().\nThe “aes” part is easy. Just us the type you specified within aes(). For edges, however, you have to prepend edge_. The “variable type” part depends on which scale the attribute is on. Before we continue, it may be a good idea to briefly discuss what aesthetics make sense for which variable type.\n\n\n\n\n\n\n\n\naesthetic\nvariable type\nnotes\n\n\n\n\nnode size\ncontinuous\n\n\n\nedge width\ncontinuous\n\n\n\nnode colour/fill\ncategorical/continuous\nuse a gradient for continuous variables\n\n\nedge colour\ncontinuous\ncategorical only if there are different types of edges\n\n\nnode shape\ncategorical\nonly if there are a few categories (1-5). Colour should be the preferred choice\n\n\nedge linetype\ncategorical\nonly if there are a few categories (1-5). Colour should be the preferred choice\n\n\nnode/edge alpha\ncontinuous\n\n\n\n\nThe easiest to use scales are those for continuous variables mapped to edge width and node size (also the alpha value, which is not used here). While there are several parameters within scale_edge_width_continuous() and scale_size_continuous(), the most important one is “range” which fixes the minimum and maximum width/size. It usually suffices to adjust this parameter.\nFor continuous variables that are mapped to node/edge colour, you can use scale_colour_gradient() scale_colour_gradient2() or scale_colour_gradientn() (add edge_ before colour for edge colours). The difference between these functions is in how the gradient is constructed. gradient creates a two colour gradient (low-high). Simply specify the the two colours to be used (e.g. low = “blue”, high = “red”). gradient2 creates a diverging colour gradient (low-mid-high) (e.g. low = “blue”, mid = “white”, high = “red”) and gradientn a gradient consisting of more than three colours (specified with the colours parameter).\nFor categorical variables that are mapped to node colours (or fill in our example), you can use scale_fill_manual(). This forces you to choose a color for each category yourself. Simply create a vector of colors (see the got_palette) and pass it to the function with the parameter values.\nggraph then assigns the colors in the order of the unique values of the categorical variable. This are either the factor levels (if the variable is a factor) or the result of sorting the unique values (if the variable is a character).\n\nsort(unique(V(gotS1)$clu))\n\n[1] \"1\" \"2\" \"3\" \"4\" \"5\" \"6\" \"7\"\n\n\nIf you want more control over which value is mapped to which colour, you can pass the vector of colours as a named vector.\n\ngot_palette2 <- c(\n  \"5\" = \"#1A5878\", \"3\" = \"#C44237\", \"2\" = \"#AD8941\",\n  \"1\" = \"#E99093\", \"4\" = \"#50594B\", \"7\" = \"#8968CD\", \"6\" = \"#9ACD32\"\n)\n\n\n\n\n\n\nUsing your own colour palette gives your network a unique touch. If you can’t be bothered with choosing colours, you may want to consider scale_fill_brewer() and scale_colour_brewer(). The function offers all palettes available at colorbrewer2.org.\n\nggraph(gotS1, layout = \"stress\") +\n  geom_edge_link0(aes(edge_width = weight), edge_colour = \"grey66\") +\n  geom_node_point(aes(fill = clu, size = size), shape = 21) +\n  geom_node_text(aes(filter = size >= 26, label = name), family = \"serif\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  scale_edge_width_continuous(range = c(0.2, 3)) +\n  scale_size_continuous(range = c(1, 6)) +\n  theme_graph() +\n  theme(legend.position = \"none\")\n\n\n\n\n(Check out this github repo from Emil Hvitfeldt for a comprehensive list of color palettes available in R)"
+  },
+  {
+    "objectID": "material/netVizR/index.html#themes",
+    "href": "material/netVizR/index.html#themes",
+    "title": "Network Visualizations in R",
+    "section": "Themes",
+    "text": "Themes\n\ntheme_graph() +\n  theme(legend.position = \"none\")\n\nthemes control the overall look of the plot. There are a lot of options within the theme() function of ggplot2. Luckily, we really don’t need any of those. theme_graph() is used to erase all of the default ggplot theme (e.g. axis, background, grids, etc.) since they are irrelevant for networks. The only option worthwhile in theme() is legend.position, which we set to “none”, i.e. don’t show the legend.\nThe code below gives an example for a plot with a legend.\n\nggraph(gotS1, layout = \"stress\") +\n  geom_edge_link0(aes(edge_width = weight), edge_colour = \"grey66\") +\n  geom_node_point(aes(fill = clu, size = size), shape = 21) +\n  geom_node_text(aes(filter = size >= 26, label = name), family = \"serif\") +\n  scale_fill_manual(values = got_palette) +\n  scale_edge_width_continuous(range = c(0.2, 3)) +\n  scale_size_continuous(range = c(1, 6)) +\n  theme_graph() +\n  theme(legend.position = \"bottom\")"
+  },
+  {
+    "objectID": "material/netVizR/index.html#another-example",
+    "href": "material/netVizR/index.html#another-example",
+    "title": "Network Visualizations in R",
+    "section": "Another example",
+    "text": "Another example\nLet us work through one more visualization using a very special data set. The “Grey’s Anatomy” hook-up network\n\ndata(\"greys\")\n\nStart with the autograph call.\n\nautograph(greys)\n\n\n\n\nThe network consists of several components. Note that the igraph standard is to pack all components in a circle. The standard in graphlayouts is to arrange them in a rectangle. You can specify the bbox parameter to arrange the components differently. The plot above arranges all components on one level, but two levels may be desirable. You may need to experiment a bit with the parameter, but for this network, bbox=15 seems to work best (see below).\nWe will use this network to quickly illustrate what can be done with geom_edge_link2(). The function allows to interpolate node attributes between the start and end node along the edges. In the code below, we use the “position” attribute. The line which adds the node labels illustrates two further features of ggraph. First, aesthetics don’t need to be node attributes. Here, for instance, we calculate the degree and then map it to the font size. The second one is the repel = TRUE argument. This option places the node labels in a way that labels do not overlap.\n\nggraph(greys, \"stress\", bbox = 15) +\n  geom_edge_link2(aes(edge_colour = node.position), edge_width = 0.5) +\n  geom_node_point(aes(fill = sex), shape = 21, size = 3) +\n  geom_node_text(aes(label = name, size = degree(greys)),\n    family = \"serif\", repel = TRUE\n  ) +\n  scale_edge_colour_brewer(palette = \"Set1\") +\n  scale_fill_manual(values = c(\"grey66\", \"#EEB422\", \"#424242\")) +\n  scale_size(range = c(2, 5), guide = \"none\") +\n  theme_graph() +\n  theme(legend.position = \"bottom\")\n\n\n\n\nWhile the coloured edges look kind of artistic, we should go back to the “0” version.\n\nggraph(greys, \"stress\", bbox = 15) +\n  geom_edge_link0(edge_colour = \"grey66\", edge_width = 0.5) +\n  geom_node_point(aes(fill = sex), shape = 21, size = 3) +\n  geom_node_text(aes(label = name, size = degree(greys)),\n    family = \"serif\", repel = TRUE\n  ) +\n  scale_fill_manual(values = c(\"grey66\", \"#EEB422\", \"#424242\")) +\n  scale_size(range = c(2, 5), guide = \"none\") +\n  theme_graph() +\n  theme(legend.position = \"bottom\")"
+  },
+  {
+    "objectID": "material/netVizR/index.html#code-through-recreate-the-polblogs-viz",
+    "href": "material/netVizR/index.html#code-through-recreate-the-polblogs-viz",
+    "title": "Network Visualizations in R",
+    "section": "Code through: Recreate the polblogs viz",
+    "text": "Code through: Recreate the polblogs viz\n\n\nExpand\n\nIn this section, we do a little code through to recreate the figure shown below.\n The network shows the linking between political blogs during the 2004 election in the US. Red nodes are conservative leaning blogs and blue ones liberal.\nThe dataset is included in the networkdata package.\n\ndata(\"polblogs\")\n\n# add a vertex attribute for the indegree\nV(polblogs)$deg <- degree(polblogs, mode = \"in\")\n\nLet us start with a simple plot without any styling.\n\nlay <- create_layout(polblogs, \"stress\")\n\nggraph(lay) +\n  geom_edge_link0(\n    edge_width = 0.2, edge_colour = \"grey66\",\n    arrow = arrow(\n      angle = 15, length = unit(0.15, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    )\n  ) +\n  geom_node_point()\n\n\n\n\nThere is obviously a lot missing. First, we delete all isolates and plot again.\n\npolblogs <- delete.vertices(polblogs, which(degree(polblogs) == 0))\nlay <- create_layout(polblogs, \"stress\")\n\nggraph(lay) +\n  geom_edge_link0(\n    edge_width = 0.2, edge_colour = \"grey66\",\n    arrow = arrow(\n      angle = 15, length = unit(0.1, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    )\n  ) +\n  geom_node_point()\n\n\n\n\nThe original does feature a small disconnected component, but we remove this here.\n\ncomps <- components(polblogs)\npolblogs <- delete.vertices(polblogs, which(comps$membership == which.min(comps$csize)))\n\nlay <- create_layout(polblogs, \"stress\")\nggraph(lay) +\n  geom_edge_link0(\n    edge_width = 0.2, edge_colour = \"grey66\",\n    arrow = arrow(\n      angle = 15, length = unit(0.15, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    )\n  ) +\n  geom_node_point()\n\n\n\n\nBetter, let’s start with some styling of the nodes.\n\nggraph(lay) +\n  geom_edge_link0(\n    edge_width = 0.2, edge_colour = \"grey66\",\n    arrow = arrow(\n      angle = 15, length = unit(0.15, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    )\n  ) +\n  geom_node_point(shape = 21, aes(fill = pol))\n\n\n\n\nThe colors are obviously wrong, so we fix this with a scale_fill_manual(). Additionally, we map the degree to node size.\n\nggraph(lay) +\n  geom_edge_link0(\n    edge_width = 0.2, edge_colour = \"grey66\",\n    arrow = arrow(\n      angle = 15, length = unit(0.15, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    )\n  ) +\n  geom_node_point(shape = 21, aes(fill = pol, size = deg), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"left\" = \"#104E8B\", \"right\" = \"firebrick3\"))\n\n\n\n\nThe node sizes are also not that satisfactory, so we fix the range with scale_size().\n\nggraph(lay) +\n  geom_edge_link0(\n    edge_width = 0.2, edge_colour = \"grey66\",\n    arrow = arrow(\n      angle = 10, length = unit(0.1, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    )\n  ) +\n  geom_node_point(shape = 21, aes(fill = pol, size = deg), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"left\" = \"#104E8B\", \"right\" = \"firebrick3\")) +\n  scale_size(range = c(0.5, 7))\n\n\n\n\nNow we move on to the edges. This is a bit more complicated since we have to create an edge variable first which indicates if an edge is within or between political orientations. This new variable is mapped to the edge color.\n\nel <- get.edgelist(polblogs, names = FALSE)\nel_pol <- cbind(V(polblogs)$pol[el[, 1]], V(polblogs)$pol[el[, 2]])\nE(polblogs)$col <- ifelse(el_pol[, 1] == el_pol[, 2], el_pol[, 1], \"mixed\")\n\n\nlay <- create_layout(polblogs, \"stress\")\nggraph(lay) +\n  geom_edge_link0(\n    edge_width = 0.2, aes(edge_colour = col),\n    arrow = arrow(\n      angle = 10, length = unit(0.1, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    )\n  ) +\n  geom_node_point(shape = 21, aes(fill = pol, size = deg), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"left\" = \"#104E8B\", \"right\" = \"firebrick3\")) +\n  scale_size(range = c(0.5, 7))\n\n\n\n\nSimilar to the node colors, we add a scale_edge_colour_manual() to adjust the edge colors.\n\nggraph(lay) +\n  geom_edge_link0(\n    edge_width = 0.2, aes(edge_colour = col),\n    arrow = arrow(\n      angle = 10, length = unit(0.1, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    ), show.legend = FALSE\n  ) +\n  geom_node_point(shape = 21, aes(fill = pol, size = deg), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"left\" = \"#104E8B\", \"right\" = \"firebrick3\")) +\n  scale_edge_colour_manual(values = c(\"left\" = \"#104E8B\", \"mixed\" = \"goldenrod\", \"right\" = \"firebrick3\")) +\n  scale_size(range = c(0.5, 7))\n\n\n\n\nAlmost, but it seems there are a lot of yellow edges which run over blue edges. It looks as if these should run below according to the original viz. To achieve this, we use a filter trick. We add two geom_edge_link0() layers: First, for the mixed edges and then for the remaining edges. In that way, the mixed edges are getting plotted below.\n\nggraph(lay) +\n  geom_edge_link0(\n    edge_width = 0.2, aes(filter = (col == \"mixed\"), edge_colour = col),\n    arrow = arrow(\n      angle = 10, length = unit(0.1, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    ), show.legend = FALSE\n  ) +\n  geom_edge_link0(\n    edge_width = 0.2, aes(filter = (col != \"mixed\"), edge_colour = col),\n    arrow = arrow(\n      angle = 10, length = unit(0.1, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    ), show.legend = FALSE\n  ) +\n  geom_node_point(shape = 21, aes(fill = pol, size = deg), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"left\" = \"#104E8B\", \"right\" = \"firebrick3\")) +\n  scale_edge_colour_manual(values = c(\"left\" = \"#104E8B\", \"mixed\" = \"goldenrod\", \"right\" = \"firebrick3\")) +\n  scale_size(range = c(0.5, 7))\n\n\n\n\nNow lets just add the theme_graph().\n\nggraph(lay) +\n  geom_edge_link0(\n    edge_width = 0.2, aes(filter = (col == \"mixed\"), edge_colour = col),\n    arrow = arrow(\n      angle = 10, length = unit(0.1, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    ), show.legend = FALSE\n  ) +\n  geom_edge_link0(\n    edge_width = 0.2, aes(filter = (col != \"mixed\"), edge_colour = col),\n    arrow = arrow(\n      angle = 10, length = unit(0.1, \"inches\"),\n      ends = \"last\", type = \"closed\"\n    ), show.legend = FALSE\n  ) +\n  geom_node_point(shape = 21, aes(fill = pol, size = deg), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"left\" = \"#104E8B\", \"right\" = \"firebrick3\")) +\n  scale_edge_colour_manual(values = c(\"left\" = \"#104E8B\", \"mixed\" = \"goldenrod\", \"right\" = \"firebrick3\")) +\n  scale_size(range = c(0.5, 7)) +\n  theme_graph()\n\n\n\n\nThat’s it!"
+  },
+  {
+    "objectID": "material/netVizR/index.html#miscellaneous",
+    "href": "material/netVizR/index.html#miscellaneous",
+    "title": "Network Visualizations in R",
+    "section": "Miscellaneous",
+    "text": "Miscellaneous\nEverything we covered above should be enough to produce nice network visualizations for scientific publications. However, ggraph has a lot more advanced functions/parameter settings to further enhance your visualization. If you are looking for something specific, it is always a good idea to read the documentation of the geoms.\nSome things that I frequently use are the following:\n\nchange the end_cap in geom_edge_link() to end edges before reaching the node. This is helpful for directed edges to not make the arrows disappear.\nlegend.position in theme() controls all legends at once. If you don’t want to show a specific legend, use guide = \"none\" in the respective scale_* function.\nuse scale_color_viridis_c() and scale_color_viridis_d(). The viridis colour palette makes plots easier to read by those with colorblindness and print well in grey scale.\n\nThe stress layout also works well with medium to large graphs.\n\nThe network shows the global football competition network between 2016-2018. It consists of ~5000 nodes (clubs) and ~15000 edges (games). Node colour corresponds to the confederation of the club.\nIf you want to go beyond 10k nodes, then you may want to switch to layout_with_pmds() or layout_with_sparse_stress() which are optimized to work with large graphs."
+  },
+  {
+    "objectID": "material/netVizR/index.html#use-the-ggforce",
+    "href": "material/netVizR/index.html#use-the-ggforce",
+    "title": "Network Visualizations in R",
+    "section": "use the ggforce",
+    "text": "use the ggforce\nThe ggforce package works pretty nicely with ggraph. You can, for instance, use the geom_mark_*() functions to highlight clusters.\n\nset.seed(665)\n\n#create network with a group structure\ng <- sample_islands(9, 40, 0.4, 15)\ng <- igraph::simplify(g)\nV(g)$grp <- as.character(rep(1:9, each = 40))\n\nbb <- layout_as_backbone(g, keep = 0.4)\nE(g)$col <- F\nE(g)$col[bb$backbone] <- T\n\n\nggraph(g,\n       layout = \"manual\",\n       x = bb$xy[, 1],\n       y = bb$xy[, 2]) +\n  geom_edge_link0(aes(col = col), width = 0.2) +\n  geom_node_point(aes(fill = grp), shape = 21, size = 3) +\n  geom_mark_hull(\n    aes(x, y, group = grp, fill = grp),\n    concavity = 4,\n    expand = unit(2, \"mm\"),\n    alpha = 0.25\n  ) +\n  scale_color_brewer(palette = \"Set1\") +\n  scale_fill_brewer(palette = \"Set1\") +\n  scale_edge_color_manual(values = c(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 1))) +\n  theme_graph()+\n  theme(legend.position = \"none\")\n\n\n\n\nOf course you can also add a label to your clusters.\n\nggraph(g,\n       layout = \"manual\",\n       x = bb$xy[, 1],\n       y = bb$xy[, 2]) +\n  geom_edge_link0(aes(col = col), width = 0.2) +\n  geom_node_point(aes(fill = grp), shape = 21, size = 3) +\n  geom_mark_hull(\n    aes(x, y, group = grp, fill = grp, label=grp),\n    concavity = 4,\n    expand = unit(2, \"mm\"),\n    alpha = 0.25\n  ) +\n  scale_color_brewer(palette = \"Set1\") +\n  scale_fill_brewer(palette = \"Set1\") +\n  scale_edge_color_manual(values = c(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 1))) +\n  theme_graph()+\n  theme(legend.position = \"none\")\n\n\n\n\nIf you want to avoid node overlaps, you can use geom_node_voronoi(). So this is actually already implemented in {{ggraph}}, but originates from geom_voronoi_tile().\n\nggraph(g,\n       layout = \"manual\",\n       x = bb$xy[, 1],\n       y = bb$xy[, 2]) +\n  geom_edge_link0(aes(filter = !col, col = col), width = 0.2) +\n  geom_node_voronoi(\n    aes(x, y, fill = grp),\n    max.radius = 0.4,\n    expand = unit(-0.5, 'mm'),\n    colour = 'black'\n  ) +\n  scale_color_brewer(palette = \"Set1\") +\n  scale_fill_brewer(palette = \"Set1\") +\n  scale_edge_color_manual(values = c(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 1))) +\n  theme(\n    legend.position = \"none\",\n    panel.grid = element_blank(),\n    axis.ticks = element_blank(),\n    axis.text = element_blank()\n  ) +\n  theme_graph() +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "material/netVizR/index.html#faq",
+    "href": "material/netVizR/index.html#faq",
+    "title": "Network Visualizations in R",
+    "section": "FAQ",
+    "text": "FAQ\nI compiled some more specific tips in a blog post a while ago. I will highlight some FAQ from that post belo (I will update this section with more tips and tricks).\n\n“How can I achieve that my directed edges stop at the node border, independent from the node size?”\n\nThis one has given me headaches for the longest time. No matter what I tried, I always ended up with something like the below plot.\n\n# create a random network\nset.seed(1071)\ng <- sample_pa(30, 1)\nV(g)$degree <- degree(g, mode = \"in\")\n\nggraph(g, \"stress\") +\n  geom_edge_link(\n    aes(end_cap = circle(node2.degree + 2, \"pt\")),\n    edge_colour = \"black\",\n    arrow = arrow(\n      angle = 10,\n      length = unit(0.15, \"inches\"),\n      ends = \"last\",\n      type = \"closed\"\n    )\n  ) +\n  geom_node_point(aes(size = degree), col = \"grey66\", show.legend = FALSE) +\n  scale_size(range = c(3, 11)) +\n  theme_graph()\n\n\n\n\nThe overlap can be avoided by using the I() function from base R, which treats the entries of a vector “as is”. So we know that if a node has degree 5, it will be mapped to a circle with radius (or diameter?) “5pt”. Since this means, that you have no control over the scaling, you need to do that beforehand.\n\n# this function is borrowed from the ambient package\nnormalise <- function(x, from = range(x), to = c(0, 1)) {\n  x <- (x - from[1]) / (from[2] - from[1])\n  if (!identical(to, c(0, 1))) {\n    x <- x * (to[2] - to[1]) + to[1]\n  }\n  x\n}\n\n# map to the range you want\nV(g)$degree <- normalise(V(g)$degree, to = c(3, 11))\n\nggraph(g, \"stress\") +\n  geom_edge_link(\n    aes(end_cap = circle(node2.degree + 2, \"pt\")),\n    edge_colour = \"grey25\",\n    arrow = arrow(\n      angle = 10,\n      length = unit(0.15, \"inches\"),\n      ends = \"last\",\n      type = \"closed\"\n    )\n  ) +\n  geom_node_point(aes(size = I(degree)), col = \"grey66\") +\n  theme_graph()\n\n\n\n\nI would not be surprised though if there is an even easier fix for this problem.\n\n“How can I lower the opacity of nodes without making edges visible underneath?”\n\nOne of the rules I try to follow is that edges should not be visible on top of nodes. Usually that is easy to achieve by drawing the edges before the nodes. But if you want to lower the opacity of nodes, they do become visible again.\n\ng <- sample_gnp(20, 0.5)\nV(g)$degree <- degree(g)\n\nggraph(g, \"stress\") +\n  geom_edge_link(edge_colour = \"grey66\") +\n  geom_node_point(\n    size = 8,\n    aes(alpha = degree),\n    col = \"red\",\n    show.legend = FALSE\n  ) +\n  theme_graph()\n\n\n\n\nThe solution is rather simple. Just add a node layer with the same aesthetics below with alpha=1 (default) and color=\"white\" (or the background color of the plot).\n\nggraph(g, \"stress\") +\n  geom_edge_link(edge_colour = \"grey66\") +\n  geom_node_point(size = 8, col = \"white\") +\n  geom_node_point(\n    aes(alpha = degree),\n    size = 8,\n    col = \"red\",\n    show.legend = FALSE\n  ) +\n  theme_graph()\n\n\n\n\nOf course you could also use start_cap and end_cap here, but you may have to fiddle again as in the last example.\n\n“How can I enhance readability of node labels in hairball graphs?”\n\nSometimes it is really hard to make labels readable when the network is very cluttered\n\ng <- sample_gnp(50, 0.7)\nV(g)$name <- sapply(1:50, function(x) paste0(sample(LETTERS, 4), collapse = \"\"))\nE(g)$weight <- runif(ecount(g))\n\nggraph(g) +\n  geom_edge_link0(aes(edge_color = weight, edge_width = weight), show.legend = FALSE) +\n  geom_node_point(size = 8, color = \"#44a6c6\") +\n  geom_node_text(aes(label = name), fontface = \"bold\") +\n  scale_edge_color_continuous(low = \"grey66\", high = \"black\") +\n  scale_edge_width(range = c(0.1, 0.5)) +\n  theme_graph() +\n  coord_fixed()\n\n\n\n\nHere you can make use of the fact that the layout of the nodes are stored in a “hidden” data frame when a ggraph object is constructed. That means you can use other geoms from other packages. In this case, the shadowtext package as shown below.\n\nggraph(g,\"stress\") +\n  geom_edge_link0(aes(edge_color = weight, edge_width = weight), show.legend = FALSE) +\n  geom_node_point(size = 8, color = \"#44a6c6\") +\n  shadowtext::geom_shadowtext(aes(x, y, label = name), color = \"black\", size = 4, bg.colour = \"white\") +\n  scale_edge_color_continuous(low = \"grey66\", high = \"black\") +\n  scale_edge_width(range = c(0.1, 0.5)) +\n  theme_graph() +\n  coord_fixed()"
+  },
+  {
+    "objectID": "material/netVizR/index.html#concentric-layouts",
+    "href": "material/netVizR/index.html#concentric-layouts",
+    "title": "Network Visualizations in R",
+    "section": "Concentric layouts",
+    "text": "Concentric layouts\nCircular layouts are generally not advisable. Concentric circles, on the other hand, help to emphasize the position of certain nodes in the network. The graphlayouts package has two function to create concentric layouts, layout_with_focus() and layout_with_centrality().\nThe first one allows to focus the network on a specific node and arrange all other nodes in concentric circles (depending on the geodesic distance) around it. Below we focus on the character Ned Stark.\n\nggraph(gotS1, layout = \"focus\", focus = 1) +\n  geom_edge_link0(aes(edge_width = weight), edge_colour = \"grey66\") +\n  geom_node_point(aes(fill = clu, size = size), shape = 21) +\n  geom_node_text(aes(filter = (name == \"Ned\"), size = size, label = name),\n    family = \"serif\"\n  ) +\n  scale_edge_width_continuous(range = c(0.2, 1.2)) +\n  scale_size_continuous(range = c(1, 5)) +\n  scale_fill_manual(values = got_palette) +\n  coord_fixed() +\n  theme_graph() +\n  theme(legend.position = \"none\")\n\n\n\n\nThe parameter focus in the first line is used to choose the node id of the focal node. The function coord_fixed() is used to always keep the aspect ratio at one (i.e. the circles are always displayed as a circle and not an ellipse).\nThe function draw_circle() can be used to add the circles explicitly.\n\nggraph(gotS1, layout = \"focus\", focus = 1) +\n  draw_circle(col = \"#00BFFF\", use = \"focus\", max.circle = 3) +\n  geom_edge_link0(aes(width = weight), edge_colour = \"grey66\") +\n  geom_node_point(aes(fill = clu, size = size), shape = 21) +\n  geom_node_text(aes(filter = (name == \"Ned\"), size = size, label = name),\n    family = \"serif\"\n  ) +\n  scale_edge_width_continuous(range = c(0.2, 1.2)) +\n  scale_size_continuous(range = c(1, 5)) +\n  scale_fill_manual(values = got_palette) +\n  coord_fixed() +\n  theme_graph() +\n  theme(legend.position = \"none\")\n\n\n\n\nlayout_with_centrality() works in a similar way. You can specify any centrality index (or any numeric vector for that matter), and create a concentric layout where the most central nodes are put in the center and the most peripheral nodes in the biggest circle. The numeric attribute used for the layout is specified with the cent parameter. Here, we use the weighted degree of the characters.\n\nggraph(gotS1, layout = \"centrality\", cent = graph.strength(gotS1)) +\n  geom_edge_link0(aes(edge_width = weight), edge_colour = \"grey66\") +\n  geom_node_point(aes(fill = clu, size = size), shape = 21) +\n  geom_node_text(aes(size = size, label = name), family = \"serif\") +\n  scale_edge_width_continuous(range = c(0.2, 0.9)) +\n  scale_size_continuous(range = c(1, 8)) +\n  scale_fill_manual(values = got_palette) +\n  coord_fixed() +\n  theme_graph() +\n  theme(legend.position = \"none\")\n\n\n\n\n(Concentric layouts are not only helpful to focus on specific nodes, but also make for a good tool to visualize ego networks.)"
+  },
+  {
+    "objectID": "material/netVizR/index.html#backbone-layout",
+    "href": "material/netVizR/index.html#backbone-layout",
+    "title": "Network Visualizations in R",
+    "section": "Backbone layout",
+    "text": "Backbone layout\nlayout_as_backbone() is a layout algorithm that can help emphasize hidden group structures. To illustrate the performance of the algorithm, we create an artificial network with a subtle group structure using sample_islands() from igraph.\n\ng <- sample_islands(9, 40, 0.4, 15)\ng <- simplify(g)\nV(g)$grp <- as.character(rep(1:9, each = 40))\n\nThe network consists of 9 groups with 40 vertices each. The density within each group is 0.4 and there are 15 edges running between each pair of groups. Let us try to visualize the network with what we have learned so far.\n\nggraph(g, layout = \"stress\") +\n  geom_edge_link0(edge_colour = \"black\", edge_width = 0.1, edge_alpha = 0.5) +\n  geom_node_point(aes(fill = grp), shape = 21) +\n  scale_fill_brewer(palette = \"Set1\") +\n  theme_graph() +\n  theme(legend.position = \"none\")\n\n\n\n\nAs you can see, the graph seems to be a proper “hairball” without any special structural features standing out. In this case, though, we know that there should be 9 groups of vertices that are internally more densely connected than externally. To uncover this group structure, we turn to the “backbone layout”.\n\nbb <- layout_as_backbone(g, keep = 0.4)\nE(g)$col <- FALSE\nE(g)$col[bb$backbone] <- TRUE\n\nThe idea of the algorithm is as follows. For each edge, an embededness score is calculated which serves as an edge weight attribute. These weights are then ordered and only the edges with the highest score are kept. The number of edges to keep is controlled with the keep parameter. In our example, we keep the top 40%. The parameter usually requires some experimenting to find out what works best. Since this may result in an unconnected network, we add all edges of the union of all maximum spanning trees. The resulting network is the “backbone” of the original network and the “stress” layout algorithm is applied to this network. Once the layout is calculated, all edges are added back to the network.\nThe output of the function are the x and y coordinates for nodes and a vector that gives the ids of the edges in the backbone network. In the code above, we use this vector to create a binary edge attribute that indicates if an edge is part of the backbone or not.\nTo use the coordinates, we set the layout parameter to “manual” and provide the x and y coordinates as parameters.\n\nggraph(g, layout = \"manual\", x = bb$xy[, 1], y = bb$xy[, 2]) +\n  geom_edge_link0(aes(edge_colour = col), edge_width = 0.1) +\n  geom_node_point(aes(fill = grp), shape = 21) +\n  scale_fill_brewer(palette = \"Set1\") +\n  scale_edge_color_manual(values = c(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 1))) +\n  theme_graph() +\n  theme(legend.position = \"none\")\n\n\n\n\nThe groups are now clearly visible! Of course the network used in the example is specifically tailored to illustrate the power of the algorithm. Using the backbone layout in real world networks may not always result in such a clear division of groups. It should thus not be seen as a universal remedy for drawing hairball networks. Keep in mind: It can only emphasize a hidden group structure if it exists.\nThe plot below shows an empirical example where the algorithm was able to uncover a hidden group structure. The network shows facebook friendships of a university in the US. Node colour corresponds to dormitory of students. Left is the ordinary stress layout and right the backbone layout."
+  },
+  {
+    "objectID": "material/netVizR/index.html#dynamic-networks",
+    "href": "material/netVizR/index.html#dynamic-networks",
+    "title": "Network Visualizations in R",
+    "section": "Dynamic networks",
+    "text": "Dynamic networks\nPeople regularly ask me if it is possible to animate a network evolution with ggraph and gganimate. Unfortunately this is not yet possible. But fear not! There is a way to still get it done with some hacking around the ggraph package. I will walk through this hack below but hope that it will eventually become obsolete.\nFor this part of the tutorial, you will need two additional packages.\n\nlibrary(gganimate)\nlibrary(ggplot2)\nlibrary(patchwork)\n\nWe will be using the 50 actor excerpt from the Teenage Friends and Lifestyle Study from the RSiena data repository as an example. The data is part of the networkdata package.\n\ndata(\"s50\")\n\nThe dataset consists of three networks with 50 actors each and a vertex attribute for the smoking behaviour of students. As a first step, we need to create a layout for all three networks. You can basically use any type of layout for each network, but I’d recommend layout_as_dynamic() from my very own package {{graphlayouts}}. The algorithm calculates a reference layout which is a layout of the union of all networks and individual layouts based on stress minimization and combines those in a linear combination which is controlled by the alpha parameter. For alpha=1, only the reference layout is used and all graphs have the same layout. For alpha=0, the stress layout of each individual graph is used. Values in-between interpolate between the two layouts.\n\nxy <- layout_as_dynamic(s50, alpha = 0.2)\n\nNow you could use {{ggraph}} and {{patchwork}} to produce a static plot with all networks side-by-side.\n\npList <- vector(\"list\", length(s50))\n\nfor (i in 1:length(s50)) {\n  pList[[i]] <- ggraph(s50[[i]], layout = \"manual\", x = xy[[i]][, 1], y = xy[[i]][, 2]) +\n    geom_edge_link0(edge_width = 0.6, edge_colour = \"grey66\") +\n    geom_node_point(shape = 21, aes(fill = as.factor(smoke)), size = 6) +\n    geom_node_text(label = 1:50, repel = FALSE, color = \"white\", size = 4) +\n    scale_fill_manual(\n      values = c(\"forestgreen\", \"grey25\", \"firebrick\"),\n      guide = ifelse(i != 2, \"none\", \"legend\"),\n      name = \"smoking\",\n      labels = c(\"never\", \"occasionally\", \"regularly\")\n    ) +\n    theme_graph() +\n    theme(legend.position = \"bottom\") +\n    labs(title = paste0(\"Wave \", i))\n}\n\nwrap_plots(pList)\n\n\n\n\nThis is nice but of course we want to animate the changes. This is where we say goodbye to ggraph and hello to good-old ggplot2. First, we create a list of data frames for all nodes and add the layout to it.\n\nnodes_lst <- lapply(1:length(s50), function(i) {\n  cbind(igraph::as_data_frame(s50[[i]], \"vertices\"),\n    x = xy[[i]][, 1], y = xy[[i]][, 2], frame = i\n  )\n})\n\nThis was the easy part, because all nodes are present in all time frames so there is not much to do. Edges will be a lot trickier.\n\nedges_lst <- lapply(1:length(s50), function(i) {\n  cbind(igraph::as_data_frame(s50[[i]], \"edges\"), frame = i)\n})\n\nedges_lst <- lapply(1:length(s50), function(i) {\n  edges_lst[[i]]$x <- nodes_lst[[i]]$x[match(edges_lst[[i]]$from, nodes_lst[[i]]$name)]\n  edges_lst[[i]]$y <- nodes_lst[[i]]$y[match(edges_lst[[i]]$from, nodes_lst[[i]]$name)]\n  edges_lst[[i]]$xend <- nodes_lst[[i]]$x[match(edges_lst[[i]]$to, nodes_lst[[i]]$name)]\n  edges_lst[[i]]$yend <- nodes_lst[[i]]$y[match(edges_lst[[i]]$to, nodes_lst[[i]]$name)]\n  edges_lst[[i]]$id <- paste0(edges_lst[[i]]$from, \"-\", edges_lst[[i]]$to)\n  edges_lst[[i]]$status <- TRUE\n  edges_lst[[i]]\n})\n\nhead(edges_lst[[1]])\n\n  from  to frame        x         y     xend      yend     id status\n1   V1 V11     1  1.70772  0.820757  2.13831 -0.118910 V1-V11   TRUE\n2   V1 V14     1  1.70772  0.820757  2.29096  0.864795 V1-V14   TRUE\n3   V2  V7     1  3.72090 -0.487140  4.04571 -1.081084  V2-V7   TRUE\n4   V2 V11     1  3.72090 -0.487140  2.13831 -0.118910 V2-V11   TRUE\n5   V3  V4     1 -4.60678 -2.892838 -3.57652 -2.931886  V3-V4   TRUE\n6   V3  V9     1 -4.60678 -2.892838 -5.04925 -3.675259  V3-V9   TRUE\n\n\nWe have expanded the edge data frame in a way that also includes the coordinates of the endpoints from the layout that we calculated earlier.\nNow we create a helper matrix which includes all edges that are present in any of the networks\n\nall_edges <- do.call(\"rbind\", lapply(s50, get.edgelist))\nall_edges <- all_edges[!duplicated(all_edges), ]\nall_edges <- cbind(all_edges, paste0(all_edges[, 1], \"-\", all_edges[, 2]))\n\nThis is used to impute the edges into all networks. So any edge that is not present in time frame two and three gets added to time frame one. But to keep track of these, we set there status to FALSE.\n\nedges_lst <- lapply(1:length(s50), function(i) {\n  idx <- which(!all_edges[, 3] %in% edges_lst[[i]]$id)\n  if (length(idx != 0)) {\n    tmp <- data.frame(from = all_edges[idx, 1], to = all_edges[idx, 2], id = all_edges[idx, 3])\n    tmp$x <- nodes_lst[[i]]$x[match(tmp$from, nodes_lst[[i]]$name)]\n    tmp$y <- nodes_lst[[i]]$y[match(tmp$from, nodes_lst[[i]]$name)]\n    tmp$xend <- nodes_lst[[i]]$x[match(tmp$to, nodes_lst[[i]]$name)]\n    tmp$yend <- nodes_lst[[i]]$y[match(tmp$to, nodes_lst[[i]]$name)]\n    tmp$frame <- i\n    tmp$status <- FALSE\n    edges_lst[[i]] <- rbind(edges_lst[[i]], tmp)\n  }\n  edges_lst[[i]]\n})\n\nWhy are we doing this? After a lot of experimenting, I came to the conclusion that it is always best to draw all edges, but use zero opacity if status = FALSE. In that way, one gets a smoother transition for edges that (dis)appear. There are probably other workarounds though.\nIn the last step, we create a data frame out of the lists.\n\nedges_df <- do.call(\"rbind\", edges_lst)\nnodes_df <- do.call(\"rbind\", nodes_lst)\n\nhead(edges_df)\n\n  from  to frame        x         y     xend      yend     id status\n1   V1 V11     1  1.70772  0.820757  2.13831 -0.118910 V1-V11   TRUE\n2   V1 V14     1  1.70772  0.820757  2.29096  0.864795 V1-V14   TRUE\n3   V2  V7     1  3.72090 -0.487140  4.04571 -1.081084  V2-V7   TRUE\n4   V2 V11     1  3.72090 -0.487140  2.13831 -0.118910 V2-V11   TRUE\n5   V3  V4     1 -4.60678 -2.892838 -3.57652 -2.931886  V3-V4   TRUE\n6   V3  V9     1 -4.60678 -2.892838 -5.04925 -3.675259  V3-V9   TRUE\n\nhead(nodes_df)\n\n   name smoke        x         y frame\nV1   V1     2  1.70772  0.820757     1\nV2   V2     3  3.72090 -0.487140     1\nV3   V3     1 -4.60678 -2.892838     1\nV4   V4     1 -3.57652 -2.931886     1\nV5   V5     1 -2.48950 -3.316815     1\nV6   V6     1 -1.06535 -5.068062     1\n\n\nAnd that’s it in terms of data wrangling. All that is left is to plot/animate the data.\n\nggplot() +\n  geom_segment(\n    data = edges_df,\n    aes(x = x, xend = xend, y = y, yend = yend, group = id, alpha = status),\n    show.legend = FALSE\n  ) +\n  geom_point(\n    data = nodes_df, aes(x, y, group = name, fill = as.factor(smoke)),\n    shape = 21, size = 4, show.legend = FALSE\n  ) +\n  scale_fill_manual(values = c(\"forestgreen\", \"grey25\", \"firebrick\")) +\n  scale_alpha_manual(values = c(0, 1)) +\n  ease_aes(\"quadratic-in-out\") +\n  transition_states(frame, state_length = 0.5, wrap = FALSE) +\n  labs(title = \"Wave {closest_state}\") +\n  theme_void()"
+  },
+  {
+    "objectID": "material/netVizR/index.html#multilevel-networks",
+    "href": "material/netVizR/index.html#multilevel-networks",
+    "title": "Network Visualizations in R",
+    "section": "Multilevel networks",
+    "text": "Multilevel networks\nIn this section, you will get to know layout_as_multilevel(), a layout algorithm in the raphlayouts package which can be use to visualize multilevel networks.\nA multilevel network consists of two (or more) levels with different node sets and intra-level ties. For instance, one level could be scientists and their collaborative ties and the second level are labs and ties among them, and inter-level edges are the affiliations of scientists and labs.\nThe graphlayouts package contains an artificial multilevel network which will be used to illustrate the algorithm.\n\ndata(\"multilvl_ex\")\n\nThe package assumes that a multilevel network has a vertex attribute called lvl which holds the level information (1 or 2).\nThe underlying algorithm of layout_as_multilevel() has three different versions, which can be used to emphasize different structural features of a multilevel network.\nIndependent of which option is chosen, the algorithm internally produces a 3D layout, where each level is positioned on a different y-plane. The 3D layout is then mapped to 2D with an isometric projection. The parameters alpha and beta control the perspective of the projection. The default values seem to work for many instances, but may not always be optimal. As a rough guideline: beta rotates the plot around the y axis (in 3D) and alpha moves the POV up or down.\n\nComplete layout\nA layout for the complete network can be computed via layout_as_multilevel() setting type = \"all\". Internally, the algorithm produces a constrained 3D stress layout (each level on a different y plane) which is then projected to 2D. This layout ignores potential differences in each level and optimizes only the overall layout.\n\nxy <- layout_as_multilevel(multilvl_ex, type = \"all\", alpha = 25, beta = 45)\n\nTo visualize the network with ggraph, you may want to draw the edges for each level (and inter level edges) with a different edge geom. This gives you more flexibility to control aesthetics and can easily be achieved with a filter.\n\nggraph(multilvl_ex, \"manual\", x = xy[, 1], y = xy[, 2]) +\n  geom_edge_link0(\n    aes(filter = (node1.lvl == 1 & node2.lvl == 1)),\n    edge_colour = \"firebrick3\",\n    alpha = 0.5,\n    edge_width = 0.3\n  ) +\n  geom_edge_link0(\n    aes(filter = (node1.lvl != node2.lvl)),\n    alpha = 0.3,\n    edge_width = 0.1,\n    edge_colour = \"black\"\n  ) +\n  geom_edge_link0(\n    aes(filter = (node1.lvl == 2 &\n      node2.lvl == 2)),\n    edge_colour = \"goldenrod3\",\n    edge_width = 0.3,\n    alpha = 0.5\n  ) +\n  geom_node_point(aes(shape = as.factor(lvl)), fill = \"grey25\", size = 3) +\n  scale_shape_manual(values = c(21, 22)) +\n  theme_graph() +\n  coord_cartesian(clip = \"off\", expand = TRUE) +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\n\n\nSeparate layouts for both levels\nIn many instances, there may be different structural properties inherent to the levels of the network. In that case, two layout functions can be passed to layout_as_multilevel() to deal with these differences. In our artificial network, level 1 has a hidden group structure and level 2 has a core-periphery structure.\nTo use this layout option, set type = \"separate\" and specify two layout functions with FUN1 and FUN2. You can change internal parameters of these layout functions with named lists in the params1 and params2 argument. Note that this version optimizes inter-level edges only minimally. The emphasis is on the intra-level structures.\n\nxy <- layout_as_multilevel(multilvl_ex,\n  type = \"separate\",\n  FUN1 = layout_as_backbone,\n  FUN2 = layout_with_stress,\n  alpha = 25, beta = 45\n)\n\nAgain, try to include an edge geom for each level.\n\ncols2 <- c(\n  \"#3A5FCD\", \"#CD00CD\", \"#EE30A7\", \"#EE6363\",\n  \"#CD2626\", \"#458B00\", \"#EEB422\", \"#EE7600\"\n)\n\nggraph(multilvl_ex, \"manual\", x = xy[, 1], y = xy[, 2]) +\n  geom_edge_link0(aes(\n    filter = (node1.lvl == 1 & node2.lvl == 1),\n    edge_colour = col\n  ),\n  alpha = 0.5, edge_width = 0.3\n  ) +\n  geom_edge_link0(\n    aes(filter = (node1.lvl != node2.lvl)),\n    alpha = 0.3,\n    edge_width = 0.1,\n    edge_colour = \"black\"\n  ) +\n  geom_edge_link0(aes(\n    filter = (node1.lvl == 2 & node2.lvl == 2),\n    edge_colour = col\n  ),\n  edge_width = 0.3, alpha = 0.5\n  ) +\n  geom_node_point(aes(\n    fill = as.factor(grp),\n    shape = as.factor(lvl),\n    size = nsize\n  )) +\n  scale_shape_manual(values = c(21, 22)) +\n  scale_size_continuous(range = c(1.5, 4.5)) +\n  scale_fill_manual(values = cols2) +\n  scale_edge_color_manual(values = cols2, na.value = \"grey12\") +\n  scale_edge_alpha_manual(values = c(0.1, 0.7)) +\n  theme_graph() +\n  coord_cartesian(clip = \"off\", expand = TRUE) +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\n\n\nFix only one level\nThis layout can be used to emphasize one intra-level structure. The layout of the second level is calculated in a way that optimizes inter-level edge placement. Set type = \"fix1\" and specify FUN1 and possibly params1 to fix level 1 or set type = \"fix2\" and specify FUN2 and possibly params2 to fix level 2.\n\nxy <- layout_as_multilevel(multilvl_ex,\n  type = \"fix2\",\n  FUN2 = layout_with_stress,\n  alpha = 25, beta = 45\n)\n\nggraph(multilvl_ex, \"manual\", x = xy[, 1], y = xy[, 2]) +\n  geom_edge_link0(aes(\n    filter = (node1.lvl == 1 & node2.lvl == 1),\n    edge_colour = col\n  ),\n  alpha = 0.5, edge_width = 0.3\n  ) +\n  geom_edge_link0(\n    aes(filter = (node1.lvl != node2.lvl)),\n    alpha = 0.3,\n    edge_width = 0.1,\n    edge_colour = \"black\"\n  ) +\n  geom_edge_link0(aes(\n    filter = (node1.lvl == 2 & node2.lvl == 2),\n    edge_colour = col\n  ),\n  edge_width = 0.3, alpha = 0.5\n  ) +\n  geom_node_point(aes(\n    fill = as.factor(grp),\n    shape = as.factor(lvl),\n    size = nsize\n  )) +\n  scale_shape_manual(values = c(21, 22)) +\n  scale_size_continuous(range = c(1.5, 4.5)) +\n  scale_fill_manual(values = cols2) +\n  scale_edge_color_manual(values = cols2, na.value = \"grey12\") +\n  scale_edge_alpha_manual(values = c(0.1, 0.7)) +\n  theme_graph() +\n  coord_cartesian(clip = \"off\", expand = TRUE) +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\n\n\n3D with threejs\nInstead of the default 2D projection, layout_as_multilevel() can also return the 3D layout by setting project2d = FALSE. The 3D layout can then be used with e.g. threejs to produce an interactive 3D visualization.\n\nlibrary(threejs)\nxyz <- layout_as_multilevel(multilvl_ex,\n  type = \"separate\",\n  FUN1 = layout_as_backbone,\n  FUN2 = layout_with_stress,\n  project2D = FALSE\n)\nmultilvl_ex$layout <- xyz\nV(multilvl_ex)$color <- c(\"#00BFFF\", \"#FF69B4\")[V(multilvl_ex)$lvl]\nV(multilvl_ex)$vertex.label <- V(multilvl_ex)$name\n\ngraphjs(multilvl_ex, bg = \"black\", vertex.shape = \"sphere\")"
+  },
+  {
+    "objectID": "material/30daymapchallenge/index.html",
+    "href": "material/30daymapchallenge/index.html",
+    "title": "30DayMapchallenge 2021",
+    "section": "",
+    "text": "Day 01 - Points\n\n  \n\n\n\nDay 02 - Lines\n\n  \n\n\n\nDay 03 - Polygons\n\n  \n\n\n\nDay 04 - Hexagons\n\n  \n\n\n\nDay 05 - Data challenge 1: OpenStreetMap\n\n  \n\n\n\nDay 06 - Red\n\n  \n\n\n\nDay 07 - Green\n\n  \n\n\n\nDay 08 - Blue\n\n  \n\n\n\nDay 09 - Monochrome\n\n  \n\n\n\nDay 10 - Raster\n\n  \n\n\n\nDay 11 - 3D\n\n  \n\n\n\nDay 12 - Population\n\n  \n\n\n\nDay 13 - Data challenge 2: Natural Earth\n\n  \n\n\n\nDay 14 - Map with a new tool\n\n  \n\n\n\nDay 15 - Map made without using a computer\n\n  \n\n\n\nDay 16 - Urban/rural\n\n  \n\n\n\nDay 17 - Land\n\n  \n\n\n\nDay 18 - Water\n\n  \n\n\n\nDay 19 - Island(s)\n\n  \n\n\n\nDay 20 - Movement\n\n  \n\n\n\nDay 21 - Elevation\n\n  \n\n\n\nDay 22 - Boundaries\n\n  \n\n\n\nDay 23 - Data challenge 3: GHSL Global Human Settlement Layer\n\n  \n\n\n\nDay 24 - Historical map\n\n  \n\n\n\nDay 26 - Choropleth map\n\n  \n\n\n\nDay 27 - Heatmap\n\n  \n\n\n\nDay 28 - The Earth is not flat\n\n  \n\n\n\nDay 29 - NULL\n\n  \n\n\n\nDay 30 - Metamapping day"
+  },
+  {
+    "objectID": "material/galaxies/index.html",
+    "href": "material/galaxies/index.html",
+    "title": "Rendering Galaxies in R",
+    "section": "",
+    "text": "Render galaxies, Blackholes and Star constellations in R\nThis was a project of mine in 2020 when I had an ambition to get into generative art. I abandoned that idea after this project because it just took too much time (and I lost motivation again…) I decided to release the code behind the project for everyone to play around with (see link above). You can do whatever you want with it. Problem is that I neither documented the code nor my resources. So it may take some time and effort to understand what is going on.\n\n\n\nExample Galaxies\n        \n\n\nExample Blackholes\n \n\n\nExample Constellations"
+  },
+  {
+    "objectID": "material/tidynetAnaR/index.html",
+    "href": "material/tidynetAnaR/index.html",
+    "title": "Tidy Network Analysis in R",
+    "section": "",
+    "text": "(last update 2022-07-08)"
+  },
+  {
+    "objectID": "material/tidynetAnaR/index.html#graph-structures",
+    "href": "material/tidynetAnaR/index.html#graph-structures",
+    "title": "Tidy Network Analysis in R",
+    "section": "Graph structures",
+    "text": "Graph structures\nWe’ll use the famous Florentine Family marriage dataset as a running example. The dataset is in igraph format but can be converted to a tbl_graph object with as_tbl_graph().\n\ndata(\"flo_marriage\")\nflo_tidy <- as_tbl_graph(flo_marriage)\nflo_tidy\n\n# A tbl_graph: 16 nodes and 20 edges\n#\n# An undirected simple graph with 2 components\n#\n# Node Data: 16 × 4 (active)\n  name       wealth `#priors` `#ties`\n  <chr>       <dbl>     <dbl>   <dbl>\n1 Acciaiuoli     10        53       2\n2 Albizzi        36        65       3\n3 Barbadori      55         0      14\n4 Bischeri       44        12       9\n5 Castellani     20        22      18\n6 Ginori         32         0       9\n# … with 10 more rows\n#\n# Edge Data: 20 × 2\n   from    to\n  <int> <int>\n1     1     9\n2     2     6\n3     2     7\n# … with 17 more rows\n\n\nThis new graph class just subclasses igraph and simply represents the network in a tidy fashion, printing two data frames, one for nodes and one for edges.\n\nclass(flo_tidy)\n\n[1] \"tbl_graph\" \"igraph\"   \n\n\nAny function in R that expects an igraph object as input will also accept a tbl_graph.\nThe function tbl_graph() can be used to create a network from scratch with two data frames. It is basically equivalent to graph_from_data_frame().\nTo create random graphs with the usual generators, check out the create_*() and play_*() families of functions."
+  },
+  {
+    "objectID": "material/tidynetAnaR/index.html#standard-verbs",
+    "href": "material/tidynetAnaR/index.html#standard-verbs",
+    "title": "Tidy Network Analysis in R",
+    "section": "Standard verbs",
+    "text": "Standard verbs\nThe tidy framework, specifically thinking about dplyr, is about providing verbs which help to solve common data manipulation tasks, such as mutate(), select(), filter(), and summarise(). The challange for the tbl_graph objects is that these verbs somehow need to work with two different data frames. The way tidygraph solves this is via a pointer to the data frame which is supposed to be manipulated. This pointer can be changed with the verb activate(). By default the nodes are activated, which can also be seen with the print function (see line 5 in the output of flo_tidy). To activate the edge data frame, simply use activate(\"edges\").\n\nflo_tidy %>% activate(\"edges\")\n\n# A tbl_graph: 16 nodes and 20 edges\n#\n# An undirected simple graph with 2 components\n#\n# Edge Data: 20 × 2 (active)\n   from    to\n  <int> <int>\n1     1     9\n2     2     6\n3     2     7\n4     2     9\n5     3     5\n6     3     9\n# … with 14 more rows\n#\n# Node Data: 16 × 4\n  name       wealth `#priors` `#ties`\n  <chr>       <dbl>     <dbl>   <dbl>\n1 Acciaiuoli     10        53       2\n2 Albizzi        36        65       3\n3 Barbadori      55         0      14\n# … with 13 more rows\n\n\nAny data manipulation would now be done on the edge data frame.\nHaving “activated” a data frame, many of the known dplyr verbs can be used to manipulate the data frame. The activation process might indicate that edges and nodes can only be manipulated separately, which is certainly not desirable. It is, however, possible to gain access to the edge data frame when nodes are activated via the .E(). Similarly, nodes can be accessed via .N() when edges are activated. In the below example, we activate the edges and create a new edge attribute which indicates if a family is connected to the Medici or not.\n\nflo_tidy <- flo_tidy %>% \n  activate(\"edges\") %>% \n  mutate(to_medici=(.N()$name[from]==\"Medici\" | .N()$name[to]==\"Medici\"))\n\nThis particular use case is helpful for visualizations.\n\nggraph(flo_tidy,\"stress\") + \n  geom_edge_link0(aes(edge_color = to_medici))+\n  geom_node_point(shape = 21, size = 10, fill = \"grey66\")+\n  geom_node_text(aes(label = name))+\n  theme_graph()\n\n\n\n\nThe dplyr verb filter() can be used to obtain a subgraph that satisfies given conditions on the nodes. Note that in the case that you filter on nodes, also edges will be effected. If a node does not satisfy the condition, then all edges connected to that node disappear. This is not the case for edges though.\n\nflo_tidy %>% \n  activate(\"edges\") %>% \n  filter(to_medici) %>% \nggraph(\"stress\",bbox=10) + \n  geom_edge_link0(edge_color = \"black\")+\n  geom_node_point(shape = 21, size = 10, fill = \"grey66\")+\n  geom_node_text(aes(label = name))+\n  theme_graph()"
+  },
+  {
+    "objectID": "material/tidynetAnaR/index.html#joins",
+    "href": "material/tidynetAnaR/index.html#joins",
+    "title": "Tidy Network Analysis in R",
+    "section": "Joins",
+    "text": "Joins"
+  },
+  {
+    "objectID": "material/tidynetAnaR/index.html#new-verbs",
+    "href": "material/tidynetAnaR/index.html#new-verbs",
+    "title": "Tidy Network Analysis in R",
+    "section": "New Verbs",
+    "text": "New Verbs"
+  },
+  {
+    "objectID": "material/minard/index.html",
+    "href": "material/minard/index.html",
+    "title": "The Minard System in R",
+    "section": "",
+    "text": "Code\nIf you are into data viz, then I am pretty sure that you have seen the chart above before. E. Tufte once declared this to be “the best statistical graphic ever drawn”.\nWhat you might not know is that its creator, Charles Joseph Minard, made far more significant contributions in the field of information graphics. Especially with his flow maps. Sandra Rendgen dedicated a book, “The Minard System”, which shows 61 maps and plots that Minard produced during his lifetime. The book is really inspiring and I can only recommend it. One cold winter day in early 2021, I decided to try to recreate some of Minards work with R. I was particularly interested in his flow maps. This was also actually the starting point for me to develop the R package edgebundle. I had the ambitious goal to reproduce as many of his 61 drawings as possible and thus far managed to do 13."
+  },
+  {
+    "objectID": "material/minard/index.html#ports-in-france-i",
+    "href": "material/minard/index.html#ports-in-france-i",
+    "title": "The Minard System in R",
+    "section": "(11) Ports in France I",
+    "text": "(11) Ports in France I\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#english-coal-exports-i",
+    "href": "material/minard/index.html#english-coal-exports-i",
+    "title": "The Minard System in R",
+    "section": "(14) English Coal Exports I",
+    "text": "(14) English Coal Exports I\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#meat-sent-to-paris",
+    "href": "material/minard/index.html#meat-sent-to-paris",
+    "title": "The Minard System in R",
+    "section": "(21) Meat Sent to Paris",
+    "text": "(21) Meat Sent to Paris\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#ports-in-france-ii",
+    "href": "material/minard/index.html#ports-in-france-ii",
+    "title": "The Minard System in R",
+    "section": "(24) Ports in France II",
+    "text": "(24) Ports in France II\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#cargo-ports-in-europe",
+    "href": "material/minard/index.html#cargo-ports-in-europe",
+    "title": "The Minard System in R",
+    "section": "(25) Cargo Ports in Europe",
+    "text": "(25) Cargo Ports in Europe\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#cargo-ports-of-the-globe",
+    "href": "material/minard/index.html#cargo-ports-of-the-globe",
+    "title": "The Minard System in R",
+    "section": "(34) Cargo Ports of the Globe",
+    "text": "(34) Cargo Ports of the Globe\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#global-migrants",
+    "href": "material/minard/index.html#global-migrants",
+    "title": "The Minard System in R",
+    "section": "(38) Global Migrants",
+    "text": "(38) Global Migrants\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#english-coal-exports-ii",
+    "href": "material/minard/index.html#english-coal-exports-ii",
+    "title": "The Minard System in R",
+    "section": "(41) English Coal Exports II",
+    "text": "(41) English Coal Exports II\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#post-offices-in-paris",
+    "href": "material/minard/index.html#post-offices-in-paris",
+    "title": "The Minard System in R",
+    "section": "(48) Post Offices in Paris",
+    "text": "(48) Post Offices in Paris\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#french-wine-exports",
+    "href": "material/minard/index.html#french-wine-exports",
+    "title": "The Minard System in R",
+    "section": "(50) French Wine Exports",
+    "text": "(50) French Wine Exports\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#english-coal-exports-iii",
+    "href": "material/minard/index.html#english-coal-exports-iii",
+    "title": "The Minard System in R",
+    "section": "(53) English Coal Exports III",
+    "text": "(53) English Coal Exports III\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#global-coal-production",
+    "href": "material/minard/index.html#global-coal-production",
+    "title": "The Minard System in R",
+    "section": "(54) Global Coal Production",
+    "text": "(54) Global Coal Production\n\nCode"
+  },
+  {
+    "objectID": "material/minard/index.html#napoleons-campaign",
+    "href": "material/minard/index.html#napoleons-campaign",
+    "title": "The Minard System in R",
+    "section": "(60) Napoleon’s Campaign",
+    "text": "(60) Napoleon’s Campaign\n\nCode"
+  },
+  {
+    "objectID": "material/netAnaR/index.html",
+    "href": "material/netAnaR/index.html",
+    "title": "Basic Network Analysis in R",
+    "section": "",
+    "text": "(last update 2022-07-08)"
+  },
+  {
+    "objectID": "material/netAnaR/index.html#use-case-triad-census",
+    "href": "material/netAnaR/index.html#use-case-triad-census",
+    "title": "Basic Network Analysis in R",
+    "section": "Use case: triad census",
+    "text": "Use case: triad census\n\n\nExpand\n\nIn this short use case example, we will discuss the triad census of a directed network. In a directed network, there are 16 possible configurations of edges that can occur between three nodes.\n\nThe triad census of a network gives the number of occurrences of each of these triad. Triads are labelled xyzL where x is the number of reciprocated ties, y is the number of unreciprocated ties and z is the number of null ties. The L term is a letter (U,C,D or T) which allows to differentiate between triads where these numbers are the same.\nOne of the many applications of the triad census is to compare a set of networks. In this example, we are tackling the question of “how transitive is football?” and asses structural differences among a set of football leagues.\n\ndata(\"football_triad\")\n\nfootball_triad is a list which contains networks of 112 football leagues as igraph objects. A directed link between team A and B indicates that A won a match against B. Note that there can also be an edge from B to A, since most leagues play a double round robin. For the sake of simplicity, all draws were deleted so that there could also be null ties between two teams if both games ended in a draw.\nBelow, we calculate the triad census for all network at once using lapply(). The function returns the triad census for each network as a list, which we turn into a matrix in the second step. Afterwards, we manually add the row and column names of the matrix.\n\nfooty_census <- lapply(football_triad,triad_census) \nfooty_census <- matrix(unlist(footy_census),ncol=16,byrow = T)\nrownames(footy_census) <- sapply(football_triad,function(x) x$name)\ncolnames(footy_census) <- c(\"003\",\"012\",\"102\",\"021D\",\"021U\",\"021C\",\"111D\",\"111U\",\n                         \"030T\",\"030C\",\"201\",\"120D\",\"120U\",\"120C\",\"210\",\"300\")\n\n#normalize to make proportions comparable across leagues\nfooty_census_norm <- footy_census/rowSums(footy_census)\n\n#check the Top 5 leagues\nidx <- which(rownames(footy_census)%in%c(\"england\",\"spain\",\"germany\",\n                                      \"italy\",\"france\"))\nfooty_census[idx,]\n\n        003 012 102 021D 021U 021C 111D 111U 030T 030C 201 120D 120U 120C 210\nengland   2  10   0   58   31   40   34   44  338   29  19  118  129  143 131\nfrance    1  23   5   30   33   44   48   40  332   41  16  132  108  160 114\ngermany   0  21   6   27   19   49   38   46  165   16  23   77   79  117 120\nitaly     1   4   2   35   43   30   30   22  419   38   5  164  116  118  99\nspain     0   8   4   27   42   45   32   35  364   43  11  126  105  148 130\n        300\nengland  14\nfrance   13\ngermany  13\nitaly    14\nspain    20\n\n\nNotice how the transitive triad (030T) has the largest count in the top leagues, hinting toward the childhood wisdom: “If A wins against B and B wins against C, then A must win against C”.\nIn empirical studies, we are not necessarily only interested in transitive triads, but rather how the triad census profiles compare across networks. We follow Kathrine Faust’s suggestion and do a singular value decomposition (SVD) on the normalized triad census matrix.\n\nfooty_svd <- svd(footy_census_norm)\n\nSVDs are used to reduce the dimensionality of the data, but retaining most of the information. In our case, the data is 16 dimensional, which is impossible to visualize to compare the networks. With an SVD, we can reduce it to two dimensions and get a better visual overview.\n\n\n\n\n\nHow to interpret the dimensions? To investigate this question, we take a closer look at the first two dimensions and compare it to some network descriptives. For the sake of brevity, we here only look at the density and proportion of 030T triads. In general, any node/dyad/triad level statistic could be used.\n\n\n\n\n\nDensity doesn’t really seem to be related to the first dimension in this case (in many cases it is!). Might be worthwhile to explore this further\n\n\n\n\n\nFor the second dimension, we get a clearer association. It seems that the fraction of transitive triads is a good indicator for structural differences among leagues.\nMore details can be found in the paper by Kathrine Faust."
+  },
+  {
+    "objectID": "material/netAnaR/index.html#use-case-florentine-families",
+    "href": "material/netAnaR/index.html#use-case-florentine-families",
+    "title": "Basic Network Analysis in R",
+    "section": "Use case: Florentine Families",
+    "text": "Use case: Florentine Families\n\n\nExpand\n\nA classic example application of centrality indices is the “Florentine Families” dataset, which is included in the networkdata package.\n\ndata(\"flo_marriage\")\n\n\n\n\n\n\nTh network shows marriage ties among Renaissance Families in Florence. Marriages at that time were strategic to improve the standing of families in society. The size of the names is proportional to the wealth of the families. Although the Strozzi were the wealthiest family, it was ultimately the Medici who became the most powerful family. This is in part due to their central position within this marriage network.\nThe table bellow shows the ranking for the four most commonly used centrality indices (1=top rank).\n\n\n\n\n\nname\ndegree\nbetweenness\ncloseness\neigen\n\n\n\n\nAcciaiuoli\n13.5\n14\n11.5\n12\n\n\nAlbizzi\n6.5\n3\n3.5\n9\n\n\nBarbadori\n10.5\n8\n6.5\n10\n\n\nBischeri\n6.5\n6\n8.0\n6\n\n\nCastellani\n6.5\n10\n9.5\n8\n\n\nGinori\n13.5\n14\n13.0\n14\n\n\nGuadagni\n2.5\n2\n5.0\n5\n\n\nLamberteschi\n13.5\n14\n14.0\n13\n\n\nMedici\n1.0\n1\n1.0\n1\n\n\nPazzi\n13.5\n14\n15.0\n15\n\n\nPeruzzi\n6.5\n11\n11.5\n7\n\n\nPucci\n16.0\n14\n16.0\n16\n\n\nRidolfi\n6.5\n5\n2.0\n3\n\n\nSalviati\n10.5\n4\n9.5\n11\n\n\nStrozzi\n2.5\n7\n6.5\n2\n\n\nTornabuoni\n6.5\n9\n3.5\n4\n\n\n\n\n\nNo matter what structural feature we consider to be important, the Medici always have the most advantageous position."
+  },
+  {
+    "objectID": "material/netAnaR/index.html#additional-material",
+    "href": "material/netAnaR/index.html#additional-material",
+    "title": "Basic Network Analysis in R",
+    "section": "Additional Material",
+    "text": "Additional Material\nI have written a series of blog post about the concept of network centrality, which introduces some novel tools to assess centrality. These also discuss empirical applications of indices in greater detail. (1, 2, 3)\nThe blog posts rely on the netrankr package (link), which also comes with 9 vignettes that explain the functionality in great detail. Note that the package also implements around 30 indices, but the index based approach is not its main purpose."
+  },
+  {
+    "objectID": "material/netAnaR/index.html#two-mode-networks",
+    "href": "material/netAnaR/index.html#two-mode-networks",
+    "title": "Basic Network Analysis in R",
+    "section": "… two mode networks",
+    "text": "… two mode networks\n\n\nExpand\n\nA two mode network is a network that consists of two disjoint sets of nodes (like people and events). Ties connect the two sets, e. g. participation of people in events. There exists a great variety of two modenetworks. The most often encountered ones are\n\nAffiliation networks (Membership in institutions )\nVoting/Sponsorship networks (politicians and bills)\nCitation network (authors and papers)\nCo-Authorship networks (authors and papers)\n\nBelow we will discuss some methods via the famous “southern women” dataset consisting of 18 women who attended a series of 14 events.\n\ndata(\"southern_women\")\n\n\n\n\n\n\nThe adjacency matrix of a two mode network is also referred to as an incidence matrix and can be obtained via as_incidence_matrix()\n\nA <- as_incidence_matrix(southern_women)\nA\n\n          6/27 3/2 4/12 9/26 2/25 5/19 3/15 9/16 4/8 6/10 2/23 4/7 11/21 8/3\nEVELYN       1   1    1    1    1    1    0    1   1    0    0   0     0   0\nLAURA        1   1    1    0    1    1    1    1   0    0    0   0     0   0\nTHERESA      0   1    1    1    1    1    1    1   1    0    0   0     0   0\nBRENDA       1   0    1    1    1    1    1    1   0    0    0   0     0   0\nCHARLOTTE    0   0    1    1    1    0    1    0   0    0    0   0     0   0\nFRANCES      0   0    1    0    1    1    0    1   0    0    0   0     0   0\nELEANOR      0   0    0    0    1    1    1    1   0    0    0   0     0   0\nPEARL        0   0    0    0    0    1    0    1   1    0    0   0     0   0\nRUTH         0   0    0    0    1    0    1    1   1    0    0   0     0   0\nVERNE        0   0    0    0    0    0    1    1   1    0    0   1     0   0\nMYRNA        0   0    0    0    0    0    0    1   1    1    0   1     0   0\nKATHERINE    0   0    0    0    0    0    0    1   1    1    0   1     1   1\nSYLVIA       0   0    0    0    0    0    1    1   1    1    0   1     1   1\nNORA         0   0    0    0    0    1    1    0   1    1    1   1     1   1\nHELEN        0   0    0    0    0    0    1    1   0    1    1   1     0   0\nDOROTHY      0   0    0    0    0    0    0    1   1    0    0   0     0   0\nOLIVIA       0   0    0    0    0    0    0    0   1    0    1   0     0   0\nFLORA        0   0    0    0    0    0    0    0   1    0    1   0     0   0\n\n\nThe tnet (link) and bipartite (link) offer some methods to analyse two mode networks directly, by adapting tools for standard (one-mode) networks (like the ones described above).\nBesides analyzing a two-mode network as-is, there is also the possibility to project it to one mode. Mathematically, this is done by calculating \\(AA^T\\) or \\(A^TA\\), depending which mode we project on. As an example, consider the southern women dataset again.\n\nB <- A%*%t(A)\nB\n\n          EVELYN LAURA THERESA BRENDA CHARLOTTE FRANCES ELEANOR PEARL RUTH\nEVELYN         8     6       7      6         3       4       3     3    3\nLAURA          6     7       6      6         3       4       4     2    3\nTHERESA        7     6       8      6         4       4       4     3    4\nBRENDA         6     6       6      7         4       4       4     2    3\nCHARLOTTE      3     3       4      4         4       2       2     0    2\nFRANCES        4     4       4      4         2       4       3     2    2\nELEANOR        3     4       4      4         2       3       4     2    3\nPEARL          3     2       3      2         0       2       2     3    2\nRUTH           3     3       4      3         2       2       3     2    4\nVERNE          2     2       3      2         1       1       2     2    3\nMYRNA          2     1       2      1         0       1       1     2    2\nKATHERINE      2     1       2      1         0       1       1     2    2\nSYLVIA         2     2       3      2         1       1       2     2    3\nNORA           2     2       3      2         1       1       2     2    2\nHELEN          1     2       2      2         1       1       2     1    2\nDOROTHY        2     1       2      1         0       1       1     2    2\nOLIVIA         1     0       1      0         0       0       0     1    1\nFLORA          1     0       1      0         0       0       0     1    1\n          VERNE MYRNA KATHERINE SYLVIA NORA HELEN DOROTHY OLIVIA FLORA\nEVELYN        2     2         2      2    2     1       2      1     1\nLAURA         2     1         1      2    2     2       1      0     0\nTHERESA       3     2         2      3    3     2       2      1     1\nBRENDA        2     1         1      2    2     2       1      0     0\nCHARLOTTE     1     0         0      1    1     1       0      0     0\nFRANCES       1     1         1      1    1     1       1      0     0\nELEANOR       2     1         1      2    2     2       1      0     0\nPEARL         2     2         2      2    2     1       2      1     1\nRUTH          3     2         2      3    2     2       2      1     1\nVERNE         4     3         3      4    3     3       2      1     1\nMYRNA         3     4         4      4    3     3       2      1     1\nKATHERINE     3     4         6      6    5     3       2      1     1\nSYLVIA        4     4         6      7    6     4       2      1     1\nNORA          3     3         5      6    8     4       1      2     2\nHELEN         3     3         3      4    4     5       1      1     1\nDOROTHY       2     2         2      2    1     1       2      1     1\nOLIVIA        1     1         1      1    2     1       1      2     2\nFLORA         1     1         1      1    2     1       1      2     2\n\n\nThis matrix can now be interpreted as a weighted network among the 18 women. Each entry corresponds to the number of times two women went to the same event.\n\n\n\n\n\nAs you can see, the network has become very dense. A very common step is now to binarize the network. In doing so, we basically turn the network into a simple undirected one-mode network. This makes all methods we described in the first few sections applicable to the network (at least in theory). The simplest way of binarizing a weighted projection is to define a global threshold and remove a tie if its weight is below the global threshold. This is simple but come with many undesirable structural problems. More sophisticated tools work with statistical models in the background which determine if an edge weight differs enough from the expected value. If so, the edge is kept in the binary “backbone” of the network.\nAll possible backbone extraction methods are implemented in the backbone package (link). An introduction to the package can be found on arxiv."
+  },
+  {
+    "objectID": "material/netAnaR/index.html#signed-networks",
+    "href": "material/netAnaR/index.html#signed-networks",
+    "title": "Basic Network Analysis in R",
+    "section": "… signed networks",
+    "text": "… signed networks\n\n\nExpand\n\nTraditional SNA usually deals with relations among entities (e.g. people) that are positive, including “friendship”, “advice seeking”, etc. Most network analytic tools are devised under this premise, be that centrality indices, clustering tools and so forth. But of course not all occurring relations are positive. People can be friends but also foes.\nThis gives rise to signed networks. These networks are usually composed of both, positive and negative, ties measured among a set of entities. Traditional network analytic tools are not applicable to such networks without adapting for the presents of negative ties. The signnet package (link) brings together methods that have been developed to analyse signed networks. This includes\n\nStructural balance (tutorial)\nBlockmodeling (tutorial)\nCentrality (tutorial)\nSigned two-mode networks (tutorial)\n\nA dedicated tutorial for each methodology is given in the package vignettes, also linked above. Below, we just briefly discuss the structure of the package.\nThe foundation of signnet is provided by igraph. All functions in the package assume that an igraph object is a signed network if it has an edge attribute “sign” with values 1 (positive) or -1 (negative).\n\nlibrary(signnet)\ng <- graph.full(5,directed = FALSE,loops = FALSE)\nE(g)$sign <- 1\ng\n\nIGRAPH d5a26e9 U--- 5 10 -- Full graph\n+ attr: name (g/c), loops (g/l), sign (e/n)\n+ edges from d5a26e9:\n [1] 1--2 1--3 1--4 1--5 2--3 2--4 2--5 3--4 3--5 4--5\n\n\nAll methods should throw an error if the sign attribute is missing or contains other values than -1 and 1.\nMatrices associated with a signed network follow the igraph naming scheme. The signed adjacency matrix can be obtained with as_adj_signed().\n\ndata(\"tribes\")\nas_adj_signed(tribes)[1:5,1:5]\n\n      Gavev Kotun Ove Alika Nagam\nGavev     0     1  -1    -1    -1\nKotun     1     0  -1     0    -1\nOve      -1    -1   0     1     0\nAlika    -1     0   1     0     0\nNagam    -1    -1   0     0     0\n\n\nThe signed Laplacian matrix is obtained by laplacian_matrix_signed().\n\nlaplacian_matrix_signed(tribes)[1:5,1:5]\n\n      Gavev Kotun Ove Alika Nagam\nGavev     8    -1   1     1     1\nKotun    -1     8   1     0     1\nOve       1     1   6    -1     0\nAlika     1     0  -1     3     0\nNagam     1     1   0     0     7\n\n\nA function not explicitly mentioned in the tutorials linked above is triad_census_signed() which calculates the signed triad census of a directed signed network. While the unsigned triad census has only 16 possible outcomes, there are 138 non-isomorphic signed triads, shown below.  The naming scheme is “xxx-yyyyyy” where “xxx” corresponds to the name of the respective unsigned triad and “yyyyyy” is a string of “0”, “N”, “P”, describing the type of ties present. So “300-NNNNNN” is a triad with all ties present and all ties are negative.\nThe package includes two well known datasets to play with.\nThe “tribes” dataset is a signed social network of tribes of the Gahuku–Gama alliance structure of the Eastern Central Highlands of New Guinea. The network contains sixteen tribes connected by friendship (“rova”) and enmity (“hina”).\nThe “cowList” dataset contains a list of 52 signed networks of inter-state relations over time (1946-1999). Two countries are connected by a positive tie if they form an alliance or have a peace treaty. A negative tie exists between countries who are at war or in other kinds of conflicts. The dataset is derrived from the correlates of war."
+  },
+  {
+    "objectID": "material/netAnaR/index.html#ego-networks",
+    "href": "material/netAnaR/index.html#ego-networks",
+    "title": "Basic Network Analysis in R",
+    "section": "… ego networks",
+    "text": "… ego networks\n\n\nExpand\n\nIf you want to analyze ego networks, then I can only recommend this book by Raffaele Vacca. Raffaele has given countless workshops on ego network analysis in R and his material should provide you with everything you need."
+  },
+  {
+    "objectID": "material/netAnaR/index.html#multilevel-networks",
+    "href": "material/netAnaR/index.html#multilevel-networks",
+    "title": "Basic Network Analysis in R",
+    "section": "… multilevel networks",
+    "text": "… multilevel networks\n\n\nExpand\n\nFor analyzing multilevel networks, I recommend the multinet pakage (link). Check out this JSS Paper for a brief introduction into the package.\nIf you just want to visualize a multilevel network, then head over to my network visualization tutorial."
+  },
+  {
+    "objectID": "material/netAnaR/index.html#multigraphs",
+    "href": "material/netAnaR/index.html#multigraphs",
+    "title": "Basic Network Analysis in R",
+    "section": "… multigraphs",
+    "text": "… multigraphs\n\n\nExpand\n\nMultigraphs are network representations in which multiple edges and edge loops (self edges) are permitted. In R, there are at least two relevant packages. The first is multigraph (link) which implements some visualization methods for multigraphs.\nThe second is multigraphr (link) which comes with a series of statistical methods to study local and global properties of such graphs and goodness of fit tests. The vignette of the package is a brilliant starting point for using the package.\nFor the technical details behind multigraphr, you can refer to:\n\nShafie, T. (2015). A multigraph approach to social network analysis. Journal of Social Structure, 16. (link)\n\n\nShafie, T. (2016). Analyzing local and global properties of multigraphs. The Journal of Mathematical Sociology, 40(4), 239-264. (link)\n\n\nShafie, T. and Schoch, D., (2021). Multiplexity analysis of networks using multigraph representations. Statistical Methods & Applications 30 (5), 1425-1444 (link)\n\n\nShafie, T. (Under review). Goodness of fit tests for random multigraph models."
+  },
+  {
+    "objectID": "material/netAnaR/index.html#something-else",
+    "href": "material/netAnaR/index.html#something-else",
+    "title": "Basic Network Analysis in R",
+    "section": "… something else",
+    "text": "… something else\n\n\nExpand\n\nCant find what you are looking for? Ping me on twitter and I see what I can do."
+  },
+  {
+    "objectID": "material/index.html",
+    "href": "material/index.html",
+    "title": "Open Source Material",
+    "section": "",
+    "text": "Network Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\n30DayMapchallenge 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nThe Minard System in R\n\n\nMinard’s Statistical Graphics with Modern Data in R\n\n\nRecreating Minard’s Statistical Graphics with Modern Data in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nRendering Galaxies in R\n\n\nRandom galaxies, black holes and star constellations\n\n\nRandomly generate galaxies, black holes and star constellations\n\n\n\n\n \n\n\n\n\nNo matching items"
+  }
+]

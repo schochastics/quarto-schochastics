@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.644">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Schoch">
+<meta name="dcterms.date" content="2019-01-25">
+<meta name="description" content="RStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.">
+
+<title>schochastics - snahelper</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../../static/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../academicons.css">
+<meta name="twitter:title" content="schochastics - snahelper">
+<meta name="twitter:description" content="RStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.">
+<meta name="twitter:image" content="https://mr.schochastics.net/static/img/avatar.png">
+<meta name="twitter:creator" content="@schochastics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="2500">
+<meta name="twitter:image-width" content="2500">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <img src="../../static/logo.png" alt="">
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://blog.schochastics.net">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../project/index.html">Projects</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../material/index.html">Material</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about/index.html">About me</a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quick-look-at-the-snahelper" id="toc-quick-look-at-the-snahelper" class="nav-link active" data-scroll-target="#quick-look-at-the-snahelper">Quick look at the SNAhelper</a></li>
+  <li><a href="#quick-look-at-the-netreader" id="toc-quick-look-at-the-netreader" class="nav-link" data-scroll-target="#quick-look-at-the-netreader">Quick look at the Netreader</a></li>
+  <li><a href="#quick-look-at-the-netbuilder" id="toc-quick-look-at-the-netbuilder" class="nav-link" data-scroll-target="#quick-look-at-the-netbuilder">Quick look at the Netbuilder</a></li>
+  <li><a href="#quick-look-at-the-componentlayouter" id="toc-quick-look-at-the-componentlayouter" class="nav-link" data-scroll-target="#quick-look-at-the-componentlayouter">Quick look at the Componentlayouter</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#usage-of-snahelper" id="toc-usage-of-snahelper" class="nav-link" data-scroll-target="#usage-of-snahelper">Usage of SNAhelper</a></li>
+  <li><a href="#interface" id="toc-interface" class="nav-link" data-scroll-target="#interface">Interface</a>
+  <ul class="collapse">
+  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout">Layout</a></li>
+  <li><a href="#node-attribute-manager" id="toc-node-attribute-manager" class="nav-link" data-scroll-target="#node-attribute-manager">Node Attribute Manager</a></li>
+  <li><a href="#nodes" id="toc-nodes" class="nav-link" data-scroll-target="#nodes">Nodes</a></li>
+  <li><a href="#edge-attribute-manager" id="toc-edge-attribute-manager" class="nav-link" data-scroll-target="#edge-attribute-manager">Edge Attribute Manager</a></li>
+  <li><a href="#edges" id="toc-edges" class="nav-link" data-scroll-target="#edges">Edges</a></li>
+  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result">Result</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header">
+<h1 class="title display-7">snahelper</h1>
+<p class="subtitle lead">Rstudio addins for network analysis</p>
+
+<p class="author">David Schoch</p>
+
+<p class="date">2019-01-25</p>
+</header>
+
+<p><code>snahelper</code> provides a set RStudio Addin for social network analysis. The main addin is the <code>SNAhelper</code> which provides a simple GUI to do common network analytic tasks and visualize a network with <a href="https://ggraph.data-imaginist.com/">ggraph</a>.</p>
+<p>The second addin, called <code>Netbuilder</code> allows you to quickly build small networks with a small “canvas” to draw on. The network can be exported as an igraph object at the end of the session by clicking on “Done”.</p>
+<p>The third addin <code>Netreader</code> is meant to facilitated the import of raw network data. It provides a GUI to easily read network and attribute data and combine them to an igraph object. The underlying code of the import procedure is shown at the end. This should help users to learn importing data themselves.</p>
+<p>The fourth addin <code>Componentlayouter</code> allows to layout networks with several components manually by placing them on an empty canvas. Components can also be rotated and resized. After finishing the session, the layout is saved as x and y vertex attributes.</p>
+<section id="quick-look-at-the-snahelper" class="level2">
+<h2 class="anchored" data-anchor-id="quick-look-at-the-snahelper">Quick look at the SNAhelper</h2>
+<p><img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/snahelper.gif" class="img-fluid"></p>
+<p>Code to reproduce the used network.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/evelinag/StarWars-social-network/master/networks/starwars-full-interactions-allCharacters.json"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(url)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>nodes<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df<span class="sc">$</span>nodes)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>nodes<span class="sc">$</span>display <span class="ot">&lt;-</span> df<span class="sc">$</span>nodes<span class="sc">$</span>name</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>nodes<span class="sc">$</span>name <span class="ot">&lt;-</span> df<span class="sc">$</span>nodes<span class="sc">$</span>id<span class="dv">-1</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph_from_data_frame</span>(df<span class="sc">$</span>links,<span class="at">directed =</span> F,<span class="at">vertices =</span> df<span class="sc">$</span>nodes)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>name <span class="ot">&lt;-</span> <span class="fu">V</span>(g)<span class="sc">$</span>display</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">remove.vertex.attribute</span>(g,<span class="st">"id"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">remove.vertex.attribute</span>(g,<span class="st">"display"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">delete.vertices</span>(g,<span class="fu">which</span>(<span class="fu">degree</span>(g)<span class="sc">==</span><span class="dv">0</span>))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>display <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">V</span>(g)<span class="sc">$</span>value<span class="sc">&gt;</span><span class="dv">75</span>,<span class="fu">V</span>(g)<span class="sc">$</span>name,<span class="st">""</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>colour <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">V</span>(g)<span class="sc">$</span>display<span class="sc">==</span><span class="st">""</span>,<span class="cn">NA</span>,<span class="fu">V</span>(g)<span class="sc">$</span>display)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>g</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="quick-look-at-the-netreader" class="level2">
+<h2 class="anchored" data-anchor-id="quick-look-at-the-netreader">Quick look at the Netreader</h2>
+<p><code>Netreader</code> should be pretty selfexplanatory. The first two tabs allow you to import raw data (edges and attributes). Make sure to specify file delimiters, etc. according to the shown preview.</p>
+<p><img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/Netreader1.png" class="img-fluid"></p>
+<p>Using the <code>Netreader</code> should comes with a learning effect (hopefully). The last tab shows the R code to produce the network with the chosen data <strong>without</strong> using the Addin. <img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/Netreader2.png" class="img-fluid"></p>
+<p>The network will be saved in your global environment once you click “Done”.</p>
+</section>
+<section id="quick-look-at-the-netbuilder" class="level2">
+<h2 class="anchored" data-anchor-id="quick-look-at-the-netbuilder">Quick look at the Netbuilder</h2>
+<p><img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/Netbuilder.gif" class="img-fluid"></p>
+</section>
+<section id="quick-look-at-the-componentlayouter" class="level2">
+<h2 class="anchored" data-anchor-id="quick-look-at-the-componentlayouter">Quick look at the Componentlayouter</h2>
+<p><img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/Componentlayouter.gif" class="img-fluid"></p>
+<p>Highlight an igraph object in your script and selcet the <code>Componentlayouter</code> from the RStudio addin menu. Components are added by clicking on the canvas and can be resized/rotated and re-positioned using the buttons at the bottom. The final layout is stored as x and y coordinates in the igraph object.</p>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># developer version</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(remotes)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"schochastics/snahelper"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#CRAN version</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"snahelper"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To work properly, you also need <a href="https://github.com/schochastics/graphlayouts">graphlayouts</a>, which adds new layout algorithms.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"graphlayouts"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="usage-of-snahelper" class="level2">
+<h2 class="anchored" data-anchor-id="usage-of-snahelper">Usage of SNAhelper</h2>
+<p>To use the main addin, simply highlight a network in your script and select <code>SNAhelper</code> from the Addin dropdown menu.</p>
+</section>
+<section id="interface" class="level2">
+<h2 class="anchored" data-anchor-id="interface">Interface</h2>
+<section id="layout" class="level3">
+<h3 class="anchored" data-anchor-id="layout">Layout</h3>
+<p>The layout tab allows you to choose from all implemented algorithms in <code>igraph</code> and some layouts from <code>graphlayouts</code>. The default is a stress based layout and also the recommended choice. In the tweak section you can move individual nodes around. Choose the node from the dropdown menu and click on its new position in the plot.</p>
+<p><img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/layout.png" class="img-fluid"></p>
+</section>
+<section id="node-attribute-manager" class="level3">
+<h3 class="anchored" data-anchor-id="node-attribute-manager">Node Attribute Manager</h3>
+<p>The Node Attribute Manager shows all existing node attributes in a sortable table. In addition, you can calculate some new ones (centrality and clustering). The functions automatically choose the right version of indices, depending if the network is directed/weighted/undirected/unweighted.</p>
+<p><img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/NattributeMan.png" class="img-fluid"></p>
+</section>
+<section id="nodes" class="level3">
+<h3 class="anchored" data-anchor-id="nodes">Nodes</h3>
+<p>This is where you can style your nodes. You can either do it manually, by choosing a color/size for all nodes together, or based on an attribute.</p>
+<p><img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/nodes.png" class="img-fluid"></p>
+</section>
+<section id="edge-attribute-manager" class="level3">
+<h3 class="anchored" data-anchor-id="edge-attribute-manager">Edge Attribute Manager</h3>
+<p>Same as Node Attribute Manager but for edges. So far only shows existing edge attributes.</p>
+<p><img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/EattributeMan.png" class="img-fluid"></p>
+</section>
+<section id="edges" class="level3">
+<h3 class="anchored" data-anchor-id="edges">Edges</h3>
+<p>You can style your edges here. <code>snahelper</code> automatically detects if your network is directed and adds arrows if the network is directed. The other options are similar to the nodes tab. The snahelper automatically chooses the appropriate edge geom. If multiple edges are present, it uses <code>geom_edge_parallel0()</code>. Otherwise <code>geom_edge_link0()</code>.</p>
+<p><img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/edges.png" class="img-fluid"></p>
+</section>
+<section id="result" class="level3">
+<h3 class="anchored" data-anchor-id="result">Result</h3>
+<p>The result tab shows the network in its full size. If you are satisfied with the results, hit the Done button and the R code to produce the plot is automatically inserted in your script. Or you can directly save the result as a png file.</p>
+<p><img src="https://raw.githubusercontent.com/schochastics/snahelper/master/man/figures/result.png" class="img-fluid"></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© 2022 David Schoch</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/schochastics">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/schochastics">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.de/citations?user=MFlgHdcAAAAJ&amp;hl=en"><i class="ai ai-google-scholar" role="img"></i></a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://orcid.org/0000-0003-2952-4812"><i class="ai ai-orcid" role="img"></i></a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

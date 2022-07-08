@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.644">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>schochastics - Open Source Material</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../static/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-material .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-image','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-material'] = new List('listing-material', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../academicons.css">
+<meta name="twitter:title" content="schochastics - Open Source Material">
+<meta name="twitter:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
+<meta name="twitter:image" content="https://mr.schochastics.net/static/img/avatar.png">
+<meta name="twitter:creator" content="@schochastics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="2500">
+<meta name="twitter:image-width" content="2500">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <img src="../static/logo.png" alt="">
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../publications/index.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://blog.schochastics.net">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../project/index.html">Projects</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../material/index.html" aria-current="page">Material</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about/index.html">About me</a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="data visualization">data visualization <span class="quarto-category-count">(2)</span></div><div class="category" data-category="generative art">generative art <span class="quarto-category-count">(1)</span></div><div class="category" data-category="network analysis">network analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="network visualization">network visualization <span class="quarto-category-count">(1)</span></div></div></div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Open Source Material</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="center">
+<p>Tutorial material and other open source projects</p>
+</div>
+<div id="listing-material" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="network visualization" data-listing-date-sort="1644966000000" data-listing-file-modified-sort="1657115939847" data-listing-reading-time-sort="43.48">
+<div class="thumbnail">
+<p><a href="../material/netVizR/index.html"> <img src="../material/netVizR/featured.png" class="thumnail-image" style="height: 250px;"> </a></p>
+</div>
+<div class="body">
+<a href="../material/netVizR/index.html">
+<h3 class="no-anchor listing-title">
+Network Visualizations in R
+</h3>
+<div class="listing-subtitle">
+using ggraph and graphlayouts
+</div>
+<div class="listing-description">
+<p>Tutorial for Network Visualization in R using ggraph and graphlayouts</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../material/netVizR/index.html"> </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="network analysis" data-listing-date-sort="1641682800000" data-listing-file-modified-sort="1657112669606" data-listing-reading-time-sort="28.845">
+<div class="thumbnail">
+<p><a href="../material/netAnaR/index.html"> <img src="../material/netAnaR/featured.png" class="thumnail-image" style="height: 250px;"> </a></p>
+</div>
+<div class="body">
+<a href="../material/netAnaR/index.html">
+<h3 class="no-anchor listing-title">
+Basic Network Analysis in R
+</h3>
+<div class="listing-subtitle">
+using igraph and related packages
+</div>
+<div class="listing-description">
+<p>Tutorial for Network Analysis in R</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../material/netAnaR/index.html"> </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="network analysis" data-listing-date-sort="1639868400000" data-listing-file-modified-sort="1657256204683" data-listing-reading-time-sort="6.935">
+<div class="thumbnail">
+<p><a href="../material/tidynetAnaR/index.html"> <img src="../material/tidynetAnaR/featured.png" class="thumnail-image" style="height: 250px;"> </a></p>
+</div>
+<div class="body">
+<a href="../material/tidynetAnaR/index.html">
+<h3 class="no-anchor listing-title">
+Tidy Network Analysis in R
+</h3>
+<div class="listing-subtitle">
+using the tidygraph package
+</div>
+<div class="listing-description">
+<p>Network Analysis in R using tidygraph</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../material/tidynetAnaR/index.html"> </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="data visualization" data-listing-date-sort="1640905200000" data-listing-file-modified-sort="1657140548235" data-listing-reading-time-sort="0.69">
+<div class="thumbnail">
+<p><a href="../material/30daymapchallenge/index.html"> <img src="../material/30daymapchallenge/featured.png" class="thumnail-image" style="height: 250px;"> </a></p>
+</div>
+<div class="body">
+<a href="../material/30daymapchallenge/index.html">
+<h3 class="no-anchor listing-title">
+30DayMapchallenge 2021
+</h3>
+<div class="listing-subtitle">
+My contributions to the 30DayMapchallenge in 2021
+</div>
+<div class="listing-description">
+<p>My contributions to the 30DayMapchallenge in 2021</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../material/30daymapchallenge/index.html"> </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="data visualization" data-listing-date-sort="1614121200000" data-listing-file-modified-sort="1657140706248" data-listing-reading-time-sort="1.265">
+<div class="thumbnail">
+<p><a href="../material/minard/index.html"> <img src="../material/minard/featured.png" class="thumnail-image" style="height: 250px;"> </a></p>
+</div>
+<div class="body">
+<a href="../material/minard/index.html">
+<h3 class="no-anchor listing-title">
+The Minard System in R
+</h3>
+<div class="listing-subtitle">
+Minard’s Statistical Graphics with Modern Data in R
+</div>
+<div class="listing-description">
+<p>Recreating Minard’s Statistical Graphics with Modern Data in R</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../material/minard/index.html"> </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="generative art" data-listing-date-sort="1583276400000" data-listing-file-modified-sort="1657140763960" data-listing-reading-time-sort="0.485">
+<div class="thumbnail">
+<p><a href="../material/galaxies/index.html"> <img src="../material/galaxies/featured.png" class="thumnail-image" style="height: 250px;"> </a></p>
+</div>
+<div class="body">
+<a href="../material/galaxies/index.html">
+<h3 class="no-anchor listing-title">
+Rendering Galaxies in R
+</h3>
+<div class="listing-subtitle">
+Random galaxies, black holes and star constellations
+</div>
+<div class="listing-description">
+<p>Randomly generate galaxies, black holes and star constellations</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../material/galaxies/index.html"> </a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© 2022 David Schoch</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/schochastics">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/schochastics">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.de/citations?user=MFlgHdcAAAAJ&amp;hl=en"><i class="ai ai-google-scholar" role="img"></i></a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://orcid.org/0000-0003-2952-4812"><i class="ai ai-orcid" role="img"></i></a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
