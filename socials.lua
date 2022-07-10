@@ -9,11 +9,11 @@ function github(handle)
 end
 
 function scholar(handle)
-  local output = '<a href="https://scholar.google.de/citations?user=' .. pandoc.utils.stringify(handle) .. '"><i class="ai ai-google-scholar" ></i></a>'
+  local output = '<a href="https://scholar.google.de/citations?user=' .. pandoc.utils.stringify(handle) .. '&hl=en"><i class="ai ai-google-scholar" ></i></a>'
   return pandoc.RawBlock('html', output)
 end
 
 function orcid(handle)
-  local output = '<a href="https://orcid.org/' .. pandoc.utils.stringify(handle) .. '&hl=en"><i class="ai ai-orcid" ></i></a>'
+  local output = '<a href="https://orcid.org/' .. pandoc.utils.stringify(handle) .. '"><i class="ai ai-orcid" ></i></a>'
   return pandoc.RawBlock('html', output)
 end

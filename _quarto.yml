@@ -34,6 +34,7 @@ website:
         text: About me
   page-footer:
     left: "© 2022 David Schoch"
+    center: "powered by [quarto](https://quarto.org)"
     right:
       - icon: twitter
         href: https://twitter.com/schochastics
