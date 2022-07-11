@@ -10,6 +10,13 @@ priority: 1
 image: featured.png
 toc: true
 title-block-style: none
+comments:
+  utterances:
+    repo: schochastics/quarto-schochastics
+    issue-term: pathname
+    label: comment
+    theme: photon-dark
+    crossorigin: anonymous
 ---
 
 ```{r setup, include=FALSE}
@@ -1466,3 +1473,4 @@ More details and algorithms of the `graphlayouts` package can be found on my blo
 ([link1](http://blog.schochastics.net/post/stress-based-graph-layouts/),
 [link2](http://blog.schochastics.net/post/introducing-graphlayouts-with-got/)) and on
 the pkgdown page of [graphlayouts](http://graphlayouts.schochastics.net/).
+
