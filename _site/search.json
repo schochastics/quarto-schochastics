@@ -119,6 +119,20 @@
     "text": "Structural Balance and Triads\nThe principles underlying structural balance are based on a theory in social psychology dating back to the work of Heider in the 1940s, which was generalized and extended to graphs by Cartwright and Harary in the 1950s. In its simplest form, it is defined via triangles. A triangle is balanced if all ties are positive (“the friend of a friend is a friend”) or only one tie is positive (“the enemy of my enemy is my friend”). The remaining configurations are said to be unbalanced.\n\nA network is balanced if i.a., it can be partitioned into two vertex subsets, such that intra-group edges are all positive and inter-group edges are all negative. Determining this is easy, but measuring a degree of balancedness (i.e. how close is a network to be balanced?) is not. The package, so far, implements three methods to calculate balance scores. All are defined such that a value of one indicates perfect balance and zero perfect unbalance. Though for intermediate networks, results may vary significantly. Check this paper by Samin Aref (and his other work) for more details.\n\nlibrary(igraph)\nlibrary(signnet)\ndata(\"tribes\")\n\nbalance_score(tribes,method = \"triangles\")\n#> [1] 0.867647\nbalance_score(tribes,method = \"walk\")\n#> [1] 0.357576\nbalance_score(tribes,method = \"frustration\")\n#> [1] 0.758621\n\nFor directed signed networks, triad_census_signed() can be used to compute the count for all 138 non-isomorphic signed triads."
   },
   {
+    "objectID": "project/quarto_sketchy/index.html",
+    "href": "project/quarto_sketchy/index.html",
+    "title": "Sketchy HTML theme",
+    "section": "",
+    "text": "GITHUB\nuses roughnotation to create a sketchy looking html file"
+  },
+  {
+    "objectID": "project/quarto_sketchy/index.html#installation",
+    "href": "project/quarto_sketchy/index.html#installation",
+    "title": "Sketchy HTML theme",
+    "section": "Installation",
+    "text": "Installation\nThe template can be installed using the following command\nquarto use template schochastics/quarto-sketchy-html\nAll available classes are shown in the template."
+  },
+  {
     "objectID": "project/roughsf/index.html",
     "href": "project/roughsf/index.html",
     "title": "roughsf",
@@ -138,6 +152,34 @@
     "title": "roughsf",
     "section": "Usage",
     "text": "Usage\nroughsf() takes a list of sf objects as input. The layers are drawn in order as they appear in the list. MULTI* geometries are not supported and should be casted beforehand. Aesthetics need to be specified explicitly as columns in the sf objects.\nThe following attributes are supported for POLYGONS:\n\nfill fill color\ncolor stroke color\nstroke stroke size\nfillstyle one of “hachure”, “solid”, “zigzag”, “cross-hatch”, “dots”, “dashed”, “zigzag-line”\nfillweight thickness of fillstyle (between 0 and 1)\nhachureangle angle of hachure lines\nhachuregap gap between two hachure lines\n\nThe following attributes are supported for LINESTRINGS:\n\ncolor stroke color\nstroke stroke size\n\nThe following attributes are supported for POINTS:\n\ncolor color of point\nsize size of point\nlabel label to be added (optional)\nlabel_pos position of label relative to point: (c)enter, (n)orth, (e)ast, (s)outh, (w)est (optional)\n\nDefault values are used if one of the attributes is not found.\nValues need to be specified explicitly and cannot be inferred from other columns (This needs to be done in a preparatory step)\n\nlibrary(sf)\nger <- rnaturalearth::ne_countries(scale = \"medium\", country = \"Germany\", returnclass = \"sf\")\nger <- st_cast(ger, \"POLYGON\")\nger$fill <- \"#CD2626\"\nger$stroke <- 2\nger$fillweight <- 0.5\n\n# MULTIPOLYGON (and also MULTILINESTRING) are not supported\nger <- st_cast(ger, \"POLYGON\")\n\ncities <- data.frame(name = c(\"Berlin\", \"Munich\", \"Hamburg\", \"Cologne\"))\ncities$geometry <- st_sfc(\n  st_point(c(13.4, 52.5200)), st_point(c(11.582, 48.1351)),\n  st_point(c(9.9937, 53.5511)), st_point(c(6.9603, 50.9375))\n)\ncities <- st_sf(cities)\nst_crs(cities) <- \"+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0\"\ncities$size <- 15\ncities$color <- \"#000000\"\ncities$label <- cities$name\ncities$label_pos <- \"e\"\n\nroughsf::roughsf(list(ger, cities),\n                 title = \"Sketchy Map of Germany\", caption = \"drawn by @schochastics\",\n                 title_font = \"48px Pristina\", font = \"30px Pristina\", caption_font = \"30px Pristina\",\n                 roughness = 1, bowing = 1, simplification = 1,\n                 width = 800, height = 1000, \n)\n\n\nPlots can be saved as png with the save_roughsf() function."
+  },
+  {
+    "objectID": "project/quarto_academicons/index.html",
+    "href": "project/quarto_academicons/index.html",
+    "title": "Quarto Academicons",
+    "section": "",
+    "text": "GITHUB\nThis extension provides support for academicons. Icons can be used in HTML documents only.\nThe code is adapted from the fontawesome extension"
+  },
+  {
+    "objectID": "project/quarto_academicons/index.html#installing",
+    "href": "project/quarto_academicons/index.html#installing",
+    "title": "Quarto Academicons",
+    "section": "Installing",
+    "text": "Installing\n$ quarto install extension schochastics/academicons\nThis will install the extension under the _extensions subdirectory. If you’re using version control, you will want to check in this directory."
+  },
+  {
+    "objectID": "project/quarto_academicons/index.html#using",
+    "href": "project/quarto_academicons/index.html#using",
+    "title": "Quarto Academicons",
+    "section": "Using",
+    "text": "Using\nTo embed an icon, use the {{< ai >}} shortcode. For example:\n{{< ai arxiv >}} \n{{< ai google-scholar >}}\n{{< ai open-access }}\nYou can browse all of the available icons here:\nhttps://jpswalsh.github.io/academicons/"
+  },
+  {
+    "objectID": "project/quarto_academicons/index.html#example",
+    "href": "project/quarto_academicons/index.html#example",
+    "title": "Quarto Academicons",
+    "section": "Example",
+    "text": "Example\nThis is the output of example.qmd in the github repo for HTML."
   },
   {
     "objectID": "project/edgebundle/index.html",
@@ -180,6 +222,13 @@
     "title": "edgebundle",
     "section": "Disclaimer",
     "text": "Disclaimer\nEdge bundling is able to produce neat looking network visualizations. However, they do not necessarily enhance readability. After experimenting with several methods, it became quite evident that the algorithms are very sensitive to the parameter settings (and often really only work in the showcase examples…). Consult the original literature (if they even provide any guidelines) or experiment yourself and do not expect any miracles."
+  },
+  {
+    "objectID": "project/quarto_webpage/index.html",
+    "href": "project/quarto_webpage/index.html",
+    "title": "Quarto website",
+    "section": "",
+    "text": "My previous personal page was done with blogdown and the amazing Hugo Apéro theme. I roughly recreated the theme with quarto and the source code is available on github. Feel free to use any part of it for your own projects."
   },
   {
     "objectID": "project/networkdata/index.html",
@@ -256,7 +305,7 @@
     "href": "project/levelnet/index.html",
     "title": "levelnet",
     "section": "",
-    "text": "<bu package is in an early stage"
+    "text": "The package implements some novel methods to analyze two-mode projections but is still in a very early stage"
   },
   {
     "objectID": "project/netrankr/index.html",
@@ -287,11 +336,25 @@
     "text": "Theoretical Background\nnetrankr is based on a series of papers that appeared in recent years. If you want to learn more about the theoretical background of the package, consult the following literature:\n\nSchoch, David. (2018). Centrality without Indices: Partial rankings and rank Probabilities in networks. Social Networks, 54, 50-60.(link)\n\n\nSchoch, David & Valente, Thomas W., & Brandes, Ulrik. (2017). Correlations among centrality indices and a class of uniquely ranked graphs. Social Networks, 50, 46-54.(link)\n\n\nSchoch, David & Brandes, Ulrik. (2016). Re-conceptualizing centrality in social networks. European Journal of Appplied Mathematics, 27(6), 971–985. (link)\n\n\nBrandes, Ulrik. (2016). Network Positions. Methodological Innovations, 9, 2059799116630650. (link)"
   },
   {
+    "objectID": "project/quarto_blackboard/index.html",
+    "href": "project/quarto_blackboard/index.html",
+    "title": "Blackboard revealjs theme",
+    "section": "",
+    "text": "GITHUB\nA port of my xaringan blackboard theme for quarto/revealjs"
+  },
+  {
+    "objectID": "project/quarto_blackboard/index.html#installation",
+    "href": "project/quarto_blackboard/index.html#installation",
+    "title": "Blackboard revealjs theme",
+    "section": "Installation",
+    "text": "Installation\nThe template can be installed using the following command\nquarto use template schochastics/quarto-blackboard-theme\nAdditionally, the showtext R package needs to be installed for the inbuilt ggplot theme to work.\ninstall.packages(\"showtext\")\nYou can find more help in the Quarto documentation on reveal.js"
+  },
+  {
     "objectID": "project/index.html",
     "href": "project/index.html",
     "title": "Projects",
     "section": "",
-    "text": "graphlayouts\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetworkdata\n\n\nThe package contains a large collection of network dataset with different context. This includes social networks, animal networks and movie networks. All datasets are in ‘igraph’ format.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\n\n\n\n\nedgebundle\n\n\nImplements several algorithms for bundling edges in networks and flow and metro map layouts. This includes force directed edge bundling, a flow algorithm based on Steiner trees and a multicriteria optimization method for metro map layouts.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet\n\n\nImplements methods for the analysis of signed networks. This includes several measures for structural balance, blockmodeling algorithms, various centrality indices, and projections of signed two-mode networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrgraph6\n\n\nThis package implements several methods to encode networks as Encode network data as strings of printable ASCII characters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughnet\n\n\nVisualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughsf\n\n\nDraw maps using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like maps.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrokemon\n\n\nThis package implements several themes for ggplot to bring your data into the world of Pokemon.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetUtils\n\n\nProvides a collection of network analytic (convenience) functions, missing in other standard packages. This includes forms of dyad and triad census with attributes and equivalence measures. All functions are build upon igraph\n\n\n\n\n\n\n\n\n\n\n\n\n\nlevelnet\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "R packages\n\n\n\n\n\n\n\n\n\n\ngraphlayouts\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetworkdata\n\n\nThe package contains a large collection of network dataset with different context. This includes social networks, animal networks and movie networks. All datasets are in ‘igraph’ format.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\n\n\n\n\nedgebundle\n\n\nImplements several algorithms for bundling edges in networks and flow and metro map layouts. This includes force directed edge bundling, a flow algorithm based on Steiner trees and a multicriteria optimization method for metro map layouts.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet\n\n\nImplements methods for the analysis of signed networks. This includes several measures for structural balance, blockmodeling algorithms, various centrality indices, and projections of signed two-mode networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrgraph6\n\n\nThis package implements several methods to encode networks as Encode network data as strings of printable ASCII characters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughnet\n\n\nVisualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughsf\n\n\nDraw maps using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like maps.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrokemon\n\n\nThis package implements several themes for ggplot to bring your data into the world of Pokemon.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetUtils\n\n\nProvides a collection of network analytic (convenience) functions, missing in other standard packages. This includes forms of dyad and triad census with attributes and equivalence measures. All functions are build upon igraph\n\n\n\n\n\n\n\n\n\n\n\n\n\nlevelnet\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nQuarto material\n\n\n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\ntype\n\n\n\n\n\n\nQuarto website\n\n\nMy personal webpage made with Quarto\n\n\nwebpage\n\n\n\n\nQuarto Academicons\n\n\nShortcodes to use academicons in quarto\n\n\nshortcodes\n\n\n\n\nBlackboard revealjs theme\n\n\nA blackboard styled theme for revealjs\n\n\nrevealjs\n\n\n\n\nSketchy HTML theme\n\n\nA sketchy theme for html documents\n\n\nhtml\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "project/snahelper/index.html",
@@ -781,7 +844,7 @@
     "href": "material/tidynetAnaR/index.html",
     "title": "Tidy Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-07-11)"
+    "text": "(last update 2022-08-03)"
   },
   {
     "objectID": "material/tidynetAnaR/index.html#graph-structures",
@@ -914,7 +977,7 @@
     "href": "material/netAnaR/index.html",
     "title": "Basic Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-07-11)"
+    "text": "(last update 2022-08-03)"
   },
   {
     "objectID": "material/netAnaR/index.html#use-case-triad-census",

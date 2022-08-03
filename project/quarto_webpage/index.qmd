@@ -1,0 +1,17 @@
+---
+date: "2022-06-10"
+description: "My personal webpage made with Quarto"
+title: Quarto website 
+title-block-style: none
+type: webpage
+toc: true
+priority: 1
+---
+
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/quarto-schochastics">GITHUB</a></button>
+<br>
+
+![](main.png)
+
+My previous personal page was done with blogdown and the amazing [Hugo Apéro](https://hugo-apero-docs.netlify.app/) theme.
+I roughly recreated the theme with quarto and the source code is available on github. Feel free to use any part of it for your own projects.

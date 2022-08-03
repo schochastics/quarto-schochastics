@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.644">
+<meta name="generator" content="quarto-1.0.28">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -96,7 +96,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -211,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="date">2022-01-09</p>
 </header>
 
-<p>(last update 2022-07-11)</p>
+<p>(last update 2022-08-03)</p>
 <section id="shortcuts" class="level1">
 <h1>Shortcuts</h1>
 <p>Interested in specific topics? Here are some shortcuts</p>
@@ -265,7 +265,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Which package to choose?</h1>
 <p>Well, the last section spoiled already what we are going to use in this tutorial, but for the sake of completeness, I will discuss some other packages here and motivate why I would recommend <code>igraph</code> as the goto package for standard network analytic tasks.</p>
 <p>Besides methods, <code>igraph</code> also provides data structures which facilitate to store and process network data. Two other packages that allow for this are <code>graph</code> and <code>network</code>. The former is, however, not available on CRAN anymore, only via Bioconductor. The latter provides the foundation for much of the statistical modelling aspects for networks such as Exponential Random Graph Models (ERGMs) and Stochastic Actor Oriented Models (SAOMs).</p>
-<p>The figure below shows how many packages on CRAN rely on those three packages (i.e.&nbsp;they are mentioned in <code>Depends</code>, <code>Imports</code>, or <code>Suggests</code>). ::: {.cell hash=‘index_cache/html/crannet_depend_fbb1548adbf91cb4892b5a87402c6abc’} ::: {.cell-output-display} <img src="index_files/figure-html/crannet_depend-1.png" class="img-fluid" style="width:100.0%"> ::: :::</p>
+<p>The figure below shows how many packages on CRAN rely on those three packages (i.e.&nbsp;they are mentioned in <code>Depends</code>, <code>Imports</code>, or <code>Suggests</code>).</p>
+<div class="cell" data-hash="index_cache/html/crannet_depend_fbb1548adbf91cb4892b5a87402c6abc">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/crannet_depend-1.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
 <p>The figure was produced with the help of the <code>cranet</code> package (<a href="https://github.com/mbojan/cranet">link</a>). <code>igraph</code> seems to be clearly favored by the R community. So if you install a package for, say, signed network analysis, changes are high that it depends on the graph structures provided by <code>igraph</code>. Besides the data structures, the package offers a large variety of network analytic methods which are all implemented in C. The methods are well optimized and also work quite well for large graphs.</p>
 <p>The <code>network</code> package historically shares some commonalities with <code>igraphs</code> data structures. The package itself, though is really only providing the data structure and no analytic methods. The <code>sna</code> package (<a href="https://cran.r-project.org/package=sna">link</a>) implements network analytic tools using the data structures provided by <code>network</code>. Overall, the syntax and provided methods are very much comparable between <code>igraph</code> and <code>sna</code> and they are almost interchangeable in this regard. The advantage of igraph is its speed. I have run several benchmark tasks and <code>igraph</code> usually comes out on top. That being said, there is no real case to be made against <code>network</code>/<code>sna</code>. If you are into statistical modelling of networks, then that should actually be the preferred choice since the <code>ergm</code> package is build on top of <code>network</code>. In this case you probably also want to look at the meta package <code>statnet</code> (<a href="http://statnet.org/">link</a>) which includes <code>network</code>, <code>sna</code>, and <code>ergm</code> (among other packages).</p>
 <p>The package <code>intergraph</code> (<a href="https://cran.r-project.org/package=intergraph">link</a>) can be used if you need to switch representations between <code>igraph</code> and <code>network</code>.</p>
@@ -343,16 +348,18 @@ Steve   1   1     0</code></pre>
 </section>
 <section id="descriptives-and-more-notations" class="level1">
 <h1>Descriptives and more notations</h1>
-<p>The <strong>density</strong> of a network is defined as the fraction of the potential edges in a network that are actually present. ::: {.cell hash=‘index_cache/html/density_959732d302ec7c2b24d9f44167e942b3’}</p>
+<p>The <strong>density</strong> of a network is defined as the fraction of the potential edges in a network that are actually present.</p>
+<div class="cell" data-hash="index_cache/html/density_959732d302ec7c2b24d9f44167e942b3">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">graph.density</span>(<span class="fu">graph.empty</span>(<span class="dv">10</span>)),</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">graph.density</span>(greys),</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">graph.density</span>(<span class="fu">graph.full</span>(<span class="dv">10</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.0000000 0.0398323 1.0000000</code></pre>
 </div>
-<p>:::</p>
+</div>
 <p>The density of an empty network is <span class="math inline">\(0\)</span> and for the full network it is <span class="math inline">\(1\)</span>. The density of empirical network lies somewhere in between but as the number of nodes increases, we’d expect the density to decrease and the network becomes quite sparse.</p>
-<p>A <strong>shortest path</strong> is a path that connects two nodes in a network with a minimal number of edges. The length of a shortest path is called the <strong>distance</strong> between two nodes. ::: {.cell hash=‘index_cache/html/shortest_path_d5795a5cb2a719cb68ec3533d93f03f5’}</p>
+<p>A <strong>shortest path</strong> is a path that connects two nodes in a network with a minimal number of edges. The length of a shortest path is called the <strong>distance</strong> between two nodes.</p>
+<div class="cell" data-hash="index_cache/html/shortest_path_d5795a5cb2a719cb68ec3533d93f03f5">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shortest_paths</span>(greys,<span class="at">from =</span> <span class="st">"Alex Karev"</span>,<span class="at">to =</span> <span class="st">"Owen Hunt"</span>,<span class="at">output =</span> <span class="st">"vpath"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$vpath
@@ -371,7 +378,7 @@ NULL
 $inbound_edges
 NULL</code></pre>
 </div>
-<p>:::</p>
+</div>
 <div class="cell" data-hash="index_cache/html/greys_shortest_path_8b50e108b52c59a7d983a4d6febaf813">
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/greys_shortest_path-1.png" class="img-fluid" style="width:100.0%"></p>
@@ -416,19 +423,20 @@ Henry Burton              Inf            0</code></pre>
 </div>
 </div>
 <p>The Grey’s Anatomy network is <strong>disconnected</strong> and consists of <span class="math inline">\(4\)</span> <strong>connected components</strong>. There are no shortest paths between components, which means that the distance is not measurable and set to infinity.</p>
-<p>The length of the longest shortest path is called the <strong>diameter</strong> of the network. ::: {.cell hash=‘index_cache/html/diameter_c2b1bda232539573fa0748e497854f52’}</p>
+<p>The length of the longest shortest path is called the <strong>diameter</strong> of the network.</p>
+<div class="cell" data-hash="index_cache/html/diameter_c2b1bda232539573fa0748e497854f52">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diameter</span>(greys)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8</code></pre>
 </div>
-<p>:::</p>
+</div>
 <div class="cell" data-hash="index_cache/html/greys_diameter_2381ac0ce2ea2a4deebeffb1f32b1f04">
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/greys_diameter-1.png" class="img-fluid" style="width:100.0%"></p>
 </div>
 </div>
-<p><strong>Transitivity</strong> measures the probability that the neighbors of a node are also connected. This is also called the <strong>clustering coefficient</strong>.<br>
-::: {.cell hash=‘index_cache/html/transitivity_fea7b9a82814ecd10c6b541bb3d2d5a7’}</p>
+<p><strong>Transitivity</strong> measures the probability that the neighbors of a node are also connected. This is also called the <strong>clustering coefficient</strong>.</p>
+<div class="cell" data-hash="index_cache/html/transitivity_fea7b9a82814ecd10c6b541bb3d2d5a7">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">transitivity</span>(greys, <span class="at">type =</span> <span class="st">"global"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
@@ -438,7 +446,8 @@ Henry Burton              Inf            0</code></pre>
 <pre><code> [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 [39] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</code></pre>
 </div>
-<p>::: The global transitivity of an undirected network is the ratio of the triangles and the connected triples in the network. Local transitivity of a node is the ratio of the triangles connected to the node and the triples centered on the node itself. In social networks, we generally assume that the transitivity is quite high (“the friend of my friend is also my friend”). In our example, we have zero for all values. This is due to the fact that a triangle would require a same sex hook-up which did not occur (<em>Disclaimer: I never watched the show and gathered the hook ups from various internet resources. So this may well be wrong.</em>).</p>
+</div>
+<p>The global transitivity of an undirected network is the ratio of the triangles and the connected triples in the network. Local transitivity of a node is the ratio of the triangles connected to the node and the triples centered on the node itself. In social networks, we generally assume that the transitivity is quite high (“the friend of my friend is also my friend”). In our example, we have zero for all values. This is due to the fact that a triangle would require a same sex hook-up which did not occur (<em>Disclaimer: I never watched the show and gathered the hook ups from various internet resources. So this may well be wrong.</em>).</p>
 <p>For directed networks, a measure of importance is <strong>reciprocity</strong>, which is defined as the proportion of mutual edges between nodes. To illustrate the measure, we use a network of grooming relations among a group of rhesus monkeys.</p>
 <div class="cell" data-hash="index_cache/html/reciprocity_example_e1b4bfa847c24ac220eff0e8f3b3e12a">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"rhesus"</span>)</span>
@@ -822,7 +831,8 @@ Expand
 <div class="cell" data-hash="index_cache/html/load_clique_graph_260ce9fa7a8574e638a3636825e5ab2f">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"clique_graph"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>All maximal cliques can be calculated with <code>max_cliques()</code> (only feasible for fairly small networks). The min parameter can be used to set a minimum size. Here, we want to ignore all cliques of size <span class="math inline">\(2\)</span>. ::: {.cell hash=‘index_cache/html/calc_max_cliques_0f0904dbb5235f9ce1be78def2d3fd99’}</p>
+<p>All maximal cliques can be calculated with <code>max_cliques()</code> (only feasible for fairly small networks). The min parameter can be used to set a minimum size. Here, we want to ignore all cliques of size <span class="math inline">\(2\)</span>.</p>
+<div class="cell" data-hash="index_cache/html/calc_max_cliques_0f0904dbb5235f9ce1be78def2d3fd99">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># only return cliques with three or more nodes</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">max_cliques</span>(clique_graph,<span class="at">min =</span> <span class="dv">3</span>)</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>cl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -863,7 +873,7 @@ Expand
 + 5/30 vertices, from 0193e05:
 [1] 1 2 5 4 3</code></pre>
 </div>
-<p>:::</p>
+</div>
 <p>The figure below shows the network and the found maximal cliques.</p>
 <div class="cell" data-hash="index_cache/html/plot_clique_graph_e2d8e9fef3bd4ac0c9ae94e25356dd95">
 <div class="cell-output-display">
@@ -871,13 +881,14 @@ Expand
 </div>
 </div>
 <p>Related to cliques is the <strong>k-core decomposition</strong> of a network. A k-core is a subgraph in which every node has at least k neighbors within the subgraph. A k-core is thus a relaxed version of a clique.<br>
-The function <code>coreness()</code> can be used to calculate the k-core membership for each node. ::: {.cell hash=‘index_cache/html/kcore_0608965cdb4837419398605692eabda9’}</p>
+The function <code>coreness()</code> can be used to calculate the k-core membership for each node.</p>
+<div class="cell" data-hash="index_cache/html/kcore_0608965cdb4837419398605692eabda9">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>kcore <span class="ot">&lt;-</span> <span class="fu">coreness</span>(clique_graph)</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>kcore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 4 4 4 4 4 3 2 2 2 2 2 3 3 3 3 3 2 2 1 1 1 1 1 1 1 1 1 1 1 1</code></pre>
 </div>
-<p>:::</p>
+</div>
 <div class="cell" data-hash="index_cache/html/kcore_plot_ef0ea278362c833bfa095aad8568a7b6">
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/kcore_plot-1.png" class="img-fluid" style="width:100.0%"></p>
@@ -907,9 +918,10 @@ The function <code>coreness()</code> can be used to calculate the k-core members
 </div>
 </div>
 <p>Most of these algorithms are based on “modularity maximization”. Modularity is defined as the fraction of edges that fall within given groups minus the expected fraction if edges were distributed at random.</p>
-<p>The workflow of a cluster analysis is always the same, independent from the chosen method. We illustrate the workflow using the infamous karate club network. ::: {.cell hash=‘index_cache/html/karate_d94fa47d4477369488aa2f921075745c’}</p>
+<p>The workflow of a cluster analysis is always the same, independent from the chosen method. We illustrate the workflow using the infamous karate club network.</p>
+<div class="cell" data-hash="index_cache/html/karate_d94fa47d4477369488aa2f921075745c">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"karate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
+</div>
 <div class="cell" data-hash="index_cache/html/karate_plot_f73e1e92cc649cc64019bfec1b9ae096">
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/karate_plot-1.png" class="img-fluid" style="width:100.0%"></p>
@@ -1269,6 +1281,24 @@ Expand
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

@@ -2,35 +2,49 @@
 title: "Projects"
 page-layout: full
 listing:
-  id: projects
-  max-description-length: 500
-  image-height: "250px"	
-  fields: [image,title,description]
-  contents: 
-    - edgebundle
-    - graphlayouts
-    - levelnet
-    - netrankr
-    - netUtils
-    - networkdata
-    - rgraph6
-    - rokemon
-    - roughnet
-    - roughsf
-    - signnet
-    - snahelper
-  type: grid
-  image-align: left
-  sort: "priority asc"
-  grid-item-border: false
+  - id: rpkg
+    max-description-length: 500
+    image-height: "250px"	
+    fields: [image,title,description]
+    contents: 
+      - edgebundle
+      - graphlayouts
+      - levelnet
+      - netrankr
+      - netUtils
+      - networkdata
+      - rgraph6
+      - rokemon
+      - roughnet
+      - roughsf
+      - signnet
+      - snahelper
+    type: grid
+    image-align: left
+    sort: "priority asc"
+    grid-item-border: false
+  - id: qrto
+    max-description-length: 80
+    fields: [title,description,type]
+    contents: 
+      - quarto_webpage
+      - quarto_academicons
+      - quarto_blackboard
+      - quarto_sketchy
+    type: table
+    sort-ui: false
+    sort: "priority asc"
 ---
 
 :::{.center}
 <img src="https://ghchart.rshah.org/137752/schochastics">
-
-R packages I actively develop and maintain
 :::
 
 
-:::{#projects}
+# R packages 
+:::{#rpkg}
+:::
+
+# Quarto material
+:::{#qrto}
 :::

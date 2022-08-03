@@ -1,0 +1,25 @@
+---
+date: "2022-08-03"
+description: "A sketchy theme for html documents"
+title: Sketchy HTML theme  
+title-block-style: none
+type: html
+toc: false
+priority: 4
+---
+
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/quarto-sketchy-theme">GITHUB</a></button>
+<br>
+uses [roughnotation](https://roughnotation.com/) to create a sketchy looking html file
+
+![](example.png)
+
+## Installation
+
+The template can be installed using the following command
+
+```bash
+quarto use template schochastics/quarto-sketchy-html
+```
+
+All available classes are shown in the template.

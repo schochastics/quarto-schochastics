@@ -1,0 +1,12 @@
+---
+title: "Page not found"
+---
+
+# 404
+
+## Page not found
+
+![](static/img/coffee.png)
+
+I redesigned my personal page and some old content may be available under a new URL. Check the mainpage or let me
+know if you are missing something

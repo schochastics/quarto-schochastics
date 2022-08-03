@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.644">
+<meta name="generator" content="quarto-1.0.28">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,7 +32,7 @@ ul.task-list{list-style: none;}
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -49,7 +49,7 @@ ul.task-list{list-style: none;}
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-projects .list');
+    const listingTargetEl = window.document.querySelector('#listing-rpkg .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -62,7 +62,35 @@ ul.task-list{list-style: none;}
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-projects'] = new List('listing-projects', options);
+    window['quarto-listings']['listing-rpkg'] = new List('listing-rpkg', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-qrto .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-type',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-qrto'] = new List('listing-qrto', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -128,10 +156,17 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link active" data-scroll-target="#r-packages">R packages</a></li>
+  <li><a href="#quarto-material" id="toc-quarto-material" class="nav-link" data-scroll-target="#quarto-material">Quarto material</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -151,9 +186,10 @@ ul.task-list{list-style: none;}
 
 <div class="center">
 <p><img src="https://ghchart.rshah.org/137752/schochastics"></p>
-<p>R packages I actively develop and maintain</p>
 </div>
-<div id="listing-projects" class="quarto-listing quarto-listing-container-grid">
+<section id="r-packages" class="level1">
+<h1>R packages</h1>
+<div id="listing-rpkg" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
 <div class="g-col-1" data-index="0" data-listing-date-sort="1536703200000" data-listing-file-modified-sort="1657309386739" data-listing-reading-time-sort="3.13">
 <a href="../project/graphlayouts/index.html" class="quarto-grid-link">
@@ -162,7 +198,7 @@ ul.task-list{list-style: none;}
 <img src="../project/graphlayouts/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
+<h5 class="no-anchor card-title listing-title" data-anchor-id="r-packages">
 graphlayouts
 </h5>
 <div class="card-text listing-description">
@@ -342,7 +378,7 @@ Provides a collection of network analytic (convenience) functions, missing in ot
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-listing-date-sort="1554328800000" data-listing-file-modified-sort="1657309423628" data-listing-reading-time-sort="0.05">
+<div class="g-col-1" data-index="11" data-listing-date-sort="1554328800000" data-listing-file-modified-sort="1659535863605" data-listing-reading-time-sort="0.11">
 <a href="../project/levelnet/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -353,7 +389,7 @@ Provides a collection of network analytic (convenience) functions, missing in ot
 levelnet
 </h5>
 <div class="card-text listing-description">
-&lt;bu package is in an early stage
+The package implements some novel methods to analyze two-mode projections but is still in a very early stage
 </div>
 </div>
 </div>
@@ -364,13 +400,109 @@ levelnet
 No matching items
 </div>
 </div>
+</section>
+<section id="quarto-material" class="level1">
+<h1>Quarto material</h1>
+<div id="listing-qrto" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Description
+</th>
+<th>
+type
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1654812000000" data-listing-file-modified-sort="1659550427301" data-listing-reading-time-sort="0.22" data-listing-title-sort="Quarto website" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="../project/quarto_webpage/index.html" class="title">Quarto website</a>
+</td>
+<td class="listing-description">
+My personal webpage made with Quarto
+</td>
+<td class="listing-type">
+webpage
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1656972000000" data-listing-file-modified-sort="1659550195459" data-listing-reading-time-sort="0.445" data-listing-title-sort="Quarto Academicons" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="../project/quarto_academicons/index.html" class="title">Quarto Academicons</a>
+</td>
+<td class="listing-description">
+Shortcodes to use academicons in quarto
+</td>
+<td class="listing-type">
+shortcodes
+</td>
+</tr>
+<tr data-index="2" data-listing-date-sort="1659391200000" data-listing-file-modified-sort="1659550184491" data-listing-reading-time-sort="0.245" data-listing-title-sort="Blackboard revealjs theme" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="../project/quarto_blackboard/index.html" class="title">Blackboard revealjs theme</a>
+</td>
+<td class="listing-description">
+A blackboard styled theme for revealjs
+</td>
+<td class="listing-type">
+revealjs
+</td>
+</tr>
+<tr data-index="3" data-listing-date-sort="1659477600000" data-listing-file-modified-sort="1659550374232" data-listing-reading-time-sort="0.155" data-listing-title-sort="Sketchy HTML theme" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="../project/quarto_sketchy/index.html" class="title">Sketchy HTML theme</a>
+</td>
+<td class="listing-description">
+A sketchy theme for html documents
+</td>
+<td class="listing-type">
+html
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
