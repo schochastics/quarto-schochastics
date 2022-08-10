@@ -14,6 +14,7 @@ listing:
     - netAnaR
     - netVizR
     - tidynetAnaR
+    - football-data
   type: default
   image-align: right
   sort: "priority asc"
@@ -22,7 +23,7 @@ listing:
 ---
 
 :::{.center}
-Tutorial material and other open source projects
+Tutorials and other open source material
 :::
 
 

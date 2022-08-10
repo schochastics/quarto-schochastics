@@ -2,174 +2,186 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mr.schochastics.net/about/index.html</loc>
-    <lastmod>2022-08-03T18:13:58.869Z</lastmod>
+    <lastmod>2022-08-10T10:59:15.503Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/rokemon/index.html</loc>
-    <lastmod>2022-08-03T18:14:11.265Z</lastmod>
+    <lastmod>2022-08-10T10:59:21.999Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/signnet/index.html</loc>
-    <lastmod>2022-08-03T18:14:22.489Z</lastmod>
+    <lastmod>2022-08-10T10:59:28.559Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/quarto_sketchy/index.html</loc>
-    <lastmod>2022-08-03T18:14:23.065Z</lastmod>
+    <lastmod>2022-08-10T10:59:28.827Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/roughsf/index.html</loc>
-    <lastmod>2022-08-03T18:14:25.545Z</lastmod>
+    <lastmod>2022-08-10T10:59:30.191Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/quarto_academicons/index.html</loc>
-    <lastmod>2022-08-03T18:14:26.069Z</lastmod>
+    <lastmod>2022-08-10T10:59:30.479Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/edgebundle/index.html</loc>
-    <lastmod>2022-08-03T18:14:34.249Z</lastmod>
+    <lastmod>2022-08-10T10:59:35.059Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/quarto_webpage/index.html</loc>
-    <lastmod>2022-08-03T18:14:34.785Z</lastmod>
+    <lastmod>2022-08-10T10:59:35.331Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/networkdata/index.html</loc>
-    <lastmod>2022-08-03T18:14:37.305Z</lastmod>
+    <lastmod>2022-08-10T10:59:36.723Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/graphlayouts/index.html</loc>
-    <lastmod>2022-08-03T18:14:55.053Z</lastmod>
+    <lastmod>2022-08-10T10:59:46.783Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/levelnet/index.html</loc>
-    <lastmod>2022-08-03T18:14:55.557Z</lastmod>
+    <lastmod>2022-08-10T10:59:47.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mr.schochastics.net/project/quarto_social-share/index.html</loc>
+    <lastmod>2022-08-10T10:59:47.383Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/netrankr/index.html</loc>
-    <lastmod>2022-08-03T18:15:03.553Z</lastmod>
+    <lastmod>2022-08-10T10:59:51.771Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/quarto_blackboard/index.html</loc>
-    <lastmod>2022-08-03T18:15:04.457Z</lastmod>
+    <lastmod>2022-08-10T10:59:52.223Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mr.schochastics.net/project/soccerverse/index.html</loc>
+    <lastmod>2022-08-10T10:59:52.503Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/index.html</loc>
-    <lastmod>2022-08-03T18:15:05.969Z</lastmod>
+    <lastmod>2022-08-10T10:59:53.335Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/snahelper/index.html</loc>
-    <lastmod>2022-08-03T18:15:09.121Z</lastmod>
+    <lastmod>2022-08-10T10:59:55.008Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/rgraph6/index.html</loc>
-    <lastmod>2022-08-03T18:15:10.585Z</lastmod>
+    <lastmod>2022-08-10T10:59:55.868Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/netUtils/index.html</loc>
-    <lastmod>2022-08-03T18:15:12.745Z</lastmod>
+    <lastmod>2022-08-10T10:59:57.184Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/roughnet/index.html</loc>
-    <lastmod>2022-08-03T18:15:15.037Z</lastmod>
+    <lastmod>2022-08-10T10:59:58.504Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/prob_central/index.html</loc>
-    <lastmod>2022-08-03T18:15:15.573Z</lastmod>
+    <lastmod>2022-08-10T10:59:58.804Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/reconceptualizing_centrality/index.html</loc>
-    <lastmod>2022-08-03T18:15:16.109Z</lastmod>
+    <lastmod>2022-08-10T10:59:59.104Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/astroturfing_around_the_world/index.html</loc>
-    <lastmod>2022-08-03T18:15:16.545Z</lastmod>
+    <lastmod>2022-08-10T10:59:59.392Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/proj_signed2mode/index.html</loc>
-    <lastmod>2022-08-03T18:15:17.025Z</lastmod>
+    <lastmod>2022-08-10T10:59:59.708Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/centrality_correlation/index.html</loc>
-    <lastmod>2022-08-03T18:15:17.501Z</lastmod>
+    <lastmod>2022-08-10T11:00:00.020Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/multiplexity_multigraph/index.html</loc>
-    <lastmod>2022-08-03T18:15:18.101Z</lastmod>
+    <lastmod>2022-08-10T11:00:00.324Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/centrality_lethality/index.html</loc>
-    <lastmod>2022-08-03T18:15:18.633Z</lastmod>
+    <lastmod>2022-08-10T11:00:00.652Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/polcomm_astroturfing/index.html</loc>
-    <lastmod>2022-08-03T18:15:19.205Z</lastmod>
+    <lastmod>2022-08-10T11:00:00.988Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/hypergraph_carib_attacks/index.html</loc>
-    <lastmod>2022-08-03T18:15:19.677Z</lastmod>
+    <lastmod>2022-08-10T11:00:01.320Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/social_stratification/index.html</loc>
-    <lastmod>2022-08-03T18:15:20.221Z</lastmod>
+    <lastmod>2022-08-10T11:00:01.620Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/index.html</loc>
-    <lastmod>2022-08-03T18:15:21.697Z</lastmod>
+    <lastmod>2022-08-10T11:00:02.468Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/political_astroturf_korea/index.html</loc>
-    <lastmod>2022-08-03T18:15:22.733Z</lastmod>
+    <lastmod>2022-08-10T11:00:03.232Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/inout_centrality/index.html</loc>
-    <lastmod>2022-08-03T18:15:23.185Z</lastmod>
+    <lastmod>2022-08-10T11:00:03.552Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/scirep_astroturfing/index.html</loc>
-    <lastmod>2022-08-03T18:15:23.681Z</lastmod>
+    <lastmod>2022-08-10T11:00:03.884Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/us_congress/index.html</loc>
-    <lastmod>2022-08-03T18:15:24.121Z</lastmod>
+    <lastmod>2022-08-10T11:00:04.184Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/publications/jap_centrality/index.html</loc>
-    <lastmod>2022-08-03T18:15:24.629Z</lastmod>
+    <lastmod>2022-08-10T11:00:04.472Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/attribution.html</loc>
-    <lastmod>2022-08-03T18:15:25.573Z</lastmod>
+    <lastmod>2022-08-10T11:00:05.084Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/index.html</loc>
-    <lastmod>2022-08-03T18:15:26.473Z</lastmod>
+    <lastmod>2022-08-10T11:00:05.600Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/material/netVizR/index.html</loc>
-    <lastmod>2022-08-03T18:15:34.233Z</lastmod>
+    <lastmod>2022-08-10T11:00:09.904Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/material/30daymapchallenge/index.html</loc>
-    <lastmod>2022-08-03T18:15:35.937Z</lastmod>
+    <lastmod>2022-08-10T11:00:10.892Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mr.schochastics.net/material/football-data/index.html</loc>
+    <lastmod>2022-08-10T11:00:11.208Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/material/galaxies/index.html</loc>
-    <lastmod>2022-08-03T18:15:36.433Z</lastmod>
+    <lastmod>2022-08-10T11:00:11.512Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/material/tidynetAnaR/index.html</loc>
-    <lastmod>2022-08-03T18:15:45.281Z</lastmod>
+    <lastmod>2022-08-10T11:00:16.544Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/material/minard/index.html</loc>
-    <lastmod>2022-08-03T18:15:46.849Z</lastmod>
+    <lastmod>2022-08-10T11:00:17.436Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/material/netAnaR/index.html</loc>
-    <lastmod>2022-08-03T18:15:54.069Z</lastmod>
+    <lastmod>2022-08-10T11:00:21.420Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/material/index.html</loc>
-    <lastmod>2022-08-03T18:15:55.225Z</lastmod>
+    <lastmod>2022-08-10T11:00:22.068Z</lastmod>
   </url>
 </urlset>

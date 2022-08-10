@@ -102,6 +102,34 @@ ul.task-list{list-style: none;}
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-misc .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-image','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-misc'] = new List('listing-misc', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -162,6 +190,7 @@ ul.task-list{list-style: none;}
   <ul>
   <li><a href="#r-packages" id="toc-r-packages" class="nav-link active" data-scroll-target="#r-packages">R packages</a></li>
   <li><a href="#quarto-material" id="toc-quarto-material" class="nav-link" data-scroll-target="#quarto-material">Quarto material</a></li>
+  <li><a href="#others" id="toc-others" class="nav-link" data-scroll-target="#others">Others</a></li>
   </ul>
 </nav>
     </div>
@@ -468,6 +497,60 @@ A sketchy theme for html documents
 </td>
 <td class="listing-type">
 html
+</td>
+</tr>
+<tr data-index="4" data-listing-date-sort="1660082400000" data-listing-file-modified-sort="1660128694696" data-listing-reading-time-sort="0.645" data-listing-title-sort="Share buttons for HTML documents" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="../project/quarto_social-share/index.html" class="title">Share buttons for HTML documents</a>
+</td>
+<td class="listing-description">
+Quarto extension to add share buttons
+</td>
+<td class="listing-type">
+filter
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="others" class="level1">
+<h1>Others</h1>
+<div id="listing-misc" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+</th>
+<th>
+Title
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1659723959152" data-listing-reading-time-sort="0.295" data-listing-title-sort="soccerverse" data-listing-filename-sort="index.qmd">
+<td class="listing-image">
+<img src="../project/soccerverse/featured-hex.png" style="height: 40px;">
+</td>
+<td class="listing-title">
+<a href="../project/soccerverse/index.html" class="title">soccerverse</a>
+</td>
+<td class="listing-description">
+Analyzing top tier soccer around the globe
 </td>
 </tr>
 </tbody>

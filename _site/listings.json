@@ -17,7 +17,9 @@
       "/project/quarto_webpage/index.html",
       "/project/quarto_academicons/index.html",
       "/project/quarto_blackboard/index.html",
-      "/project/quarto_sketchy/index.html"
+      "/project/quarto_sketchy/index.html",
+      "/project/quarto_social-share/index.html",
+      "/project/soccerverse/index.html"
     ]
   },
   {
@@ -73,7 +75,8 @@
       "/material/tidynetAnaR/index.html",
       "/material/30daymapchallenge/index.html",
       "/material/minard/index.html",
-      "/material/galaxies/index.html"
+      "/material/galaxies/index.html",
+      "/material/football-data/index.html"
     ]
   }
 ]

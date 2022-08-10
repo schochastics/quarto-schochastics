@@ -31,6 +31,15 @@ listing:
       - quarto_academicons
       - quarto_blackboard
       - quarto_sketchy
+      - quarto_social-share
+    type: table
+    sort-ui: false
+    sort: "priority asc"
+  - id: misc
+    max-description-length: 80
+    fields: [image,title,description]
+    contents: 
+      - soccerverse
     type: table
     sort-ui: false
     sort: "priority asc"
@@ -47,4 +56,8 @@ listing:
 
 # Quarto material
 :::{#qrto}
+:::
+
+# Others
+:::{#misc}
 :::

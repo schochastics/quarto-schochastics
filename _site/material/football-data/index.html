@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.28">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Schoch">
+<meta name="dcterms.date" content="2022-08-05">
+<meta name="description" content="A collection of datasets around soccer">
+
+<title>schochastics - Soccer Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../../static/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../academicons.css">
+<meta name="twitter:title" content="schochastics - Soccer Data">
+<meta name="twitter:description" content="A collection of datasets around soccer">
+<meta name="twitter:image" content="https://mr.schochastics.net/static/img/avatar.png">
+<meta name="twitter:creator" content="@schochastics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="2500">
+<meta name="twitter:image-width" content="2500">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <img src="../../static/logo.png" alt="">
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://blog.schochastics.net">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../project/index.html">Projects</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../material/index.html">Material</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about/index.html">About me</a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#football-data" id="toc-football-data" class="nav-link active" data-scroll-target="#football-data">football-data</a></li>
+  <li><a href="#football-results-dataset" id="toc-football-results-dataset" class="nav-link" data-scroll-target="#football-results-dataset">Football Results Dataset</a>
+  <ul class="collapse">
+  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook">Codebook</a></li>
+  <li><a href="#rscipts" id="toc-rscipts" class="nav-link" data-scroll-target="#rscipts">Rscipts</a></li>
+  <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link" data-scroll-target="#disclaimer">Disclaimer</a></li>
+  </ul></li>
+  <li><a href="#formations-and-lineups" id="toc-formations-and-lineups" class="nav-link" data-scroll-target="#formations-and-lineups">formations and lineups</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header">
+<h1 class="title display-7">Soccer Data</h1>
+<p class="subtitle lead">A collection of datasets around soccer</p>
+
+<p class="author">David Schoch</p>
+
+<p class="date">2022-08-05</p>
+</header>
+
+<button type="button" class="btn btn-outline-success">
+<a href="https://github.com/schochastics/football-data">GITHUB</a>
+</button>
+<section id="football-data" class="level1">
+<h1>football-data</h1>
+<p>This repository contains some datasets around football (soccer). The main dataset contains results from ~1 million top-tier games.</p>
+</section>
+<section id="football-results-dataset" class="level1">
+<h1>Football Results Dataset</h1>
+<p><code>data/results</code> contains results of 1,078,214 football games in 207 top-tier domestic leagues and 20 international tournaments (UEFA EuroLeague/ChampionsLeague,etc.) from 1888-2019. The files are split up by competition but all follow the same scheme.</p>
+<section id="codebook" class="level2">
+<h2 class="anchored" data-anchor-id="codebook">Codebook</h2>
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>variable</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>home</td>
+<td>home team name (not necessarily unique)</td>
+</tr>
+<tr class="even">
+<td>away</td>
+<td>away team name (not necessarily unique)</td>
+</tr>
+<tr class="odd">
+<td>date</td>
+<td>date of match</td>
+</tr>
+<tr class="even">
+<td>gh</td>
+<td>goals for home team (including extra time and penalties)</td>
+</tr>
+<tr class="odd">
+<td>ga</td>
+<td>goals for away team (including extra time and penalties)</td>
+</tr>
+<tr class="even">
+<td>full_time</td>
+<td>“F”=game ended in 90’, “E”=extra time, “P”=penalty shoot-out</td>
+</tr>
+<tr class="odd">
+<td>competition</td>
+<td>country name of league or name of international competition</td>
+</tr>
+<tr class="even">
+<td>home_ident</td>
+<td>unique identifier of home team</td>
+</tr>
+<tr class="odd">
+<td>away_ident</td>
+<td>unique identifier of away team</td>
+</tr>
+<tr class="even">
+<td>home_country</td>
+<td>country of home team</td>
+</tr>
+<tr class="odd">
+<td>away_country</td>
+<td>country of away team</td>
+</tr>
+<tr class="even">
+<td>home_code</td>
+<td>country code of home team</td>
+</tr>
+<tr class="odd">
+<td>away_code</td>
+<td>country code of away team</td>
+</tr>
+<tr class="even">
+<td>home_continent</td>
+<td>continent of home team</td>
+</tr>
+<tr class="odd">
+<td>away_continent</td>
+<td>continent of away team</td>
+</tr>
+<tr class="even">
+<td>continent</td>
+<td>continent of competition</td>
+</tr>
+<tr class="odd">
+<td>level</td>
+<td>“national”= domestic league, “international”= international cup</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rscipts" class="level2">
+<h2 class="anchored" data-anchor-id="rscipts">Rscipts</h2>
+<p>The folder <code>Rscripts</code> contains some R code with basic analyses which could get you going:</p>
+<ul>
+<li><code>01_basic_stats.R</code>: very simple stats (number of games, goals, etc)</li>
+<li><code>02_soccerverse.R</code>: some code for figures on soccerverse.com</li>
+</ul>
+</section>
+<section id="disclaimer" class="level2">
+<h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
+<p>This dataset definitely contains errors, especially for older games, where sources are not as reliable. A big issue are teams that merge/split/dissolve over time, which (I think) I did not resolve consistently over time.</p>
+<p>I have gathered this dataset over the course of 8 years and put a lot of effort in it (see <a href="soccerverse.com">soccerverse.com</a>). If you use the data for any kind of project, please drop me a line or ping me on <a href="https://twitter.com/schochastics">twitter</a>. I hapilly include your results on soccerverse.com too.</p>
+</section>
+</section>
+<section id="formations-and-lineups" class="level1">
+<h1>formations and lineups</h1>
+<p>The folder <code>data/formations</code> contains lineups and formations datasets</p>
+</section>
+<section id="links" class="level1">
+<h1>Links</h1>
+<p><a href="soccerverse.com">soccerverse.com</a></p>
+<p>Similar datasets:</p>
+<ul>
+<li><a href="https://www.kaggle.com/hugomathien/soccer">European Soccer Database</a> (Kaggle)</li>
+<li><a href="https://www.kaggle.com/sashchernuh/european-football">World Soccer</a> (Kaggle)</li>
+<li><a href="https://www.kaggle.com/martj42/international-football-results-from-1872-to-2017">International Football Results</a> (Kaggle)</li>
+<li><a href="https://github.com/jalapic/engsoccerdata">engsoccerdata</a> (R package)</li>
+<li><a href="http://football-data.co.uk/">football-data.co.uk</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© 2022 David Schoch</div>   
+      <div class="nav-footer-center">powered by <a href="https://quarto.org">quarto</a></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/schochastics">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/schochastics">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.de/citations?user=MFlgHdcAAAAJ&amp;hl=en"><i class="ai ai-google-scholar" role="img"></i></a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://orcid.org/0000-0003-2952-4812"><i class="ai ai-orcid" role="img"></i></a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

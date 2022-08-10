@@ -308,6 +308,34 @@
     "text": "The package implements some novel methods to analyze two-mode projections but is still in a very early stage"
   },
   {
+    "objectID": "project/quarto_social-share/index.html",
+    "href": "project/quarto_social-share/index.html",
+    "title": "Share buttons for HTML documents",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/quarto_social-share/index.html#installing",
+    "href": "project/quarto_social-share/index.html#installing",
+    "title": "Share buttons for HTML documents",
+    "section": "Installing",
+    "text": "Installing\n$ quarto install extension schochastics/quarto-social-share\nThis will install the extension under the _extensions subdirectory. If you’re using version control, you will want to check in this directory."
+  },
+  {
+    "objectID": "project/quarto_social-share/index.html#using",
+    "href": "project/quarto_social-share/index.html#using",
+    "title": "Share buttons for HTML documents",
+    "section": "Using",
+    "text": "Using\nAdd the following to the yaml header of your document. You can set options to false if you don’t want to display the respective share button.\nshare:\n  permalink: \"https://mr.schochastics.net/\"\n  description: \"awesome page\"\n  twitter: true\n  facebook: true\n  reddit: true\n  stumble: true\n  tumblr: true\n  linkedin: true\n  email: true\npermalink is the url you are going to share and description and optional text."
+  },
+  {
+    "objectID": "project/quarto_social-share/index.html#example",
+    "href": "project/quarto_social-share/index.html#example",
+    "title": "Share buttons for HTML documents",
+    "section": "Example",
+    "text": "Example\nHere is the source code for a minimal example: example.qmd\nA rendered version can be found here."
+  },
+  {
     "objectID": "project/netrankr/index.html",
     "href": "project/netrankr/index.html",
     "title": "netrankr",
@@ -350,11 +378,18 @@
     "text": "Installation\nThe template can be installed using the following command\nquarto use template schochastics/quarto-blackboard-theme\nAdditionally, the showtext R package needs to be installed for the inbuilt ggplot theme to work.\ninstall.packages(\"showtext\")\nYou can find more help in the Quarto documentation on reveal.js"
   },
   {
+    "objectID": "project/soccerverse/index.html",
+    "href": "project/soccerverse/index.html",
+    "title": "soccerverse",
+    "section": "",
+    "text": "LINK\n\n\nSoccerverse is a project dedicated to the analysis of club-level (association) football around the world. From Afghanistan to Zimbabwe, from UEFA Champions League to CFU Club Championship, this project covers statistical analyses on a global scale. Global rankings, predicting league tables and champions are just some of the content you can find on this page."
+  },
+  {
     "objectID": "project/index.html",
     "href": "project/index.html",
     "title": "Projects",
     "section": "",
-    "text": "R packages\n\n\n\n\n\n\n\n\n\n\ngraphlayouts\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetworkdata\n\n\nThe package contains a large collection of network dataset with different context. This includes social networks, animal networks and movie networks. All datasets are in ‘igraph’ format.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\n\n\n\n\nedgebundle\n\n\nImplements several algorithms for bundling edges in networks and flow and metro map layouts. This includes force directed edge bundling, a flow algorithm based on Steiner trees and a multicriteria optimization method for metro map layouts.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet\n\n\nImplements methods for the analysis of signed networks. This includes several measures for structural balance, blockmodeling algorithms, various centrality indices, and projections of signed two-mode networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrgraph6\n\n\nThis package implements several methods to encode networks as Encode network data as strings of printable ASCII characters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughnet\n\n\nVisualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughsf\n\n\nDraw maps using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like maps.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrokemon\n\n\nThis package implements several themes for ggplot to bring your data into the world of Pokemon.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetUtils\n\n\nProvides a collection of network analytic (convenience) functions, missing in other standard packages. This includes forms of dyad and triad census with attributes and equivalence measures. All functions are build upon igraph\n\n\n\n\n\n\n\n\n\n\n\n\n\nlevelnet\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nQuarto material\n\n\n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\ntype\n\n\n\n\n\n\nQuarto website\n\n\nMy personal webpage made with Quarto\n\n\nwebpage\n\n\n\n\nQuarto Academicons\n\n\nShortcodes to use academicons in quarto\n\n\nshortcodes\n\n\n\n\nBlackboard revealjs theme\n\n\nA blackboard styled theme for revealjs\n\n\nrevealjs\n\n\n\n\nSketchy HTML theme\n\n\nA sketchy theme for html documents\n\n\nhtml\n\n\n\n\n\n\nNo matching items"
+    "text": "R packages\n\n\n\n\n\n\n\n\n\n\ngraphlayouts\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetworkdata\n\n\nThe package contains a large collection of network dataset with different context. This includes social networks, animal networks and movie networks. All datasets are in ‘igraph’ format.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\n\n\n\n\nedgebundle\n\n\nImplements several algorithms for bundling edges in networks and flow and metro map layouts. This includes force directed edge bundling, a flow algorithm based on Steiner trees and a multicriteria optimization method for metro map layouts.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet\n\n\nImplements methods for the analysis of signed networks. This includes several measures for structural balance, blockmodeling algorithms, various centrality indices, and projections of signed two-mode networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrgraph6\n\n\nThis package implements several methods to encode networks as Encode network data as strings of printable ASCII characters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughnet\n\n\nVisualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughsf\n\n\nDraw maps using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like maps.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrokemon\n\n\nThis package implements several themes for ggplot to bring your data into the world of Pokemon.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetUtils\n\n\nProvides a collection of network analytic (convenience) functions, missing in other standard packages. This includes forms of dyad and triad census with attributes and equivalence measures. All functions are build upon igraph\n\n\n\n\n\n\n\n\n\n\n\n\n\nlevelnet\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nQuarto material\n\n\n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\ntype\n\n\n\n\n\n\nQuarto website\n\n\nMy personal webpage made with Quarto\n\n\nwebpage\n\n\n\n\nQuarto Academicons\n\n\nShortcodes to use academicons in quarto\n\n\nshortcodes\n\n\n\n\nBlackboard revealjs theme\n\n\nA blackboard styled theme for revealjs\n\n\nrevealjs\n\n\n\n\nSketchy HTML theme\n\n\nA sketchy theme for html documents\n\n\nhtml\n\n\n\n\nShare buttons for HTML documents\n\n\nQuarto extension to add share buttons\n\n\nfilter\n\n\n\n\n\n\nNo matching items\n\n\n\n\nOthers\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n\n\n\nsoccerverse\n\n\nAnalyzing top tier soccer around the globe\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "project/snahelper/index.html",
@@ -833,6 +868,34 @@
     "text": "Day 01 - Points\n\n  \n\n\n\nDay 02 - Lines\n\n  \n\n\n\nDay 03 - Polygons\n\n  \n\n\n\nDay 04 - Hexagons\n\n  \n\n\n\nDay 05 - Data challenge 1: OpenStreetMap\n\n  \n\n\n\nDay 06 - Red\n\n  \n\n\n\nDay 07 - Green\n\n  \n\n\n\nDay 08 - Blue\n\n  \n\n\n\nDay 09 - Monochrome\n\n  \n\n\n\nDay 10 - Raster\n\n  \n\n\n\nDay 11 - 3D\n\n  \n\n\n\nDay 12 - Population\n\n  \n\n\n\nDay 13 - Data challenge 2: Natural Earth\n\n  \n\n\n\nDay 14 - Map with a new tool\n\n  \n\n\n\nDay 15 - Map made without using a computer\n\n  \n\n\n\nDay 16 - Urban/rural\n\n  \n\n\n\nDay 17 - Land\n\n  \n\n\n\nDay 18 - Water\n\n  \n\n\n\nDay 19 - Island(s)\n\n  \n\n\n\nDay 20 - Movement\n\n  \n\n\n\nDay 21 - Elevation\n\n  \n\n\n\nDay 22 - Boundaries\n\n  \n\n\n\nDay 23 - Data challenge 3: GHSL Global Human Settlement Layer\n\n  \n\n\n\nDay 24 - Historical map\n\n  \n\n\n\nDay 26 - Choropleth map\n\n  \n\n\n\nDay 27 - Heatmap\n\n  \n\n\n\nDay 28 - The Earth is not flat\n\n  \n\n\n\nDay 29 - NULL\n\n  \n\n\n\nDay 30 - Metamapping day"
   },
   {
+    "objectID": "material/football-data/index.html",
+    "href": "material/football-data/index.html",
+    "title": "Soccer Data",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "material/football-data/index.html#codebook",
+    "href": "material/football-data/index.html#codebook",
+    "title": "Soccer Data",
+    "section": "Codebook",
+    "text": "Codebook\n\n\n\n\n\n\n\nvariable\ndescription\n\n\n\n\nhome\nhome team name (not necessarily unique)\n\n\naway\naway team name (not necessarily unique)\n\n\ndate\ndate of match\n\n\ngh\ngoals for home team (including extra time and penalties)\n\n\nga\ngoals for away team (including extra time and penalties)\n\n\nfull_time\n“F”=game ended in 90’, “E”=extra time, “P”=penalty shoot-out\n\n\ncompetition\ncountry name of league or name of international competition\n\n\nhome_ident\nunique identifier of home team\n\n\naway_ident\nunique identifier of away team\n\n\nhome_country\ncountry of home team\n\n\naway_country\ncountry of away team\n\n\nhome_code\ncountry code of home team\n\n\naway_code\ncountry code of away team\n\n\nhome_continent\ncontinent of home team\n\n\naway_continent\ncontinent of away team\n\n\ncontinent\ncontinent of competition\n\n\nlevel\n“national”= domestic league, “international”= international cup"
+  },
+  {
+    "objectID": "material/football-data/index.html#rscipts",
+    "href": "material/football-data/index.html#rscipts",
+    "title": "Soccer Data",
+    "section": "Rscipts",
+    "text": "Rscipts\nThe folder Rscripts contains some R code with basic analyses which could get you going:\n\n01_basic_stats.R: very simple stats (number of games, goals, etc)\n02_soccerverse.R: some code for figures on soccerverse.com"
+  },
+  {
+    "objectID": "material/football-data/index.html#disclaimer",
+    "href": "material/football-data/index.html#disclaimer",
+    "title": "Soccer Data",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nThis dataset definitely contains errors, especially for older games, where sources are not as reliable. A big issue are teams that merge/split/dissolve over time, which (I think) I did not resolve consistently over time.\nI have gathered this dataset over the course of 8 years and put a lot of effort in it (see soccerverse.com). If you use the data for any kind of project, please drop me a line or ping me on twitter. I hapilly include your results on soccerverse.com too."
+  },
+  {
     "objectID": "material/galaxies/index.html",
     "href": "material/galaxies/index.html",
     "title": "Rendering Galaxies in R",
@@ -844,7 +907,7 @@
     "href": "material/tidynetAnaR/index.html",
     "title": "Tidy Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-08-03)"
+    "text": "(last update 2022-08-10)"
   },
   {
     "objectID": "material/tidynetAnaR/index.html#graph-structures",
@@ -977,7 +1040,7 @@
     "href": "material/netAnaR/index.html",
     "title": "Basic Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-08-03)"
+    "text": "(last update 2022-08-10)"
   },
   {
     "objectID": "material/netAnaR/index.html#use-case-triad-census",
@@ -1047,6 +1110,6 @@
     "href": "material/index.html",
     "title": "Open Source Material",
     "section": "",
-    "text": "Network Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\n30DayMapchallenge 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nThe Minard System in R\n\n\nMinard’s Statistical Graphics with Modern Data in R\n\n\nRecreating Minard’s Statistical Graphics with Modern Data in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nRendering Galaxies in R\n\n\nRandom galaxies, black holes and star constellations\n\n\nRandomly generate galaxies, black holes and star constellations\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "Network Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\n30DayMapchallenge 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nThe Minard System in R\n\n\nMinard’s Statistical Graphics with Modern Data in R\n\n\nRecreating Minard’s Statistical Graphics with Modern Data in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nRendering Galaxies in R\n\n\nRandom galaxies, black holes and star constellations\n\n\nRandomly generate galaxies, black holes and star constellations\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSoccer Data\n\n\nA collection of datasets around soccer\n\n\nA collection of datasets around soccer\n\n\n\n\n \n\n\n\n\nNo matching items"
   }
 ]
