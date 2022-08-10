@@ -2,7 +2,6 @@
 author: David Schoch 
 categories:
   - data visualization
-date: "2021-02-24"
 description: Recreating Minard's Statistical Graphics with Modern Data in R
 title: "The Minard System in R"
 subtitle: "Minard's Statistical Graphics with Modern Data in R"

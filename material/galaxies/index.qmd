@@ -2,7 +2,6 @@
 author: David Schoch 
 categories:
   - generative art
-date: "2020-03-04"
 description: Randomly generate galaxies, black holes and star constellations
 title: "Rendering Galaxies in R"
 subtitle: "Random galaxies, black holes and star constellations"

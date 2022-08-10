@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="David Schoch">
-<meta name="dcterms.date" content="2022-01-09">
 <meta name="description" content="Tutorial for Network Analysis in R">
 
 <title>schochastics - Basic Network Analysis in R</title>
@@ -167,8 +166,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#shortcuts" id="toc-shortcuts" class="nav-link active" data-scroll-target="#shortcuts">Shortcuts</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#required-libraries" id="toc-required-libraries" class="nav-link" data-scroll-target="#required-libraries">Required libraries</a></li>
   <li><a href="#which-package-to-choose" id="toc-which-package-to-choose" class="nav-link" data-scroll-target="#which-package-to-choose">Which package to choose?</a></li>
   <li><a href="#basic-network-notations" id="toc-basic-network-notations" class="nav-link" data-scroll-target="#basic-network-notations">Basic network notations</a></li>
@@ -208,21 +206,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <p class="author">David Schoch</p>
 
-<p class="date">2022-01-09</p>
 </header>
 
 <p>(last update 2022-08-10)</p>
-<section id="shortcuts" class="level1">
-<h1>Shortcuts</h1>
-<p>Interested in specific topics? Here are some shortcuts</p>
-<p><a href="#basic-network-notations">Basic network notations</a><br>
-<a href="#descriptives-and-more-notations">Descriptives and more notations</a><br>
-<a href="#use-case-triad-census">Use Case: Triad Census</a></p>
-<p>Concepts - <a href="#centrality">Centrality</a> (<a href="#use-case-florentine-families">Use Case</a>)<br>
-- <a href="#cliques-and-clustering">Cliques and Clustering</a> - <a href="#blockmodeling">Blockmodeling</a> - <a href="#core-periphery-structures">Core-periphery</a></p>
-<p>Special types of networks - <a href="#-two-mode-networks">two mode networks</a> - <a href="#-signed-networks">signed networks</a> - <a href="#-ego-networks">ego networks</a> - <a href="#-multilevel-networks">multilevel networks</a> - <a href="#-multigraphs">multigraphs</a></p>
-<p><a href="#loading-network-data-into-r">Loading network data</a></p>
-</section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>The main focus of this tutorial is empirical analysis of networks and skips a lot of additional functionality of igraph For the most part of this tutorial, we assume that the network data is already present in R. Reading in data may not pose much of an issue if you are already familiar with R, but can be quite a challenge if you are new to R. The last section of this tutorial is devoted to this topic in great detail.</p>
@@ -1375,6 +1361,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="schochastics/quarto-schochastics" issue-term="pathname" theme="photon-dark" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">

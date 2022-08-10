@@ -2,7 +2,6 @@
 author: David Schoch 
 categories:
   - network visualization
-date: "2022-02-16"
 description: Tutorial for Network Visualization in R using ggraph and graphlayouts
 title: "Network Visualizations in R"
 subtitle: "using ggraph and graphlayouts"

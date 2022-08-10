@@ -2,7 +2,6 @@
 author: David Schoch 
 categories:
 - network analysis
-date: "2022-01-09"
 description: Tutorial for Network Analysis in R
 title: "Basic Network Analysis in R"
 subtitle: "using igraph and related packages"
@@ -10,6 +9,13 @@ priority: 2
 image: featured.png
 toc: true
 title-block-style: none
+comments:
+  utterances:
+    repo: schochastics/quarto-schochastics
+    issue-term: pathname
+    label: comment
+    theme: photon-dark
+    crossorigin: anonymous
 ---
 
 ```{r setup, include=FALSE}
@@ -21,29 +27,6 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 (last update `r Sys.Date()`)
-
-# Shortcuts
-
-Interested in specific topics? Here are some shortcuts
-
-[Basic network notations](#basic-network-notations)  
-[Descriptives and more notations](#descriptives-and-more-notations)  
-[Use Case: Triad Census](#use-case-triad-census)  
-
-Concepts 
-- [Centrality](#centrality) ([Use Case](#use-case-florentine-families))  
-- [Cliques and Clustering](#cliques-and-clustering)
-- [Blockmodeling](#blockmodeling)
-- [Core-periphery](#core-periphery-structures)
-
-Special types of networks
-- [two mode networks](#-two-mode-networks)
-- [signed networks](#-signed-networks)
-- [ego networks](#-ego-networks)
-- [multilevel networks](#-multilevel-networks)
-- [multigraphs](#-multigraphs)
-
-[Loading network data](#loading-network-data-into-r)
 
 # Introduction
 

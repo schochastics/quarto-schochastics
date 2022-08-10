@@ -1,6 +1,5 @@
 ---
 author: David Schoch 
-date: "2021-11-31"
 categories: data visualization
 description: My contributions to the 30DayMapchallenge in 2021
 title: "30DayMapchallenge 2021"

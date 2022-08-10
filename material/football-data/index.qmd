@@ -2,7 +2,6 @@
 author: David Schoch 
 categories:
   - dataset
-date: "2022-08-05"
 description: "A collection of datasets around soccer"
 title: "Soccer Data"
 subtitle: "A collection of datasets around soccer"

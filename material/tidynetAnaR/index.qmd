@@ -2,7 +2,6 @@
 author: David Schoch 
 categories:
 - network analysis
-date: "2021-12-19"
 description: Network Analysis in R using tidygraph
 title: "Tidy Network Analysis in R"
 subtitle: "using the tidygraph package"
