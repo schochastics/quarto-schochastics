@@ -42,4 +42,4 @@ You can browse all of the available icons here:
 
 ## Example
 
-This is the output of `example.qmd` in the github repo for [HTML](https://schochastics.github.io/academicons/).
+A demo can be found on [quarto.pub](https://schochastics.quarto.pub/academicons-quarto-extension/).

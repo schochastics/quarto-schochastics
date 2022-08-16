@@ -23,3 +23,5 @@ quarto use template schochastics/quarto-sketchy-html
 ```
 
 All available classes are shown in the template.
+
+A demo can be found on [quarto.pub](https://schochastics.quarto.pub/quarto-sketchy-theme/)
