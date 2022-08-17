@@ -130,7 +130,7 @@
     "href": "project/quarto_sketchy/index.html#installation",
     "title": "Sketchy HTML theme",
     "section": "Installation",
-    "text": "Installation\nThe template can be installed using the following command\nquarto use template schochastics/quarto-sketchy-html\nAll available classes are shown in the template."
+    "text": "Installation\nThe template can be installed using the following command\nquarto use template schochastics/quarto-sketchy-html\nAll available classes are shown in the template.\nA demo can be found on quarto.pub"
   },
   {
     "objectID": "project/roughsf/index.html",
@@ -179,7 +179,7 @@
     "href": "project/quarto_academicons/index.html#example",
     "title": "Quarto Academicons",
     "section": "Example",
-    "text": "Example\nThis is the output of example.qmd in the github repo for HTML."
+    "text": "Example\nA demo can be found on quarto.pub."
   },
   {
     "objectID": "project/edgebundle/index.html",
@@ -907,7 +907,7 @@
     "href": "material/tidynetAnaR/index.html",
     "title": "Tidy Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-08-10)"
+    "text": "(last update 2022-08-16)"
   },
   {
     "objectID": "material/tidynetAnaR/index.html#graph-structures",
@@ -1040,7 +1040,7 @@
     "href": "material/netAnaR/index.html",
     "title": "Basic Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-08-10)"
+    "text": "(last update 2022-08-16)"
   },
   {
     "objectID": "material/netAnaR/index.html#use-case-triad-census",
