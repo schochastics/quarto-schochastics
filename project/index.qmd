@@ -32,6 +32,7 @@ listing:
       - quarto_blackboard
       - quarto_sketchy
       - quarto_social-share
+      - quarto_nutshell
     type: table
     sort-ui: false
     sort: "priority asc"

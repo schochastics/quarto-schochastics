@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/index.html</loc>
-    <lastmod>2022-08-16T11:38:28.602Z</lastmod>
+    <lastmod>2022-08-18T19:40:10.088Z</lastmod>
   </url>
   <url>
     <loc>https://mr.schochastics.net/project/snahelper/index.html</loc>
@@ -183,5 +183,9 @@
   <url>
     <loc>https://mr.schochastics.net/material/index.html</loc>
     <lastmod>2022-08-16T11:38:58.750Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mr.schochastics.net/project/quarto_nutshell/index.html</loc>
+    <lastmod>2022-08-18T19:40:11.216Z</lastmod>
   </url>
 </urlset>
