@@ -448,6 +448,34 @@
     "text": "Interface\n\nLayout\nThe layout tab allows you to choose from all implemented algorithms in igraph and some layouts from graphlayouts. The default is a stress based layout and also the recommended choice. In the tweak section you can move individual nodes around. Choose the node from the dropdown menu and click on its new position in the plot.\n\n\n\nNode Attribute Manager\nThe Node Attribute Manager shows all existing node attributes in a sortable table. In addition, you can calculate some new ones (centrality and clustering). The functions automatically choose the right version of indices, depending if the network is directed/weighted/undirected/unweighted.\n\n\n\nNodes\nThis is where you can style your nodes. You can either do it manually, by choosing a color/size for all nodes together, or based on an attribute.\n\n\n\nEdge Attribute Manager\nSame as Node Attribute Manager but for edges. So far only shows existing edge attributes.\n\n\n\nEdges\nYou can style your edges here. snahelper automatically detects if your network is directed and adds arrows if the network is directed. The other options are similar to the nodes tab. The snahelper automatically chooses the appropriate edge geom. If multiple edges are present, it uses geom_edge_parallel0(). Otherwise geom_edge_link0().\n\n\n\nResult\nThe result tab shows the network in its full size. If you are satisfied with the results, hit the Done button and the R code to produce the plot is automatically inserted in your script. Or you can directly save the result as a png file."
   },
   {
+    "objectID": "project/quartocities/index.html",
+    "href": "project/quartocities/index.html",
+    "title": "Quartocities",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/quartocities/index.html#usage",
+    "href": "project/quartocities/index.html#usage",
+    "title": "Quartocities",
+    "section": "Usage",
+    "text": "Usage\nsimple clone/fork this repository and adapt at will. Most style aspects can be changed in styles.css and geo.scss."
+  },
+  {
+    "objectID": "project/quartocities/index.html#custom-shortcodes",
+    "href": "project/quartocities/index.html#custom-shortcodes",
+    "title": "Quartocities",
+    "section": "Custom Shortcodes",
+    "text": "Custom Shortcodes\n\nsocials\n{{< twitter schochastics >}}\n{{< github schochastics >}}\nadd a gif that links to twitter/github profiles\n \n\n\nGif shortcodes\n{{< hammer3 >}}\ndisplay 3 mc hammer’s dancing\n\n\n\nDivider shortcodes\n{{< divider x >}} horizontal divider gifs (x=1...9)"
+  },
+  {
+    "objectID": "project/quartocities/index.html#custom-filters",
+    "href": "project/quartocities/index.html#custom-filters",
+    "title": "Quartocities",
+    "section": "Custom filters",
+    "text": "Custom filters\n\nUnder Construction\nadd construction: true to the yaml header of a page and a random “under construction” gif is added at the top of the page\n\n\nBody backgrounds\nchange the background of the html body using the yaml parameter body_bg. Can be set globally in _quarto.yml or locally in a file. The default is microfab. other options can be found in the bg folder (dont use the file ending, ie body_bg: space). You can of course also add your own background gifs to the folder.\n\n\nNavbar backgrounds\nIn the same way, the background of the navbar can be changed with nav_bg. Here the default is stars.\n\n\nTitle gif\nAdd a gif to the title of a page using the yaml parameter title_gif. Can be set globally in _quarto.yml or locally in a file. default is to not display a gif. The gif needs to be present in the `folder (dont use the file ending, ietitle_gif: banana-dance). If you set a global gif you can unset it for specific pages viatitle-gif:none`.\n\n\nMaterial\n\nParts of this repo are a port of the geocities theme for bootstrap2\nBrowse one of the geocities archives for more inspiration\nSearch for your favorite gifs at gifcities"
+  },
+  {
     "objectID": "project/quarto_nutshell/index.html",
     "href": "project/quarto_nutshell/index.html",
     "title": "Nutshell: Expandable Explanations",
@@ -935,7 +963,7 @@
     "href": "material/tidynetAnaR/index.html",
     "title": "Tidy Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-08-18)"
+    "text": "(last update 2022-08-19)"
   },
   {
     "objectID": "material/tidynetAnaR/index.html#graph-structures",
@@ -1068,7 +1096,7 @@
     "href": "material/netAnaR/index.html",
     "title": "Basic Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-08-18)"
+    "text": "(last update 2022-08-19)"
   },
   {
     "objectID": "material/netAnaR/index.html#use-case-triad-census",
@@ -1139,33 +1167,5 @@
     "title": "Open Source Material",
     "section": "",
     "text": "Network Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\n30DayMapchallenge 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nThe Minard System in R\n\n\nMinard’s Statistical Graphics with Modern Data in R\n\n\nRecreating Minard’s Statistical Graphics with Modern Data in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nRendering Galaxies in R\n\n\nRandom galaxies, black holes and star constellations\n\n\nRandomly generate galaxies, black holes and star constellations\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSoccer Data\n\n\nA collection of datasets around soccer\n\n\nA collection of datasets around soccer\n\n\n\n\n \n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "project/quartocities/index.html",
-    "href": "project/quartocities/index.html",
-    "title": "Quartocities",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/quartocities/index.html#custom-shortcodes",
-    "href": "project/quartocities/index.html#custom-shortcodes",
-    "title": "Quartocities",
-    "section": "Custom Shortcodes",
-    "text": "Custom Shortcodes\n\nsocials\n{{< twitter schochastics >}}\n{{< github schochastics >}}\nadd a gif that links to twitter/github profiles\n \n\n\nGif shortcodes\n{{< hammer3 >}}\ndisplay 3 mc hammer’s dancing\n\n\n\nDivider shortcodes\n{{< divider x >}} horizontal divider gifs (x=1...9)"
-  },
-  {
-    "objectID": "project/quartocities/index.html#custom-filters",
-    "href": "project/quartocities/index.html#custom-filters",
-    "title": "Quartocities",
-    "section": "Custom filters",
-    "text": "Custom filters\n\nUnder Construction\nadd construction: true to the yaml header of a page and a random “under construction” gif is added at the top of the page\n\n\nBody backgrounds\nchange the background of the html body using the yaml parameter body_bg. Can be set globally in _quarto.yml or locally in a file. The default is microfab. other options can be found in the bg folder (dont use the file ending, ie body_bg: space). You can of course also add your own background gifs to the folder.\n\n\nNavbar backgrounds\nIn the same way, the background of the navbar can be changed with nav_bg. Here the default is stars.\n\n\nTitle gif\nAdd a gif to the title of a page using the yaml parameter title_gif. Can be set globally in _quarto.yml or locally in a file. default is to not display a gif. The gif needs to be present in the `folder (dont use the file ending, ietitle_gif: banana-dance). If you set a global gif you can unset it for specific pages viatitle-gif:none`.\n\n\nMaterial\n\nParts of this repo are a port of the geocities theme for bootstrap2\nBrowse one of the geocities archives for more inspiration\nSearch for your favorite gifs at gifcities"
-  },
-  {
-    "objectID": "project/quartocities/index.html#usage",
-    "href": "project/quartocities/index.html#usage",
-    "title": "Quartocities",
-    "section": "Usage",
-    "text": "Usage\nsimple clone/fork this repository and adapt at will. Most style aspects can be changed in styles.css and geo.scss."
   }
 ]
