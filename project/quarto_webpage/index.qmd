@@ -1,9 +1,9 @@
 ---
 date: "2022-06-10"
 description: "My personal webpage made with Quarto"
-title: Quarto website 
+title: Personal website 
 title-block-style: none
-type: webpage
+type: website
 toc: true
 priority: 1
 ---

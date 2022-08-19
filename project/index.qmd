@@ -33,6 +33,7 @@ listing:
       - quarto_sketchy
       - quarto_social-share
       - quarto_nutshell
+      - quartocities
     type: table
     sort-ui: false
     sort: "priority asc"
