@@ -448,6 +448,34 @@
     "text": "Interface\n\nLayout\nThe layout tab allows you to choose from all implemented algorithms in igraph and some layouts from graphlayouts. The default is a stress based layout and also the recommended choice. In the tweak section you can move individual nodes around. Choose the node from the dropdown menu and click on its new position in the plot.\n\n\n\nNode Attribute Manager\nThe Node Attribute Manager shows all existing node attributes in a sortable table. In addition, you can calculate some new ones (centrality and clustering). The functions automatically choose the right version of indices, depending if the network is directed/weighted/undirected/unweighted.\n\n\n\nNodes\nThis is where you can style your nodes. You can either do it manually, by choosing a color/size for all nodes together, or based on an attribute.\n\n\n\nEdge Attribute Manager\nSame as Node Attribute Manager but for edges. So far only shows existing edge attributes.\n\n\n\nEdges\nYou can style your edges here. snahelper automatically detects if your network is directed and adds arrows if the network is directed. The other options are similar to the nodes tab. The snahelper automatically chooses the appropriate edge geom. If multiple edges are present, it uses geom_edge_parallel0(). Otherwise geom_edge_link0().\n\n\n\nResult\nThe result tab shows the network in its full size. If you are satisfied with the results, hit the Done button and the R code to produce the plot is automatically inserted in your script. Or you can directly save the result as a png file."
   },
   {
+    "objectID": "project/quarto_nutshell/index.html",
+    "href": "project/quarto_nutshell/index.html",
+    "title": "Nutshell: Expandable Explanations",
+    "section": "",
+    "text": "GITHUB\nYou can find more information (and a demo) on the nutshell webpage."
+  },
+  {
+    "objectID": "project/quarto_nutshell/index.html#install",
+    "href": "project/quarto_nutshell/index.html#install",
+    "title": "Nutshell: Expandable Explanations",
+    "section": "Install",
+    "text": "Install\nquarto install extension schochastics/quarto-nutshell\nThis will install the extension under the _extensions subdirectory. If you’re using version control, you will want to check in this directory."
+  },
+  {
+    "objectID": "project/quarto_nutshell/index.html#using",
+    "href": "project/quarto_nutshell/index.html#using",
+    "title": "Nutshell: Expandable Explanations",
+    "section": "Using",
+    "text": "Using\nYou can use the filter by adding\nfilters:\n   - nutshell\nto your yaml header.\nTo write a Nutshell snippet, just use headings & paragraphs. To embed a snippet, just make a link, but with a :colon in the front:\n[:link](https://en.wikipedia.org/wiki/Nutshell)\nNote, however, the other webpage needs to also have Nutshell installed, or CORS enabled. If you own the other page, that’s not a problem! But if not, you’ll have to mirror/copy the other page.\nCheck out the interactive demo for more help or head to the github repo to learn about the full functionality of nutshell."
+  },
+  {
+    "objectID": "project/quarto_nutshell/index.html#example",
+    "href": "project/quarto_nutshell/index.html#example",
+    "title": "Nutshell: Expandable Explanations",
+    "section": "Example",
+    "text": "Example\nHere is the source code for a minimal example: example.qmd\nA rendered version can be found here."
+  },
+  {
     "objectID": "project/rgraph6/index.html",
     "href": "project/rgraph6/index.html",
     "title": "rgraph6",
@@ -907,7 +935,7 @@
     "href": "material/tidynetAnaR/index.html",
     "title": "Tidy Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-08-16)"
+    "text": "(last update 2022-08-18)"
   },
   {
     "objectID": "material/tidynetAnaR/index.html#graph-structures",
@@ -1040,7 +1068,7 @@
     "href": "material/netAnaR/index.html",
     "title": "Basic Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-08-16)"
+    "text": "(last update 2022-08-18)"
   },
   {
     "objectID": "material/netAnaR/index.html#use-case-triad-census",
@@ -1111,33 +1139,5 @@
     "title": "Open Source Material",
     "section": "",
     "text": "Network Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\n30DayMapchallenge 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nThe Minard System in R\n\n\nMinard’s Statistical Graphics with Modern Data in R\n\n\nRecreating Minard’s Statistical Graphics with Modern Data in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nRendering Galaxies in R\n\n\nRandom galaxies, black holes and star constellations\n\n\nRandomly generate galaxies, black holes and star constellations\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSoccer Data\n\n\nA collection of datasets around soccer\n\n\nA collection of datasets around soccer\n\n\n\n\n \n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "project/quarto_nutshell/index.html",
-    "href": "project/quarto_nutshell/index.html",
-    "title": "Nutshell: Expandable Explanations",
-    "section": "",
-    "text": "GITHUB\nYou can find more information (and a demo) on the nutshell webpage."
-  },
-  {
-    "objectID": "project/quarto_nutshell/index.html#install",
-    "href": "project/quarto_nutshell/index.html#install",
-    "title": "Nutshell: Expandable Explanations",
-    "section": "Install",
-    "text": "Install\nquarto install extension schochastics/quarto-nutshell\nThis will install the extension under the _extensions subdirectory. If you’re using version control, you will want to check in this directory."
-  },
-  {
-    "objectID": "project/quarto_nutshell/index.html#using",
-    "href": "project/quarto_nutshell/index.html#using",
-    "title": "Nutshell: Expandable Explanations",
-    "section": "Using",
-    "text": "Using\nYou can use the filter by adding\nfilters:\n   - nutshell\nto your yaml header.\nTo write a Nutshell snippet, just use headings & paragraphs. To embed a snippet, just make a link, but with a :colon in the front:\n[:link](https://en.wikipedia.org/wiki/Nutshell)\nNote, however, the other webpage needs to also have Nutshell installed, or CORS enabled. If you own the other page, that’s not a problem! But if not, you’ll have to mirror/copy the other page.\nCheck out the interactive demo for more help or head to the github repo to learn about the full functionality of nutshell."
-  },
-  {
-    "objectID": "project/quarto_nutshell/index.html#example",
-    "href": "project/quarto_nutshell/index.html#example",
-    "title": "Nutshell: Expandable Explanations",
-    "section": "Example",
-    "text": "Example\nHere is the source code for a minimal example: example.qmd\nA rendered version can be found here."
   }
 ]
