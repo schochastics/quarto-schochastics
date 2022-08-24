@@ -862,9 +862,9 @@ can also be used to find community structures. Several packages exist for this, 
 
 A two mode network is a network that consists of two disjoint sets of nodes (like people and events). 
 Ties connect the two sets, e. g. participation of people in events. There exists a great variety
-of two modenetworks. The most often encountered ones are 
+of two mode networks. The most often encountered ones are 
 
-- Affiliation networks (Membership in institutions )
+- Affiliation networks (Membership in institutions)
 - Voting/Sponsorship networks (politicians and bills)
 - Citation network (authors and papers)
 - Co-Authorship networks (authors and papers)

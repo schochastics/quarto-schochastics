@@ -197,23 +197,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="functions" class="level2">
 <h2 class="anchored" data-anchor-id="functions">Functions</h2>
-<p><em>(The functions listed below are just a sample of the available methods)</em><br>
-most functions only support igraph objects</p>
+<p>most functions only support igraph objects</p>
 <p><strong>helper/convenience functions</strong><br>
-<code>biggest_component()</code> extract the biggest connected component of a network.<br>
-<code>delete_isolates()</code> delete vertices with degree zero.<br>
-<code>bipartite_from_data_frame()</code> create a two mode network from a data frame.<br>
-<code>clique_vertex_mat()</code> compute the clique vertex matrix<br>
-<code>graph_cartesian()</code> computes the Cartesian product of two graphs<br>
-<code>graph_direct()</code> computes the direct (or tensor) product of graphs</p>
+<code>biggest_component()</code> extracts the biggest connected component of a network.<br>
+<code>delete_isolates()</code> deletes vertices with degree zero.<br>
+<code>bipartite_from_data_frame()</code> creates a two mode network from a data frame.<br>
+<code>graph_from_multi_edgelist()</code> creates multiple graphs from a typed edgelist.<br>
+<code>clique_vertex_mat()</code> computes the clique vertex matrix.<br>
+<code>graph_cartesian()</code> computes the Cartesian product of two graphs.<br>
+<code>graph_direct()</code> computes the direct (or tensor) product of graphs.<br>
+<code>str()</code> extends str to work with igraph objects.</p>
 <p><strong>methods</strong><br>
-<code>graph_kpartite()</code> create a random k-partite network. <img src="https://img.shields.io/badge/lifecycle-stable-green.svg" class="img-fluid" alt="Lifecycle: stable"><br>
-<!-- `dyad_census_attr()` calculate dyad census with vertex attributes. ![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)   --> <code>triad_census_attr()</code> calculate triad census with vertex attributes. <img src="https://img.shields.io/badge/lifecycle-stable-green.svg" class="img-fluid" alt="Lifecycle: stable"><br>
-<code>structural_equivalence()</code> finds structurally equivalent vertices. <img src="https://img.shields.io/badge/lifecycle-stable-green.svg" class="img-fluid" alt="Lifecycle: stable"><br>
-<code>core_periphery()</code> to fit a discrete core periphery model. <img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" class="img-fluid" alt="Lifecycle: stable"><br>
-<code>sample_coreseq()</code> creates a random graph with given coreness sequence. <img src="https://img.shields.io/badge/lifecycle-stable-green.svg" class="img-fluid" alt="Lifecycle: stable"><br>
-<code>fast_clique()</code> to calculate cliques with MACE (sometimes faster than igraph) <img src="https://img.shields.io/badge/lifecycle-stable-green.svg" class="img-fluid" alt="Lifecycle: stable"><br>
-<code>sample_pa_homophilic()</code> to create a preferential attachment graph with two groups of nodes <img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" class="img-fluid" alt="Lifecycle: stable"></p>
+<code>triad_census_attr()</code> calculates triad census with vertex attributes.<br>
+<code>core_periphery()</code> fits a discrete core periphery model.<br>
+<code>graph_kpartite()</code> creates a random k-partite network.<br>
+<code>sample_coreseq()</code> creates a random graph with given coreness sequence.<br>
+<code>sample_pa_homophilic()</code> creates a preferential attachment graph with two groups of nodes.<br>
+<code>structural_equivalence()</code> finds structurally equivalent vertices.<br>
+<code>fast_clique()</code> computes cliques with MACE (faster than igraph for dense graphs).</p>
+<p><strong>methods to use with caution</strong><br>
+<em>(this functions should only be used if you know what you are doing)</em><br>
+<code>as_adj_list1()</code> extracts the adjacency list faster, but less stable, from igraph objects.<br>
+<code>as_adj_weighted()</code> extracts the dense weighted adjacency matrix fast.</p>
 
 
 </section>
