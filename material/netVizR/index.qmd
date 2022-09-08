@@ -15,7 +15,6 @@ comments:
     issue-term: pathname
     label: comment
     theme: photon-dark
-    crossorigin: anonymous
 ---
 
 ```{r setup, include=FALSE}

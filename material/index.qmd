@@ -19,12 +19,13 @@ listing:
   image-align: right
   sort: "priority asc"
   grid-item-border: false
-  
 ---
 
 :::{.center}
-Tutorials and other open source material
+Tutorials and other open source material  
 :::
+[![](https://i.creativecommons.org/l/by-nc-sa/3.0/de/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/3.0/de/deed.en)  
+All material listed here is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License](https://creativecommons.org/licenses/by-nc-sa/3.0/de/deed.en).
 
 
 :::{#material}

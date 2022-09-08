@@ -12,8 +12,7 @@ website:
     image: "static/img/avatar.png"
     card-style: "summary"
   search: false
-  highlight-style: monochrome
-  opengraph: 
+  open-graph: 
     site-name: schochastics
     description: "I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R."
     image: "static/img/avatar.png"

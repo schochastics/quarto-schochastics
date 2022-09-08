@@ -963,7 +963,7 @@
     "href": "material/tidynetAnaR/index.html",
     "title": "Tidy Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-08-24)"
+    "text": "(last update 2022-09-08)"
   },
   {
     "objectID": "material/tidynetAnaR/index.html#graph-structures",
@@ -1096,7 +1096,7 @@
     "href": "material/netAnaR/index.html",
     "title": "Basic Network Analysis in R",
     "section": "",
-    "text": "(last update 2022-08-24)"
+    "text": "(last update 2022-09-08)"
   },
   {
     "objectID": "material/netAnaR/index.html#use-case-triad-census",
@@ -1166,6 +1166,6 @@
     "href": "material/index.html",
     "title": "Open Source Material",
     "section": "",
-    "text": "Network Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\n30DayMapchallenge 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nThe Minard System in R\n\n\nMinard’s Statistical Graphics with Modern Data in R\n\n\nRecreating Minard’s Statistical Graphics with Modern Data in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nRendering Galaxies in R\n\n\nRandom galaxies, black holes and star constellations\n\n\nRandomly generate galaxies, black holes and star constellations\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSoccer Data\n\n\nA collection of datasets around soccer\n\n\nA collection of datasets around soccer\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "All material listed here is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.\n\n\n\n\n  \n\n\n\n\nNetwork Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\n30DayMapchallenge 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nThe Minard System in R\n\n\nMinard’s Statistical Graphics with Modern Data in R\n\n\nRecreating Minard’s Statistical Graphics with Modern Data in R\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nRendering Galaxies in R\n\n\nRandom galaxies, black holes and star constellations\n\n\nRandomly generate galaxies, black holes and star constellations\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSoccer Data\n\n\nA collection of datasets around soccer\n\n\nA collection of datasets around soccer\n\n\n\n\n \n\n\n\n\nNo matching items"
   }
 ]
