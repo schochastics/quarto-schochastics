@@ -53,6 +53,7 @@ format:
       - styles.css
       - academicons.css
     toc: true
-
+execute: 
+  freeze: auto
 
 
