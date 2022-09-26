@@ -46,6 +46,7 @@ listing:
     - publications/reconceptualizing_centrality
     - publications/scirep_astroturfing
     - publications/social_stratification
+    - publications/joss_netrankr
     type: default
     image-align: left
     max-items: 3

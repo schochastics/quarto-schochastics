@@ -27,6 +27,7 @@
   {
     "listing": "/publications/index.html",
     "items": [
+      "/publications/joss_netrankr/index.html",
       "/publications/inout_centrality/index.html",
       "/publications/scirep_astroturfing/index.html",
       "/publications/multiplexity_multigraph/index.html",
@@ -53,6 +54,7 @@
       "/material/netVizR/index.html",
       "/material/netAnaR/index.html",
       "/material/tidynetAnaR/index.html",
+      "/publications/joss_netrankr/index.html",
       "/publications/inout_centrality/index.html",
       "/publications/scirep_astroturfing/index.html",
       "/publications/multiplexity_multigraph/index.html",

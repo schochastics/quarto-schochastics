@@ -17,6 +17,7 @@ listing:
     - scirep_astroturfing
     - social_stratification
     - us_congress
+    - joss_netrankr
   type: default
   image-align: left
   sort: "date desc"
