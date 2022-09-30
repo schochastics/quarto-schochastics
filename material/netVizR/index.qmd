@@ -436,7 +436,7 @@ ggraph(gotS1, layout = "stress") +
   theme(legend.position = "bottom")
 ```
 
-## Another example
+# Another full example
 
 Let us work through one more visualization using a very special data set. The 
 "Grey's Anatomy" hook-up network
@@ -492,7 +492,7 @@ ggraph(greys, "stress", bbox = 15) +
   theme(legend.position = "bottom")
 ```
 
-## Code through: Recreate the polblogs viz
+# Code through: Recreate the polblogs viz
 
 <details>
 
@@ -705,7 +705,7 @@ That's it!
 
 </details>
 
-## Miscellaneous
+# Miscellaneous
 
 Everything we covered above should be enough to produce nice network visualizations for scientific publications.
 However, `ggraph` has a lot more advanced functions/parameter settings to further enhance your visualization. 
@@ -721,12 +721,11 @@ Some things that I frequently use are the following:
 
 The stress layout also works well with medium to large graphs. 
 
-![](https://repository-images.githubusercontent.com/184780502/44327780-70f4-11e9-9f7d-575c04fa5cfb)
+![](coauthor_cran.png)
 
-The network shows the global football competition network between 2016-2018. It consists of ~5000 nodes (clubs)
-and ~15000 edges (games). Node colour corresponds to the confederation of the club.
+The network shows the biggest componentn of the co-authorship network of R package developers on CRAN (~12k nodes)
 
-If you want to go beyond 10k nodes, then you may want to switch to `layout_with_pmds()` or
+If you want to go beyond ~20k nodes, then you may want to switch to `layout_with_pmds()` or
 `layout_with_sparse_stress()` which are optimized to work with large graphs.
 
 ## use the ggforce
@@ -818,7 +817,7 @@ ggraph(g,
 ```
 
 
-## FAQ 
+# FAQ 
 
 I compiled some more specific tips in a [blog post](http://blog.schochastics.net/post/ggraph-tricks-for-common-problems/) a while ago. I will highlight some FAQ from that post belo (I will update this section with more tips and tricks).
 

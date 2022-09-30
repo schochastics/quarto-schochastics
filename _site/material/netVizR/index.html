@@ -201,12 +201,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#nodes" id="toc-nodes" class="nav-link" data-scroll-target="#nodes">Nodes</a></li>
   <li><a href="#scales" id="toc-scales" class="nav-link" data-scroll-target="#scales">Scales</a></li>
   <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes">Themes</a></li>
-  <li><a href="#another-example" id="toc-another-example" class="nav-link" data-scroll-target="#another-example">Another example</a></li>
-  <li><a href="#code-through-recreate-the-polblogs-viz" id="toc-code-through-recreate-the-polblogs-viz" class="nav-link" data-scroll-target="#code-through-recreate-the-polblogs-viz">Code through: Recreate the polblogs viz</a></li>
-  <li><a href="#miscellaneous" id="toc-miscellaneous" class="nav-link" data-scroll-target="#miscellaneous">Miscellaneous</a></li>
-  <li><a href="#use-the-ggforce" id="toc-use-the-ggforce" class="nav-link" data-scroll-target="#use-the-ggforce">use the ggforce</a></li>
-  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">FAQ</a></li>
   </ul></li>
+  <li><a href="#another-full-example" id="toc-another-full-example" class="nav-link" data-scroll-target="#another-full-example">Another full example</a></li>
+  <li><a href="#code-through-recreate-the-polblogs-viz" id="toc-code-through-recreate-the-polblogs-viz" class="nav-link" data-scroll-target="#code-through-recreate-the-polblogs-viz">Code through: Recreate the polblogs viz</a></li>
+  <li><a href="#miscellaneous" id="toc-miscellaneous" class="nav-link" data-scroll-target="#miscellaneous">Miscellaneous</a>
+  <ul class="collapse">
+  <li><a href="#use-the-ggforce" id="toc-use-the-ggforce" class="nav-link" data-scroll-target="#use-the-ggforce">use the ggforce</a></li>
+  </ul></li>
+  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">FAQ</a></li>
   <li><a href="#snahelper" id="toc-snahelper" class="nav-link" data-scroll-target="#snahelper">snahelper</a></li>
   <li><a href="#advanced-layouts" id="toc-advanced-layouts" class="nav-link" data-scroll-target="#advanced-layouts">Advanced layouts</a>
   <ul class="collapse">
@@ -584,8 +586,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="another-example" class="level2">
-<h2 class="anchored" data-anchor-id="another-example">Another example</h2>
+</section>
+<section id="another-full-example" class="level1">
+<h1>Another full example</h1>
 <p>Let us work through one more visualization using a very special data set. The “Grey’s Anatomy” hook-up network</p>
 <div class="cell" data-hash="index_cache/html/read greys anatomy_eb573ab4f6b07c189c56ef0e34886829">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"greys"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -632,8 +635,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="code-through-recreate-the-polblogs-viz" class="level2">
-<h2 class="anchored" data-anchor-id="code-through-recreate-the-polblogs-viz">Code through: Recreate the polblogs viz</h2>
+<section id="code-through-recreate-the-polblogs-viz" class="level1">
+<h1>Code through: Recreate the polblogs viz</h1>
 <details>
 <summary>
 Expand
@@ -844,8 +847,8 @@ Expand
 <p>That’s it!</p>
 </details>
 </section>
-<section id="miscellaneous" class="level2">
-<h2 class="anchored" data-anchor-id="miscellaneous">Miscellaneous</h2>
+<section id="miscellaneous" class="level1">
+<h1>Miscellaneous</h1>
 <p>Everything we covered above should be enough to produce nice network visualizations for scientific publications. However, <code>ggraph</code> has a lot more advanced functions/parameter settings to further enhance your visualization. If you are looking for something specific, it is always a good idea to read the documentation of the geoms.</p>
 <p>Some things that I frequently use are the following:</p>
 <ul>
@@ -854,10 +857,9 @@ Expand
 <li>use <code>scale_color_viridis_c()</code> and <code>scale_color_viridis_d()</code>. The viridis colour palette makes plots easier to read by those with colorblindness and print well in grey scale.</li>
 </ul>
 <p>The stress layout also works well with medium to large graphs.</p>
-<p><img src="https://repository-images.githubusercontent.com/184780502/44327780-70f4-11e9-9f7d-575c04fa5cfb.png" class="img-fluid"></p>
-<p>The network shows the global football competition network between 2016-2018. It consists of ~5000 nodes (clubs) and ~15000 edges (games). Node colour corresponds to the confederation of the club.</p>
-<p>If you want to go beyond 10k nodes, then you may want to switch to <code>layout_with_pmds()</code> or <code>layout_with_sparse_stress()</code> which are optimized to work with large graphs.</p>
-</section>
+<p><img src="coauthor_cran.png" class="img-fluid"></p>
+<p>The network shows the biggest componentn of the co-authorship network of R package developers on CRAN (~12k nodes)</p>
+<p>If you want to go beyond ~20k nodes, then you may want to switch to <code>layout_with_pmds()</code> or <code>layout_with_sparse_stress()</code> which are optimized to work with large graphs.</p>
 <section id="use-the-ggforce" class="level2">
 <h2 class="anchored" data-anchor-id="use-the-ggforce">use the ggforce</h2>
 <p>The <code>ggforce</code> package works pretty nicely with <code>ggraph</code>. You can, for instance, use the <code>geom_mark_*()</code> functions to highlight clusters.</p>
@@ -947,8 +949,9 @@ Expand
 </div>
 </div>
 </section>
-<section id="faq" class="level2">
-<h2 class="anchored" data-anchor-id="faq">FAQ</h2>
+</section>
+<section id="faq" class="level1">
+<h1>FAQ</h1>
 <p>I compiled some more specific tips in a <a href="http://blog.schochastics.net/post/ggraph-tricks-for-common-problems/">blog post</a> a while ago. I will highlight some FAQ from that post belo (I will update this section with more tips and tricks).</p>
 <blockquote class="blockquote">
 <p>“How can I achieve that my directed edges stop at the node border, independent from the node size?”</p>
@@ -1083,7 +1086,6 @@ Expand
 <p><img src="index_files/figure-html/shadowtext_labels-1.png" class="img-fluid" style="width:100.0%"></p>
 </div>
 </div>
-</section>
 </section>
 <section id="snahelper" class="level1">
 <h1>snahelper</h1>
