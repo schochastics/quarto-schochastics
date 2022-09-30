@@ -60,7 +60,9 @@ listing:
 :::
 
 ::: {.column .col-v-center width="35%"}
+::: {.portrait}
 ![](static/img/avatar.png)
+:::
 :::
 
 ::: {.column .col-v-center width="35%"}

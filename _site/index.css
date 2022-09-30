@@ -57,3 +57,11 @@ div.quarto-post .thumbnail img {
   position: relative;
   margin-left: 2px;
 }
+
+.portrait {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
