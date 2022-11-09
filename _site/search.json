@@ -385,6 +385,62 @@
     "text": "LINK\n\n\nSoccerverse is a project dedicated to the analysis of club-level (association) football around the world. From Afghanistan to Zimbabwe, from UEFA Champions League to CFU Club Championship, this project covers statistical analyses on a global scale. Global rankings, predicting league tables and champions are just some of the content you can find on this page."
   },
   {
+    "objectID": "project/rtoot/index.html",
+    "href": "project/rtoot/index.html",
+    "title": "rtoot",
+    "section": "",
+    "text": "GITHUB\nInteract with the mastodon API from R.\nGet started by reading vignette(\"rtoot\")."
+  },
+  {
+    "objectID": "project/rtoot/index.html#installation",
+    "href": "project/rtoot/index.html#installation",
+    "title": "rtoot",
+    "section": "Installation",
+    "text": "Installation\nTo get the current released version from CRAN:\n\ninstall.packages(\"rtoot\")\n\nYou can install the development version of rtoot from GitHub:\n\ndevtools::install_github(\"schochastics/rtoot\")"
+  },
+  {
+    "objectID": "project/rtoot/index.html#authenticate",
+    "href": "project/rtoot/index.html#authenticate",
+    "title": "rtoot",
+    "section": "Authenticate",
+    "text": "Authenticate\nFirst you should set up your own credentials (see also vignette(\"auth\"))\n\nauth_setup()\n\nThe mastodon API allows different access levels. Setting up a token with your own account grants you the most access."
+  },
+  {
+    "objectID": "project/rtoot/index.html#instances",
+    "href": "project/rtoot/index.html#instances",
+    "title": "rtoot",
+    "section": "Instances",
+    "text": "Instances\nIn contrast to twitter, mastodon is not a single instance, but a federation of different servers. You sign up at a specific server (say “mastodon.social”) but can still communicate with others from other servers (say “fosstodon.org”). The existence of different instances makes API calls more complex. For example, some calls can only be made within your own instance (e.g get_timeline_home()), others can access all instances but you need to specify the instance as a parameter (e.g. get_timeline_public()).\nA list of active instances can be obtained with get_fedi_instances(). The results are sorted by number of users.\nGeneral information about an instance can be obtained with get_instance_general()\n\nget_instance_general(instance = \"mastodon.social\")\n\nget_instance_activity() shows the activity for the last three months and get_instance_trends() the trending hashtags of the week.\n\nget_instance_activity(instance = \"mastodon.social\")\nget_instance_trends(instance = \"mastodon.social\")"
+  },
+  {
+    "objectID": "project/rtoot/index.html#get-toots",
+    "href": "project/rtoot/index.html#get-toots",
+    "title": "rtoot",
+    "section": "Get toots",
+    "text": "Get toots\nTo get the most recent toots of a specific instance use get_timeline_public()\n\nget_timeline_public(instance = \"mastodon.social\")\n\nTo get the most recent toots containing a specific hashtag use get_timeline_hashtag()\n\nget_timeline_hashtag(hashtag = \"rstats\", instance = \"mastodon.social\")\n\nThe function get_timeline_home() allows you to get the most recent toots from your own timeline.\n\nget_timeline_home()"
+  },
+  {
+    "objectID": "project/rtoot/index.html#get-accounts",
+    "href": "project/rtoot/index.html#get-accounts",
+    "title": "rtoot",
+    "section": "Get accounts",
+    "text": "Get accounts\nrtoot exposes several account level endpoints. Most require the account id instead of the username as an input. There is, to our knowledge, no straightforward way of obtaining the account id. With the package you can get the id via search_accounts().\n\nsearch_accounts(\"schochastics\")\n\n(Future versions will allow to use the username and user id interchangeably)\nUsing the id, you can get the followers and following users with get_account_followers() and get_account_following() and statuses with get_account_statuses().\n\nid <- \"109302436954721982\"\nget_account_followers(id)\nget_account_following(id)\nget_account_statuses(id)"
+  },
+  {
+    "objectID": "project/rtoot/index.html#posting-statuses",
+    "href": "project/rtoot/index.html#posting-statuses",
+    "title": "rtoot",
+    "section": "Posting statuses",
+    "text": "Posting statuses\nYou can post toots with:\n\npost_toot(status = \"my first rtoot #rstats\")\n\nIt can also include media and alt_text.\n\npost_toot(status = \"my first rtoot #rstats\", media=\"path/to/media\", \n          alt_text = \"description of media\")\n\nYou can mark the toot as sensitive by setting sensitive = TRUE and add a spoiler text with spoiler_text."
+  },
+  {
+    "objectID": "project/rtoot/index.html#pagination",
+    "href": "project/rtoot/index.html#pagination",
+    "title": "rtoot",
+    "section": "Pagination",
+    "text": "Pagination\nMost functions only return up to 40 results. The current version of rtoot does not support pagination out of the box (but it is planned for later). there is a workaround which can be found in the wiki"
+  },
+  {
     "objectID": "project/index.html",
     "href": "project/index.html",
     "title": "Projects",
