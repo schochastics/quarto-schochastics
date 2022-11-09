@@ -19,6 +19,7 @@ listing:
       - roughsf
       - signnet
       - snahelper
+      - rtoot
     type: grid
     image-align: left
     sort: "priority asc"
