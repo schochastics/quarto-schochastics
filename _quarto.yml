@@ -43,6 +43,8 @@ website:
         href: https://scholar.google.de/citations?user=MFlgHdcAAAAJ&hl=en
       - text: <i class="ai ai-orcid" role="img"></i>
         href: https://orcid.org/0000-0003-2952-4812
+      - text: <i class="bi bi-mastodon"></i>
+        href: https://fosstodon.org/@schochastics
 
 format:
   html:

@@ -76,6 +76,7 @@ listing:
 {{< github schochastics >}}
 {{< scholar MFlgHdcAAAAJ >}}
 {{< orcid 0000-0003-2952-4812 >}}
+{{< mastodon https://fosstodon.org/@schochastics >}}
 :::
 
 I’m the team lead for “Transparent Social Analytics” in the Department for Computational Social Science at [GESIS](https://www.gesis.org/en/institute/departments/computational-social-science) and 
