@@ -56,10 +56,10 @@ listing:
 
 :::: {.columns}
 
-::: {.column .col-v-center width="15%"}
+::: {.column .col-v-center width="20%"}
 :::
 
-::: {.column .col-v-center width="35%"}
+::: {.column .col-v-center width="25%"}
 ::: {.portrait}
 ![](static/img/avatar.png)
 :::
@@ -67,7 +67,7 @@ listing:
 
 ::: {.column .col-v-center width="35%"}
 
-# David Schoch
+# Hi, I'm David 👋
 
 ::: {.david-intro}
 
