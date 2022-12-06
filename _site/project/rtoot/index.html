@@ -185,6 +185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#get-toots" id="toc-get-toots" class="nav-link" data-scroll-target="#get-toots">Get toots</a></li>
   <li><a href="#get-accounts" id="toc-get-accounts" class="nav-link" data-scroll-target="#get-accounts">Get accounts</a></li>
   <li><a href="#posting-statuses" id="toc-posting-statuses" class="nav-link" data-scroll-target="#posting-statuses">Posting statuses</a></li>
+  <li><a href="#streaming" id="toc-streaming" class="nav-link" data-scroll-target="#streaming">Streaming</a></li>
   <li><a href="#pagination" id="toc-pagination" class="nav-link" data-scroll-target="#pagination">Pagination</a></li>
   </ul>
 </nav>
@@ -281,10 +282,24 @@ Get started by reading <code>vignette("rtoot")</code>.</p>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">alt_text =</span> <span class="st">"description of media"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can mark the toot as sensitive by setting <code>sensitive = TRUE</code> and add a spoiler text with <code>spoiler_text</code>.</p>
+<p><em>(Be aware that excessive automated posting is frowned upon (or even against the ToS) in many instances. Make sure to check the ToS of your instance and be mindful when using this function.)</em></p>
+</section>
+<section id="streaming" class="level2">
+<h2 class="anchored" data-anchor-id="streaming">Streaming</h2>
+<p><code>rtoot</code> allows to stream statuses from three different streams. To get any public status on any instance use <code>stream_timeline_public()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stream_timeline_public</span>(<span class="at">timeout =</span> <span class="dv">30</span>,<span class="at">file_name =</span> <span class="st">"public.json"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>the timeout parameter is the time in seconds data should be streamed (set to <code>Inf</code> for indefinite streaming). If just the local timeline is needed, use <code>local=TRUE</code> and set an instance (or use your own provided by the token).</p>
+<p><code>stream_timeline_hashtag()</code> streams all statuses containing a specific hashtag</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stream_timeline_hashtag</span>(<span class="st">"rstats"</span>, <span class="at">timeout =</span> <span class="dv">30</span>, <span class="at">file_name =</span> <span class="st">"rstats_public.json"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The statuses are directly written to file as json. The function <code>parse_stream()</code> can be used to read in and convert a json to a data frame.</p>
 </section>
 <section id="pagination" class="level2">
 <h2 class="anchored" data-anchor-id="pagination">Pagination</h2>
-<p>Most functions only return up to 40 results. The current version of <code>rtoot</code> does not support pagination out of the box (but it is planned for later). there is a workaround which can be found in the <a href="https://github.com/schochastics/rtoot/wiki/Pagination">wiki</a></p>
+<p>All relevant functions in the package support pagination of results if the <code>limit</code> parameter is larger than the default page size (which is 40 in most cases). In this case, you may get more results than requested since the pages are always fetched as a whole. If you for example request 70 records, you will get 80 back, given that many records exist.</p>
 
 
 </section>

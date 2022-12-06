@@ -20,6 +20,7 @@ listing:
       - signnet
       - snahelper
       - rtoot
+      - PSAWR
     type: grid
     image-align: left
     sort: "priority asc"

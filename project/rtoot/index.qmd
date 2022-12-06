@@ -16,6 +16,8 @@ priority: 6
 Interact with the [mastodon API](https://docs.joinmastodon.org/api/) from R.  
 Get started by reading `vignette("rtoot")`.
 
+
+
 ## Installation
 
 To get the current released version from CRAN:
@@ -117,10 +119,27 @@ post_toot(status = "my first rtoot #rstats", media="path/to/media",
 
 You can mark the toot as sensitive by setting `sensitive = TRUE` and add a spoiler text with `spoiler_text`.
 
+*(Be aware that excessive automated posting is frowned upon (or even against the ToS) in many instances. Make sure to check the ToS of your instance and be mindful when using this function.)*
+
+## Streaming 
+
+`rtoot` allows to stream statuses from three different streams.
+To get any public status on any instance use `stream_timeline_public()`
+```{r, eval = FALSE}
+stream_timeline_public(timeout = 30,file_name = "public.json")
+```
+the timeout parameter is the time in seconds data should be streamed (set to `Inf` for indefinite streaming). If just the local timeline is needed, use `local=TRUE` and set an instance (or use your own provided by the token).
+
+`stream_timeline_hashtag()` streams all statuses containing a specific hashtag
+
+```{r, eval = FALSE}
+stream_timeline_hashtag("rstats", timeout = 30, file_name = "rstats_public.json")
+```
+
+The statuses are directly written to file as json. The function `parse_stream()` can be used
+to read in and convert a json to a data frame.
 
 ## Pagination
 
-Most functions only return up to 40 results. The current version of `rtoot` does not 
-support pagination out of the box (but it is planned for later). there is a workaround which can be found
-in the [wiki](https://github.com/schochastics/rtoot/wiki/Pagination)
+All relevant functions in the package support pagination of results if the `limit` parameter is larger than the default page size (which is 40 in most cases). In this case, you may get more results than requested since the pages are always fetched as a whole. If you for example request 70 records, you will get 80 back, given that many records exist.
  
