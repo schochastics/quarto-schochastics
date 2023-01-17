@@ -1,0 +1,14 @@
+{
+  "hash": "65e0189d0a801fd9ec0a640b13ad0c2f",
+  "result": {
+    "markdown": "---\nauthor: David Schoch\ndate: \"2019-08-02\"\ndescription: Provides a collection of network analytic (convenience) functions, missing in other standard packages. This includes forms of dyad and triad census with attributes and equivalence measures. All functions are build upon igraph\nsubtitle: Network utility functions\ntitle: netUtils\nimage: featured-hex.png\ntitle-block-style: none\ntoc: true\npriority: 11\n---\n\n\n\n\n<button type=\"button\" class=\"btn btn-outline-success\"><a href=\"https://github.com/schochastics/netUtils\">GITHUB</a></button>\n\n\nnetUtils is a collection of tools for network analysis that may not deserve a package on their own and/or are missing from other network packages.\n\n## Installation\n\nYou can install the development version of netUtils with:\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# install.packages(\"remotes\")\nremotes::install_github(\"schochastics/netUtils\")\n```\n:::\n\n\n## Functions\nmost functions only support igraph objects\n\n**helper/convenience functions**  \n`biggest_component()` extracts the biggest connected component of a network.  \n`delete_isolates()` deletes vertices with degree zero.  \n`bipartite_from_data_frame()` creates a two mode network from a data frame.  \n`graph_from_multi_edgelist()` creates multiple graphs from a typed edgelist.  \n`clique_vertex_mat()` computes the clique vertex matrix.  \n`graph_cartesian()` computes the Cartesian product of two graphs.  \n`graph_direct()` computes the direct (or tensor) product of graphs.  \n`str()` extends str to work with igraph objects.  \n\n**methods**  \n`triad_census_attr()` calculates triad census with vertex attributes.  \n`core_periphery()` fits a discrete core periphery model.  \n`graph_kpartite()` creates a random k-partite network.  \n`sample_coreseq()` creates a random graph with given coreness sequence.  \n`sample_pa_homophilic()` creates a preferential attachment graph with two groups of nodes.  \n`structural_equivalence()` finds structurally equivalent vertices.    \n`fast_clique()` computes cliques with MACE (faster than igraph for dense graphs).  \n\n**methods to use with caution**  \n*(this functions should only be used if you know what you are doing)*  \n`as_adj_list1()` extracts the adjacency list faster, but less stable, from igraph objects.  \n`as_adj_weighted()` extracts the dense weighted adjacency matrix fast.  \n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

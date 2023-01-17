@@ -1,0 +1,14 @@
+{
+  "hash": "d5059e8faf0dd9ee5d762412868e08d2",
+  "result": {
+    "markdown": "---\nauthor: David Schoch\ndate: \"2013-06-13\"\ndescription: This package implements several methods to encode networks as Encode network data as strings of printable ASCII characters.\ntitle: rgraph6\nimage: featured-hex.png\ntitle-block-style: none\ntoc: true\npriority: 7\n---\n\n\n<button type=\"button\" class=\"btn btn-outline-success\"><a href=\"https://github.com/mbojan/rgraph6\">GITHUB</a></button>\n\n\n\n::: {.cell}\n\n:::\n\n\n(**Main Author and maintainer**: Michal Bojanowski)  \n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
