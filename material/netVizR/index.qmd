@@ -29,7 +29,7 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-Most network analytic tasks are fairly easy to do in R. But when it comes to visualizing
+Most network analytic tasks are fairly straightforward to do in R. But when it comes to visualizing
 networks, R may lack behind some standalone software tools. Not because it is not possible to produce nice
 figures, but rather because it requires some time to obtain pleasing results.
 Just take a look at the default output when plotting a network with the `plot()` function.

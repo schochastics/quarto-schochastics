@@ -5,6 +5,6 @@ networkdata
 ggplot2
 ggraph
 graphlayouts
+ggforce
 gganimate
 threejs
-ggforce
