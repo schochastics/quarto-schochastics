@@ -121,7 +121,7 @@ Instead of explaining the grammar, let us directly jump into some code and work 
 ```{r got_plot,fig.width = 10, fig.height = 6, fig.fullwidth = TRUE,echo=TRUE}
 
 ggraph(gotS1, layout = "stress") +
-  geom_edge_link0(aes(edge_width = weight), edge_colour = "grey66") +
+  geom_edge_link0(aes(edge_linewidth = weight), edge_colour = "grey66") +
   geom_node_point(aes(fill = clu, size = size), shape = 21) +
   geom_node_text(aes(filter = size >= 26, label = name), family = "serif") +
   scale_fill_manual(values = got_palette) +
@@ -229,7 +229,7 @@ edge width according to the attribute. The colour of all edges is globally set t
 The following aesthetics can be used within `geom_edge_link0` either within `aes()` or globally:
 
 - edge_colour (colour of the edge)
-- edge_width  (width of the edge)
+- edge_linewidth  (width of the edge)
 - edge_linetype (linetype of the edge, defaults to "solid")
 - edge_alpha (opacity; a value between 0 and 1)
 
@@ -311,7 +311,7 @@ The `scale_*` functions are used to control aesthetics that are mapped within `a
 You do not necessarily need to set them, since `ggraph` can take care of it automatically.
 ```{r no_scales,fig.width = 10, fig.height = 6, fig.fullwidth = TRUE}
 ggraph(gotS1, layout = "stress") +
-  geom_edge_link0(aes(edge_width = weight), edge_colour = "grey66") +
+  geom_edge_link0(aes(edge_linewidth = weight), edge_colour = "grey66") +
   geom_node_point(aes(fill = clu, size = size), shape = 21) +
   geom_node_text(aes(filter = size >= 26, label = name), family = "serif") +
   theme_graph() +
@@ -370,7 +370,7 @@ got_palette2 <- c(
 
 ```{r got_plot_pal2,fig.width = 13, fig.height = 5, fig.fullwidth = TRUE,echo=FALSE}
 ggraph(gotS1, layout = "stress") +
-  geom_edge_link0(aes(edge_width = weight), edge_colour = "grey66") +
+  geom_edge_link0(aes(edge_linewidth = weight), edge_colour = "grey66") +
   geom_node_point(aes(fill = clu, size = size), shape = 21) +
   geom_node_text(aes(filter = size >= 26, label = name), family = "serif") +
   scale_fill_manual(values = got_palette2) +
@@ -381,7 +381,7 @@ ggraph(gotS1, layout = "stress") +
   theme(legend.position = "none") -> p2
 
 ggraph(gotS1, layout = "stress") +
-  geom_edge_link0(aes(edge_width = weight), edge_colour = "grey66") +
+  geom_edge_link0(aes(edge_linewidth = weight), edge_colour = "grey66") +
   geom_node_point(aes(fill = clu, size = size), shape = 21) +
   geom_node_text(aes(filter = size >= 26, label = name), family = "serif") +
   scale_fill_manual(values = got_palette) +
@@ -400,7 +400,7 @@ The function offers all palettes available at [colorbrewer2.org](http://colorbre
 
 ```{r got_plot_brewer,fig.width = 10, fig.height = 6, fig.fullwidth = TRUE}
 ggraph(gotS1, layout = "stress") +
-  geom_edge_link0(aes(edge_width = weight), edge_colour = "grey66") +
+  geom_edge_link0(aes(edge_linewidth = weight), edge_colour = "grey66") +
   geom_node_point(aes(fill = clu, size = size), shape = 21) +
   geom_node_text(aes(filter = size >= 26, label = name), family = "serif") +
   scale_fill_brewer(palette = "Dark2") +
@@ -427,7 +427,7 @@ The only option worthwhile in `theme()` is `legend.position`, which we set to "n
 The code below gives an example for a plot with a legend.
 ```{r got_plot_legend,fig.width = 10, fig.height = 6, fig.fullwidth = TRUE}
 ggraph(gotS1, layout = "stress") +
-  geom_edge_link0(aes(edge_width = weight), edge_colour = "grey66") +
+  geom_edge_link0(aes(edge_linewidth = weight), edge_colour = "grey66") +
   geom_node_point(aes(fill = clu, size = size), shape = 21) +
   geom_node_text(aes(filter = size >= 26, label = name), family = "serif") +
   scale_fill_manual(values = got_palette) +
@@ -466,7 +466,7 @@ node attributes. Here, for instance, we calculate the degree and then map it to 
 The second one is the `repel = TRUE` argument. This option places the node labels in a way that labels do not overlap.
 ```{r ga_edge2,fig.width = 9, fig.height = 7, fig.fullwidth = TRUE}
 ggraph(greys, "stress", bbox = 15) +
-  geom_edge_link2(aes(edge_colour = node.position), edge_width = 0.5) +
+  geom_edge_link2(aes(edge_colour = node.position), edge_linewidth = 0.5) +
   geom_node_point(aes(fill = sex), shape = 21, size = 3) +
   geom_node_text(aes(label = name, size = degree(greys)),
     family = "serif", repel = TRUE
@@ -482,7 +482,7 @@ While the coloured edges look kind of artistic, we should go back to the "0" ver
 
 ```{r ga_edge0,fig.width = 9, fig.height = 7, fig.fullwidth = TRUE}
 ggraph(greys, "stress", bbox = 15) +
-  geom_edge_link0(edge_colour = "grey66", edge_width = 0.5) +
+  geom_edge_link0(edge_colour = "grey66", edge_linewidth = 0.5) +
   geom_node_point(aes(fill = sex), shape = 21, size = 3) +
   geom_node_text(aes(label = name, size = degree(greys)),
     family = "serif", repel = TRUE
@@ -518,7 +518,7 @@ lay <- create_layout(polblogs, "stress")
 
 ggraph(lay) +
   geom_edge_link0(
-    edge_width = 0.2, edge_colour = "grey66",
+    edge_linewidth = 0.2, edge_colour = "grey66",
     arrow = arrow(
       angle = 15, length = unit(0.15, "inches"),
       ends = "last", type = "closed"
@@ -535,7 +535,7 @@ lay <- create_layout(polblogs, "stress")
 
 ggraph(lay) +
   geom_edge_link0(
-    edge_width = 0.2, edge_colour = "grey66",
+    edge_linewidth = 0.2, edge_colour = "grey66",
     arrow = arrow(
       angle = 15, length = unit(0.1, "inches"),
       ends = "last", type = "closed"
@@ -553,7 +553,7 @@ polblogs <- delete.vertices(polblogs, which(comps$membership == which.min(comps$
 lay <- create_layout(polblogs, "stress")
 ggraph(lay) +
   geom_edge_link0(
-    edge_width = 0.2, edge_colour = "grey66",
+    edge_linewidth = 0.2, edge_colour = "grey66",
     arrow = arrow(
       angle = 15, length = unit(0.15, "inches"),
       ends = "last", type = "closed"
@@ -568,7 +568,7 @@ Better, let's start with some styling of the nodes.
 ```{r polblogs3,fig.width=10,fig.height=8}
 ggraph(lay) +
   geom_edge_link0(
-    edge_width = 0.2, edge_colour = "grey66",
+    edge_linewidth = 0.2, edge_colour = "grey66",
     arrow = arrow(
       angle = 15, length = unit(0.15, "inches"),
       ends = "last", type = "closed"
@@ -583,7 +583,7 @@ we map the degree to node size.
 ```{r polblogs4,fig.width=10,fig.height=8}
 ggraph(lay) +
   geom_edge_link0(
-    edge_width = 0.2, edge_colour = "grey66",
+    edge_linewidth = 0.2, edge_colour = "grey66",
     arrow = arrow(
       angle = 15, length = unit(0.15, "inches"),
       ends = "last", type = "closed"
@@ -598,7 +598,7 @@ The node sizes are also not that satisfactory, so we fix the range with `scale_s
 ```{r polblogs5,fig.width=10,fig.height=8}
 ggraph(lay) +
   geom_edge_link0(
-    edge_width = 0.2, edge_colour = "grey66",
+    edge_linewidth = 0.2, edge_colour = "grey66",
     arrow = arrow(
       angle = 10, length = unit(0.1, "inches"),
       ends = "last", type = "closed"
@@ -622,7 +622,7 @@ E(polblogs)$col <- ifelse(el_pol[, 1] == el_pol[, 2], el_pol[, 1], "mixed")
 lay <- create_layout(polblogs, "stress")
 ggraph(lay) +
   geom_edge_link0(
-    edge_width = 0.2, aes(edge_colour = col),
+    edge_linewidth = 0.2, aes(edge_colour = col),
     arrow = arrow(
       angle = 10, length = unit(0.1, "inches"),
       ends = "last", type = "closed"
@@ -638,7 +638,7 @@ Similar to the node colors, we add a `scale_edge_colour_manual()` to adjust the 
 ```{r polblogs7,fig.width=10,fig.height=8}
 ggraph(lay) +
   geom_edge_link0(
-    edge_width = 0.2, aes(edge_colour = col),
+    edge_linewidth = 0.2, aes(edge_colour = col),
     arrow = arrow(
       angle = 10, length = unit(0.1, "inches"),
       ends = "last", type = "closed"
@@ -658,14 +658,14 @@ In that way, the mixed edges are getting plotted below.
 ```{r polblogs8,fig.width=10,fig.height=8}
 ggraph(lay) +
   geom_edge_link0(
-    edge_width = 0.2, aes(filter = (col == "mixed"), edge_colour = col),
+    edge_linewidth = 0.2, aes(filter = (col == "mixed"), edge_colour = col),
     arrow = arrow(
       angle = 10, length = unit(0.1, "inches"),
       ends = "last", type = "closed"
     ), show.legend = FALSE
   ) +
   geom_edge_link0(
-    edge_width = 0.2, aes(filter = (col != "mixed"), edge_colour = col),
+    edge_linewidth = 0.2, aes(filter = (col != "mixed"), edge_colour = col),
     arrow = arrow(
       angle = 10, length = unit(0.1, "inches"),
       ends = "last", type = "closed"
@@ -681,14 +681,14 @@ Now lets just add the `theme_graph()`.
 ```{r  polblogs9,fig.width=10,fig.height=8}
 ggraph(lay) +
   geom_edge_link0(
-    edge_width = 0.2, aes(filter = (col == "mixed"), edge_colour = col),
+    edge_linewidth = 0.2, aes(filter = (col == "mixed"), edge_colour = col),
     arrow = arrow(
       angle = 10, length = unit(0.1, "inches"),
       ends = "last", type = "closed"
     ), show.legend = FALSE
   ) +
   geom_edge_link0(
-    edge_width = 0.2, aes(filter = (col != "mixed"), edge_colour = col),
+    edge_linewidth = 0.2, aes(filter = (col != "mixed"), edge_colour = col),
     arrow = arrow(
       angle = 10, length = unit(0.1, "inches"),
       ends = "last", type = "closed"
@@ -933,7 +933,7 @@ V(g)$name <- sapply(1:50, function(x) paste0(sample(LETTERS, 4), collapse = ""))
 E(g)$weight <- runif(ecount(g))
 
 ggraph(g) +
-  geom_edge_link0(aes(edge_color = weight, edge_width = weight), show.legend = FALSE) +
+  geom_edge_link0(aes(edge_color = weight, edge_linewidth = weight), show.legend = FALSE) +
   geom_node_point(size = 8, color = "#44a6c6") +
   geom_node_text(aes(label = name), fontface = "bold") +
   scale_edge_color_continuous(low = "grey66", high = "black") +
@@ -946,7 +946,7 @@ Here you can make use of the fact that the layout of the nodes are stored in a "
 
 ```{r shadowtext_labels,fig.width = 8, fig.height = 8}
 ggraph(g,"stress") +
-  geom_edge_link0(aes(edge_color = weight, edge_width = weight), show.legend = FALSE) +
+  geom_edge_link0(aes(edge_color = weight, edge_linewidth = weight), show.legend = FALSE) +
   geom_node_point(size = 8, color = "#44a6c6") +
   shadowtext::geom_shadowtext(aes(x, y, label = name), color = "black", size = 4, bg.colour = "white") +
   scale_edge_color_continuous(low = "grey66", high = "black") +
@@ -992,7 +992,7 @@ concentric layouts, `layout_with_focus()` and `layout_with_centrality()`.
 The first one allows to focus the network on a specific node and arrange all other nodes in concentric circles (depending on the geodesic distance) around it. Below we focus on the character *Ned Stark*.
 ```{r concentric_ned,fig.width = 8, fig.height = 8}
 ggraph(gotS1, layout = "focus", focus = 1) +
-  geom_edge_link0(aes(edge_width = weight), edge_colour = "grey66") +
+  geom_edge_link0(aes(edge_linewidth = weight), edge_colour = "grey66") +
   geom_node_point(aes(fill = clu, size = size), shape = 21) +
   geom_node_text(aes(filter = (name == "Ned"), size = size, label = name),
     family = "serif"
@@ -1029,7 +1029,7 @@ ggraph(gotS1, layout = "focus", focus = 1) +
 of the characters.
 ```{r concentric_weighted_deg,fig.width = 8, fig.height = 8}
 ggraph(gotS1, layout = "centrality", cent = graph.strength(gotS1)) +
-  geom_edge_link0(aes(edge_width = weight), edge_colour = "grey66") +
+  geom_edge_link0(aes(edge_linewidth = weight), edge_colour = "grey66") +
   geom_node_point(aes(fill = clu, size = size), shape = 21) +
   geom_node_text(aes(size = size, label = name), family = "serif") +
   scale_edge_width_continuous(range = c(0.2, 0.9)) +
@@ -1060,7 +1060,7 @@ visualize the network with what we have learned so far.
 
 ```{r island_stress,fig.width=8,fig.height=8}
 ggraph(g, layout = "stress") +
-  geom_edge_link0(edge_colour = "black", edge_width = 0.1, edge_alpha = 0.5) +
+  geom_edge_link0(edge_colour = "black", edge_linewidth = 0.1, edge_alpha = 0.5) +
   geom_node_point(aes(fill = grp), shape = 21) +
   scale_fill_brewer(palette = "Set1") +
   theme_graph() +
@@ -1091,7 +1091,7 @@ To use the coordinates, we set the `layout` parameter to "manual" and provide th
 as parameters.
 ```{r backbone_plot,fig.width=8,fig.height=6}
 ggraph(g, layout = "manual", x = bb$xy[, 1], y = bb$xy[, 2]) +
-  geom_edge_link0(aes(edge_colour = col), edge_width = 0.1) +
+  geom_edge_link0(aes(edge_colour = col), edge_linewidth = 0.1) +
   geom_node_point(aes(fill = grp), shape = 21) +
   scale_fill_brewer(palette = "Set1") +
   scale_edge_color_manual(values = c(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 1))) +
@@ -1142,7 +1142,7 @@ pList <- vector("list", length(s50))
 
 for (i in 1:length(s50)) {
   pList[[i]] <- ggraph(s50[[i]], layout = "manual", x = xy[[i]][, 1], y = xy[[i]][, 2]) +
-    geom_edge_link0(edge_width = 0.6, edge_colour = "grey66") +
+    geom_edge_link0(edge_linewidth = 0.6, edge_colour = "grey66") +
     geom_node_point(shape = 21, aes(fill = as.factor(smoke)), size = 6) +
     geom_node_text(label = 1:50, repel = FALSE, color = "white", size = 4) +
     scale_fill_manual(
@@ -1303,19 +1303,19 @@ ggraph(multilvl_ex, "manual", x = xy[, 1], y = xy[, 2]) +
     aes(filter = (node1.lvl == 1 & node2.lvl == 1)),
     edge_colour = "firebrick3",
     alpha = 0.5,
-    edge_width = 0.3
+    edge_linewidth = 0.3
   ) +
   geom_edge_link0(
     aes(filter = (node1.lvl != node2.lvl)),
     alpha = 0.3,
-    edge_width = 0.1,
+    edge_linewidth = 0.1,
     edge_colour = "black"
   ) +
   geom_edge_link0(
     aes(filter = (node1.lvl == 2 &
       node2.lvl == 2)),
     edge_colour = "goldenrod3",
-    edge_width = 0.3,
+    edge_linewidth = 0.3,
     alpha = 0.5
   ) +
   geom_node_point(aes(shape = as.factor(lvl)), fill = "grey25", size = 3) +
@@ -1359,19 +1359,19 @@ ggraph(multilvl_ex, "manual", x = xy[, 1], y = xy[, 2]) +
     filter = (node1.lvl == 1 & node2.lvl == 1),
     edge_colour = col
   ),
-  alpha = 0.5, edge_width = 0.3
+  alpha = 0.5, edge_linewidth = 0.3
   ) +
   geom_edge_link0(
     aes(filter = (node1.lvl != node2.lvl)),
     alpha = 0.3,
-    edge_width = 0.1,
+    edge_linewidth = 0.1,
     edge_colour = "black"
   ) +
   geom_edge_link0(aes(
     filter = (node1.lvl == 2 & node2.lvl == 2),
     edge_colour = col
   ),
-  edge_width = 0.3, alpha = 0.5
+  edge_linewidth = 0.3, alpha = 0.5
   ) +
   geom_node_point(aes(
     fill = as.factor(grp),
@@ -1407,19 +1407,19 @@ ggraph(multilvl_ex, "manual", x = xy[, 1], y = xy[, 2]) +
     filter = (node1.lvl == 1 & node2.lvl == 1),
     edge_colour = col
   ),
-  alpha = 0.5, edge_width = 0.3
+  alpha = 0.5, edge_linewidth = 0.3
   ) +
   geom_edge_link0(
     aes(filter = (node1.lvl != node2.lvl)),
     alpha = 0.3,
-    edge_width = 0.1,
+    edge_linewidth = 0.1,
     edge_colour = "black"
   ) +
   geom_edge_link0(aes(
     filter = (node1.lvl == 2 & node2.lvl == 2),
     edge_colour = col
   ),
-  edge_width = 0.3, alpha = 0.5
+  edge_linewidth = 0.3, alpha = 0.5
   ) +
   geom_node_point(aes(
     fill = as.factor(grp),
