@@ -693,6 +693,20 @@
     "text": "Abstract\nWe present an alternative approach to assess centrality in networks which does not rely on traditional indices. The work is based on neighborhood-inclusion, a partial ranking inducing relation of nodes, which was shown to be preserved by many existing centrality indices. As such, it can serve as the shared basis for centrality in networks. We argue that evaluating this partial ranking by itself allows for a generic assessment of centrality, avoiding several pitfalls that can arise when indices are applied. Additionally, we illustrate how to derive further partial rankings and introduce some probabilistic methods to, among others, compute expected centrality ranks of nodes.\nSocial Networks, 54:50-60"
   },
   {
+    "objectID": "publications/joss_signnet/index.html",
+    "href": "publications/joss_signnet/index.html",
+    "title": "signnet: An R package for analyzing signed networks",
+    "section": "",
+    "text": "R package"
+  },
+  {
+    "objectID": "publications/joss_signnet/index.html#abstract",
+    "href": "publications/joss_signnet/index.html#abstract",
+    "title": "signnet: An R package for analyzing signed networks",
+    "section": "Abstract",
+    "text": "Abstract\nNetwork analysis usually deals with relations among entities which are positive, such as friendship, or advice seeking. Most analytic tools are constructed with this assumption, be that centrality indices, or clustering tools. However, not all conceivable relationships are positive. People can be friends but also enemies. A signed network is a network where both, positive and negative relationships may occur. Common network analytic tools are not applicable to such networks without adapting for the existence of negative ties. The R package signnet brings together methods that have been developed to analyze signed networks. This includes known blockmodeling techniques, centrality indices and tools for two-mode networks, as well as unique analytic techniques surrounding structural balance theory.\nJournal of Open Source Software 8 (81), 4987"
+  },
+  {
     "objectID": "publications/reconceptualizing_centrality/index.html",
     "href": "publications/reconceptualizing_centrality/index.html",
     "title": "Re-conceptualizing centrality in social networks",
