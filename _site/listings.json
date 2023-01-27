@@ -30,6 +30,7 @@
   {
     "listing": "/publications/index.html",
     "items": [
+      "/publications/joss_signnet/index.html",
       "/publications/joss_netrankr/index.html",
       "/publications/inout_centrality/index.html",
       "/publications/scirep_astroturfing/index.html",
@@ -57,6 +58,7 @@
       "/material/netVizR/index.html",
       "/material/netAnaR/index.html",
       "/material/tidynetAnaR/index.html",
+      "/publications/joss_signnet/index.html",
       "/publications/joss_netrankr/index.html",
       "/publications/inout_centrality/index.html",
       "/publications/scirep_astroturfing/index.html",

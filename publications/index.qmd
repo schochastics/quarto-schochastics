@@ -18,6 +18,7 @@ listing:
     - social_stratification
     - us_congress
     - joss_netrankr
+    - joss_signnet
   type: default
   image-align: left
   sort: "date desc"

@@ -47,6 +47,7 @@ listing:
     - publications/scirep_astroturfing
     - publications/social_stratification
     - publications/joss_netrankr
+    - publications/joss_signnet
     type: default
     image-align: left
     max-items: 3
