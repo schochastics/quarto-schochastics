@@ -7,7 +7,7 @@ subtitle: Analyzing two mode networks and their projections
 image: featured-hex.png
 title-block-style: none
 toc: true
-priority: 12
+priority: 99
 ---
 
 <button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/levelnet">GITHUB</a></button>

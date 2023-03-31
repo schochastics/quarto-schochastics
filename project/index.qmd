@@ -21,6 +21,9 @@ listing:
       - snahelper
       - rtoot
       - PSAWR
+      - webtrackR
+      - webBotparseR
+      - Rtumblr
     type: grid
     image-align: left
     sort: "priority asc"

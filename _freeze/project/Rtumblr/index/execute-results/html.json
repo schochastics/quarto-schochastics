@@ -1,0 +1,14 @@
+{
+  "hash": "9615ba466e22d30114205fafb7fdd47f",
+  "result": {
+    "markdown": "---\nauthor: David Schoch\ndate: \"2023-03-31\"\ndescription: \"An implementation of calls designed to collect Tumblr data via its Application Program Interfaces (API)\"\nsubtitle: tumblr API calls\ntitle: Rtumblr\nimage: featured-hex.png\ntitle-block-style: none\ntoc: true\npriority: 12\n---\n\n\n\n\n<button type=\"button\" class=\"btn btn-outline-success\"><a href=\"https://github.com/schochastics/Rtumblr\">GITHUB</a></button>\n\n## Installation\n\nYou can install the development version of Rtumblr like so:\n\n``` r\ndevtools::install_github(\"schochastics/Rtumblr\")\n```\n\n## API keys\n\nYou need to register an app here: <https://www.tumblr.com/oauth/apps>\nThen, create an environment variable called “RTUMBLR_TOKEN” (for\ninstance in `.Renviron`) from the consumer_key and the consumer_secret\nas follows. If you have\n\n``` r\nconsumer_key = 123456789\nconsumer_secret = abcdefghi\n```\n\nThen your environment variable RTUMBLR_TOKEN should be\n`123456789;abcdefghi`\n\n## Usage\n\nMost API endpoints only work with your own account. The ones already\nimplemented include:\n\n- `get_blog_blocks()`: get a list of accounts you blocked\n- `get_blog_likes()`: get a list of posts you liked\n- `get_blog_followers()`: get your followers\n- `get_blog_following()`: get accounts you follow\n\nImplemented endpoints that work with any account are:\n\n- `get_blog_avatar()`: get the avatar of a blog\n- `get_blog_info()`: get the general info of a blog\n- `get_blog_posts()`: get the posts of a blog\n- `get_posts_tag()`: get posts with a specific tag.\n\nAll function return a tibble (or list of tibble). To get information\nabout columns, see the official API documentation:\n<https://www.tumblr.com/docs/en/api/v2>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

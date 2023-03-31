@@ -133,6 +133,41 @@
     "text": "Installation\nThe template can be installed using the following command\nquarto use template schochastics/quarto-sketchy-html\nAll available classes are shown in the template.\nA demo can be found on quarto.pub"
   },
   {
+    "objectID": "project/webtrackR/index.html",
+    "href": "project/webtrackR/index.html",
+    "title": "webtrackR",
+    "section": "",
+    "text": "GITHUB\nwebtrackR is an R package to preprocess and analyse web tracking data in conjunction with survey data of panelists. The package is built on top of data.table and can thus comfortably handle very large web tracking datasets"
+  },
+  {
+    "objectID": "project/webtrackR/index.html#installation",
+    "href": "project/webtrackR/index.html#installation",
+    "title": "webtrackR",
+    "section": "Installation",
+    "text": "Installation\nYou can install the development version of webtrackR from GitHub with:\n# install.packages(\"devtools\")\ndevtools::install_github(\"schochastics/webtrackR\")"
+  },
+  {
+    "objectID": "project/webtrackR/index.html#s3-class",
+    "href": "project/webtrackR/index.html#s3-class",
+    "title": "webtrackR",
+    "section": "S3 class",
+    "text": "S3 class\nThe package adds a S3 class called wt_dt which inherits most of the functionality from the data.table class A summary and print method are included in the package"
+  },
+  {
+    "objectID": "project/webtrackR/index.html#preprocessing",
+    "href": "project/webtrackR/index.html#preprocessing",
+    "title": "webtrackR",
+    "section": "Preprocessing",
+    "text": "Preprocessing\nraw web tracking data is assumed to have (at least) the following variables:\n\npanelist_id: person who’s data is tracked\nurl: the website the person is visiting\ntimestamp: when the website was visited\n\nAll preprocessing functions check if these are present. Otherwise an error is thrown.\nSeveral other variables can be derived from these with the package:\n\nduration: how much time was spend on a website (use add_duration() and aggregate_duration() to summarize consecutive visits to the same website)\ndomain: the toplevel domain of a URL (use extract_domain())\ntype and prev_type: using a domain dictionary to classify domains and previously visited domains (use classify_domains())\nurl dummy variables: add a dummy variable if a URL falls into a category or not (e.g. political website) (use create_urldummy())\npanelist data: add e.g. survey data to the webtrack data (use add_panelist_data())\n\nA typical workflow looks like this:\n# load webtrack data as data.table\nlibrary(data.table)\nlibrary(webtrackR)\n\n# webtrack data\nwt <- fread(\"<path/to/file>\")\n\n# domain dictionary (there is also an inbuilt dictionary)\ndomain_dict <- fread(\"<path/to/file>\")\n\n# dummy file (should just be a vecor of urls)\npolitical_urls <- c(\"...\")\n\n# survey data\nsurvey <- fread(\"<path/to/file>\")\n\n# convert to wt_dt object\nwt <- as.wt_dt(wt)\n\nwt <- add_duration(wt)\nwt <- extract_domain(wt)\n\n# classify domains and only return rows with type news\nwt <- classify_domains(wt, domain_classes = domain_dict, return.only = \"news\")\n\n# create a dummy variable for political news\nwt <- create_urldummy(wt, dummy = political_urls, name = \"political\")\n\n# add survey data\nwt <- add_panelist_data(wt, data = survey)"
+  },
+  {
+    "objectID": "project/webtrackR/index.html#analysis",
+    "href": "project/webtrackR/index.html#analysis",
+    "title": "webtrackR",
+    "section": "Analysis",
+    "text": "Analysis\n\nIdeology\nTop 500 Bakshy scores are available in the package\ndata(\"bakshy\")\n\n\nAudience Networks\nCreate audiences network\naudience_network(wt, cutoff = 3, type = \"pmi\")\n\ncutoff indicates minimal duration to count as visit.\ntype can be one of “pmi”, “phi”, “disparity”, “sdsm”, or “fdsm”"
+  },
+  {
     "objectID": "project/roughsf/index.html",
     "href": "project/roughsf/index.html",
     "title": "roughsf",
@@ -222,6 +257,20 @@
     "title": "edgebundle",
     "section": "Disclaimer",
     "text": "Disclaimer\nEdge bundling is able to produce neat looking network visualizations. However, they do not necessarily enhance readability. After experimenting with several methods, it became quite evident that the algorithms are very sensitive to the parameter settings (and often really only work in the showcase examples…). Consult the original literature (if they even provide any guidelines) or experiment yourself and do not expect any miracles."
+  },
+  {
+    "objectID": "project/webBotparseR/index.html",
+    "href": "project/webBotparseR/index.html",
+    "title": "webBotparseR",
+    "section": "",
+    "text": "GITHUB\nwebbotparseR allows to parse search engine results that where scraped with the WebBot browser extension. A similar python library is also available."
+  },
+  {
+    "objectID": "project/webBotparseR/index.html#installation",
+    "href": "project/webBotparseR/index.html#installation",
+    "title": "webBotparseR",
+    "section": "Installation",
+    "text": "Installation\nYou can install the development version of webbotparseR like so:\nremotes::install_github(\"schochastics/webbotparseR\")\nThe package contains an example html from a google search on climate change.\nlibrary(webbotparseR)\nex_file <- system.file(\"www.google.com_climatechange_text_2023-03-16_08_16_11.html\", package = \"webbotparseR\")\nSuch search results can be parsed via the function parse_search_results(). The parameter engine is used to specify the search engine and the search type.\noutput <- parse_search_results(path = ex_file,engine = \"google text\")\noutput\n#> # A tibble: 10 × 10\n#>    title link  text  image page  posit…¹ searc…² type  query date               \n#>    <chr> <chr> <chr> <chr> <chr>   <int> <chr>   <chr> <chr> <dttm>             \n#>  1 What… http… Clim… data… 1           1 www.go… text  clim… 2023-03-16 08:16:11\n#>  2 Home… http… Vita… data… 1           2 www.go… text  clim… 2023-03-16 08:16:11\n#>  3 Vita… http… “Cli… data… 1           3 www.go… text  clim… 2023-03-16 08:16:11\n#>  4 Clim… http… In c… data… 1           4 www.go… text  clim… 2023-03-16 08:16:11\n#>  5 IPCC… http… The … data… 1           5 www.go… text  clim… 2023-03-16 08:16:11\n#>  6 Clim… http… Comp… data… 1           6 www.go… text  clim… 2023-03-16 08:16:11\n#>  7 Clim… http… Clim… <NA>  1           7 www.go… text  clim… 2023-03-16 08:16:11\n#>  8 UNFC… http… What… data… 1           8 www.go… text  clim… 2023-03-16 08:16:11\n#>  9 Clim… http… Clim… data… 1           9 www.go… text  clim… 2023-03-16 08:16:11\n#> 10 Caus… http… This… data… 1          10 www.go… text  clim… 2023-03-16 08:16:11\n#> # … with abbreviated variable names ¹​position, ²​search_engine\nNote that images are always returned base64 encoded.\noutput$image[1]\n#> [1] \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAABnRSTlMAAAAAAABupgeRAAAAMklEQVR4AWMAgYYG4hEdNJAHGoCIABvBJayhgcYaIAwaakCwydUA52MKYeeSCgZh4gMAXrJ9ASggqqAAAAAASUVORK5CYII=\"\nThe function base64_to_img() can be used to decode the image and save it in an appropriate format."
   },
   {
     "objectID": "project/quarto_webpage/index.html",
@@ -364,6 +413,34 @@
     "text": "Theoretical Background\nnetrankr is based on a series of papers that appeared in recent years. If you want to learn more about the theoretical background of the package, consult the following literature:\n\nSchoch, David. (2018). Centrality without Indices: Partial rankings and rank Probabilities in networks. Social Networks, 54, 50-60.(link)\n\n\nSchoch, David & Valente, Thomas W., & Brandes, Ulrik. (2017). Correlations among centrality indices and a class of uniquely ranked graphs. Social Networks, 50, 46-54.(link)\n\n\nSchoch, David & Brandes, Ulrik. (2016). Re-conceptualizing centrality in social networks. European Journal of Appplied Mathematics, 27(6), 971–985. (link)\n\n\nBrandes, Ulrik. (2016). Network Positions. Methodological Innovations, 9, 2059799116630650. (link)"
   },
   {
+    "objectID": "project/Rtumblr/index.html",
+    "href": "project/Rtumblr/index.html",
+    "title": "Rtumblr",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/Rtumblr/index.html#installation",
+    "href": "project/Rtumblr/index.html#installation",
+    "title": "Rtumblr",
+    "section": "Installation",
+    "text": "Installation\nYou can install the development version of Rtumblr like so:\ndevtools::install_github(\"schochastics/Rtumblr\")"
+  },
+  {
+    "objectID": "project/Rtumblr/index.html#api-keys",
+    "href": "project/Rtumblr/index.html#api-keys",
+    "title": "Rtumblr",
+    "section": "API keys",
+    "text": "API keys\nYou need to register an app here: https://www.tumblr.com/oauth/apps Then, create an environment variable called “RTUMBLR_TOKEN” (for instance in .Renviron) from the consumer_key and the consumer_secret as follows. If you have\nconsumer_key = 123456789\nconsumer_secret = abcdefghi\nThen your environment variable RTUMBLR_TOKEN should be 123456789;abcdefghi"
+  },
+  {
+    "objectID": "project/Rtumblr/index.html#usage",
+    "href": "project/Rtumblr/index.html#usage",
+    "title": "Rtumblr",
+    "section": "Usage",
+    "text": "Usage\nMost API endpoints only work with your own account. The ones already implemented include:\n\nget_blog_blocks(): get a list of accounts you blocked\nget_blog_likes(): get a list of posts you liked\nget_blog_followers(): get your followers\nget_blog_following(): get accounts you follow\n\nImplemented endpoints that work with any account are:\n\nget_blog_avatar(): get the avatar of a blog\nget_blog_info(): get the general info of a blog\nget_blog_posts(): get the posts of a blog\nget_posts_tag(): get posts with a specific tag.\n\nAll function return a tibble (or list of tibble). To get information about columns, see the official API documentation: https://www.tumblr.com/docs/en/api/v2"
+  },
+  {
     "objectID": "project/quarto_glossary/index.html",
     "href": "project/quarto_glossary/index.html",
     "title": "Glossary with nutshell",
@@ -480,7 +557,7 @@
     "href": "project/index.html",
     "title": "Projects",
     "section": "",
-    "text": "R packages\n\n\n\n\n\n\n\n\n\n\ngraphlayouts\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetworkdata\n\n\nThe package contains a large collection of network dataset with different context. This includes social networks, animal networks and movie networks. All datasets are in ‘igraph’ format.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\n\n\n\n\nedgebundle\n\n\nImplements several algorithms for bundling edges in networks and flow and metro map layouts. This includes force directed edge bundling, a flow algorithm based on Steiner trees and a multicriteria optimization method for metro map layouts.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet\n\n\nImplements methods for the analysis of signed networks. This includes several measures for structural balance, blockmodeling algorithms, various centrality indices, and projections of signed two-mode networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrtoot\n\n\nAn implementation of calls designed to collect and organize Mastodon data via its Application Program Interfaces (API), which can be found at the following URL: https://docs.joinmastodon.org/.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrgraph6\n\n\nThis package implements several methods to encode networks as Encode network data as strings of printable ASCII characters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughnet\n\n\nVisualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nPSAWR\n\n\nPushsift.io API Wrapper written in R for comment/submission search for Reddit.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughsf\n\n\nDraw maps using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like maps.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrokemon\n\n\nThis package implements several themes for ggplot to bring your data into the world of Pokemon.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetUtils\n\n\nProvides a collection of network analytic (convenience) functions, missing in other standard packages. This includes forms of dyad and triad census with attributes and equivalence measures. All functions are build upon igraph\n\n\n\n\n\n\n\n\n\n\n\n\n\nlevelnet\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nQuarto material\n\n\n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\ntype\n\n\n\n\n\n\nPersonal website\n\n\nMy personal webpage made with Quarto\n\n\nwebsite\n\n\n\n\nQuarto Academicons\n\n\nShortcodes to use academicons in quarto\n\n\nshortcodes\n\n\n\n\nBlackboard revealjs theme\n\n\nA blackboard styled theme for revealjs\n\n\nrevealjs\n\n\n\n\nSketchy HTML theme\n\n\nA sketchy theme for html documents\n\n\nhtml\n\n\n\n\nShare buttons for HTML documents\n\n\nQuarto extension to add share buttons\n\n\nfilter\n\n\n\n\nNutshell: Expandable Explanations\n\n\nInclude expandable explanations in documents\n\n\nfilter\n\n\n\n\nQuartocities\n\n\nGeocities template for websites\n\n\nwebsite\n\n\n\n\nGlossary with nutshell\n\n\nAutomatic glossary for webpages using nutshell\n\n\ncode\n\n\n\n\n\n\nNo matching items\n\n\n\n\nOthers\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n\n\n\nsoccerverse\n\n\nAnalyzing top tier soccer around the globe\n\n\n\n\n\n\nNo matching items"
+    "text": "R packages\n\n\n\n\n\n\n\n\n\n\ngraphlayouts\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetworkdata\n\n\nThe package contains a large collection of network dataset with different context. This includes social networks, animal networks and movie networks. All datasets are in ‘igraph’ format.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\n\n\n\n\nedgebundle\n\n\nImplements several algorithms for bundling edges in networks and flow and metro map layouts. This includes force directed edge bundling, a flow algorithm based on Steiner trees and a multicriteria optimization method for metro map layouts.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet\n\n\nImplements methods for the analysis of signed networks. This includes several measures for structural balance, blockmodeling algorithms, various centrality indices, and projections of signed two-mode networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrtoot\n\n\nAn implementation of calls designed to collect and organize Mastodon data via its Application Program Interfaces (API), which can be found at the following URL: https://docs.joinmastodon.org/.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrgraph6\n\n\nThis package implements several methods to encode networks as Encode network data as strings of printable ASCII characters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughnet\n\n\nVisualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nPSAWR\n\n\nPushsift.io API Wrapper written in R for comment/submission search for Reddit.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughsf\n\n\nDraw maps using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like maps.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrokemon\n\n\nThis package implements several themes for ggplot to bring your data into the world of Pokemon.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetUtils\n\n\nProvides a collection of network analytic (convenience) functions, missing in other standard packages. This includes forms of dyad and triad census with attributes and equivalence measures. All functions are build upon igraph\n\n\n\n\n\n\n\n\n\n\n\n\n\nRtumblr\n\n\nAn implementation of calls designed to collect Tumblr data via its Application Program Interfaces (API)\n\n\n\n\n\n\n\n\n\n\n\n\n\nwebBotparseR\n\n\nParse search engine results which have been scraped with the ‘WebBot’ browser extension\n\n\n\n\n\n\n\n\n\n\n\n\n\nwebtrackR\n\n\nImplements data structures and methods to work with web tracking data\n\n\n\n\n\n\n\n\n\n\n\n\n\nlevelnet\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nQuarto material\n\n\n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\ntype\n\n\n\n\n\n\nPersonal website\n\n\nMy personal webpage made with Quarto\n\n\nwebsite\n\n\n\n\nQuarto Academicons\n\n\nShortcodes to use academicons in quarto\n\n\nshortcodes\n\n\n\n\nBlackboard revealjs theme\n\n\nA blackboard styled theme for revealjs\n\n\nrevealjs\n\n\n\n\nSketchy HTML theme\n\n\nA sketchy theme for html documents\n\n\nhtml\n\n\n\n\nShare buttons for HTML documents\n\n\nQuarto extension to add share buttons\n\n\nfilter\n\n\n\n\nNutshell: Expandable Explanations\n\n\nInclude expandable explanations in documents\n\n\nfilter\n\n\n\n\nQuartocities\n\n\nGeocities template for websites\n\n\nwebsite\n\n\n\n\nGlossary with nutshell\n\n\nAutomatic glossary for webpages using nutshell\n\n\ncode\n\n\n\n\n\n\nNo matching items\n\n\n\n\nOthers\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n\n\n\nsoccerverse\n\n\nAnalyzing top tier soccer around the globe\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "project/PSAWR/index.html",
