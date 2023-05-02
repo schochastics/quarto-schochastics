@@ -33,6 +33,8 @@
   {
     "listing": "/publications/index.html",
     "items": [
+      "/publications/joss_graphlayouts/index.html",
+      "/publications/arxiv_rang/index.html",
       "/publications/joss_signnet/index.html",
       "/publications/joss_netrankr/index.html",
       "/publications/inout_centrality/index.html",

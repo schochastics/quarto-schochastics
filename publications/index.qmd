@@ -19,6 +19,8 @@ listing:
     - us_congress
     - joss_netrankr
     - joss_signnet
+    - arxiv_rang
+    - joss_graphlayouts
   type: default
   image-align: left
   sort: "date desc"

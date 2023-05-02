@@ -48,6 +48,8 @@ listing:
     - publications/social_stratification
     - publications/joss_netrankr
     - publications/joss_signnet
+    - arxiv_rang
+    - joss_graphlayouts
     type: default
     image-align: left
     max-items: 3
