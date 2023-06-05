@@ -33,6 +33,7 @@
   {
     "listing": "/publications/index.html",
     "items": [
+      "/publications/mmc_rtoot/index.html",
       "/publications/joss_graphlayouts/index.html",
       "/publications/arxiv_rang/index.html",
       "/publications/joss_signnet/index.html",
@@ -63,6 +64,9 @@
       "/material/netVizR/index.html",
       "/material/netAnaR/index.html",
       "/material/tidynetAnaR/index.html",
+      "/publications/mmc_rtoot/index.html",
+      "/publications/joss_graphlayouts/index.html",
+      "/publications/arxiv_rang/index.html",
       "/publications/joss_signnet/index.html",
       "/publications/joss_netrankr/index.html",
       "/publications/inout_centrality/index.html",

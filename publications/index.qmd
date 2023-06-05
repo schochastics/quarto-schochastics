@@ -21,6 +21,7 @@ listing:
     - joss_signnet
     - arxiv_rang
     - joss_graphlayouts
+    - mmc_rtoot
   type: default
   image-align: left
   sort: "date desc"
