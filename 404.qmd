@@ -8,5 +8,5 @@ title: "Page not found"
 
 ![](static/img/coffee.png)
 
-I redesigned my personal page and some old content may be available under a new URL. Check the mainpage or let me
+I redesigned my personal page and some old content may be available under a new URL. Check the main page or let me
 know if you are missing something
