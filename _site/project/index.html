@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.151">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -48,7 +48,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -137,6 +138,7 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
@@ -190,6 +192,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About me</span></a>
   </li>  
 </ul>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -236,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>R packages</h1>
 <div id="listing-rpkg" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1536703200000" data-listing-file-modified-sort="1657309386739" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3.13">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1536703200000" data-listing-file-modified-sort="1657309386739" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <a href="../project/graphlayouts/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -253,7 +257,7 @@ The package implements several new layout algorithms to visualize networks which
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1494280800000" data-listing-file-modified-sort="1657309447563" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4.245">
+<div class="g-col-1" data-index="1" data-listing-date-sort="1494280800000" data-listing-file-modified-sort="1657309447563" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <a href="../project/netrankr/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -270,7 +274,7 @@ Implements methods for centrality related analyses of networks. While the packag
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1575586800000" data-listing-file-modified-sort="1657309488233" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1.305">
+<div class="g-col-1" data-index="2" data-listing-date-sort="1575586800000" data-listing-file-modified-sort="1657309488233" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <a href="../project/networkdata/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -287,7 +291,7 @@ The package contains a large collection of network dataset with different contex
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1548370800000" data-listing-file-modified-sort="1657309608686" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3.085">
+<div class="g-col-1" data-index="3" data-listing-date-sort="1548370800000" data-listing-file-modified-sort="1657309608686" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <a href="../project/snahelper/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -304,7 +308,7 @@ RStudio addin which provides a GUI to visualize and analyse networks. After fini
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1607986800000" data-listing-file-modified-sort="1657107587072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8.85">
+<div class="g-col-1" data-index="4" data-listing-date-sort="1607986800000" data-listing-file-modified-sort="1657107587072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
 <a href="../project/edgebundle/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -321,7 +325,7 @@ Implements several algorithms for bundling edges in networks and flow and metro 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-listing-date-sort="1565733600000" data-listing-file-modified-sort="1657309586235" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2.55">
+<div class="g-col-1" data-index="5" data-listing-date-sort="1565733600000" data-listing-file-modified-sort="1657309586235" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <a href="../project/signnet/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -338,7 +342,7 @@ Implements methods for the analysis of signed networks. This includes several me
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-listing-date-sort="1667948400000" data-listing-file-modified-sort="1670361441440" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2.965">
+<div class="g-col-1" data-index="6" data-listing-date-sort="1667948400000" data-listing-file-modified-sort="1670361441440" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <a href="../project/rtoot/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -355,7 +359,7 @@ rtoot
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-listing-date-sort="1371074400000" data-listing-file-modified-sort="1657309513340" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.2">
+<div class="g-col-1" data-index="7" data-listing-date-sort="1371074400000" data-listing-file-modified-sort="1657309513340" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <a href="../project/rgraph6/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -372,7 +376,7 @@ This package implements several methods to encode networks as Encode network dat
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="8" data-listing-date-sort="1593036000000" data-listing-file-modified-sort="1657309549644" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2.69">
+<div class="g-col-1" data-index="8" data-listing-date-sort="1593036000000" data-listing-file-modified-sort="1657309549644" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <a href="../project/roughnet/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -389,7 +393,7 @@ Visualize networks using the javascript library roughjs. This allows to draw ske
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-listing-date-sort="1670281200000" data-listing-file-modified-sort="1670361554230" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.32">
+<div class="g-col-1" data-index="9" data-listing-date-sort="1670281200000" data-listing-file-modified-sort="1670361554230" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <a href="../project/PSAWR/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -406,7 +410,7 @@ PSAWR
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="10" data-listing-date-sort="1635980400000" data-listing-file-modified-sort="1657309565096" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1.94">
+<div class="g-col-1" data-index="10" data-listing-date-sort="1635980400000" data-listing-file-modified-sort="1657309565096" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <a href="../project/roughsf/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -423,7 +427,7 @@ Draw maps using the javascript library roughjs. This allows to draw sketchy, han
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-listing-date-sort="1511823600000" data-listing-file-modified-sort="1657309529312" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2.855">
+<div class="g-col-1" data-index="11" data-listing-date-sort="1511823600000" data-listing-file-modified-sort="1657309529312" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <a href="../project/rokemon/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -440,7 +444,7 @@ This package implements several themes for ggplot to bring your data into the wo
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="12" data-listing-date-sort="1564696800000" data-listing-file-modified-sort="1661272527766" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1.225">
+<div class="g-col-1" data-index="12" data-listing-date-sort="1564696800000" data-listing-file-modified-sort="1661272527766" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <a href="../project/netUtils/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -457,7 +461,7 @@ Provides a collection of network analytic (convenience) functions, missing in ot
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="13" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1680270806169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.8">
+<div class="g-col-1" data-index="13" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1680270806169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <a href="../project/Rtumblr/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -474,7 +478,7 @@ An implementation of calls designed to collect Tumblr data via its Application P
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="14" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1680270798941" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2.18">
+<div class="g-col-1" data-index="14" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1680270798941" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <a href="../project/webBotparseR/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -491,7 +495,7 @@ Parse search engine results which have been scraped with the ‘WebBot’ browse
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="15" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1680270792761" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1.78">
+<div class="g-col-1" data-index="15" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1680270792761" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <a href="../project/webtrackR/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -508,7 +512,24 @@ Implements data structures and methods to work with web tracking data
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="16" data-listing-date-sort="1554328800000" data-listing-file-modified-sort="1680270256847" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.11">
+<div class="g-col-1" data-index="16" data-listing-date-sort="1689976800000" data-listing-file-modified-sort="1690059592760" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="../project/stabilityAI/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top">
+<img src="../project/stabilityAI/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+stabilityAI
+</h5>
+<div class="card-text listing-description">
+Interact with the API of stability.ai
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="17" data-listing-date-sort="1554328800000" data-listing-file-modified-sort="1680270256847" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <a href="../project/levelnet/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -556,92 +577,103 @@ type
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1654812000000" data-listing-file-modified-sort="1660907813084" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.22" data-listing-title-sort="Personal website" data-listing-filename-sort="index.qmd">
-<td class="listing-title">
-<a href="../project/quarto_webpage/index.html" class="title">Personal website</a>
+<tr data-index="0" data-listing-date-sort="1654812000000" data-listing-file-modified-sort="1660907813084" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Personal website" data-listing-filename-sort="index.qmd">
+<td>
+<a href="../project/quarto_webpage/index.html" class="title listing-title">Personal website</a>
 </td>
-<td class="listing-description">
-My personal webpage made with Quarto
+<td>
+<span class="listing-description">My personal webpage made with Quarto</span>
 </td>
-<td class="listing-type">
-website
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1656972000000" data-listing-file-modified-sort="1660649769041" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.42" data-listing-title-sort="Quarto Academicons" data-listing-filename-sort="index.qmd">
-<td class="listing-title">
-<a href="../project/quarto_academicons/index.html" class="title">Quarto Academicons</a>
-</td>
-<td class="listing-description">
-Shortcodes to use academicons in quarto
-</td>
-<td class="listing-type">
-shortcodes
+<td>
+<span class="listing-type">website</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1659391200000" data-listing-file-modified-sort="1659550184491" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.245" data-listing-title-sort="Blackboard revealjs theme" data-listing-filename-sort="index.qmd">
-<td class="listing-title">
-<a href="../project/quarto_blackboard/index.html" class="title">Blackboard revealjs theme</a>
+<tr data-index="1" data-listing-date-sort="1656972000000" data-listing-file-modified-sort="1660649769041" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Quarto Academicons" data-listing-filename-sort="index.qmd">
+<td>
+<a href="../project/quarto_academicons/index.html" class="title listing-title">Quarto Academicons</a>
 </td>
-<td class="listing-description">
-A blackboard styled theme for revealjs
+<td>
+<span class="listing-description">Shortcodes to use academicons in quarto</span>
 </td>
-<td class="listing-type">
-revealjs
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1659477600000" data-listing-file-modified-sort="1683004204943" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.185" data-listing-title-sort="Sketchy HTML theme" data-listing-filename-sort="index.qmd">
-<td class="listing-title">
-<a href="../project/quarto_sketchy/index.html" class="title">Sketchy HTML theme</a>
-</td>
-<td class="listing-description">
-A sketchy theme for html documents
-</td>
-<td class="listing-type">
-html
+<td>
+<span class="listing-type">shortcodes</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-date-sort="1660082400000" data-listing-file-modified-sort="1660128694696" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.645" data-listing-title-sort="Share buttons for HTML documents" data-listing-filename-sort="index.qmd">
-<td class="listing-title">
-<a href="../project/quarto_social-share/index.html" class="title">Share buttons for HTML documents</a>
+<tr data-index="2" data-listing-date-sort="1659391200000" data-listing-file-modified-sort="1659550184491" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Blackboard revealjs theme" data-listing-filename-sort="index.qmd">
+<td>
+<a href="../project/quarto_blackboard/index.html" class="title listing-title">Blackboard revealjs theme</a>
 </td>
-<td class="listing-description">
-Quarto extension to add share buttons
+<td>
+<span class="listing-description">A blackboard styled theme for revealjs</span>
 </td>
-<td class="listing-type">
-filter
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1660773600000" data-listing-file-modified-sort="1660851574536" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1.11" data-listing-title-sort="Nutshell: Expandable Explanations" data-listing-filename-sort="index.qmd">
-<td class="listing-title">
-<a href="../project/quarto_nutshell/index.html" class="title">Nutshell: Expandable Explanations</a>
-</td>
-<td class="listing-description">
-Include expandable explanations in documents
-</td>
-<td class="listing-type">
-filter
+<td>
+<span class="listing-type">revealjs</span>
 </td>
 </tr>
-<tr data-index="6" data-listing-date-sort="1660860000000" data-listing-file-modified-sort="1660907722855" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1.495" data-listing-title-sort="Quartocities" data-listing-filename-sort="index.qmd">
-<td class="listing-title">
-<a href="../project/quartocities/index.html" class="title">Quartocities</a>
+<tr data-index="3" data-listing-date-sort="1659477600000" data-listing-file-modified-sort="1683004204943" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Sketchy HTML theme" data-listing-filename-sort="index.qmd">
+<td>
+<a href="../project/quarto_sketchy/index.html" class="title listing-title">Sketchy HTML theme</a>
 </td>
-<td class="listing-description">
-Geocities template for websites
+<td>
+<span class="listing-description">A sketchy theme for html documents</span>
 </td>
-<td class="listing-type">
-website
+<td>
+<span class="listing-type">html</span>
 </td>
 </tr>
-<tr data-index="7" data-listing-date-sort="1674601200000" data-listing-file-modified-sort="1674631976390" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1.345" data-listing-title-sort="Glossary with nutshell" data-listing-filename-sort="index.qmd">
-<td class="listing-title">
-<a href="../project/quarto_glossary/index.html" class="title">Glossary with nutshell</a>
+<tr data-index="4" data-listing-date-sort="1660082400000" data-listing-file-modified-sort="1660128694696" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Share buttons for HTML documents" data-listing-filename-sort="index.qmd">
+<td>
+<a href="../project/quarto_social-share/index.html" class="title listing-title">Share buttons for HTML documents</a>
 </td>
-<td class="listing-description">
-Automatic glossary for webpages using nutshell
+<td>
+<span class="listing-description">Quarto extension to add share buttons</span>
 </td>
-<td class="listing-type">
-code
+<td>
+<span class="listing-type">filter</span>
+</td>
+</tr>
+<tr data-index="5" data-listing-date-sort="1660773600000" data-listing-file-modified-sort="1660851574536" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Nutshell: Expandable Explanations" data-listing-filename-sort="index.qmd">
+<td>
+<a href="../project/quarto_nutshell/index.html" class="title listing-title">Nutshell: Expandable Explanations</a>
+</td>
+<td>
+<span class="listing-description">Include expandable explanations in documents</span>
+</td>
+<td>
+<span class="listing-type">filter</span>
+</td>
+</tr>
+<tr data-index="6" data-listing-date-sort="1660860000000" data-listing-file-modified-sort="1660907722855" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Quartocities" data-listing-filename-sort="index.qmd">
+<td>
+<a href="../project/quartocities/index.html" class="title listing-title">Quartocities</a>
+</td>
+<td>
+<span class="listing-description">Geocities template for websites</span>
+</td>
+<td>
+<span class="listing-type">website</span>
+</td>
+</tr>
+<tr data-index="7" data-listing-date-sort="1674601200000" data-listing-file-modified-sort="1674631976390" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Glossary with nutshell" data-listing-filename-sort="index.qmd">
+<td>
+<a href="../project/quarto_glossary/index.html" class="title listing-title">Glossary with nutshell</a>
+</td>
+<td>
+<span class="listing-description">Automatic glossary for webpages using nutshell</span>
+</td>
+<td>
+<span class="listing-type">code</span>
+</td>
+</tr>
+<tr data-index="8" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1689584902901" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="CV templates" data-listing-filename-sort="index.qmd">
+<td>
+<a href="../project/quarto_cv/index.html" class="title listing-title">CV templates</a>
+</td>
+<td>
+<span class="listing-description">CV/Resume templates for Quarto</span>
+</td>
+<td>
+<span class="listing-type">html</span>
 </td>
 </tr>
 </tbody>
@@ -676,15 +708,15 @@ Description
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1659723959152" data-listing-reading-time-sort="0.295" data-listing-title-sort="soccerverse" data-listing-filename-sort="index.qmd">
-<td class="listing-image">
-<img src="../project/soccerverse/featured-hex.png" style="height: 40px;">
+<tr data-index="0" data-listing-file-modified-sort="1659723959152" data-listing-reading-time-sort="1" data-listing-title-sort="soccerverse" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><img src="../project/soccerverse/featured-hex.png" style="height: 40px;"></span>
 </td>
-<td class="listing-title">
-<a href="../project/soccerverse/index.html" class="title">soccerverse</a>
+<td>
+<a href="../project/soccerverse/index.html" class="title listing-title">soccerverse</a>
 </td>
-<td class="listing-description">
-Analyzing top tier soccer around the globe
+<td>
+<span class="listing-description">Analyzing top tier soccer around the globe</span>
 </td>
 </tr>
 </tbody>
@@ -727,9 +759,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -923,7 +969,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">© 2022 David Schoch</div>   
-      <div class="nav-footer-center">powered by <a href="https://quarto.org">quarto</a></div>
+    <div class="nav-footer-center">powered by <a href="https://quarto.org">quarto</a></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

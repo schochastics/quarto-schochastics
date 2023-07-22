@@ -24,6 +24,7 @@ listing:
       - webtrackR
       - webBotparseR
       - Rtumblr
+      - stabilityAI
     type: grid
     image-align: left
     sort: "priority asc"
@@ -40,6 +41,7 @@ listing:
       - quarto_nutshell
       - quartocities
       - quarto_glossary
+      - quarto_cv
     type: table
     sort-ui: false
     sort: "priority asc"

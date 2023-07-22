@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.151">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>schochastics - Page not found</title>
+<title>schochastics – quarto-inputac42052b</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -46,27 +46,14 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
 
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/academicons.css">
-<meta property="og:title" content="schochastics - Page not found">
-<meta property="og:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
-<meta property="og:image" content="https://mr.schochastics.net/static/img/avatar.png">
-<meta property="og:site-name" content="schochastics">
-<meta property="og:image:height" content="2500">
-<meta property="og:image:width" content="2500">
-<meta name="twitter:title" content="schochastics - Page not found">
-<meta name="twitter:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
-<meta name="twitter:image" content="https://mr.schochastics.net/static/img/avatar.png">
-<meta name="twitter:creator" content="@schochastics">
-<meta name="twitter:site" content="@schochastics">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image-height" content="2500">
-<meta name="twitter:image-width" content="2500">
 </head>
 
 <body class="nav-fixed">
@@ -106,6 +93,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About me</span></a>
   </li>  
 </ul>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -129,29 +118,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Page not found</h1>
-</div>
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
 
 <section id="section" class="level1">
 <h1>404</h1>
 <section id="page-not-found" class="level2">
 <h2 class="anchored" data-anchor-id="page-not-found">Page not found</h2>
 <p><img src="/static/img/coffee.png" class="img-fluid"></p>
-<p>I redesigned my personal page and some old content may be available under a new URL. Check the mainpage or let me know if you are missing something</p>
+<p>I redesigned my personal page and some old content may be available under a new URL. Check the main page or let me know if you are missing something</p>
 
 
 </section>
@@ -185,9 +159,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -381,7 +369,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">© 2022 David Schoch</div>   
-      <div class="nav-footer-center">powered by <a href="https://quarto.org">quarto</a></div>
+    <div class="nav-footer-center">powered by <a href="https://quarto.org">quarto</a></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

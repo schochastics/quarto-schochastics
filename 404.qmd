@@ -1,5 +1,5 @@
 ---
-title: "Page not found"
+page-title: "404 - page not found"
 ---
 
 # 404

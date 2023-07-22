@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.151">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -48,7 +48,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -137,6 +138,7 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
@@ -195,6 +197,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About me</span></a>
   </li>  
 </ul>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -243,9 +247,9 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-anchor-id="selected-open-source-material">Selected Open Source Material</h2>
 <div id="listing-material" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-left" data-index="0" data-categories="network visualization" data-listing-file-modified-sort="1674765131642" data-listing-reading-time-sort="43.425">
+<div class="quarto-post image-left" data-index="0" data-categories="network visualization" data-listing-file-modified-sort="1674765131642" data-listing-reading-time-sort="44">
 <div class="thumbnail">
-<p><a href="./material/netVizR/index.html"> <img src="./material/netVizR/featured.png" class="thumnail-image"> </a></p>
+<p><a href="./material/netVizR/index.html"> <img src="./material/netVizR/featured.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./material/netVizR/index.html">
@@ -264,9 +268,9 @@ using ggraph and graphlayouts
 <a href="./material/netVizR/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-left" data-index="1" data-categories="network analysis" data-listing-file-modified-sort="1662635178561" data-listing-reading-time-sort="28.605">
+<div class="quarto-post image-left" data-index="1" data-categories="network analysis" data-listing-file-modified-sort="1662635178561" data-listing-reading-time-sort="29">
 <div class="thumbnail">
-<p><a href="./material/netAnaR/index.html"> <img src="./material/netAnaR/featured.png" class="thumnail-image"> </a></p>
+<p><a href="./material/netAnaR/index.html"> <img src="./material/netAnaR/featured.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./material/netAnaR/index.html">
@@ -285,9 +289,9 @@ using igraph and related packages
 <a href="./material/netAnaR/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-left" data-index="2" data-categories="network analysis" data-listing-file-modified-sort="1660134316252" data-listing-reading-time-sort="6.935">
+<div class="quarto-post image-left" data-index="2" data-categories="network analysis" data-listing-file-modified-sort="1660134316252" data-listing-reading-time-sort="7">
 <div class="thumbnail">
-<p><a href="./material/tidynetAnaR/index.html"> <img src="./material/tidynetAnaR/featured.png" class="thumnail-image"> </a></p>
+<p><a href="./material/tidynetAnaR/index.html"> <img src="./material/tidynetAnaR/featured.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./material/tidynetAnaR/index.html">
@@ -319,9 +323,9 @@ No matching items
 <h2 data-anchor-id="selected-projects">Selected Projects</h2>
 <div id="listing-projects" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-left" data-index="0" data-listing-date-sort="1536703200000" data-listing-file-modified-sort="1657309386739" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3.13">
+<div class="quarto-post image-left" data-index="0" data-listing-date-sort="1536703200000" data-listing-file-modified-sort="1657309386739" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="thumbnail">
-<p><a href="./project/graphlayouts/index.html"> <img src="./project/graphlayouts/featured-hex.png" class="thumnail-image"> </a></p>
+<p><a href="./project/graphlayouts/index.html"> <img src="./project/graphlayouts/featured-hex.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./project/graphlayouts/index.html">
@@ -340,9 +344,9 @@ An R package for network visualization
 <a href="./project/graphlayouts/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-left" data-index="1" data-listing-date-sort="1494280800000" data-listing-file-modified-sort="1657309447563" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4.245">
+<div class="quarto-post image-left" data-index="1" data-listing-date-sort="1494280800000" data-listing-file-modified-sort="1657309447563" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <div class="thumbnail">
-<p><a href="./project/netrankr/index.html"> <img src="./project/netrankr/featured-hex.png" class="thumnail-image"> </a></p>
+<p><a href="./project/netrankr/index.html"> <img src="./project/netrankr/featured-hex.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./project/netrankr/index.html">
@@ -361,9 +365,9 @@ An R package for network centrality
 <a href="./project/netrankr/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-left" data-index="2" data-listing-date-sort="1548370800000" data-listing-file-modified-sort="1657309608686" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3.085">
+<div class="quarto-post image-left" data-index="2" data-listing-date-sort="1548370800000" data-listing-file-modified-sort="1657309608686" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="thumbnail">
-<p><a href="./project/snahelper/index.html"> <img src="./project/snahelper/featured-hex.png" class="thumnail-image"> </a></p>
+<p><a href="./project/snahelper/index.html"> <img src="./project/snahelper/featured-hex.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./project/snahelper/index.html">
@@ -395,9 +399,9 @@ No matching items
 <h2 data-anchor-id="last-publications">Last Publications</h2>
 <div id="listing-publication" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-left" data-index="0" data-listing-date-sort="1685484000000" data-listing-file-modified-sort="1685948905830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.725">
+<div class="quarto-post image-left" data-index="0" data-listing-date-sort="1685484000000" data-listing-file-modified-sort="1685948905830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./publications/mmc_rtoot/index.html"> <img src="./publications/mmc_rtoot/featured.png" class="thumnail-image"> </a></p>
+<p><a href="./publications/mmc_rtoot/index.html"> <img src="./publications/mmc_rtoot/featured.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./publications/mmc_rtoot/index.html">
@@ -420,9 +424,9 @@ May 31, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-left" data-index="1" data-listing-date-sort="1682719200000" data-listing-file-modified-sort="1683005664237" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.84">
+<div class="quarto-post image-left" data-index="1" data-listing-date-sort="1682719200000" data-listing-file-modified-sort="1683005664237" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./publications/joss_graphlayouts/index.html"> <img src="./publications/joss_graphlayouts/featured.png" class="thumnail-image"> </a></p>
+<p><a href="./publications/joss_graphlayouts/index.html"> <img src="./publications/joss_graphlayouts/featured.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./publications/joss_graphlayouts/index.html">
@@ -445,9 +449,9 @@ Apr 29, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-left" data-index="2" data-listing-date-sort="1678230000000" data-listing-file-modified-sort="1683006023170" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="0.87">
+<div class="quarto-post image-left" data-index="2" data-listing-date-sort="1678230000000" data-listing-file-modified-sort="1683006023170" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./publications/arxiv_rang/index.html"> <img src="./publications/arxiv_rang/featured.png" class="thumnail-image"> </a></p>
+<p><a href="./publications/arxiv_rang/index.html"> <img src="./publications/arxiv_rang/featured.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./publications/arxiv_rang/index.html">
@@ -515,9 +519,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -711,7 +729,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">© 2022 David Schoch</div>   
-      <div class="nav-footer-center">powered by <a href="https://quarto.org">quarto</a></div>
+    <div class="nav-footer-center">powered by <a href="https://quarto.org">quarto</a></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
