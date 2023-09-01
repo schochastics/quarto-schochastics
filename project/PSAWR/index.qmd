@@ -2,7 +2,7 @@
 author: David Schoch
 date: "2022-12-06"
 description: |
-    Pushsh¬ift.io API Wrapper written in R for comment/submission search for Reddit.
+    Pushshift.io API Wrapper written in R for comment/submission search for Reddit.
 subtitle: Collecting and Analyzing Reddit Data
 title: PSAWR
 image: featured-hex.png
