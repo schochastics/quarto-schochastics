@@ -11,5 +11,3 @@ priority: 99
 ---
 
 <button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/levelnet">GITHUB</a></button>
-
-The package implements some novel methods to analyze two-mode projections but is still in a very early stage

@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -151,20 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#authenticate" id="toc-authenticate" class="nav-link" data-scroll-target="#authenticate">Authenticate</a></li>
-  <li><a href="#instances" id="toc-instances" class="nav-link" data-scroll-target="#instances">Instances</a></li>
-  <li><a href="#get-toots" id="toc-get-toots" class="nav-link" data-scroll-target="#get-toots">Get toots</a></li>
-  <li><a href="#get-accounts" id="toc-get-accounts" class="nav-link" data-scroll-target="#get-accounts">Get accounts</a></li>
-  <li><a href="#posting-statuses" id="toc-posting-statuses" class="nav-link" data-scroll-target="#posting-statuses">Posting statuses</a></li>
-  <li><a href="#streaming" id="toc-streaming" class="nav-link" data-scroll-target="#streaming">Streaming</a></li>
-  <li><a href="#pagination" id="toc-pagination" class="nav-link" data-scroll-target="#pagination">Pagination</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -180,104 +133,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <button type="button" class="btn btn-outline-success">
 <a href="https://github.com/schochastics/rtoot">GITHUB</a>
 </button>
-<p>Interact with the <a href="https://docs.joinmastodon.org/api/">mastodon API</a> from R.<br>
-Get started by reading <code>vignette("rtoot")</code>.</p>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>To get the current released version from CRAN:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rtoot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You can install the development version of rtoot from GitHub:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"schochastics/rtoot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="authenticate" class="level2">
-<h2 class="anchored" data-anchor-id="authenticate">Authenticate</h2>
-<p>First you should set up your own credentials (see also <code>vignette("auth")</code>)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">auth_setup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The mastodon API allows different access levels. Setting up a token with your own account grants you the most access.</p>
-</section>
-<section id="instances" class="level2">
-<h2 class="anchored" data-anchor-id="instances">Instances</h2>
-<p>In contrast to twitter, mastodon is not a single instance, but a federation of different servers. You sign up at a specific server (say “mastodon.social”) but can still communicate with others from other servers (say “fosstodon.org”). The existence of different instances makes API calls more complex. For example, some calls can only be made within your own instance (e.g <code>get_timeline_home()</code>), others can access all instances but you need to specify the instance as a parameter (e.g.&nbsp;<code>get_timeline_public()</code>).</p>
-<p>A list of active instances can be obtained with <code>get_fedi_instances()</code>. The results are sorted by number of users.</p>
-<p>General information about an instance can be obtained with <code>get_instance_general()</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_instance_general</span>(<span class="at">instance =</span> <span class="st">"mastodon.social"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><code>get_instance_activity()</code> shows the activity for the last three months and <code>get_instance_trends()</code> the trending hashtags of the week.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_instance_activity</span>(<span class="at">instance =</span> <span class="st">"mastodon.social"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_instance_trends</span>(<span class="at">instance =</span> <span class="st">"mastodon.social"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="get-toots" class="level2">
-<h2 class="anchored" data-anchor-id="get-toots">Get toots</h2>
-<p>To get the most recent toots of a specific instance use <code>get_timeline_public()</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_timeline_public</span>(<span class="at">instance =</span> <span class="st">"mastodon.social"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>To get the most recent toots containing a specific hashtag use <code>get_timeline_hashtag()</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_timeline_hashtag</span>(<span class="at">hashtag =</span> <span class="st">"rstats"</span>, <span class="at">instance =</span> <span class="st">"mastodon.social"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The function <code>get_timeline_home()</code> allows you to get the most recent toots from your own timeline.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_timeline_home</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="get-accounts" class="level2">
-<h2 class="anchored" data-anchor-id="get-accounts">Get accounts</h2>
-<p><code>rtoot</code> exposes several account level endpoints. Most require the account id instead of the username as an input. There is, to our knowledge, no straightforward way of obtaining the account id. With the package you can get the id via <code>search_accounts()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">search_accounts</span>(<span class="st">"schochastics"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><em>(Future versions will allow to use the username and user id interchangeably)</em></p>
-<p>Using the id, you can get the followers and following users with <code>get_account_followers()</code> and <code>get_account_following()</code> and statuses with <code>get_account_statuses()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>id <span class="ot">&lt;-</span> <span class="st">"109302436954721982"</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_account_followers</span>(id)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_account_following</span>(id)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">get_account_statuses</span>(id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="posting-statuses" class="level2">
-<h2 class="anchored" data-anchor-id="posting-statuses">Posting statuses</h2>
-<p>You can post toots with:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">post_toot</span>(<span class="at">status =</span> <span class="st">"my first rtoot #rstats"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>It can also include media and alt_text.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">post_toot</span>(<span class="at">status =</span> <span class="st">"my first rtoot #rstats"</span>, <span class="at">media=</span><span class="st">"path/to/media"</span>, </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">alt_text =</span> <span class="st">"description of media"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You can mark the toot as sensitive by setting <code>sensitive = TRUE</code> and add a spoiler text with <code>spoiler_text</code>.</p>
-<p><em>(Be aware that excessive automated posting is frowned upon (or even against the ToS) in many instances. Make sure to check the ToS of your instance and be mindful when using this function.)</em></p>
-</section>
-<section id="streaming" class="level2">
-<h2 class="anchored" data-anchor-id="streaming">Streaming</h2>
-<p><code>rtoot</code> allows to stream statuses from three different streams. To get any public status on any instance use <code>stream_timeline_public()</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stream_timeline_public</span>(<span class="at">timeout =</span> <span class="dv">30</span>,<span class="at">file_name =</span> <span class="st">"public.json"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>the timeout parameter is the time in seconds data should be streamed (set to <code>Inf</code> for indefinite streaming). If just the local timeline is needed, use <code>local=TRUE</code> and set an instance (or use your own provided by the token).</p>
-<p><code>stream_timeline_hashtag()</code> streams all statuses containing a specific hashtag</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stream_timeline_hashtag</span>(<span class="st">"rstats"</span>, <span class="at">timeout =</span> <span class="dv">30</span>, <span class="at">file_name =</span> <span class="st">"rstats_public.json"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The statuses are directly written to file as json. The function <code>parse_stream()</code> can be used to read in and convert a json to a data frame.</p>
-</section>
-<section id="pagination" class="level2">
-<h2 class="anchored" data-anchor-id="pagination">Pagination</h2>
-<p>All relevant functions in the package support pagination of results if the <code>limit</code> parameter is larger than the default page size (which is 40 in most cases). In this case, you may get more results than requested since the pages are always fetched as a whole. If you for example request 70 records, you will get 80 back, given that many records exist.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

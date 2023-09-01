@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -151,15 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
-  <li><a href="#more-examples" id="toc-more-examples" class="nav-link" data-scroll-target="#more-examples">More Examples</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -174,82 +132,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <button type="button" class="btn btn-outline-success">
 <a href="https://github.com/schochastics/roughsf">GITHUB</a>
 </button>
-<p>Using the java script library <a href="https://roughjs.com/">rough.js</a> to draw sketchy, hand-drawn-like maps</p>
-<p><img src="https://raw.githubusercontent.com/schochastics/roughsf/main/man/figures/example.png" class="img-fluid"></p>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>You can install the developers version of roughsf with:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"schochastics/roughsf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="usage" class="level2">
-<h2 class="anchored" data-anchor-id="usage">Usage</h2>
-<p><code>roughsf()</code> takes a list of sf objects as input. The layers are drawn in order as they appear in the list. MULTI* geometries are not supported and should be casted beforehand. Aesthetics need to be specified explicitly as columns in the sf objects.</p>
-<p>The following attributes are supported for POLYGONS:</p>
-<ul>
-<li><em>fill</em> fill color</li>
-<li><em>color</em> stroke color</li>
-<li><em>stroke</em> stroke size</li>
-<li><em>fillstyle</em> one of “hachure”, “solid”, “zigzag”, “cross-hatch”, “dots”, “dashed”, “zigzag-line”</li>
-<li><em>fillweight</em> thickness of fillstyle (between 0 and 1)</li>
-<li><em>hachureangle</em> angle of hachure lines</li>
-<li><em>hachuregap</em> gap between two hachure lines</li>
-</ul>
-<p>The following attributes are supported for LINESTRINGS:</p>
-<ul>
-<li><em>color</em> stroke color</li>
-<li><em>stroke</em> stroke size</li>
-</ul>
-<p>The following attributes are supported for POINTS:</p>
-<ul>
-<li><em>color</em> color of point</li>
-<li><em>size</em> size of point</li>
-<li><em>label</em> label to be added (optional)</li>
-<li><em>label_pos</em> position of label relative to point: (c)enter, (n)orth, (e)ast, (s)outh, (w)est (optional)</li>
-</ul>
-<p>Default values are used if one of the attributes is not found.</p>
-<p><strong>Values need to be specified explicitly and cannot be inferred from other columns</strong> (This needs to be done in a preparatory step)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ger <span class="ot">&lt;-</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="at">country =</span> <span class="st">"Germany"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ger <span class="ot">&lt;-</span> <span class="fu">st_cast</span>(ger, <span class="st">"POLYGON"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>ger<span class="sc">$</span>fill <span class="ot">&lt;-</span> <span class="st">"#CD2626"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ger<span class="sc">$</span>stroke <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ger<span class="sc">$</span>fillweight <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># MULTIPOLYGON (and also MULTILINESTRING) are not supported</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>ger <span class="ot">&lt;-</span> <span class="fu">st_cast</span>(ger, <span class="st">"POLYGON"</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>cities <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Berlin"</span>, <span class="st">"Munich"</span>, <span class="st">"Hamburg"</span>, <span class="st">"Cologne"</span>))</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>cities<span class="sc">$</span>geometry <span class="ot">&lt;-</span> <span class="fu">st_sfc</span>(</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="fl">13.4</span>, <span class="fl">52.5200</span>)), <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="fl">11.582</span>, <span class="fl">48.1351</span>)),</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="fl">9.9937</span>, <span class="fl">53.5511</span>)), <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="fl">6.9603</span>, <span class="fl">50.9375</span>))</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>cities <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(cities)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(cities) <span class="ot">&lt;-</span> <span class="st">"+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>cities<span class="sc">$</span>size <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>cities<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="st">"#000000"</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>cities<span class="sc">$</span>label <span class="ot">&lt;-</span> cities<span class="sc">$</span>name</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>cities<span class="sc">$</span>label_pos <span class="ot">&lt;-</span> <span class="st">"e"</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>roughsf<span class="sc">::</span><span class="fu">roughsf</span>(<span class="fu">list</span>(ger, cities),</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                 <span class="at">title =</span> <span class="st">"Sketchy Map of Germany"</span>, <span class="at">caption =</span> <span class="st">"drawn by @schochastics"</span>,</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>                 <span class="at">title_font =</span> <span class="st">"48px Pristina"</span>, <span class="at">font =</span> <span class="st">"30px Pristina"</span>, <span class="at">caption_font =</span> <span class="st">"30px Pristina"</span>,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>                 <span class="at">roughness =</span> <span class="dv">1</span>, <span class="at">bowing =</span> <span class="dv">1</span>, <span class="at">simplification =</span> <span class="dv">1</span>,</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>                 <span class="at">width =</span> <span class="dv">800</span>, <span class="at">height =</span> <span class="dv">1000</span>, </span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="https://raw.githubusercontent.com/schochastics/roughsf/main/man/figures/germany.png" class="img-fluid"></p>
-<p>Plots can be saved as png with the <code>save_roughsf()</code> function.</p>
-</section>
-<section id="more-examples" class="level1">
-<h1>More Examples</h1>
-<p><img src="https://raw.githubusercontent.com/schochastics/roughsf/main/man/figures/africa.png" class="img-fluid"></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

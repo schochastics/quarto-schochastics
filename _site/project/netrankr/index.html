@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -88,8 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="../../academicons.css">
@@ -153,18 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
-  <ul class="collapse">
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#simple-example" id="toc-simple-example" class="nav-link" data-scroll-target="#simple-example">Simple Example</a></li>
-  <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature">Theoretical Background</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -183,214 +136,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <button type="button" class="btn btn-outline-success">
 <a href="http://netrankr.schochastics.net/">PKGDOWN</a>
 </button>
-<section id="overview" class="level1">
-<h1>Overview</h1>
-<p>The literature is flooded with centrality indices and new ones are introduced on a regular basis. Although there exist several theoretical and empirical guidelines on when to use certain indices, there still exists plenty of ambiguity in the concept of network centrality. To date, network centrality is nothing more than applying indices to a network.</p>
-<p>The only degree of freedom is the choice of index. The package comes with an Rstudio addin (<code>index_builder()</code>), which allows to build or choose from more than 20 different indices. Blindly (ab)using this function is highly discouraged!</p>
-<p>The <code>netrankr</code> package is based on the idea that centrality is more than a conglomeration of indices. Decomposing them in a series of microsteps offers the possibility to gradually add ideas about centrality, without succumbing to trial-and-error approaches. Further, it allows for alternative assessment methods which can be more general than the index-driven approach.</p>
-<p>The new approach is centered around the concept of <em>positions</em>, which are defined as the relations and potential attributes of a node in a network. The aggregation of the relations leads to the definition of indices. However, positions can also be compared via <em>positional dominance</em>, leading to partial centrality rankings and the option to calculate probabilistic centrality rankings.</p>
-<p>For a more detailed theoretical background, consult the <a href="#literature">Literature</a> at the end of this page.</p>
-<hr>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>To install from CRAN:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">install.packages</span>(<span class="st">"netrankr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>To install the developer version from github:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("devtools")</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"schochastics/netrankr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<hr>
-</section>
-<section id="simple-example" class="level2">
-<h2 class="anchored" data-anchor-id="simple-example">Simple Example</h2>
-<p>This example briefly explains some of the functionality of the package and the difference to an index driven approach. For a more realistic application see the use case vignette.</p>
-<p>We work with the following small graph.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(netrankr)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">n =</span> <span class="dv">11</span>,<span class="at">directed =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">add_edges</span>(g,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">11</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">11</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">11</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">8</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                    <span class="dv">6</span>,<span class="dv">10</span>,<span class="dv">6</span>,<span class="dv">11</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">7</span>,<span class="dv">11</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/dbces_neutral-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Say we are interested in the most central node of the graph and simply compute some standard centrality scores with the <code>igraph</code> package. Defining centrality indices in the <code>netrankr</code> package is explained in the centrality indices vignette.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cent_scores <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   <span class="at">degree =</span> <span class="fu">degree</span>(g),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>   <span class="at">betweenness =</span> <span class="fu">round</span>(<span class="fu">betweenness</span>(g),<span class="dv">4</span>),</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">closeness =</span> <span class="fu">round</span>(<span class="fu">closeness</span>(g),<span class="dv">4</span>),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>   <span class="at">eigenvector =</span> <span class="fu">round</span>(<span class="fu">eigen_centrality</span>(g)<span class="sc">$</span>vector,<span class="dv">4</span>),</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>   <span class="at">subgraph =</span> <span class="fu">round</span>(<span class="fu">subgraph_centrality</span>(g),<span class="dv">4</span>))</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the most central nodes for each index?</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(cent_scores,<span class="dv">2</span>,which.max)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      degree betweenness   closeness eigenvector    subgraph </span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          11           8           6           7          10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/dbces_color-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>As you can see, each index assigns the highest value to a different vertex.</p>
-<p>A more general assessment starts by calculating the neighborhood inclusion preorder.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="fu">neighborhood_inclusion</span>(g)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>P</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    1 2 3 4 5 6 7 8 9 10 11</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  0 0 1 0 1 1 1 0 0  0  1</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  0 0 0 1 0 0 0 1 0  0  0</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  0 0 0 0 1 0 0 0 0  0  1</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  0 0 0 0 0 0 0 0 0  0  0</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  0 0 0 0 0 0 0 0 0  0  0</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  0 0 0 0 0 0 0 0 0  0  0</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7  0 0 0 0 0 0 0 0 0  0  0</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  0 0 0 0 0 0 0 0 0  0  0</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  0 0 0 0 0 0 0 0 0  0  0</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 0 0 0 0 0 0 0 0 0  0  0</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11 0 0 0 0 0 0 0 0 0  0  0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><a href="https://doi.org/10.1017/S0956792516000401">Schoch &amp; Brandes (2016)</a> showed that <span class="math inline">\(N(u) \subseteq N[v]\)</span> (i.e.&nbsp;<code>P[u,v]=1</code>) implies <span class="math inline">\(c(u) \leq c(v)\)</span> for centrality indices <span class="math inline">\(c\)</span>, which are defined via specific path algebras. These include many of the well-known measures like closeness (and variants), betweenness (and variants) as well as many walk-based indices (eigenvector and subgraph centrality, total communicability,…).</p>
-<p>Neighborhood-inclusion defines a partial ranking on the set of nodes. Each ranking that is in accordance with this partial ranking yields a proper centrality ranking. Each of these ranking can thus potentially be the outcome of a centrality index.</p>
-<p>Using rank intervals, we can examine the minimal and maximal possible rank of each node. The bigger the intervals are, the more freedom exists for indices to rank nodes differently.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rank_intervals</span>(P),<span class="at">cent_scores =</span> cent_scores,<span class="at">ties.method=</span><span class="st">"average"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/partial-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The potential ranks of nodes are not uniformly distributed in the intervals. To get the exact probabilities, the function <code>exact_rank_prob()</code> can be used.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">exact_rank_prob</span>(P)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>res</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Number of possible centrality rankings:  739200 </span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Equivalence Classes (max. possible): 11 (11)</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; - - - - - - - - - - </span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Rank Probabilities (rows:nodes/cols:ranks)</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            1         2         3         4         5         6         7</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  0.5454545 0.2727273 0.1212121 0.0454545 0.0129870 0.0021645 0.0000000</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  0.2727273 0.2181818 0.1696970 0.1272727 0.0909091 0.0606061 0.0363636</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  0.0000000 0.1636364 0.2181818 0.2090909 0.1688312 0.1190476 0.0727273</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  0.0000000 0.0272727 0.0515152 0.0727273 0.0909091 0.1060606 0.1181818</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  0.0000000 0.0000000 0.0181818 0.0454545 0.0753247 0.1034632 0.1272727</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  0.0000000 0.0545455 0.0848485 0.1000000 0.1064935 0.1086580 0.1090909</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7  0.0000000 0.0545455 0.0848485 0.1000000 0.1064935 0.1086580 0.1090909</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  0.0000000 0.0272727 0.0515152 0.0727273 0.0909091 0.1060606 0.1181818</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  0.0909091 0.0909091 0.0909091 0.0909091 0.0909091 0.0909091 0.0909091</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 0.0909091 0.0909091 0.0909091 0.0909091 0.0909091 0.0909091 0.0909091</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11 0.0000000 0.0000000 0.0181818 0.0454545 0.0753247 0.1034632 0.1272727</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            8          9        10        11</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  0.0000000 0.00000000 0.0000000 0.0000000</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  0.0181818 0.00606061 0.0000000 0.0000000</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  0.0363636 0.01212121 0.0000000 0.0000000</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  0.1272727 0.13333333 0.1363636 0.1363636</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  0.1454545 0.15757576 0.1636364 0.1636364</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  0.1090909 0.10909091 0.1090909 0.1090909</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7  0.1090909 0.10909091 0.1090909 0.1090909</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  0.1272727 0.13333333 0.1363636 0.1363636</span></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  0.0909091 0.09090909 0.0909091 0.0909091</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 0.0909091 0.09090909 0.0909091 0.0909091</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11 0.1454545 0.15757576 0.1636364 0.1636364</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; - - - - - - - - - - </span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Relative Rank Probabilities (row ranked lower than col)</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;           1         2        3        4        5        6        7        8</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  0.000000 0.6666667 1.000000 0.952381 1.000000 1.000000 1.000000 0.952381</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  0.333333 0.0000000 0.666667 1.000000 0.916667 0.833333 0.833333 1.000000</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  0.000000 0.3333333 0.000000 0.797619 1.000000 0.750000 0.750000 0.797619</span></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  0.047619 0.0000000 0.202381 0.000000 0.559524 0.440476 0.440476 0.500000</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  0.000000 0.0833333 0.000000 0.440476 0.000000 0.375000 0.375000 0.440476</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  0.000000 0.1666667 0.250000 0.559524 0.625000 0.000000 0.500000 0.559524</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7  0.000000 0.1666667 0.250000 0.559524 0.625000 0.500000 0.000000 0.559524</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  0.047619 0.0000000 0.202381 0.500000 0.559524 0.440476 0.440476 0.000000</span></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  0.142857 0.2500000 0.357143 0.625000 0.678571 0.571429 0.571429 0.625000</span></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 0.142857 0.2500000 0.357143 0.625000 0.678571 0.571429 0.571429 0.625000</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11 0.000000 0.0833333 0.000000 0.440476 0.500000 0.375000 0.375000 0.440476</span></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;           9       10       11</span></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  0.857143 0.857143 1.000000</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  0.750000 0.750000 0.916667</span></span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  0.642857 0.642857 1.000000</span></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  0.375000 0.375000 0.559524</span></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  0.321429 0.321429 0.500000</span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  0.428571 0.428571 0.625000</span></span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7  0.428571 0.428571 0.625000</span></span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  0.375000 0.375000 0.559524</span></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  0.000000 0.500000 0.678571</span></span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 0.500000 0.000000 0.678571</span></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11 0.321429 0.321429 0.000000</span></span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; - - - - - - - - - - </span></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Expected Ranks (higher values are better)</span></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       1       2       3       4       5       6       7       8       9      10 </span></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1.71429 3.00000 4.28571 7.50000 8.14286 6.85714 6.85714 7.50000 6.00000 6.00000 </span></span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      11 </span></span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8.14286 </span></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; - - - - - - - - - - </span></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SD of Rank Probabilities</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        1        2        3        4        5        6        7        8 </span></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.958315 1.897367 1.724967 2.539685 2.159932 2.721794 2.721794 2.539685 </span></span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        9       10       11 </span></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3.162278 3.162278 2.159932 </span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; - - - - - - - - - -</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For the graph <code>g</code> we can therefore come up with 739,200 indices that would rank the nodes differently.</p>
-<p><code>rank.prob</code> contains the probabilities for each node to occupy a certain rank. For instance, the probability for each node to be the most central one is as follows.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(res<span class="sc">$</span>rank.prob[ ,<span class="dv">11</span>],<span class="dv">2</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    1    2    3    4    5    6    7    8    9   10   11 </span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.00 0.00 0.00 0.14 0.16 0.11 0.11 0.14 0.09 0.09 0.16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><code>relative.rank</code> contains the relative rank probabilities. An entry <code>relative.rank[u,v]</code> indicates how likely it is that <code>v</code> is more central than <code>u</code>.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How likely is it, that 6 is more central than 3?</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(res<span class="sc">$</span>relative.rank[<span class="dv">3</span>,<span class="dv">6</span>],<span class="dv">2</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.75</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><code>expected.ranks</code> contains the expected centrality ranks for all nodes. They are derived on the basis of <code>rank.prob</code>.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(res<span class="sc">$</span>expected.rank,<span class="dv">2</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    1    2    3    4    5    6    7    8    9   10   11 </span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1.71 3.00 4.29 7.50 8.14 6.86 6.86 7.50 6.00 6.00 8.14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The higher the value, the more central a node is expected to be.</p>
-<p><strong>Note</strong>: The set of rankings grows exponentially in the number of nodes and the exact calculation becomes infeasible quite quickly and approximations need to be used. Check the benchmark results for guidelines.</p>
-<hr>
-</section>
-<section id="literature" class="level2">
-<h2 class="anchored" data-anchor-id="literature">Theoretical Background</h2>
-<p><code>netrankr</code> is based on a series of papers that appeared in recent years. If you want to learn more about the theoretical background of the package, consult the following literature:</p>
-<blockquote class="blockquote">
-<p>Schoch, David. (2018). Centrality without Indices: Partial rankings and rank Probabilities in networks. <em>Social Networks</em>, <strong>54</strong>, 50-60.(<a href="https://doi.org/10.1016/j.socnet.2017.12.003">link</a>)</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Schoch, David &amp; Valente, Thomas W., &amp; Brandes, Ulrik. (2017). Correlations among centrality indices and a class of uniquely ranked graphs. <em>Social Networks</em>, <strong>50</strong>, 46-54.(<a href="https://doi.org/10.1016/j.socnet.2017.03.010">link</a>)</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Schoch, David &amp; Brandes, Ulrik. (2016). Re-conceptualizing centrality in social networks. <em>European Journal of Appplied Mathematics</em>, <strong>27</strong>(6), 971–985. (<a href="https://doi.org/10.1017/S0956792516000401">link</a>)</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Brandes, Ulrik. (2016). Network Positions. <em>Methodological Innovations</em>, <strong>9</strong>, 2059799116630650. (<a href="https://dx.doi.org/10.1177/2059799116630650">link</a>)</p>
-</blockquote>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

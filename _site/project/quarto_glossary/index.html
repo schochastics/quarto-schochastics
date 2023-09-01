@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -150,15 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#glossary-file" id="toc-glossary-file" class="nav-link active" data-scroll-target="#glossary-file">glossary file</a></li>
-  <li><a href="#prerender-script" id="toc-prerender-script" class="nav-link" data-scroll-target="#prerender-script">prerender script</a></li>
-  <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link" data-scroll-target="#disclaimer">Disclaimer</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -172,48 +130,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <button type="button" class="btn btn-outline-success">
 <a href="https://github.com/schochastics/quarto-glossary">GITHUB</a>
 </button>
-<p><br> # Automatic Glossary for Quarto with nutshell</p>
-<p>This repo shows an example for how to create a glossary using the quarto extension <a href="https://github.com/schochastics/quarto-nutshell">nutshell</a>.</p>
-<section id="glossary-file" class="level2">
-<h2 class="anchored" data-anchor-id="glossary-file">glossary file</h2>
-<p>Create a <code>glossary.md</code> file for your project with terms as second level headings and their explanation as a paragraph below</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Glossary</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quarto</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Quarto is an open-source scientific and technical publishing system built on Pandoc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="prerender-script" class="level2">
-<h2 class="anchored" data-anchor-id="prerender-script">prerender script</h2>
-<p>The prerender script <code>glossary.R</code> looks as follows</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>files <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"QUARTO_PROJECT_INPUT_FILES"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>glossary <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="st">"glossary.md"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>terms <span class="ot">&lt;-</span> glossary[stringr<span class="sc">::</span><span class="fu">str_detect</span>(glossary, <span class="st">"^## "</span>)] <span class="sc">|&gt;</span> stringr<span class="sc">::</span><span class="fu">str_remove_all</span>(<span class="st">"## "</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (f <span class="cf">in</span> files){</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (f <span class="sc">!=</span> <span class="st">"glossary.md"</span>){</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      co <span class="ot">&lt;-</span> <span class="fu">readLines</span>(f)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">any</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(co, <span class="fu">paste0</span>(terms, <span class="at">collapse =</span> <span class="st">"|"</span>)))) {</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>          <span class="fu">print</span>(f)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>          co <span class="ot">&lt;-</span> stringi<span class="sc">::</span><span class="fu">stri_replace_all_regex</span>(co, <span class="fu">paste0</span>(<span class="st">"(?&lt;![:#])"</span>, terms),</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>              <span class="fu">paste0</span>(<span class="st">"[:"</span>, terms, <span class="st">"](/glossary.html#"</span>, terms, <span class="st">")"</span>), <span class="at">vectorize_all =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>          <span class="fu">writeLines</span>(co, f)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The script reads all files that are to be rendered and replaces every term from the glossary with a nutshell link. For our example, all instances of <code>Quarto</code> turn into <code>[:Quarto](/glossary.html#Quarto)</code>. <strong>It thus changes all input files</strong>.</p>
-<p>Add the script to <code>_quarto.yml</code> like this</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> book</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pre-render</span><span class="kw">:</span><span class="at"> glossary.R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The rendered demo book included in this repo with a glossary can be found on <a href="https://schochastics.quarto.pub/a-quarto-book-with-nutshell-glossary/">quarto.pub</a></p>
-</section>
-<section id="disclaimer" class="level2">
-<h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
-<p>The pre-render R script is not perfect and still struggles with some cases. Also, I am not sure if a pre-render script is the best solution for this. Probably a lua filter would make more sense, but my lua skills are still limited.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

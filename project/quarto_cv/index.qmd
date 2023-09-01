@@ -1,0 +1,11 @@
+---
+date: "2023-07-17"
+description: "CV/Resume templates for Quarto"
+title: CV templates  
+title-block-style: none
+type: html
+toc: false
+priority: 9
+---
+
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/quarto-cv">GITHUB</a></button>

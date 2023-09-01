@@ -1,0 +1,14 @@
+{
+  "hash": "4db3b995527dfa88a9a790723b9f5e9c",
+  "result": {
+    "markdown": "---\nauthor: David Schoch\ndate: \"2023-07-22\"\ndescription: \"Interact with the API of stability.ai\"\nsubtitle: \"\"\ntitle: stabilityAI\nimage: featured-hex.png\ntitle-block-style: none\ntoc: true\npriority: 15\n---\n\n\n\n\n<button type=\"button\" class=\"btn btn-outline-success\"><a href=\"https://github.com/schochastics/stabilityAI\">GITHUB</a></button>\n\n`stabilityAI` implements functions to connect with the API of stability.ai\n\n## Installation\n\nYou can install the development version of stabilityAI like so:\n\n``` r\nremotes::install_github(\"schochastics/stabilityAI\")\n```\n\n## Authentication\n\nAfter signing up at <stability.ai>, obtain an API key from\n<https://platform.stability.ai/account/keys> and save it in your `.Renviron`\nfile (for example using `usethis::edit_r_environ()`) as \"STABILITYAI_TOKEN\".\n\n## Create an image\n\n```r\n# this prompt generated the logo and describes how the package was implemented... \nimg <- generate_txt2img(\n    text_prompts = \"A dude with no hair and a beard sitting in front of his laptop in a dark room\",\n    style_preset = \"pixel-art\"\n)\nbase64_to_img(img,\"test\")\n\n```",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

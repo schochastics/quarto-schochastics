@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -163,35 +129,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="https://github.com/schochastics/quarto-nutshell">GITHUB</a>
 </button>
 <p><br></p>
-<p><img src="nutshell.gif" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Nutshell is a tool to make “expandable explanations” This lets your readers learn only the details they need, just-in-time, always-in-context.<br>
-Unlike links, Nutshell lets you include only the snippet you need, not the whole page. Plus, instead of being lost in a jungle of new tabs, your reader stays on one page, keeping their flow of reading. Even if you interrupt a sentence, Nutshell recaps the sentence afterwards, so your reader never loses context.</p>
-</blockquote>
-<p>You can find more information (and a demo) on the nutshell <a href="https://ncase.me/nutshell/">webpage</a>.</p>
-<section id="install" class="level2">
-<h2 class="anchored" data-anchor-id="install">Install</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension schochastics/quarto-nutshell</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will install the extension under the <code>_extensions</code> subdirectory. If you’re using version control, you will want to check in this directory.</p>
-</section>
-<section id="using" class="level2">
-<h2 class="anchored" data-anchor-id="using">Using</h2>
-<p>You can use the filter by adding</p>
-<pre><code>filters:
-   - nutshell</code></pre>
-<p>to your yaml header.</p>
-<p>To write a Nutshell snippet, just use headings &amp; paragraphs. To embed a snippet, just make a link, but with a :colon in the front:</p>
-<pre><code>[:link](https://en.wikipedia.org/wiki/Nutshell)</code></pre>
-<p>Note, however, the other webpage needs to also have Nutshell installed, or CORS enabled. If you own the other page, that’s not a problem! But if not, you’ll have to mirror/copy the other page.</p>
-<p>Check out the <a href="https://ncase.me/nutshell/try/">interactive demo</a> for more help or head to the <a href="https://github.com/ncase/nutshell">github repo</a> to learn about the full functionality of nutshell.</p>
-</section>
-<section id="example" class="level2">
-<h2 class="anchored" data-anchor-id="example">Example</h2>
-<p>Here is the source code for a minimal example: <a href="https://github.com/schochastics/quarto-nutshell/example.qmd">example.qmd</a><br>
-A rendered version can be found <a href="https://schochastics.quarto.pub/nutshell-expandable-explanations/">here</a>.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

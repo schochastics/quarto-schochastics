@@ -12,6 +12,3 @@ priority: 1
 ![](logo_text.png)
 
 <button type="button" class="btn btn-outline-success"><a href="http://soccerverse.com">LINK</a></button>
-<br>
-
-Soccerverse is a project dedicated to the analysis of club-level (association) football around the world. From Afghanistan to Zimbabwe, from UEFA Champions League to CFU Club Championship, this project covers statistical analyses on a global scale. Global rankings, predicting league tables and champions are just some of the content you can find on this page.

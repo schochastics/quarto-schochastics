@@ -2,7 +2,7 @@
 author: David Schoch
 date: "2022-12-06"
 description: |
-    Pushsift.io API Wrapper written in R for comment/submission search for Reddit.
+    Pushsh¬ift.io API Wrapper written in R for comment/submission search for Reddit.
 subtitle: Collecting and Analyzing Reddit Data
 title: PSAWR
 image: featured-hex.png
@@ -12,27 +12,3 @@ priority: 8
 ---
 
 <button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/PSAWR">GITHUB</a></button>
-
-`PSAWR` is a **P**ush**s**ift.io **A**PI **W**rapper written in **R** for comment/submission search
-for Reddit.
-
-## Installation
-
-You can install the development version of PSAWR like so:
-
-``` r
-devtools::install_github("schochastics/PSAWR")
-```
-
-## Search comments
-
-Get the last 100 comments mentioning dogs in the subreddit cats.
-```r
-search_coments(q = "dogs", subreddit = "cats", size = 100)
-```
-
-## Search subreddits
-Get the last 10 submissions mentioning cats in the subreddit dogs.
-```r
-search_submissions(q="cats", subreddit = "dogs",size = 10)
-```

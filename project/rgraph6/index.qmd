@@ -11,18 +11,6 @@ priority: 7
 
 <button type="button" class="btn btn-outline-success"><a href="https://github.com/mbojan/rgraph6">GITHUB</a></button>
 
-
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.width = 6,
-  fig.height = 4,
-  out.width = '100%',
-  fig.align = "center" 
-)
-```
-
 (**Main Author and maintainer**: Michal Bojanowski)  
 
 
