@@ -63,7 +63,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-image','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 18,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
@@ -427,18 +428,18 @@ Draw maps using the javascript library roughjs. This allows to draw sketchy, han
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-listing-date-sort="1511823600000" data-listing-file-modified-sort="1693592663792" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<a href="../project/rokemon/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="11" data-listing-date-sort="1695506400000" data-listing-file-modified-sort="1695590003376" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="../project/adaR/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
-<img src="../project/rokemon/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
+<img src="../project/adaR/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-rokemon
+adaR
 </h5>
 <div class="card-text listing-description">
-This package implements several themes for ggplot to bring your data into the world of Pokemon.
+wrapper for ada-url a WHATWG-compliant and fast URL parser written in modern C++
 </div>
 </div>
 </div>
@@ -529,11 +530,28 @@ Interact with the API of stability.ai
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="17" data-listing-date-sort="1554328800000" data-listing-file-modified-sort="1693592395626" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="17" data-listing-date-sort="1511823600000" data-listing-file-modified-sort="1695589942411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="../project/rokemon/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top">
+<img src="../project/rokemon/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+rokemon
+</h5>
+<div class="card-text listing-description">
+This package implements several themes for ggplot to bring your data into the world of Pokemon.
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="18" data-listing-date-sort="1554328800000" data-listing-file-modified-sort="1693592395626" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <a href="../project/levelnet/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
-<img src="../project/levelnet/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
+<img data-src="../project/levelnet/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -550,6 +568,9 @@ levelnet
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="rpkg-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div>
 </section>
 <section id="quarto-material" class="level1">

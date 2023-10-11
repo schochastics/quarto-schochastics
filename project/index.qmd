@@ -25,6 +25,7 @@ listing:
       - webBotparseR
       - Rtumblr
       - stabilityAI
+      - adaR
     type: grid
     image-align: left
     sort: "priority asc"

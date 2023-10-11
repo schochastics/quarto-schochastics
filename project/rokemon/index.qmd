@@ -7,7 +7,7 @@ title: rokemon
 image: featured-hex.png
 title-block-style: none
 toc: true
-priority: 10
+priority: 50
 ---
 
 <button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/rokemon">GITHUB</a></button>

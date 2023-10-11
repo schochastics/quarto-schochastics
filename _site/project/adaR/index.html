@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="David Schoch">
+<meta name="dcterms.date" content="2023-09-24">
+<meta name="description" content="wrapper for ada-url a WHATWG-compliant and fast URL parser written in modern C++">
 
-<title>schochastics – quarto-input15ef0f8f</title>
+<title>schochastics - adaR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,19 +26,19 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="/site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="/site_libs/quarto-nav/headroom.min.js"></script>
-<link href="/./static/favicon.png" rel="icon" type="image/png">
-<script src="/site_libs/clipboard/clipboard.min.js"></script>
-<script src="/site_libs/quarto-html/quarto.js"></script>
-<script src="/site_libs/quarto-html/popper.min.js"></script>
-<script src="/site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="/site_libs/quarto-html/anchor.min.js"></script>
-<link href="/site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="/site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="/site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="/site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../../static/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -52,8 +55,18 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="/styles.css">
-<link rel="stylesheet" href="/academicons.css">
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../academicons.css">
+<meta property="og:title" content="schochastics - adaR">
+<meta property="og:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
+<meta property="og:image" content="https://mr.schochastics.net/project/adaR/static/img/avatar.png">
+<meta property="og:site-name" content="schochastics">
+<meta name="twitter:title" content="schochastics - adaR">
+<meta name="twitter:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
+<meta name="twitter:image" content="https://mr.schochastics.net/project/adaR/static/img/avatar.png">
+<meta name="twitter:creator" content="@schochastics">
+<meta name="twitter:site" content="@schochastics">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed">
@@ -63,8 +76,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="/index.html" class="navbar-brand navbar-brand-logo">
-    <img src="/static/logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../static/logo.png" alt="" class="navbar-logo">
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -73,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/publications/index.html" rel="" target="">
+    <a class="nav-link" href="../../publications/index.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
@@ -81,15 +94,15 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/project/index.html" rel="" target="">
+    <a class="nav-link" href="../../project/index.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/material/index.html" rel="" target="">
+    <a class="nav-link" href="../../material/index.html" rel="" target="">
  <span class="menu-text">Material</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/about/index.html" rel="" target="">
+    <a class="nav-link" href="../../about/index.html" rel="" target="">
  <span class="menu-text">About me</span></a>
   </li>  
 </ul>
@@ -104,32 +117,24 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">404</a>
-  <ul class="collapse">
-  <li><a href="#page-not-found" id="toc-page-not-found" class="nav-link" data-scroll-target="#page-not-found">Page not found</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header">
+<h1 class="title display-7">adaR</h1>
+<p class="subtitle lead">URL parser</p>
+<p class="author">David Schoch</p>
+
+<p class="date">2023-09-24</p>
+</header>
+
+<button type="button" class="btn btn-outline-success">
+<a href="https://github.com/schochastics/adaR">GITHUB</a>
+</button>
 
 
-<section id="section" class="level1">
-<h1>404</h1>
-<section id="page-not-found" class="level2">
-<h2 class="anchored" data-anchor-id="page-not-found">Page not found</h2>
-<p><img src="/static/img/coffee.png" class="img-fluid"></p>
-<p>I redesigned my personal page and some old content may be available under a new URL. Check the main page or let me know if you are missing something</p>
-
-
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
