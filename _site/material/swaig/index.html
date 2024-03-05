@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="David Schoch">
+<meta name="description" content="nerdy designs partially generated with AI">
 
-<title>schochastics - Open Source Material</title>
+<title>schochastics - swAIg</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../static/favicon.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../../static/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -53,78 +56,24 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-material .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-image','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-material'] = new List('listing-material', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="../academicons.css">
-<meta property="og:title" content="schochastics - Open Source Material">
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../academicons.css">
+<meta property="og:title" content="schochastics - swAIg">
 <meta property="og:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
-<meta property="og:image" content="https://mr.schochastics.net/material/static/img/avatar.png">
+<meta property="og:image" content="https://mr.schochastics.net/material/swaig/featured.png">
 <meta property="og:site_name" content="schochastics">
-<meta name="twitter:title" content="schochastics - Open Source Material">
+<meta property="og:image:height" content="500">
+<meta property="og:image:width" content="500">
+<meta name="twitter:title" content="schochastics - swAIg">
 <meta name="twitter:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
-<meta name="twitter:image" content="https://mr.schochastics.net/material/static/img/avatar.png">
+<meta name="twitter:image" content="https://mr.schochastics.net/material/swaig/featured.png">
 <meta name="twitter:creator" content="@schochastics">
 <meta name="twitter:site" content="@schochastics">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="500">
+<meta name="twitter:image-width" content="500">
 </head>
 
 <body class="nav-fixed">
@@ -134,8 +83,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../static/logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../static/logo.png" alt="" class="navbar-logo">
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -144,7 +93,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../publications/index.html"> 
+    <a class="nav-link" href="../../publications/index.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
@@ -152,15 +101,15 @@ window.Quarto = {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../project/index.html"> 
+    <a class="nav-link" href="../../project/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../material/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../material/index.html"> 
 <span class="menu-text">Material</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about/index.html"> 
+    <a class="nav-link" href="../../about/index.html"> 
 <span class="menu-text">About me</span></a>
   </li>  
 </ul>
@@ -174,222 +123,34 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="data visualization">data visualization <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dataset">dataset <span class="quarto-category-count">(1)</span></div><div class="category" data-category="generative art">generative art <span class="quarto-category-count">(1)</span></div><div class="category" data-category="network analysis">network analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="network visualization">network visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="swag">swag <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Open Source Material</h1>
-</div>
-
-
-
-<div class="quarto-title-meta column-page-left">
-
-    
-  
-    
-  </div>
-  
-
+<header id="title-block-header">
+<h1 class="title display-7">swAIg</h1>
+<p class="subtitle lead">AI generated code coture</p>
+<p class="author">David Schoch</p>
 
 </header>
 
 
-<div class="center">
-<p>Tutorials and other open source material</p>
+<style>
+img{
+    background-color: #444444;
+}
+</style>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="featured.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="featured.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
 </div>
-<p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://licensebuttons.net/l/by/3.0/88x31.png" class="img-fluid"></a><br>
-All material listed here is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">CC by License</a>.</p>
-<div id="listing-material" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="network visualization" data-listing-file-modified-sort="1674765131642" data-listing-reading-time-sort="44" data-listing-word-count-sort="8685">
-<div class="thumbnail">
-<p><a href="../material/netVizR/index.html" class="no-external"></a></p><a href="../material/netVizR/index.html" class="no-external">
-<p><img src="../material/netVizR/featured.png" class="thumbnail-image" style="height: 250px;"></p>
-</a><p><a href="../material/netVizR/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../material/netVizR/index.html" class="no-external">Network Visualizations in R</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../material/netVizR/index.html" class="no-external">using ggraph and graphlayouts</a>
-</div>
-<div class="listing-description">
-<a href="../material/netVizR/index.html" class="no-external">Tutorial for Network Visualization in R using ggraph and graphlayouts</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../material/netVizR/index.html" class="no-external"></a></p><a href="../material/netVizR/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="network analysis" data-listing-file-modified-sort="1662635178561" data-listing-reading-time-sort="29" data-listing-word-count-sort="5721">
-<div class="thumbnail">
-<p><a href="../material/netAnaR/index.html" class="no-external"></a></p><a href="../material/netAnaR/index.html" class="no-external">
-<p><img src="../material/netAnaR/featured.png" class="thumbnail-image" style="height: 250px;"></p>
-</a><p><a href="../material/netAnaR/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../material/netAnaR/index.html" class="no-external">Basic Network Analysis in R</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../material/netAnaR/index.html" class="no-external">using igraph and related packages</a>
-</div>
-<div class="listing-description">
-<a href="../material/netAnaR/index.html" class="no-external">Tutorial for Network Analysis in R</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../material/netAnaR/index.html" class="no-external"></a></p><a href="../material/netAnaR/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="network analysis" data-listing-file-modified-sort="1660134316252" data-listing-reading-time-sort="7" data-listing-word-count-sort="1387">
-<div class="thumbnail">
-<p><a href="../material/tidynetAnaR/index.html" class="no-external"></a></p><a href="../material/tidynetAnaR/index.html" class="no-external">
-<p><img src="../material/tidynetAnaR/featured.png" class="thumbnail-image" style="height: 250px;"></p>
-</a><p><a href="../material/tidynetAnaR/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../material/tidynetAnaR/index.html" class="no-external">Tidy Network Analysis in R</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../material/tidynetAnaR/index.html" class="no-external">using the tidygraph package</a>
-</div>
-<div class="listing-description">
-<a href="../material/tidynetAnaR/index.html" class="no-external">Network Analysis in R using tidygraph</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../material/tidynetAnaR/index.html" class="no-external"></a></p><a href="../material/tidynetAnaR/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="data visualization" data-listing-file-modified-sort="1660134403595" data-listing-reading-time-sort="1" data-listing-word-count-sort="138">
-<div class="thumbnail">
-<p><a href="../material/30daymapchallenge/index.html" class="no-external"></a></p><a href="../material/30daymapchallenge/index.html" class="no-external">
-<p><img src="../material/30daymapchallenge/featured.png" class="thumbnail-image" style="height: 250px;"></p>
-</a><p><a href="../material/30daymapchallenge/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../material/30daymapchallenge/index.html" class="no-external">30DayMapchallenge 2021</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../material/30daymapchallenge/index.html" class="no-external">My contributions to the 30DayMapchallenge in 2021</a>
-</div>
-<div class="listing-description">
-<a href="../material/30daymapchallenge/index.html" class="no-external">My contributions to the 30DayMapchallenge in 2021</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../material/30daymapchallenge/index.html" class="no-external"></a></p><a href="../material/30daymapchallenge/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="data visualization" data-listing-file-modified-sort="1660134420690" data-listing-reading-time-sort="2" data-listing-word-count-sort="253">
-<div class="thumbnail">
-<p><a href="../material/minard/index.html" class="no-external"></a></p><a href="../material/minard/index.html" class="no-external">
-<p><img src="../material/minard/featured.png" class="thumbnail-image" style="height: 250px;"></p>
-</a><p><a href="../material/minard/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../material/minard/index.html" class="no-external">The Minard System in R</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../material/minard/index.html" class="no-external">Minard’s Statistical Graphics with Modern Data in R</a>
-</div>
-<div class="listing-description">
-<a href="../material/minard/index.html" class="no-external">Recreating Minard’s Statistical Graphics with Modern Data in R</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../material/minard/index.html" class="no-external"></a></p><a href="../material/minard/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="generative art" data-listing-file-modified-sort="1660134412227" data-listing-reading-time-sort="1" data-listing-word-count-sort="97">
-<div class="thumbnail">
-<p><a href="../material/galaxies/index.html" class="no-external"></a></p><a href="../material/galaxies/index.html" class="no-external">
-<p><img src="../material/galaxies/featured.png" class="thumbnail-image" style="height: 250px;"></p>
-</a><p><a href="../material/galaxies/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../material/galaxies/index.html" class="no-external">Rendering Galaxies in R</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../material/galaxies/index.html" class="no-external">Random galaxies, black holes and star constellations</a>
-</div>
-<div class="listing-description">
-<a href="../material/galaxies/index.html" class="no-external">Randomly generate galaxies, black holes and star constellations</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../material/galaxies/index.html" class="no-external"></a></p><a href="../material/galaxies/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="dataset" data-listing-file-modified-sort="1660134394873" data-listing-reading-time-sort="5" data-listing-word-count-sort="970">
-<div class="thumbnail">
-<p><a href="../material/football-data/index.html" class="no-external"></a></p><a href="../material/football-data/index.html" class="no-external">
-<p><img src="../material/football-data/featured.png" class="thumbnail-image" style="height: 250px;"></p>
-</a><p><a href="../material/football-data/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../material/football-data/index.html" class="no-external">Soccer Data</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../material/football-data/index.html" class="no-external">A collection of datasets around soccer</a>
-</div>
-<div class="listing-description">
-<a href="../material/football-data/index.html" class="no-external">A collection of datasets around soccer</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../material/football-data/index.html" class="no-external"></a></p><a href="../material/football-data/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="swag" data-listing-file-modified-sort="1709659568244" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
-<div class="thumbnail">
-<p><a href="../material/swaig/index.html" class="no-external"></a></p><a href="../material/swaig/index.html" class="no-external">
-<p><img src="../material/swaig/featured.png" class="thumbnail-image" style="height: 250px;"></p>
-</a><p><a href="../material/swaig/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../material/swaig/index.html" class="no-external">swAIg</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../material/swaig/index.html" class="no-external">AI generated code coture</a>
-</div>
-<div class="listing-description">
-<a href="../material/swaig/index.html" class="no-external">nerdy designs partially generated with AI</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../material/swaig/index.html" class="no-external"></a></p><a href="../material/swaig/index.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+<section id="designs" class="level1">
+<h1>Designs</h1>
+<p><a href="debugging.png" class="lightbox" data-gallery="gallery"><img src="debugging.png" class="img-fluid"></a> <a href="foss_you_black.png" class="lightbox" data-gallery="gallery"><img src="foss_you_black.png" class="img-fluid"></a> <a href="jit.png" class="lightbox" data-gallery="gallery"><img src="jit.png" class="img-fluid"></a> <a href="panic.png" class="lightbox" data-gallery="gallery"><img src="panic.png" class="img-fluid"></a> <a href="rtfm.png" class="lightbox" data-gallery="gallery"><img src="rtfm.png" class="img-fluid"></a> <a href="sampling.png" class="lightbox" data-gallery="gallery"><img src="sampling.png" class="img-fluid"></a> <a href="shell_commander.png" class="lightbox" data-gallery="gallery"><img src="shell_commander.png" class="img-fluid"></a> <a href="slothware.png" class="lightbox" data-gallery="gallery"><img src="slothware.png" class="img-fluid"></a> <a href="technical_debt.png" class="lightbox" data-gallery="gallery"><img src="technical_debt.png" class="img-fluid"></a></p>
 
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -821,6 +582,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","selector":".lightbox"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

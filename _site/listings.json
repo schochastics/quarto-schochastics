@@ -8,18 +8,13 @@
       "/material/30daymapchallenge/index.html",
       "/material/minard/index.html",
       "/material/galaxies/index.html",
-      "/material/football-data/index.html"
+      "/material/football-data/index.html",
+      "/material/swaig/index.html"
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/publications/index.html",
     "items": [
-      "/project/graphlayouts/index.html",
-      "/project/netrankr/index.html",
-      "/project/snahelper/index.html",
-      "/material/netVizR/index.html",
-      "/material/netAnaR/index.html",
-      "/material/tidynetAnaR/index.html",
       "/publications/penalty_shootout/index.html",
       "/publications/css_reproducibility/index.html",
       "/publications/dissimilarity_centrality/index.html",
@@ -31,6 +26,7 @@
       "/publications/inout_centrality/index.html",
       "/publications/scirep_astroturfing/index.html",
       "/publications/multiplexity_multigraph/index.html",
+      "/publications/us_congress/index.html",
       "/publications/proj_signed2mode/index.html",
       "/publications/astroturfing_around_the_world/index.html",
       "/publications/polcomm_astroturfing/index.html",
@@ -81,8 +77,14 @@
     ]
   },
   {
-    "listing": "/publications/index.html",
+    "listing": "/index.html",
     "items": [
+      "/project/graphlayouts/index.html",
+      "/project/netrankr/index.html",
+      "/project/snahelper/index.html",
+      "/material/netVizR/index.html",
+      "/material/netAnaR/index.html",
+      "/material/tidynetAnaR/index.html",
       "/publications/penalty_shootout/index.html",
       "/publications/css_reproducibility/index.html",
       "/publications/dissimilarity_centrality/index.html",
@@ -94,7 +96,6 @@
       "/publications/inout_centrality/index.html",
       "/publications/scirep_astroturfing/index.html",
       "/publications/multiplexity_multigraph/index.html",
-      "/publications/us_congress/index.html",
       "/publications/proj_signed2mode/index.html",
       "/publications/astroturfing_around_the_world/index.html",
       "/publications/polcomm_astroturfing/index.html",

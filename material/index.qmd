@@ -15,6 +15,7 @@ listing:
     - netVizR
     - tidynetAnaR
     - football-data
+    - swaig
   type: default
   image-align: right
   sort: "priority asc"

@@ -4,7 +4,7 @@
     "href": "material/index.html",
     "title": "Open Source Material",
     "section": "",
-    "text": "Tutorials and other open source material\n\n\nAll material listed here is licensed under a CC by License.\n\n\n\n\n\n\n\n\n\n\nNetwork Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n30DayMapchallenge 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Minard System in R\n\n\nMinard’s Statistical Graphics with Modern Data in R\n\n\nRecreating Minard’s Statistical Graphics with Modern Data in R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRendering Galaxies in R\n\n\nRandom galaxies, black holes and star constellations\n\n\nRandomly generate galaxies, black holes and star constellations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSoccer Data\n\n\nA collection of datasets around soccer\n\n\nA collection of datasets around soccer\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Tutorials and other open source material\n\n\nAll material listed here is licensed under a CC by License.\n\n\n\n\n\n\n\n\n\n\nNetwork Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n30DayMapchallenge 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\nMy contributions to the 30DayMapchallenge in 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Minard System in R\n\n\nMinard’s Statistical Graphics with Modern Data in R\n\n\nRecreating Minard’s Statistical Graphics with Modern Data in R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRendering Galaxies in R\n\n\nRandom galaxies, black holes and star constellations\n\n\nRandomly generate galaxies, black holes and star constellations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSoccer Data\n\n\nA collection of datasets around soccer\n\n\nA collection of datasets around soccer\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nswAIg\n\n\nAI generated code coture\n\n\nnerdy designs partially generated with AI\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "material/minard/index.html",
@@ -112,641 +112,32 @@
     "text": "Code\n\n\nRender galaxies, Blackholes and Star constellations in R\nThis was a project of mine in 2020 when I had an ambition to get into generative art. I abandoned that idea after this project because it just took too much time (and I lost motivation again…) I decided to release the code behind the project for everyone to play around with (see link above). You can do whatever you want with it. Problem is that I neither documented the code nor my resources. So it may take some time and effort to understand what is going on.\n\n\n\nExample Galaxies\n        \n\n\nExample Blackholes\n \n\n\nExample Constellations"
   },
   {
-    "objectID": "material/30daymapchallenge/index.html",
-    "href": "material/30daymapchallenge/index.html",
-    "title": "30DayMapchallenge 2021",
-    "section": "",
-    "text": "Code\n\n\nDay 01 - Points\n\n  \n\n\n\nDay 02 - Lines\n\n  \n\n\n\nDay 03 - Polygons\n\n  \n\n\n\nDay 04 - Hexagons\n\n  \n\n\n\nDay 05 - Data challenge 1: OpenStreetMap\n\n  \n\n\n\nDay 06 - Red\n\n  \n\n\n\nDay 07 - Green\n\n  \n\n\n\nDay 08 - Blue\n\n  \n\n\n\nDay 09 - Monochrome\n\n  \n\n\n\nDay 10 - Raster\n\n  \n\n\n\nDay 11 - 3D\n\n  \n\n\n\nDay 12 - Population\n\n  \n\n\n\nDay 13 - Data challenge 2: Natural Earth\n\n  \n\n\n\nDay 14 - Map with a new tool\n\n  \n\n\n\nDay 15 - Map made without using a computer\n\n  \n\n\n\nDay 16 - Urban/rural\n\n  \n\n\n\nDay 17 - Land\n\n  \n\n\n\nDay 18 - Water\n\n  \n\n\n\nDay 19 - Island(s)\n\n  \n\n\n\nDay 20 - Movement\n\n  \n\n\n\nDay 21 - Elevation\n\n  \n\n\n\nDay 22 - Boundaries\n\n  \n\n\n\nDay 23 - Data challenge 3: GHSL Global Human Settlement Layer\n\n  \n\n\n\nDay 24 - Historical map\n\n  \n\n\n\nDay 26 - Choropleth map\n\n  \n\n\n\nDay 27 - Heatmap\n\n  \n\n\n\nDay 28 - The Earth is not flat\n\n  \n\n\n\nDay 29 - NULL\n\n  \n\n\n\nDay 30 - Metamapping day"
-  },
-  {
-    "objectID": "index.html#selected-open-source-material",
-    "href": "index.html#selected-open-source-material",
-    "title": "schochastics",
-    "section": "Selected Open Source Material",
-    "text": "Selected Open Source Material\n\n\n\n\n\n\n\n\n\n\nNetwork Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\nall open source material"
-  },
-  {
-    "objectID": "index.html#selected-projects",
-    "href": "index.html#selected-projects",
-    "title": "schochastics",
-    "section": "Selected Projects",
-    "text": "Selected Projects\n\n\n\n\n\n\n\n\n\n\ngraphlayouts\n\n\nAn R package for network visualization\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nAn R package for network centrality\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRstudio addins for network analysis\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\nall projects"
-  },
-  {
-    "objectID": "index.html#last-publications",
-    "href": "index.html#last-publications",
-    "title": "schochastics",
-    "section": "Last Publications",
-    "text": "Last Publications\n\n\n\n\n\n\n\n\n\n\nPenalty shootouts are tough, but the alternating order is fair\n\n\nSilvan Vollmer and David Schoch and Ulrik Brandes\n\n\nWe compare conversion rates of association football (soccer) penalties during regulation or extra time with those during shootouts. Our data consists of roughly 50,000 penalties from the eleven~most recent seasons in European men’s football competitions \n\n\n\n\n\nOct 7, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nComputational Reproducibility in Computational Social Science\n\n\nDavid Schoch and Chung-hong Chan and Claudia Wagner and Arnim Bleier\n\n\nIn the last decade, replication and reproducibility crises have shaken the scientific landscape. As potential solutions, open science practices were heavily discussed and have been implemented with varying success in different disciplines. We argue, however, that the binary definition of reproducibility, specifically for computational-X disciplines such as computational social science, is insufficient since it is not explicit about the agents and conditions under which results can be…\n\n\n\n\n\nJul 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nThe interplay of structural features and observed dissimilarities among centrality indices\n\n\nDavid Schoch and Termeh Shafie\n\n\nAn abundance of centrality indices has been proposed which capture the importance of nodes in a network based on different structural features. While there remains a persistent belief that similarities in outcomes of indices is contingent on their technical definitions, a growing body of research shows that structural features affect observed similarities more than technicalities. \n\n\n\n\n\nJul 1, 2023\n\n\n\n\n\n\nNo matching items\n\n\n\nall publications"
-  },
-  {
-    "objectID": "publications/jap_centrality/index.html",
-    "href": "publications/jap_centrality/index.html",
-    "title": "What do centrality measures measure in psychological networks?",
-    "section": "",
-    "text": "preprint"
-  },
-  {
-    "objectID": "publications/jap_centrality/index.html#abstract",
-    "href": "publications/jap_centrality/index.html#abstract",
-    "title": "What do centrality measures measure in psychological networks?",
-    "section": "Abstract",
-    "text": "Abstract\nCentrality indices are a popular tool to analyze structural aspects of psychological networks. As centrality indices were originally developed in the context of social networks, it is unclear to what extent these indices are suitable in a psychological network context. In this article we critically examine several issues with the use of the most popular centrality indices in psychological networks: degree, betweenness, and closeness centrality. We show that problems with centrality indices discussed in the social network literature also apply to the psychological networks. Assumptions underlying centrality indices, such as presence of a flow and shortest paths, may not correspond with a general theory of how psychological variables relate to one another. Furthermore, the assumptions of node distinctiveness and node exchangeability may not hold in psychological networks. We conclude that, for psychological networks, betweenness and closeness centrality seem especially unsuitable as measures of node importance. We therefore suggest three ways forward: (a) using centrality measures that are tailored to the psychological network context, (b) reconsidering existing measures of importance used in statistical models underlying psychological networks, and (c) discarding the concept of node centrality entirely. Foremost, we argue that one has to make explicit what one means when one states that a node is central, and what assumptions the centrality measure of choice entails, to make sure that there is a match between the process under study and the centrality measure that is used.\nJournal of Abnormal Psychology 128 (8), 892"
-  },
-  {
-    "objectID": "publications/scirep_astroturfing/index.html",
-    "href": "publications/scirep_astroturfing/index.html",
-    "title": "Coordination patterns reveal online political astroturfing across the world",
-    "section": "",
-    "text": "oa journal"
-  },
-  {
-    "objectID": "publications/scirep_astroturfing/index.html#abstract",
-    "href": "publications/scirep_astroturfing/index.html#abstract",
-    "title": "Coordination patterns reveal online political astroturfing across the world",
-    "section": "Abstract",
-    "text": "Abstract\nOnline political astroturfing—hidden information campaigns in which a political actor mimics genuine citizen behavior by incentivizing agents to spread information online—has become prevalent on social media. Such inauthentic information campaigns threaten to undermine the Internet’s promise to more equitable participation in public debates. We argue that the logic of social behavior within the campaign bureaucracy and principal–agent problems lead to detectable activity patterns among the campaign’s social media accounts. Our analysis uses a network-based methodology to identify such coordination patterns in all campaigns contained in the largest publicly available database on astroturfing published by Twitter. On average, 74% of the involved accounts in each campaign engaged in a simple form of coordination that we call co-tweeting and co-retweeting. Comparing the astroturfing accounts to various systematically constructed comparison samples, we show that the same behavior is negligible among the accounts of regular users that the campaigns try to mimic. As its main substantive contribution, the paper demonstrates that online political astroturfing consistently leaves similar traces of coordination, even across diverse political and country contexts and different time periods. The presented methodology is a reliable first step for detecting astroturfing campaigns.\nScientific Reports 12, 4572"
-  },
-  {
-    "objectID": "publications/political_astroturf_korea/index.html",
-    "href": "publications/political_astroturf_korea/index.html",
-    "title": "How to Manipulate Social Media: Analyzing Political Astroturfing Using Ground Truth Data from South Korea",
-    "section": "",
-    "text": "journal"
-  },
-  {
-    "objectID": "publications/political_astroturf_korea/index.html#abstract",
-    "href": "publications/political_astroturf_korea/index.html#abstract",
-    "title": "How to Manipulate Social Media: Analyzing Political Astroturfing Using Ground Truth Data from South Korea",
-    "section": "Abstract",
-    "text": "Abstract\nThis project investigates political astroturfing, i.e. hidden propaganda by powerful political actors aimed at mimicking grassroots activity, on social media. We focus on Twitter accounts used by the South Korean secret service to influence the 2012 presidential elections in favor of the eventual winner, Park Geun-hye. Two independent cluster analyses based on activity patterns of the Twitter accounts and textual features of tweets reliably reveal that there are three groups of NIS accounts, including one group that engages mostly in retweeting, and another group focused on posting news articles with a link. We show that these groups reflect different strategic agendas and correspond to several secret service agents identified in the court documents. We argue that these patterns of coordinated tweeting are consistent with predictions derived from principal-agent theory, and should therefore appear in other astroturfing campaigns as well.\nIn Eleventh International AAAI Conference on Web and Social Media"
-  },
-  {
-    "objectID": "publications/social_stratification/index.html",
-    "href": "publications/social_stratification/index.html",
-    "title": "Social Stratification from Networks of Leveling Ties",
-    "section": "",
-    "text": "preprint"
-  },
-  {
-    "objectID": "publications/social_stratification/index.html#abstract",
-    "href": "publications/social_stratification/index.html#abstract",
-    "title": "Social Stratification from Networks of Leveling Ties",
-    "section": "Abstract",
-    "text": "Abstract\nSocial networks can be made of various kinds of ties, but (often implicit) assumptions embodied in network-analytic tools do not necessarily apply to all of them. Centrality indices, or instance, build on the assumption that it is always beneficial to add more ties. While it has been noted that networks of ties with a negative sentiment require different concepts of centrality, we here highlight ties that are neither positive nor negative to have, but an indication of commonality. This is exemplified by the derivation of socio-economic status from networks that indicate common class membership.\nIn International Conference on Complex Networks and their Applications"
-  },
-  {
-    "objectID": "publications/polcomm_astroturfing/index.html",
-    "href": "publications/polcomm_astroturfing/index.html",
-    "title": "Political Astroturfing on Twitter: How to Coordinate a Disinformation Campaign",
-    "section": "",
-    "text": "preprint"
-  },
-  {
-    "objectID": "publications/polcomm_astroturfing/index.html#abstract",
-    "href": "publications/polcomm_astroturfing/index.html#abstract",
-    "title": "Political Astroturfing on Twitter: How to Coordinate a Disinformation Campaign",
-    "section": "Abstract",
-    "text": "Abstract\nPolitical astroturfing, a centrally coordinated disinformation campaign in which participants pretend to be ordinary citizens acting independently, has the potential to influence electoral outcomes and other forms of political behavior. Yet, it is hard to evaluate the scope and effectiveness of political astroturfing without ground truth information, such as the verified identity of its agents and instigators. In this paper, we study the South Korean National Information Service’s (NIS) disinformation campaign during the presidential election in 2012, taking advantage of a list of campaign accounts published in court proceedings. Features that best distinguish these accounts from regular users in contemporaneously collected Twitter data are traces left by coordination among astroturfing agents, instead of the individual account characteristics typically used in related approaches such as social bot detection. We develop a methodology that exploits these distinct empirical patterns to identify additional likely astroturfing accounts and validate this detection strategy by analyzing their messages and current account status. However, an analysis relying on Twitter influence metrics shows that the known and suspect NIS accounts only had a limited impact on political social media discussions. By using the principal-agent framework to analyze one of the earliest revealed instances of political astroturfing, we improve on extant methodological approaches to detect disinformation campaigns and ground them more firmly in social science theory.\nPolitical Communication 37 (2), 256-280"
-  },
-  {
-    "objectID": "publications/centrality_lethality/index.html",
-    "href": "publications/centrality_lethality/index.html",
-    "title": "Centrality as a Predictor of Lethal Proteins: Performance and Robustness",
-    "section": "",
-    "text": "preprint"
-  },
-  {
-    "objectID": "publications/centrality_lethality/index.html#abstract",
-    "href": "publications/centrality_lethality/index.html#abstract",
-    "title": "Centrality as a Predictor of Lethal Proteins: Performance and Robustness",
-    "section": "Abstract",
-    "text": "Abstract\nThe Centrality-Lethality Hypothesis states that proteins with a higher degree centrality are more likely to be lethal, i.e. proteins involved in more interactions are more likely to cause death when knocked off. This proposition gave rise to several new investigations in which stronger associations were obtained for other centrality measures. Most of this previous work focused on the well known protein-interaction network of Saccharomyces cerevisiae. In a recent study, however, it was found that degree and betweenness of lethal proteins is significantly above average across 20 different protein-interaction networks. Closeness centrality, on the other hand, did not perform as well. We replicate this study and show that the reported results are due largely to a misapplication of closeness to disconnected networks. A more suitable variant actually turns out to be a better predictor than betweenness and degree in most of the networks. Worse, we find that despite the different theoretical explanations they offer, the performance ranking of centrality indices varies across networks and depends on the somewhat arbitrary derivation of binary network data from unreliable measurements. Our results suggest that the celebrated hypothesis is not supported by data.\nIn MMB & DFT 2014: 11"
-  },
-  {
-    "objectID": "publications/joss_graphlayouts/index.html",
-    "href": "publications/joss_graphlayouts/index.html",
-    "title": "graphlayouts: Layout algorithms for network visualizations in R",
-    "section": "",
-    "text": "R package"
-  },
-  {
-    "objectID": "publications/joss_graphlayouts/index.html#abstract",
-    "href": "publications/joss_graphlayouts/index.html#abstract",
-    "title": "graphlayouts: Layout algorithms for network visualizations in R",
-    "section": "Abstract",
-    "text": "Abstract\nNetwork analysis offers a powerful set of methods to understand the relationships among entities, such as people, or organizations, and the patterns that emerge from these connections. It is increasingly popular in various fields, including sociology, biology, economics, and computer science, and has been used to study diverse phenomena including the spread of diseases, flow of information, and the structure of political organizations. Network visualization is a powerful tool for exploring, analyzing, and communicating network structures and patterns therein. However, in contrast to tabular data, nodes can technically be placed arbitrarily on the plane and it is easy to draw wrong conclusion based on an inadequate layout. To circumvent arbitrary placement of nodes, many different layout algorithms have been developed which optimize different stylistic features and can serve purposes in communicating structural properties. The package graphlayouts implements several state-of-the-art algorithms which are so far not available for R. This includes algorithms for large graphs, to emphasize hidden group structures, and important nodes within a network.\nJournal of Open Source Software 8 (84), 5238"
-  },
-  {
-    "objectID": "publications/joss_netrankr/index.html",
-    "href": "publications/joss_netrankr/index.html",
-    "title": "netrankr: An R package for total, partial, and probabilistic rankings in networks",
-    "section": "",
-    "text": "R package"
-  },
-  {
-    "objectID": "publications/joss_netrankr/index.html#abstract",
-    "href": "publications/joss_netrankr/index.html#abstract",
-    "title": "netrankr: An R package for total, partial, and probabilistic rankings in networks",
-    "section": "Abstract",
-    "text": "Abstract\nOne of the key concepts in network science is network centrality. Centrality seeks to provide the answer to the question of who (or what) is important in a network depending on the underlying process forming the network and the empirical phenomenon in question. In a nutshell, an actor in a network is more central if they have better relations, where the definition of better relations depends on the conceptualization of structural importance. Applications of centrality can be found in any field where networks arise. In social networks, we may simply be interested in finding the most popular user. In bioinformatics, centrality is used to detect essential proteins in protein-protein interaction networks (Jeong et al., 2001). Even in sports, centrality is applied to rank athletes or teams (Radicchi, 2011). A myriad of indices have been proposed, all with differing interpretations of what constitutes a central position within a network. Although netrankr offers this traditional approach to network centrality, its main focus lies on alternative assessments of centrality based on partial and probabilistic rankings in networks.\nJournal of Open Source Software 7 (77), 4563"
-  },
-  {
-    "objectID": "publications/penalty_shootout/index.html",
-    "href": "publications/penalty_shootout/index.html",
-    "title": "Penalty shootouts are tough, but the alternating order is fair",
-    "section": "",
-    "text": "preprint"
-  },
-  {
-    "objectID": "publications/penalty_shootout/index.html#abstract",
-    "href": "publications/penalty_shootout/index.html#abstract",
-    "title": "Penalty shootouts are tough, but the alternating order is fair",
-    "section": "Abstract",
-    "text": "Abstract\nWe compare conversion rates of association football (soccer) penalties during regulation or extra time with those during shootouts. Our data consists of roughly 50,000 penalties from the eleven~most recent seasons in European men’s football competitions. About one third of the penalties are from more than 1,500 penalty shootouts. We find that shootout conversion rates are significantly lower, and attribute this to worse performance of shooters rather than better performance of goalkeepers. We also find that, statistically, there is no advantage for either team in the usual alternating shooting order. These main findings are complemented by a number of more detailed analyses.\nArxiv 2310.04797"
-  },
-  {
-    "objectID": "publications/proj_signed2mode/index.html",
-    "href": "publications/proj_signed2mode/index.html",
-    "title": "Projecting Signed Two-Mode Networks",
-    "section": "",
-    "text": "preprint"
-  },
-  {
-    "objectID": "publications/proj_signed2mode/index.html#abstract",
-    "href": "publications/proj_signed2mode/index.html#abstract",
-    "title": "Projecting Signed Two-Mode Networks",
-    "section": "Abstract",
-    "text": "Abstract\nSigned two-mode networks have so far predominantly been analysed using blockmodeling techniques. In this work, we put forward the idea of projecting such networks onto its modes. Two projection methods are introduced which allow the application of known dichotomization tool for weighted networks to obtain a simple signed network. It turns out, however, that resulting networks may contain ambivalent ties, defined as conjunctions of positive and negative ties. We show that this requires the reformulation of matrices related to the network and introduce the complex adjacency and Laplacian matrix. These matrices are used to prove some properties related to balance theory including ambivalence.\nMathematical Sociology 45 (1), 37-50"
-  },
-  {
-    "objectID": "publications/reconceptualizing_centrality/index.html",
-    "href": "publications/reconceptualizing_centrality/index.html",
-    "title": "Re-conceptualizing centrality in social networks",
-    "section": "",
-    "text": "preprint"
-  },
-  {
-    "objectID": "publications/reconceptualizing_centrality/index.html#abstract",
-    "href": "publications/reconceptualizing_centrality/index.html#abstract",
-    "title": "Re-conceptualizing centrality in social networks",
-    "section": "Abstract",
-    "text": "Abstract\nIn the social sciences, networks are used to represent relationships between social actors, be they individuals or aggregates. The structural importance of these actors is assessed in terms of centrality indices which are commonly defined as graph invariants. Many such indices have been proposed, but there is no unifying theory of centrality. Previous attempts at axiomatic characterization have been focused on particular indices, and the conceptual frameworks that have been proposed alternatively do not lend themselves to mathematical treatment. We show that standard centrality indices, although seemingly distinct, can in fact be expressed in a common framework based on path algebras. Since, as a consequence, all of these indices preserve the neighbourhood-inclusion pre-order, the latter provides a conceptually clear criterion for the definition of centrality indices.\nEuropean Journal of Applied Mathematics, 27(6):971-985"
-  },
-  {
-    "objectID": "publications/prob_central/index.html",
-    "href": "publications/prob_central/index.html",
-    "title": "Centrality without indices: Partial rankings and rank probabilities in networks",
-    "section": "",
-    "text": "journal"
-  },
-  {
-    "objectID": "publications/prob_central/index.html#abstract",
-    "href": "publications/prob_central/index.html#abstract",
-    "title": "Centrality without indices: Partial rankings and rank probabilities in networks",
-    "section": "Abstract",
-    "text": "Abstract\nWe present an alternative approach to assess centrality in networks which does not rely on traditional indices. The work is based on neighborhood-inclusion, a partial ranking inducing relation of nodes, which was shown to be preserved by many existing centrality indices. As such, it can serve as the shared basis for centrality in networks. We argue that evaluating this partial ranking by itself allows for a generic assessment of centrality, avoiding several pitfalls that can arise when indices are applied. Additionally, we illustrate how to derive further partial rankings and introduce some probabilistic methods to, among others, compute expected centrality ranks of nodes.\nSocial Networks, 54:50-60"
-  },
-  {
-    "objectID": "project/dialrs/index.html",
-    "href": "project/dialrs/index.html",
-    "title": "dialrs",
+    "objectID": "material/football-data/index.html",
+    "href": "material/football-data/index.html",
+    "title": "Soccer Data",
     "section": "",
     "text": "GITHUB"
   },
   {
-    "objectID": "project/netUtils/index.html",
-    "href": "project/netUtils/index.html",
-    "title": "netUtils",
-    "section": "",
-    "text": "GITHUB"
+    "objectID": "material/football-data/index.html#codebook",
+    "href": "material/football-data/index.html#codebook",
+    "title": "Soccer Data",
+    "section": "Codebook",
+    "text": "Codebook\n\n\n\n\n\n\n\nvariable\ndescription\n\n\n\n\nhome\nhome team name (not necessarily unique)\n\n\naway\naway team name (not necessarily unique)\n\n\ndate\ndate of match\n\n\ngh\ngoals for home team (including extra time and penalties)\n\n\nga\ngoals for away team (including extra time and penalties)\n\n\nfull_time\n“F”=game ended in 90’, “E”=extra time, “P”=penalty shoot-out\n\n\ncompetition\ncountry name of league or name of international competition\n\n\nhome_ident\nunique identifier of home team\n\n\naway_ident\nunique identifier of away team\n\n\nhome_country\ncountry of home team\n\n\naway_country\ncountry of away team\n\n\nhome_code\ncountry code of home team\n\n\naway_code\ncountry code of away team\n\n\nhome_continent\ncontinent of home team\n\n\naway_continent\ncontinent of away team\n\n\ncontinent\ncontinent of competition\n\n\nlevel\n“national”= domestic league, “international”= international cup"
   },
   {
-    "objectID": "project/rgraph6/index.html",
-    "href": "project/rgraph6/index.html",
-    "title": "rgraph6",
-    "section": "",
-    "text": "GITHUB\n\n(Main Author and maintainer: Michal Bojanowski)"
+    "objectID": "material/football-data/index.html#rscipts",
+    "href": "material/football-data/index.html#rscipts",
+    "title": "Soccer Data",
+    "section": "Rscipts",
+    "text": "Rscipts\nThe folder Rscripts contains some R code with basic analyses which could get you going:\n\n01_basic_stats.R: very simple stats (number of games, goals, etc)\n02_soccerverse.R: some code for figures on soccerverse.com"
   },
   {
-    "objectID": "project/quartocities/index.html",
-    "href": "project/quartocities/index.html",
-    "title": "Quartocities",
-    "section": "",
-    "text": "GITHUB\n\n\nDEMO"
-  },
-  {
-    "objectID": "project/PSAWR/index.html",
-    "href": "project/PSAWR/index.html",
-    "title": "PSAWR",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/quarto_cv/index.html",
-    "href": "project/quarto_cv/index.html",
-    "title": "CV templates",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/soccerverse/index.html",
-    "href": "project/soccerverse/index.html",
-    "title": "soccerverse",
-    "section": "",
-    "text": "LINK"
-  },
-  {
-    "objectID": "project/quarto_glossary/index.html",
-    "href": "project/quarto_glossary/index.html",
-    "title": "Glossary with nutshell",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/adaR/index.html",
-    "href": "project/adaR/index.html",
-    "title": "adaR",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/quarto_social-share/index.html",
-    "href": "project/quarto_social-share/index.html",
-    "title": "Share buttons for HTML documents",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/levelnet/index.html",
-    "href": "project/levelnet/index.html",
-    "title": "levelnet",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/networkdata/index.html",
-    "href": "project/networkdata/index.html",
-    "title": "networkdata",
-    "section": "",
-    "text": "GITHUB\n\n\nPKGDOWN"
-  },
-  {
-    "objectID": "project/webBotparseR/index.html",
-    "href": "project/webBotparseR/index.html",
-    "title": "webBotparseR",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/quarto_academicons/index.html",
-    "href": "project/quarto_academicons/index.html",
-    "title": "Quarto Academicons",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/webtrackR/index.html",
-    "href": "project/webtrackR/index.html",
-    "title": "webtrackR",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/signnet/index.html",
-    "href": "project/signnet/index.html",
-    "title": "signnet",
-    "section": "",
-    "text": "GITHUB\n\n\nPKGDOWN"
-  },
-  {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "schochastics",
-    "section": "",
-    "text": "👋 Hi, I’m David Schoch"
-  },
-  {
-    "objectID": "about/index.html#more-about-me",
-    "href": "about/index.html#more-about-me",
-    "title": "schochastics",
-    "section": "more about me",
-    "text": "more about me\nBefore joining GESIS, I was a Presidential Fellow at the University of Manchester in the Department of Sociology, affiliated with the The Mitchell Centre for Social Network Analysis.\nI received my PhD in Computer Science at the University of Konstanz as a fellow of the Graduate School of Decision Sciences. I also have a diploma in business mathematics from Karlsruhe Institute of Technology."
-  },
-  {
-    "objectID": "about/index.html#research-interests",
-    "href": "about/index.html#research-interests",
-    "title": "schochastics",
-    "section": "research interests",
-    "text": "research interests\nMy main research interests lie in the field of (social) network analysis. I have made technical and methodological contributions to topics such as network centrality, signed networks, and two-mode networks.\nI am also actively involved in research around political astroturfing on social media.\nSee my publications for all my scientific output."
-  },
-  {
-    "objectID": "about/index.html#soccerverse",
-    "href": "about/index.html#soccerverse",
-    "title": "schochastics",
-    "section": "soccerverse",
-    "text": "soccerverse\nIn an effort to combine a hobby with work, I created the football analytics website soccerverse together with some former colleagues. The project includes a world ranking of football clubs, close to the one FIFA uses for national teams. I developed most of my data science and R skills with this project, including scraping and cleaning data (i.e. collecting football results from various sources) and using the tidyverse to analyse the data.\nPart of the data is available on github."
-  },
-  {
-    "objectID": "about/index.html#science-slam",
-    "href": "about/index.html#science-slam",
-    "title": "schochastics",
-    "section": "science slam",
-    "text": "science slam\nI am a semi-active Science slammer, mostly slamming about networks and disinformation on social media. Some of my slams can be found on youtube (all in german)."
-  },
-  {
-    "objectID": "project/rokemon/index.html",
-    "href": "project/rokemon/index.html",
-    "title": "rokemon",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/quarto_sketchy/index.html",
-    "href": "project/quarto_sketchy/index.html",
-    "title": "Sketchy HTML theme",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/roughsf/index.html",
-    "href": "project/roughsf/index.html",
-    "title": "roughsf",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/edgebundle/index.html",
-    "href": "project/edgebundle/index.html",
-    "title": "edgebundle",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/quarto_webpage/index.html",
-    "href": "project/quarto_webpage/index.html",
-    "title": "Personal website",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/graphlayouts/index.html",
-    "href": "project/graphlayouts/index.html",
-    "title": "graphlayouts",
-    "section": "",
-    "text": "GITHUB\n\n\nPKGDOWN"
-  },
-  {
-    "objectID": "project/timeless/index.html",
-    "href": "project/timeless/index.html",
-    "title": "timeless",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/netrankr/index.html",
-    "href": "project/netrankr/index.html",
-    "title": "netrankr",
-    "section": "",
-    "text": "GITHUB\n\n\nPKGDOWN"
-  },
-  {
-    "objectID": "project/Rtumblr/index.html",
-    "href": "project/Rtumblr/index.html",
-    "title": "Rtumblr",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/quarto_blackboard/index.html",
-    "href": "project/quarto_blackboard/index.html",
-    "title": "Blackboard revealjs theme",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/rtoot/index.html",
-    "href": "project/rtoot/index.html",
-    "title": "rtoot",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/index.html",
-    "href": "project/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "R packages\n\n\n\n\n\n\n\n\n\n\ngraphlayouts\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetworkdata\n\n\nThe package contains a large collection of network dataset with different context. This includes social networks, animal networks and movie networks. All datasets are in ‘igraph’ format.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\n\n\n\n\nedgebundle\n\n\nImplements several algorithms for bundling edges in networks and flow and metro map layouts. This includes force directed edge bundling, a flow algorithm based on Steiner trees and a multicriteria optimization method for metro map layouts.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet\n\n\nImplements methods for the analysis of signed networks. This includes several measures for structural balance, blockmodeling algorithms, various centrality indices, and projections of signed two-mode networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrtoot\n\n\nAn implementation of calls designed to collect and organize Mastodon data via its Application Program Interfaces (API), which can be found at the following URL: https://docs.joinmastodon.org/.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrgraph6\n\n\nThis package implements several methods to encode networks as Encode network data as strings of printable ASCII characters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughnet\n\n\nVisualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nPSAWR\n\n\nPushshift.io API Wrapper written in R for comment/submission search for Reddit.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughsf\n\n\nDraw maps using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like maps.\n\n\n\n\n\n\n\n\n\n\n\n\n\nadaR\n\n\nwrapper for ada-url a WHATWG-compliant and fast URL parser written in modern C++\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetUtils\n\n\nProvides a collection of network analytic (convenience) functions, missing in other standard packages. This includes forms of dyad and triad census with attributes and equivalence measures. All functions are build upon igraph\n\n\n\n\n\n\n\n\n\n\n\n\n\nRtumblr\n\n\nAn implementation of calls designed to collect Tumblr data via its Application Program Interfaces (API)\n\n\n\n\n\n\n\n\n\n\n\n\n\nwebBotparseR\n\n\nParse search engine results which have been scraped with the ‘WebBot’ browser extension\n\n\n\n\n\n\n\n\n\n\n\n\n\nwebtrackR\n\n\nImplements data structures and methods to work with web tracking data\n\n\n\n\n\n\n\n\n\n\n\n\n\nstabilityAI\n\n\nInteract with the API of stability.ai\n\n\n\n\n\n\n\n\n\n\n\n\n\ntimeless\n\n\nFast general purpose date time converter\n\n\n\n\n\n\n\n\n\n\n\n\n\ndialrs\n\n\nParsing phone numbers in different formats\n\n\n\n\n\n\n\n\n\n\n\n\n\nrokemon\n\n\nThis package implements several themes for ggplot to bring your data into the world of Pokemon.\n\n\n\n\n\n\n\n\n\n\n\n\n\nlevelnet\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n  \n\n\n\n\nQuarto material\n\n\n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDescription\n\n\ntype\n\n\n\n\n\n\nPersonal website\n\n\nMy personal webpage made with Quarto\n\n\nwebsite\n\n\n\n\nQuarto Academicons\n\n\nShortcodes to use academicons in quarto\n\n\nshortcodes\n\n\n\n\nBlackboard revealjs theme\n\n\nA blackboard styled theme for revealjs\n\n\nrevealjs\n\n\n\n\nSketchy HTML theme\n\n\nA sketchy theme for html documents\n\n\nhtml\n\n\n\n\nShare buttons for HTML documents\n\n\nQuarto extension to add share buttons\n\n\nfilter\n\n\n\n\nNutshell: Expandable Explanations\n\n\nInclude expandable explanations in documents\n\n\nfilter\n\n\n\n\nQuartocities\n\n\nGeocities template for websites\n\n\nwebsite\n\n\n\n\nGlossary with nutshell\n\n\nAutomatic glossary for webpages using nutshell\n\n\ncode\n\n\n\n\nCV templates\n\n\nCV/Resume templates for Quarto\n\n\nhtml\n\n\n\n\n\nNo matching items\n\n\n\n\nOthers\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n\n\n\nsoccerverse\n\n\nAnalyzing top tier soccer around the globe\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "project/snahelper/index.html",
-    "href": "project/snahelper/index.html",
-    "title": "snahelper",
-    "section": "",
-    "text": "GITHUB\n\n\nPKGDOWN"
-  },
-  {
-    "objectID": "project/quarto_nutshell/index.html",
-    "href": "project/quarto_nutshell/index.html",
-    "title": "Nutshell: Expandable Explanations",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/stabilityAI/index.html",
-    "href": "project/stabilityAI/index.html",
-    "title": "stabilityAI",
-    "section": "",
-    "text": "GITHUB"
-  },
-  {
-    "objectID": "project/roughnet/index.html",
-    "href": "project/roughnet/index.html",
-    "title": "roughnet",
-    "section": "",
-    "text": "GITHUB\n\n\nPKGDOWN"
-  },
-  {
-    "objectID": "publications/arxiv_rang/index.html",
-    "href": "publications/arxiv_rang/index.html",
-    "title": "RANG: Reconstructing reproducible R computational environments",
-    "section": "",
-    "text": "R package"
-  },
-  {
-    "objectID": "publications/arxiv_rang/index.html#abstract",
-    "href": "publications/arxiv_rang/index.html#abstract",
-    "title": "RANG: Reconstructing reproducible R computational environments",
-    "section": "Abstract",
-    "text": "Abstract\nA complete declarative description of the computational environment is often missing when researchers share their materials. Without such description, software obsolescence and missing system components can jeopardize computational reproducibility in the future, even when data and computer code are available. The R package rang is a complete solution for generating the declarative description for other researchers to automatically reconstruct the computational environment at a specific time point. The reconstruction process, based on Docker, has been tested for R code as old as 2001. The declarative description generated by rang satisfies the definition of a reproducible research compendium and can be shared as such. In this contribution, we show how rang can be used to make otherwise unexecutable code, spanning from fields such as computational social science and bioinformatics, executable again. We also provide instructions on how to use rang to construct reproducible and shareable research compendia of current research. The package is currently available from CRAN (this https URL) and GitHub (this https URL).\nArxiv 2303.04758"
-  },
-  {
-    "objectID": "publications/joss_signnet/index.html",
-    "href": "publications/joss_signnet/index.html",
-    "title": "signnet: An R package for analyzing signed networks",
-    "section": "",
-    "text": "R package"
-  },
-  {
-    "objectID": "publications/joss_signnet/index.html#abstract",
-    "href": "publications/joss_signnet/index.html#abstract",
-    "title": "signnet: An R package for analyzing signed networks",
-    "section": "Abstract",
-    "text": "Abstract\nNetwork analysis usually deals with relations among entities which are positive, such as friendship, or advice seeking. Most analytic tools are constructed with this assumption, be that centrality indices, or clustering tools. However, not all conceivable relationships are positive. People can be friends but also enemies. A signed network is a network where both, positive and negative relationships may occur. Common network analytic tools are not applicable to such networks without adapting for the existence of negative ties. The R package signnet brings together methods that have been developed to analyze signed networks. This includes known blockmodeling techniques, centrality indices and tools for two-mode networks, as well as unique analytic techniques surrounding structural balance theory.\nJournal of Open Source Software 8 (81), 4987"
-  },
-  {
-    "objectID": "publications/astroturfing_around_the_world/index.html",
-    "href": "publications/astroturfing_around_the_world/index.html",
-    "title": "Political Astroturfing around the world",
-    "section": "",
-    "text": "poster"
-  },
-  {
-    "objectID": "publications/astroturfing_around_the_world/index.html#abstract",
-    "href": "publications/astroturfing_around_the_world/index.html#abstract",
-    "title": "Political Astroturfing around the world",
-    "section": "Abstract",
-    "text": "Abstract\nComparison of 8 disinformation campaigns on twitter\nAPSA 2019 (poster)"
-  },
-  {
-    "objectID": "publications/centrality_correlation/index.html",
-    "href": "publications/centrality_correlation/index.html",
-    "title": "Correlations among centrality indices and a class of uniquely ranked graphs",
-    "section": "",
-    "text": "journal"
-  },
-  {
-    "objectID": "publications/centrality_correlation/index.html#abstract",
-    "href": "publications/centrality_correlation/index.html#abstract",
-    "title": "Correlations among centrality indices and a class of uniquely ranked graphs",
-    "section": "Abstract",
-    "text": "Abstract\nVarious centrality indices have been proposed to capture different aspects of structural importance but relations among them are largely unexplained. The most common strategy appears to be the pairwise comparison of centrality indices via correlation. While correlation between centralities is often read as an inherent property of the indices, we argue that it is confounded by network structure in a systematic way. In fact, correlations may be even more indicative of network structure than of relationships between indices. This has substantial implications for the interpretation of centrality effects as it implies that competing explanations embodied in different indices cannot be separated from each other if the network structure is close to a certain generalization of star graphs.\nSocial Networks, 50:46-54"
-  },
-  {
-    "objectID": "publications/css_reproducibility/index.html",
-    "href": "publications/css_reproducibility/index.html",
-    "title": "Computational Reproducibility in Computational Social Science",
-    "section": "",
-    "text": "preprint"
-  },
-  {
-    "objectID": "publications/css_reproducibility/index.html#abstract",
-    "href": "publications/css_reproducibility/index.html#abstract",
-    "title": "Computational Reproducibility in Computational Social Science",
-    "section": "Abstract",
-    "text": "Abstract\nIn the last decade, replication and reproducibility crises have shaken the scientific landscape. As potential solutions, open science practices were heavily discussed and have been implemented with varying success in different disciplines. We argue, however, that the binary definition of reproducibility, specifically for computational-X disciplines such as computational social science, is insufficient since it is not explicit about the agents and conditions under which results can be reproduced. We expand the definition to avoid “open washing”, the practice of fabricating theoretical reproducibility but not supporting practical or verified reproducibility, and introduce a tier system of computational reproducibility based on the concept of verifiability. We identify common barriers to verifiable computational reproducibility, specifically in the field of computational social science, and provide suggestions on how to circumvent common access and computational barriers.\nArxiv 2307.01918"
-  },
-  {
-    "objectID": "publications/multiplexity_multigraph/index.html",
-    "href": "publications/multiplexity_multigraph/index.html",
-    "title": "Multiplexity analysis of networks using multigraph representations",
-    "section": "",
-    "text": "oa journal"
-  },
-  {
-    "objectID": "publications/multiplexity_multigraph/index.html#abstract",
-    "href": "publications/multiplexity_multigraph/index.html#abstract",
-    "title": "Multiplexity analysis of networks using multigraph representations",
-    "section": "Abstract",
-    "text": "Abstract\nMultivariate networks comprising several compositional and structural variables can be represented as multigraphs by various forms of aggregations based on vertex attributes. We propose a framework to perform exploratory and confirmatory multiplexity analysis of aggregated multigraphs in order to find relevant associations between vertex and edge attributes. The exploration is performed by comparing frequencies of the different edges within and between aggregated vertex categories, while the confirmatory analysis is performed using derived complexity or multiplexity statistics under different random multigraph models. These statistics are defined by the distribution of edge multiplicities and provide information on the covariation and dependencies of different edges given vertex attributes. The presented approach highlights the need to further analyse and model structural dependencies with respect to edge entrainment. We illustrate the approach by applying it on a well known multivariate network dataset which has previously been analysed in the context of multiplexity."
-  },
-  {
-    "objectID": "publications/mmc_rtoot/index.html",
-    "href": "publications/mmc_rtoot/index.html",
-    "title": "Rtoot: Collecting and Analyzing Mastodon Data",
-    "section": "",
-    "text": "R package"
-  },
-  {
-    "objectID": "publications/mmc_rtoot/index.html#abstract",
-    "href": "publications/mmc_rtoot/index.html#abstract",
-    "title": "Rtoot: Collecting and Analyzing Mastodon Data",
-    "section": "Abstract",
-    "text": "Abstract\nMastodon is a free and open source software which allows to run a self-hosted microblogging service, similar to Twitter. Servers running Mastodon can interoperate, meaning that their users can communicate across different instances. Together, all Mastodon instances form a large decentralized federation of social networking sites. Mastodon was first released in late 2016 but has not attracted as much attention by users and researchers compared to centralized social media platforms such as Twitter. Previous studies on Mastodon classify it as an “alternative social media” platform, in contrast to “corporate social media” platforms such as Twitter. Due to the open source nature, Mastodon is also famous for being the technology behind far-right social media platforms Gab and Donald Trump’s Truth Social. These far-right platforms have also captured certain academic attention…\nMobile Media & Communication"
-  },
-  {
-    "objectID": "publications/dissimilarity_centrality/index.html",
-    "href": "publications/dissimilarity_centrality/index.html",
-    "title": "The interplay of structural features and observed dissimilarities among centrality indices",
-    "section": "",
-    "text": "open access"
-  },
-  {
-    "objectID": "publications/dissimilarity_centrality/index.html#abstract",
-    "href": "publications/dissimilarity_centrality/index.html#abstract",
-    "title": "The interplay of structural features and observed dissimilarities among centrality indices",
-    "section": "Abstract",
-    "text": "Abstract\nAn abundance of centrality indices has been proposed which capture the importance of nodes in a network based on different structural features. While there remains a persistent belief that similarities in outcomes of indices is contingent on their technical definitions, a growing body of research shows that structural features affect observed similarities more than technicalities. We conduct a series of experiments on artificial networks to trace the influence of specific structural features on the similarity of indices which confirm previous results in the literature. Our analysis on 1163 real-world networks, however, shows that little of the observations on synthetic networks convincingly carry over to empirical settings. Our findings suggest that although it seems clear that (dis)similarities among centralities depend on structural properties of the network, using correlation type analyses do not seem to be a promising approach to uncover such connections.\nSocial Networks 78:54-64"
-  },
-  {
-    "objectID": "publications/hypergraph_carib_attacks/index.html",
-    "href": "publications/hypergraph_carib_attacks/index.html",
-    "title": "Hypergraph Representations: A Study of Carib Attacks on Colonial Forces, 1509-1700",
-    "section": "",
-    "text": "preprint"
-  },
-  {
-    "objectID": "publications/hypergraph_carib_attacks/index.html#abstract",
-    "href": "publications/hypergraph_carib_attacks/index.html#abstract",
-    "title": "Hypergraph Representations: A Study of Carib Attacks on Colonial Forces, 1509-1700",
-    "section": "Abstract",
-    "text": "Abstract\nNetwork data consisting of recorded historical events can be represented as hypergraphs where the ties or events can connect any number of nodes or event related attributes. In this paper, we perform a centrality analysis of a directed hypergraph representing attacks by indigenous peoples from the Lesser Antilles on European colonial settlements, 1509–1700. The results of central attacks with respect to attacked colonial force, member of attack alliances, and year and location of attack are discussed and compared to a non-relational exploratory analysis of the data. This comparison points to the importance of a mixed methods approach to enhance the analysis and to obtain a complementary understanding of a network study.\nJournal of Historical Network Research, 1(1)"
-  },
-  {
-    "objectID": "publications/index.html",
-    "href": "publications/index.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Penalty shootouts are tough, but the alternating order is fair\n\n\nSilvan Vollmer and David Schoch and Ulrik Brandes\n\n\nWe compare conversion rates of association football (soccer) penalties during regulation or extra time with those during shootouts. Our data consists of roughly 50,000 penalties from the eleven~most recent seasons in European men’s football competitions \n\n\n\n\n\nOct 7, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nComputational Reproducibility in Computational Social Science\n\n\nDavid Schoch and Chung-hong Chan and Claudia Wagner and Arnim Bleier\n\n\nIn the last decade, replication and reproducibility crises have shaken the scientific landscape. As potential solutions, open science practices were heavily discussed and have been implemented with varying success in different disciplines. We argue, however, that the binary definition of reproducibility, specifically for computational-X disciplines such as computational social science, is insufficient since it is not explicit about the agents and conditions under which results can be reproduced. \n\n\n\n\n\nJul 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nThe interplay of structural features and observed dissimilarities among centrality indices\n\n\nDavid Schoch and Termeh Shafie\n\n\nAn abundance of centrality indices has been proposed which capture the importance of nodes in a network based on different structural features. While there remains a persistent belief that similarities in outcomes of indices is contingent on their technical definitions, a growing body of research shows that structural features affect observed similarities more than technicalities. \n\n\n\n\n\nJul 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nRtoot: Collecting and Analyzing Mastodon Data\n\n\nDavid Schoch and Chung-hong Chan\n\n\nAn implementation of calls designed to collect and organize Mastodon data via its Application Program Interfaces (API)\n\n\n\n\n\nMay 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\ngraphlayouts: Layout algorithms for network visualizations in R\n\n\nDavid Schoch\n\n\nThe package graphlayouts implements several state-of-the-art algorithms which are so far not available for R. This includes algorithms for large graphs, to emphasize hidden group structures, and important nodes within a network. \n\n\n\n\n\nApr 29, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nRANG: Reconstructing reproducible R computational environments\n\n\nChung-hong Chan and David Schoch\n\n\nA complete declarative description of the computational environment is often missing when researchers share their materials. Without such description, software obsolescence and missing system components can jeopardize computational reproducibility in the future, even when data and computer code are available. The R package rang is a complete solution for generating the declarative description \n\n\n\n\n\nMar 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet: An R package for analyzing signed networks\n\n\nDavid Schoch\n\n\nA signed network is a network where both, positive and negative relationships may occur. Common network analytic tools are not applicable to such networks without adapting for the existence of negative ties. The R package signnet brings together methods that have been developed to analyze signed networks \n\n\n\n\n\nJan 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr: An R package for total, partial, and probabilistic rankings in networks\n\n\nDavid Schoch\n\n\nOne of the key concepts in network science is network centrality. Centrality seeks to provide the answer to the question of who (or what) is important in a network depending on the underlying process forming the network and the empirical phenomenon in question…. \n\n\n\n\n\nSep 26, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nAn extended family of measures for directed networks\n\n\nMartin Everett & David Schoch\n\n\nCentrality indices such as β-centrality, Katz status, and Hubbell’s index are commonly generalized to directed networks by relating the in-centrality of nodes to the in-centrality of their in-neighbors and equivalently so for out-centrality. This paper proposes an extension of Bonacich’s β-centrality…\n\n\n\n\n\nMar 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nCoordination patterns reveal online political astroturfing across the world\n\n\nDavid Schoch, Franziska B Keller, Sebastian Stier & JungHwan Yang\n\n\nOnline political astroturfing—hidden information campaigns in which a political actor mimics genuine citizen behavior by incentivizing agents to spread information online—has become prevalent on social media. Such inauthentic information campaigns threaten to undermine the Internet’s promise to more equitable participation in public debates. We argue that the logic of social behavior within the campaign bureaucracy and principal–agent problems lead to detectable activity patterns among the campaign’s social media accounts…\n\n\n\n\n\nMar 17, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nMultiplexity analysis of networks using multigraph representations\n\n\nTermeh Shafie & David Schoch\n\n\nMultivariate networks comprising several compositional and structural variables can be represented as multigraphs by various forms of aggregations based on vertex attributes. We propose a framework to perform exploratory and confirmatory multiplexity analysis of aggregated multigraphs in order to find relevant associations between vertex and edge attributes…\n\n\n\n\n\nSep 30, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nLegislators’ roll-call voting behavior increasingly corresponds to intervals in the political spectrum\n\n\nDavid Schoch & Ulrik Brandes\n\n\nScaling techniques such as the well known NOMINATE position political actors in a low dimensional space to represent the similarity or dissimilarity of their political orientation based on roll-call voting patterns. Starting from the same kind of data we propose an alternative, discrete, representation that replaces positions (points and distances) with niches (boxes and overlap)…\n\n\n\n\n\nOct 15, 2020\n\n\n\n\n\n\n\n\n\n\n\n\nProjecting Signed Two-Mode Networks\n\n\nDavid Schoch\n\n\nSigned two-mode networks have so far predominantly been analysed using blockmodeling techniques. In this work, we put forward the idea of projecting such networks onto its modes. Two projection methods are introduced which allow the application of known dichotomization tool for weighted networks to obtain a simple signed network…\n\n\n\n\n\nJan 10, 2020\n\n\n\n\n\n\n\n\n\n\n\n\nPolitical Astroturfing around the world\n\n\nFranziska B Keller, David Schoch, Sebastian Stier & JungHwan Yang\n\n\nComparison of 8 disinformation campaigns on twitter\n\n\n\n\n\nAug 26, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nPolitical Astroturfing on Twitter: How to Coordinate a Disinformation Campaign\n\n\nFranziska B Keller, David Schoch, Sebastian Stier & JungHwan Yang\n\n\nPolitical astroturfing, a centrally coordinated disinformation campaign in which participants pretend to be ordinary citizens acting independently, has the potential to influence electoral outcomes and other forms of political behavior. Yet, it is hard to evaluate the scope and effectiveness of political astroturfing without ground truth information, such as the verified identity of its agents and instigators. In this paper, we study the South Korean National Information Service’s (NIS) disinformation campaign during the presidential election in 2012…\n\n\n\n\n\nJul 28, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do centrality measures measure in psychological networks?\n\n\nLaura F Bringmann, Timon Elmer, Sacha Epskamp, Robert W Krause, David Schoch, Marieke Wichers, Johanna TW Wigman & Eveline Snippe\n\n\nCentrality indices are a popular tool to analyze structural aspects of psychological networks. As centrality indices were originally developed in the context of social networks, it is unclear to what extent these indices are suitable in a psychological network context. In this article we critically examine several issues with the use of the most popular centrality indices in psychological networks…\n\n\n\n\n\nJul 27, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nSocial Stratification from Networks of Leveling Ties\n\n\nDavid Schoch & Ulrik Brandes\n\n\nSocial networks can be made of various kinds of ties, but (often implicit) assumptions embodied in network-analytic tools do not necessarily apply to all of them. Centrality indices, or instance, build on the assumption that it is always beneficial to add more ties. While it has been noted that networks of ties with a negative sentiment require different concepts of centrality…\n\n\n\n\n\nDec 14, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nCentrality without indices: Partial rankings and rank probabilities in networks\n\n\nDavid Schoch\n\n\nWe present an alternative approach to assess centrality in networks which does not rely on traditional indices. The work is based on neighborhood-inclusion, a partial ranking inducing relation of nodes, which was shown to be preserved by many existing centrality indices. As such, it can serve as the shared basis for centrality in networks…\n\n\n\n\n\nJan 3, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nHypergraph Representations: A Study of Carib Attacks on Colonial Forces, 1509-1700\n\n\nTermeh Shafie, David Schoch Jimmy Mans, Corinne Hofman & Ulrik Brandes\n\n\nNetwork data consisting of recorded historical events can be represented as hypergraphs where the ties or events can connect any number of nodes or event related attributes. In this paper, we perform a centrality analysis of a directed hypergraph representing attacks by indigenous peoples from the Lesser Antilles on European colonial settlements, 1509–1700…\n\n\n\n\n\nNov 1, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nCorrelations among centrality indices and a class of uniquely ranked graphs\n\n\nDavid Schoch, Thomas Valente & Ulrik Brandes\n\n\nVarious centrality indices have been proposed to capture different aspects of structural importance but relations among them are largely unexplained. The most common strategy appears to be the pairwise comparison of centrality indices via correlation. While correlation between centralities is often read as an inherent property of the indices, we argue that it is confounded by network structure in a systematic way…\n\n\n\n\n\nJul 15, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nHow to Manipulate Social Media: Analyzing Political Astroturfing Using Ground Truth Data from South Korea\n\n\nFranziska B Keller, David Schoch, Sebastian Stier & JungHwan Yang\n\n\nThis project investigates political astroturfing, i.e. hidden propaganda by powerful political actors aimed at mimicking grassroots activity, on social media. We focus on Twitter accounts used by the South Korean secret service to influence the 2012 presidential elections in favor of the eventual winner, Park Geun-hye…\n\n\n\n\n\nMay 3, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nRe-conceptualizing centrality in social networks\n\n\nDavid Schoch & Ulrik Brandes\n\n\nIn the social sciences, networks are used to represent relationships between social actors, be they individuals or aggregates. The structural importance of these actors is assessed in terms of centrality indices which are commonly defined as graph invariants. Many such indices have been proposed, but there is no unifying theory of centrality. Previous attempts at axiomatic characterization have been focused on particular indices, and the conceptual frameworks that have been proposed alternatively do not lend themselves to mathematical treatment…\n\n\n\n\n\nDec 15, 2016\n\n\n\n\n\n\n\n\n\n\n\n\nCentrality as a Predictor of Lethal Proteins: Performance and Robustness\n\n\nDavid Schoch & Ulrik Brandes\n\n\nThe Centrality-Lethality Hypothesis states that proteins with a higher degree centrality are more likely to be lethal, i.e. proteins involved in more interactions are more likely to cause death when knocked off. This proposition gave rise to several new investigations in which stronger associations were obtained for other centrality measures. Most of this previous work focused on the well known protein-interaction network of Saccharomyces cerevisiae…\n\n\n\n\n\nDec 29, 2014\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "publications/inout_centrality/index.html",
-    "href": "publications/inout_centrality/index.html",
-    "title": "An extended family of measures for directed networks",
-    "section": "",
-    "text": "preprint"
-  },
-  {
-    "objectID": "publications/inout_centrality/index.html#abstract",
-    "href": "publications/inout_centrality/index.html#abstract",
-    "title": "An extended family of measures for directed networks",
-    "section": "Abstract",
-    "text": "Abstract\nCentrality indices such as β-centrality, Katz status, and Hubbell’s index are commonly generalized to directed networks by relating the in-centrality of nodes to the in-centrality of their in-neighbors and equivalently so for out-centrality. This paper proposes an extension of Bonacich’s β-centrality and related measures for directed networks where the in-centrality of a node depends on the out-centrality of their in-neighbors and their out-centrality on the in-centrality of their out- neighbors. The so defined indices extend hubs and authorities in the same way as β-centrality generalizes eigenvector centrality. Several technical results are presented including the extension of the range of permissible β parameters to negative values, similar to traditional β- centrality.\nSocial Networks 70:334-340, 2022"
-  },
-  {
-    "objectID": "publications/us_congress/index.html",
-    "href": "publications/us_congress/index.html",
-    "title": "Legislators’ roll-call voting behavior increasingly corresponds to intervals in the political spectrum",
-    "section": "",
-    "text": "oa journal"
-  },
-  {
-    "objectID": "publications/us_congress/index.html#abstract",
-    "href": "publications/us_congress/index.html#abstract",
-    "title": "Legislators’ roll-call voting behavior increasingly corresponds to intervals in the political spectrum",
-    "section": "Abstract",
-    "text": "Abstract\nScaling techniques such as the well known NOMINATE position political actors in a low dimensional space to represent the similarity or dissimilarity of their political orientation based on roll-call voting patterns. Starting from the same kind of data we propose an alternative, discrete, representation that replaces positions (points and distances) with niches (boxes and overlap). In the one-dimensional case, this corresponds to replacing the left-to-right ordering of points on the real line with an interval order. As it turns out, this seemingly simplistic one-dimensional model is sufficient to represent the similarity of roll-call votes by U.S. senators in recent years. In a historic context, however, low dimensionality represents the exception which stands in contrast to what is suggested by scaling techniques.\nScientific Reports 10 (1), 1-9"
-  },
-  {
-    "objectID": "attribution.html",
-    "href": "attribution.html",
-    "title": "Fine Print",
-    "section": "",
-    "text": "Made with Hugo Apéro, which is based on Blogophonic by Formspree. Powered by blogdown and built by Hugo."
-  },
-  {
-    "objectID": "attribution.html#made-with-hugo-apéro-and-blogdown",
-    "href": "attribution.html#made-with-hugo-apéro-and-blogdown",
-    "title": "Fine Print",
-    "section": "",
-    "text": "Made with Hugo Apéro, which is based on Blogophonic by Formspree. Powered by blogdown and built by Hugo."
-  },
-  {
-    "objectID": "attribution.html#license",
-    "href": "attribution.html#license",
-    "title": "Fine Print",
-    "section": "License",
-    "text": "License\nMy blog posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.\n\n\n\nUnless otherwise specified, code presented in blog posts are released under the MIT license."
+    "objectID": "material/football-data/index.html#disclaimer",
+    "href": "material/football-data/index.html#disclaimer",
+    "title": "Soccer Data",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nThis dataset definitely contains errors, especially for older games, where sources are not as reliable. A big issue are teams that merge/split/dissolve over time, which (I think) I did not resolve consistently over time.\nI have gathered this dataset over the course of 8 years and put a lot of effort in it (see soccerverse.com). If you use the data for any kind of project, please drop me a line or ping me on twitter. I hapilly include your results on soccerverse.com too."
   },
   {
     "objectID": "material/netVizR/index.html",
@@ -840,32 +231,648 @@
     "text": "Multilevel networks\nIn this section, you will get to know layout_as_multilevel(), a layout algorithm in the raphlayouts package which can be use to visualize multilevel networks.\nA multilevel network consists of two (or more) levels with different node sets and intra-level ties. For instance, one level could be scientists and their collaborative ties and the second level are labs and ties among them, and inter-level edges are the affiliations of scientists and labs.\nThe graphlayouts package contains an artificial multilevel network which will be used to illustrate the algorithm.\n\ndata(\"multilvl_ex\")\n\nThe package assumes that a multilevel network has a vertex attribute called lvl which holds the level information (1 or 2).\nThe underlying algorithm of layout_as_multilevel() has three different versions, which can be used to emphasize different structural features of a multilevel network.\nIndependent of which option is chosen, the algorithm internally produces a 3D layout, where each level is positioned on a different y-plane. The 3D layout is then mapped to 2D with an isometric projection. The parameters alpha and beta control the perspective of the projection. The default values seem to work for many instances, but may not always be optimal. As a rough guideline: beta rotates the plot around the y axis (in 3D) and alpha moves the POV up or down.\n\nComplete layout\nA layout for the complete network can be computed via layout_as_multilevel() setting type = \"all\". Internally, the algorithm produces a constrained 3D stress layout (each level on a different y plane) which is then projected to 2D. This layout ignores potential differences in each level and optimizes only the overall layout.\n\nxy &lt;- layout_as_multilevel(multilvl_ex, type = \"all\", alpha = 25, beta = 45)\n\nTo visualize the network with ggraph, you may want to draw the edges for each level (and inter level edges) with a different edge geom. This gives you more flexibility to control aesthetics and can easily be achieved with a filter.\n\nggraph(multilvl_ex, \"manual\", x = xy[, 1], y = xy[, 2]) +\n  geom_edge_link0(\n    aes(filter = (node1.lvl == 1 & node2.lvl == 1)),\n    edge_colour = \"firebrick3\",\n    alpha = 0.5,\n    edge_linewidth = 0.3\n  ) +\n  geom_edge_link0(\n    aes(filter = (node1.lvl != node2.lvl)),\n    alpha = 0.3,\n    edge_linewidth = 0.1,\n    edge_colour = \"black\"\n  ) +\n  geom_edge_link0(\n    aes(filter = (node1.lvl == 2 &\n      node2.lvl == 2)),\n    edge_colour = \"goldenrod3\",\n    edge_linewidth = 0.3,\n    alpha = 0.5\n  ) +\n  geom_node_point(aes(shape = as.factor(lvl)), fill = \"grey25\", size = 3) +\n  scale_shape_manual(values = c(21, 22)) +\n  theme_graph() +\n  coord_cartesian(clip = \"off\", expand = TRUE) +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\n\n\nSeparate layouts for both levels\nIn many instances, there may be different structural properties inherent to the levels of the network. In that case, two layout functions can be passed to layout_as_multilevel() to deal with these differences. In our artificial network, level 1 has a hidden group structure and level 2 has a core-periphery structure.\nTo use this layout option, set type = \"separate\" and specify two layout functions with FUN1 and FUN2. You can change internal parameters of these layout functions with named lists in the params1 and params2 argument. Note that this version optimizes inter-level edges only minimally. The emphasis is on the intra-level structures.\n\nxy &lt;- layout_as_multilevel(multilvl_ex,\n  type = \"separate\",\n  FUN1 = layout_as_backbone,\n  FUN2 = layout_with_stress,\n  alpha = 25, beta = 45\n)\n\nAgain, try to include an edge geom for each level.\n\ncols2 &lt;- c(\n  \"#3A5FCD\", \"#CD00CD\", \"#EE30A7\", \"#EE6363\",\n  \"#CD2626\", \"#458B00\", \"#EEB422\", \"#EE7600\"\n)\n\nggraph(multilvl_ex, \"manual\", x = xy[, 1], y = xy[, 2]) +\n  geom_edge_link0(aes(\n    filter = (node1.lvl == 1 & node2.lvl == 1),\n    edge_colour = col\n  ),\n  alpha = 0.5, edge_linewidth = 0.3\n  ) +\n  geom_edge_link0(\n    aes(filter = (node1.lvl != node2.lvl)),\n    alpha = 0.3,\n    edge_linewidth = 0.1,\n    edge_colour = \"black\"\n  ) +\n  geom_edge_link0(aes(\n    filter = (node1.lvl == 2 & node2.lvl == 2),\n    edge_colour = col\n  ),\n  edge_linewidth = 0.3, alpha = 0.5\n  ) +\n  geom_node_point(aes(\n    fill = as.factor(grp),\n    shape = as.factor(lvl),\n    size = nsize\n  )) +\n  scale_shape_manual(values = c(21, 22)) +\n  scale_size_continuous(range = c(1.5, 4.5)) +\n  scale_fill_manual(values = cols2) +\n  scale_edge_color_manual(values = cols2, na.value = \"grey12\") +\n  scale_edge_alpha_manual(values = c(0.1, 0.7)) +\n  theme_graph() +\n  coord_cartesian(clip = \"off\", expand = TRUE) +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\n\n\nFix only one level\nThis layout can be used to emphasize one intra-level structure. The layout of the second level is calculated in a way that optimizes inter-level edge placement. Set type = \"fix1\" and specify FUN1 and possibly params1 to fix level 1 or set type = \"fix2\" and specify FUN2 and possibly params2 to fix level 2.\n\nxy &lt;- layout_as_multilevel(multilvl_ex,\n  type = \"fix2\",\n  FUN2 = layout_with_stress,\n  alpha = 25, beta = 45\n)\n\nggraph(multilvl_ex, \"manual\", x = xy[, 1], y = xy[, 2]) +\n  geom_edge_link0(aes(\n    filter = (node1.lvl == 1 & node2.lvl == 1),\n    edge_colour = col\n  ),\n  alpha = 0.5, edge_linewidth = 0.3\n  ) +\n  geom_edge_link0(\n    aes(filter = (node1.lvl != node2.lvl)),\n    alpha = 0.3,\n    edge_linewidth = 0.1,\n    edge_colour = \"black\"\n  ) +\n  geom_edge_link0(aes(\n    filter = (node1.lvl == 2 & node2.lvl == 2),\n    edge_colour = col\n  ),\n  edge_linewidth = 0.3, alpha = 0.5\n  ) +\n  geom_node_point(aes(\n    fill = as.factor(grp),\n    shape = as.factor(lvl),\n    size = nsize\n  )) +\n  scale_shape_manual(values = c(21, 22)) +\n  scale_size_continuous(range = c(1.5, 4.5)) +\n  scale_fill_manual(values = cols2) +\n  scale_edge_color_manual(values = cols2, na.value = \"grey12\") +\n  scale_edge_alpha_manual(values = c(0.1, 0.7)) +\n  theme_graph() +\n  coord_cartesian(clip = \"off\", expand = TRUE) +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\n\n\n3D with threejs\nInstead of the default 2D projection, layout_as_multilevel() can also return the 3D layout by setting project2d = FALSE. The 3D layout can then be used with e.g. threejs to produce an interactive 3D visualization.\n\nlibrary(threejs)\nxyz &lt;- layout_as_multilevel(multilvl_ex,\n  type = \"separate\",\n  FUN1 = layout_as_backbone,\n  FUN2 = layout_with_stress,\n  project2D = FALSE\n)\nmultilvl_ex$layout &lt;- xyz\nV(multilvl_ex)$color &lt;- c(\"#00BFFF\", \"#FF69B4\")[V(multilvl_ex)$lvl]\nV(multilvl_ex)$vertex.label &lt;- V(multilvl_ex)$name\n\ngraphjs(multilvl_ex, bg = \"black\", vertex.shape = \"sphere\")"
   },
   {
-    "objectID": "material/football-data/index.html",
-    "href": "material/football-data/index.html",
-    "title": "Soccer Data",
+    "objectID": "attribution.html",
+    "href": "attribution.html",
+    "title": "Fine Print",
+    "section": "",
+    "text": "Made with Hugo Apéro, which is based on Blogophonic by Formspree. Powered by blogdown and built by Hugo."
+  },
+  {
+    "objectID": "attribution.html#made-with-hugo-apéro-and-blogdown",
+    "href": "attribution.html#made-with-hugo-apéro-and-blogdown",
+    "title": "Fine Print",
+    "section": "",
+    "text": "Made with Hugo Apéro, which is based on Blogophonic by Formspree. Powered by blogdown and built by Hugo."
+  },
+  {
+    "objectID": "attribution.html#license",
+    "href": "attribution.html#license",
+    "title": "Fine Print",
+    "section": "License",
+    "text": "License\nMy blog posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.\n\n\n\nUnless otherwise specified, code presented in blog posts are released under the MIT license."
+  },
+  {
+    "objectID": "publications/us_congress/index.html",
+    "href": "publications/us_congress/index.html",
+    "title": "Legislators’ roll-call voting behavior increasingly corresponds to intervals in the political spectrum",
+    "section": "",
+    "text": "oa journal"
+  },
+  {
+    "objectID": "publications/us_congress/index.html#abstract",
+    "href": "publications/us_congress/index.html#abstract",
+    "title": "Legislators’ roll-call voting behavior increasingly corresponds to intervals in the political spectrum",
+    "section": "Abstract",
+    "text": "Abstract\nScaling techniques such as the well known NOMINATE position political actors in a low dimensional space to represent the similarity or dissimilarity of their political orientation based on roll-call voting patterns. Starting from the same kind of data we propose an alternative, discrete, representation that replaces positions (points and distances) with niches (boxes and overlap). In the one-dimensional case, this corresponds to replacing the left-to-right ordering of points on the real line with an interval order. As it turns out, this seemingly simplistic one-dimensional model is sufficient to represent the similarity of roll-call votes by U.S. senators in recent years. In a historic context, however, low dimensionality represents the exception which stands in contrast to what is suggested by scaling techniques.\nScientific Reports 10 (1), 1-9"
+  },
+  {
+    "objectID": "publications/inout_centrality/index.html",
+    "href": "publications/inout_centrality/index.html",
+    "title": "An extended family of measures for directed networks",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/inout_centrality/index.html#abstract",
+    "href": "publications/inout_centrality/index.html#abstract",
+    "title": "An extended family of measures for directed networks",
+    "section": "Abstract",
+    "text": "Abstract\nCentrality indices such as β-centrality, Katz status, and Hubbell’s index are commonly generalized to directed networks by relating the in-centrality of nodes to the in-centrality of their in-neighbors and equivalently so for out-centrality. This paper proposes an extension of Bonacich’s β-centrality and related measures for directed networks where the in-centrality of a node depends on the out-centrality of their in-neighbors and their out-centrality on the in-centrality of their out- neighbors. The so defined indices extend hubs and authorities in the same way as β-centrality generalizes eigenvector centrality. Several technical results are presented including the extension of the range of permissible β parameters to negative values, similar to traditional β- centrality.\nSocial Networks 70:334-340, 2022"
+  },
+  {
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Penalty shootouts are tough, but the alternating order is fair\n\n\nSilvan Vollmer and David Schoch and Ulrik Brandes\n\n\nWe compare conversion rates of association football (soccer) penalties during regulation or extra time with those during shootouts. Our data consists of roughly 50,000 penalties from the eleven~most recent seasons in European men’s football competitions \n\n\n\n\n\nOct 7, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nComputational Reproducibility in Computational Social Science\n\n\nDavid Schoch and Chung-hong Chan and Claudia Wagner and Arnim Bleier\n\n\nIn the last decade, replication and reproducibility crises have shaken the scientific landscape. As potential solutions, open science practices were heavily discussed and have been implemented with varying success in different disciplines. We argue, however, that the binary definition of reproducibility, specifically for computational-X disciplines such as computational social science, is insufficient since it is not explicit about the agents and conditions under which results can be reproduced. \n\n\n\n\n\nJul 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nThe interplay of structural features and observed dissimilarities among centrality indices\n\n\nDavid Schoch and Termeh Shafie\n\n\nAn abundance of centrality indices has been proposed which capture the importance of nodes in a network based on different structural features. While there remains a persistent belief that similarities in outcomes of indices is contingent on their technical definitions, a growing body of research shows that structural features affect observed similarities more than technicalities. \n\n\n\n\n\nJul 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nRtoot: Collecting and Analyzing Mastodon Data\n\n\nDavid Schoch and Chung-hong Chan\n\n\nAn implementation of calls designed to collect and organize Mastodon data via its Application Program Interfaces (API)\n\n\n\n\n\nMay 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\ngraphlayouts: Layout algorithms for network visualizations in R\n\n\nDavid Schoch\n\n\nThe package graphlayouts implements several state-of-the-art algorithms which are so far not available for R. This includes algorithms for large graphs, to emphasize hidden group structures, and important nodes within a network. \n\n\n\n\n\nApr 29, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nRANG: Reconstructing reproducible R computational environments\n\n\nChung-hong Chan and David Schoch\n\n\nA complete declarative description of the computational environment is often missing when researchers share their materials. Without such description, software obsolescence and missing system components can jeopardize computational reproducibility in the future, even when data and computer code are available. The R package rang is a complete solution for generating the declarative description \n\n\n\n\n\nMar 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet: An R package for analyzing signed networks\n\n\nDavid Schoch\n\n\nA signed network is a network where both, positive and negative relationships may occur. Common network analytic tools are not applicable to such networks without adapting for the existence of negative ties. The R package signnet brings together methods that have been developed to analyze signed networks \n\n\n\n\n\nJan 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr: An R package for total, partial, and probabilistic rankings in networks\n\n\nDavid Schoch\n\n\nOne of the key concepts in network science is network centrality. Centrality seeks to provide the answer to the question of who (or what) is important in a network depending on the underlying process forming the network and the empirical phenomenon in question…. \n\n\n\n\n\nSep 26, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nAn extended family of measures for directed networks\n\n\nMartin Everett & David Schoch\n\n\nCentrality indices such as β-centrality, Katz status, and Hubbell’s index are commonly generalized to directed networks by relating the in-centrality of nodes to the in-centrality of their in-neighbors and equivalently so for out-centrality. This paper proposes an extension of Bonacich’s β-centrality…\n\n\n\n\n\nMar 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nCoordination patterns reveal online political astroturfing across the world\n\n\nDavid Schoch, Franziska B Keller, Sebastian Stier & JungHwan Yang\n\n\nOnline political astroturfing—hidden information campaigns in which a political actor mimics genuine citizen behavior by incentivizing agents to spread information online—has become prevalent on social media. Such inauthentic information campaigns threaten to undermine the Internet’s promise to more equitable participation in public debates. We argue that the logic of social behavior within the campaign bureaucracy and principal–agent problems lead to detectable activity patterns among the campaign’s social media accounts…\n\n\n\n\n\nMar 17, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nMultiplexity analysis of networks using multigraph representations\n\n\nTermeh Shafie & David Schoch\n\n\nMultivariate networks comprising several compositional and structural variables can be represented as multigraphs by various forms of aggregations based on vertex attributes. We propose a framework to perform exploratory and confirmatory multiplexity analysis of aggregated multigraphs in order to find relevant associations between vertex and edge attributes…\n\n\n\n\n\nSep 30, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nLegislators’ roll-call voting behavior increasingly corresponds to intervals in the political spectrum\n\n\nDavid Schoch & Ulrik Brandes\n\n\nScaling techniques such as the well known NOMINATE position political actors in a low dimensional space to represent the similarity or dissimilarity of their political orientation based on roll-call voting patterns. Starting from the same kind of data we propose an alternative, discrete, representation that replaces positions (points and distances) with niches (boxes and overlap)…\n\n\n\n\n\nOct 15, 2020\n\n\n\n\n\n\n\n\n\n\n\n\nProjecting Signed Two-Mode Networks\n\n\nDavid Schoch\n\n\nSigned two-mode networks have so far predominantly been analysed using blockmodeling techniques. In this work, we put forward the idea of projecting such networks onto its modes. Two projection methods are introduced which allow the application of known dichotomization tool for weighted networks to obtain a simple signed network…\n\n\n\n\n\nJan 10, 2020\n\n\n\n\n\n\n\n\n\n\n\n\nPolitical Astroturfing around the world\n\n\nFranziska B Keller, David Schoch, Sebastian Stier & JungHwan Yang\n\n\nComparison of 8 disinformation campaigns on twitter\n\n\n\n\n\nAug 26, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nPolitical Astroturfing on Twitter: How to Coordinate a Disinformation Campaign\n\n\nFranziska B Keller, David Schoch, Sebastian Stier & JungHwan Yang\n\n\nPolitical astroturfing, a centrally coordinated disinformation campaign in which participants pretend to be ordinary citizens acting independently, has the potential to influence electoral outcomes and other forms of political behavior. Yet, it is hard to evaluate the scope and effectiveness of political astroturfing without ground truth information, such as the verified identity of its agents and instigators. In this paper, we study the South Korean National Information Service’s (NIS) disinformation campaign during the presidential election in 2012…\n\n\n\n\n\nJul 28, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do centrality measures measure in psychological networks?\n\n\nLaura F Bringmann, Timon Elmer, Sacha Epskamp, Robert W Krause, David Schoch, Marieke Wichers, Johanna TW Wigman & Eveline Snippe\n\n\nCentrality indices are a popular tool to analyze structural aspects of psychological networks. As centrality indices were originally developed in the context of social networks, it is unclear to what extent these indices are suitable in a psychological network context. In this article we critically examine several issues with the use of the most popular centrality indices in psychological networks…\n\n\n\n\n\nJul 27, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nSocial Stratification from Networks of Leveling Ties\n\n\nDavid Schoch & Ulrik Brandes\n\n\nSocial networks can be made of various kinds of ties, but (often implicit) assumptions embodied in network-analytic tools do not necessarily apply to all of them. Centrality indices, or instance, build on the assumption that it is always beneficial to add more ties. While it has been noted that networks of ties with a negative sentiment require different concepts of centrality…\n\n\n\n\n\nDec 14, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nCentrality without indices: Partial rankings and rank probabilities in networks\n\n\nDavid Schoch\n\n\nWe present an alternative approach to assess centrality in networks which does not rely on traditional indices. The work is based on neighborhood-inclusion, a partial ranking inducing relation of nodes, which was shown to be preserved by many existing centrality indices. As such, it can serve as the shared basis for centrality in networks…\n\n\n\n\n\nJan 3, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nHypergraph Representations: A Study of Carib Attacks on Colonial Forces, 1509-1700\n\n\nTermeh Shafie, David Schoch Jimmy Mans, Corinne Hofman & Ulrik Brandes\n\n\nNetwork data consisting of recorded historical events can be represented as hypergraphs where the ties or events can connect any number of nodes or event related attributes. In this paper, we perform a centrality analysis of a directed hypergraph representing attacks by indigenous peoples from the Lesser Antilles on European colonial settlements, 1509–1700…\n\n\n\n\n\nNov 1, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nCorrelations among centrality indices and a class of uniquely ranked graphs\n\n\nDavid Schoch, Thomas Valente & Ulrik Brandes\n\n\nVarious centrality indices have been proposed to capture different aspects of structural importance but relations among them are largely unexplained. The most common strategy appears to be the pairwise comparison of centrality indices via correlation. While correlation between centralities is often read as an inherent property of the indices, we argue that it is confounded by network structure in a systematic way…\n\n\n\n\n\nJul 15, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nHow to Manipulate Social Media: Analyzing Political Astroturfing Using Ground Truth Data from South Korea\n\n\nFranziska B Keller, David Schoch, Sebastian Stier & JungHwan Yang\n\n\nThis project investigates political astroturfing, i.e. hidden propaganda by powerful political actors aimed at mimicking grassroots activity, on social media. We focus on Twitter accounts used by the South Korean secret service to influence the 2012 presidential elections in favor of the eventual winner, Park Geun-hye…\n\n\n\n\n\nMay 3, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nRe-conceptualizing centrality in social networks\n\n\nDavid Schoch & Ulrik Brandes\n\n\nIn the social sciences, networks are used to represent relationships between social actors, be they individuals or aggregates. The structural importance of these actors is assessed in terms of centrality indices which are commonly defined as graph invariants. Many such indices have been proposed, but there is no unifying theory of centrality. Previous attempts at axiomatic characterization have been focused on particular indices, and the conceptual frameworks that have been proposed alternatively do not lend themselves to mathematical treatment…\n\n\n\n\n\nDec 15, 2016\n\n\n\n\n\n\n\n\n\n\n\n\nCentrality as a Predictor of Lethal Proteins: Performance and Robustness\n\n\nDavid Schoch & Ulrik Brandes\n\n\nThe Centrality-Lethality Hypothesis states that proteins with a higher degree centrality are more likely to be lethal, i.e. proteins involved in more interactions are more likely to cause death when knocked off. This proposition gave rise to several new investigations in which stronger associations were obtained for other centrality measures. Most of this previous work focused on the well known protein-interaction network of Saccharomyces cerevisiae…\n\n\n\n\n\nDec 29, 2014\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "publications/hypergraph_carib_attacks/index.html",
+    "href": "publications/hypergraph_carib_attacks/index.html",
+    "title": "Hypergraph Representations: A Study of Carib Attacks on Colonial Forces, 1509-1700",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/hypergraph_carib_attacks/index.html#abstract",
+    "href": "publications/hypergraph_carib_attacks/index.html#abstract",
+    "title": "Hypergraph Representations: A Study of Carib Attacks on Colonial Forces, 1509-1700",
+    "section": "Abstract",
+    "text": "Abstract\nNetwork data consisting of recorded historical events can be represented as hypergraphs where the ties or events can connect any number of nodes or event related attributes. In this paper, we perform a centrality analysis of a directed hypergraph representing attacks by indigenous peoples from the Lesser Antilles on European colonial settlements, 1509–1700. The results of central attacks with respect to attacked colonial force, member of attack alliances, and year and location of attack are discussed and compared to a non-relational exploratory analysis of the data. This comparison points to the importance of a mixed methods approach to enhance the analysis and to obtain a complementary understanding of a network study.\nJournal of Historical Network Research, 1(1)"
+  },
+  {
+    "objectID": "publications/dissimilarity_centrality/index.html",
+    "href": "publications/dissimilarity_centrality/index.html",
+    "title": "The interplay of structural features and observed dissimilarities among centrality indices",
+    "section": "",
+    "text": "open access"
+  },
+  {
+    "objectID": "publications/dissimilarity_centrality/index.html#abstract",
+    "href": "publications/dissimilarity_centrality/index.html#abstract",
+    "title": "The interplay of structural features and observed dissimilarities among centrality indices",
+    "section": "Abstract",
+    "text": "Abstract\nAn abundance of centrality indices has been proposed which capture the importance of nodes in a network based on different structural features. While there remains a persistent belief that similarities in outcomes of indices is contingent on their technical definitions, a growing body of research shows that structural features affect observed similarities more than technicalities. We conduct a series of experiments on artificial networks to trace the influence of specific structural features on the similarity of indices which confirm previous results in the literature. Our analysis on 1163 real-world networks, however, shows that little of the observations on synthetic networks convincingly carry over to empirical settings. Our findings suggest that although it seems clear that (dis)similarities among centralities depend on structural properties of the network, using correlation type analyses do not seem to be a promising approach to uncover such connections.\nSocial Networks 78:54-64"
+  },
+  {
+    "objectID": "publications/mmc_rtoot/index.html",
+    "href": "publications/mmc_rtoot/index.html",
+    "title": "Rtoot: Collecting and Analyzing Mastodon Data",
+    "section": "",
+    "text": "R package"
+  },
+  {
+    "objectID": "publications/mmc_rtoot/index.html#abstract",
+    "href": "publications/mmc_rtoot/index.html#abstract",
+    "title": "Rtoot: Collecting and Analyzing Mastodon Data",
+    "section": "Abstract",
+    "text": "Abstract\nMastodon is a free and open source software which allows to run a self-hosted microblogging service, similar to Twitter. Servers running Mastodon can interoperate, meaning that their users can communicate across different instances. Together, all Mastodon instances form a large decentralized federation of social networking sites. Mastodon was first released in late 2016 but has not attracted as much attention by users and researchers compared to centralized social media platforms such as Twitter. Previous studies on Mastodon classify it as an “alternative social media” platform, in contrast to “corporate social media” platforms such as Twitter. Due to the open source nature, Mastodon is also famous for being the technology behind far-right social media platforms Gab and Donald Trump’s Truth Social. These far-right platforms have also captured certain academic attention…\nMobile Media & Communication"
+  },
+  {
+    "objectID": "publications/multiplexity_multigraph/index.html",
+    "href": "publications/multiplexity_multigraph/index.html",
+    "title": "Multiplexity analysis of networks using multigraph representations",
+    "section": "",
+    "text": "oa journal"
+  },
+  {
+    "objectID": "publications/multiplexity_multigraph/index.html#abstract",
+    "href": "publications/multiplexity_multigraph/index.html#abstract",
+    "title": "Multiplexity analysis of networks using multigraph representations",
+    "section": "Abstract",
+    "text": "Abstract\nMultivariate networks comprising several compositional and structural variables can be represented as multigraphs by various forms of aggregations based on vertex attributes. We propose a framework to perform exploratory and confirmatory multiplexity analysis of aggregated multigraphs in order to find relevant associations between vertex and edge attributes. The exploration is performed by comparing frequencies of the different edges within and between aggregated vertex categories, while the confirmatory analysis is performed using derived complexity or multiplexity statistics under different random multigraph models. These statistics are defined by the distribution of edge multiplicities and provide information on the covariation and dependencies of different edges given vertex attributes. The presented approach highlights the need to further analyse and model structural dependencies with respect to edge entrainment. We illustrate the approach by applying it on a well known multivariate network dataset which has previously been analysed in the context of multiplexity."
+  },
+  {
+    "objectID": "publications/css_reproducibility/index.html",
+    "href": "publications/css_reproducibility/index.html",
+    "title": "Computational Reproducibility in Computational Social Science",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/css_reproducibility/index.html#abstract",
+    "href": "publications/css_reproducibility/index.html#abstract",
+    "title": "Computational Reproducibility in Computational Social Science",
+    "section": "Abstract",
+    "text": "Abstract\nIn the last decade, replication and reproducibility crises have shaken the scientific landscape. As potential solutions, open science practices were heavily discussed and have been implemented with varying success in different disciplines. We argue, however, that the binary definition of reproducibility, specifically for computational-X disciplines such as computational social science, is insufficient since it is not explicit about the agents and conditions under which results can be reproduced. We expand the definition to avoid “open washing”, the practice of fabricating theoretical reproducibility but not supporting practical or verified reproducibility, and introduce a tier system of computational reproducibility based on the concept of verifiability. We identify common barriers to verifiable computational reproducibility, specifically in the field of computational social science, and provide suggestions on how to circumvent common access and computational barriers.\nArxiv 2307.01918"
+  },
+  {
+    "objectID": "publications/centrality_correlation/index.html",
+    "href": "publications/centrality_correlation/index.html",
+    "title": "Correlations among centrality indices and a class of uniquely ranked graphs",
+    "section": "",
+    "text": "journal"
+  },
+  {
+    "objectID": "publications/centrality_correlation/index.html#abstract",
+    "href": "publications/centrality_correlation/index.html#abstract",
+    "title": "Correlations among centrality indices and a class of uniquely ranked graphs",
+    "section": "Abstract",
+    "text": "Abstract\nVarious centrality indices have been proposed to capture different aspects of structural importance but relations among them are largely unexplained. The most common strategy appears to be the pairwise comparison of centrality indices via correlation. While correlation between centralities is often read as an inherent property of the indices, we argue that it is confounded by network structure in a systematic way. In fact, correlations may be even more indicative of network structure than of relationships between indices. This has substantial implications for the interpretation of centrality effects as it implies that competing explanations embodied in different indices cannot be separated from each other if the network structure is close to a certain generalization of star graphs.\nSocial Networks, 50:46-54"
+  },
+  {
+    "objectID": "publications/astroturfing_around_the_world/index.html",
+    "href": "publications/astroturfing_around_the_world/index.html",
+    "title": "Political Astroturfing around the world",
+    "section": "",
+    "text": "poster"
+  },
+  {
+    "objectID": "publications/astroturfing_around_the_world/index.html#abstract",
+    "href": "publications/astroturfing_around_the_world/index.html#abstract",
+    "title": "Political Astroturfing around the world",
+    "section": "Abstract",
+    "text": "Abstract\nComparison of 8 disinformation campaigns on twitter\nAPSA 2019 (poster)"
+  },
+  {
+    "objectID": "publications/joss_signnet/index.html",
+    "href": "publications/joss_signnet/index.html",
+    "title": "signnet: An R package for analyzing signed networks",
+    "section": "",
+    "text": "R package"
+  },
+  {
+    "objectID": "publications/joss_signnet/index.html#abstract",
+    "href": "publications/joss_signnet/index.html#abstract",
+    "title": "signnet: An R package for analyzing signed networks",
+    "section": "Abstract",
+    "text": "Abstract\nNetwork analysis usually deals with relations among entities which are positive, such as friendship, or advice seeking. Most analytic tools are constructed with this assumption, be that centrality indices, or clustering tools. However, not all conceivable relationships are positive. People can be friends but also enemies. A signed network is a network where both, positive and negative relationships may occur. Common network analytic tools are not applicable to such networks without adapting for the existence of negative ties. The R package signnet brings together methods that have been developed to analyze signed networks. This includes known blockmodeling techniques, centrality indices and tools for two-mode networks, as well as unique analytic techniques surrounding structural balance theory.\nJournal of Open Source Software 8 (81), 4987"
+  },
+  {
+    "objectID": "publications/arxiv_rang/index.html",
+    "href": "publications/arxiv_rang/index.html",
+    "title": "RANG: Reconstructing reproducible R computational environments",
+    "section": "",
+    "text": "R package"
+  },
+  {
+    "objectID": "publications/arxiv_rang/index.html#abstract",
+    "href": "publications/arxiv_rang/index.html#abstract",
+    "title": "RANG: Reconstructing reproducible R computational environments",
+    "section": "Abstract",
+    "text": "Abstract\nA complete declarative description of the computational environment is often missing when researchers share their materials. Without such description, software obsolescence and missing system components can jeopardize computational reproducibility in the future, even when data and computer code are available. The R package rang is a complete solution for generating the declarative description for other researchers to automatically reconstruct the computational environment at a specific time point. The reconstruction process, based on Docker, has been tested for R code as old as 2001. The declarative description generated by rang satisfies the definition of a reproducible research compendium and can be shared as such. In this contribution, we show how rang can be used to make otherwise unexecutable code, spanning from fields such as computational social science and bioinformatics, executable again. We also provide instructions on how to use rang to construct reproducible and shareable research compendia of current research. The package is currently available from CRAN (this https URL) and GitHub (this https URL).\nArxiv 2303.04758"
+  },
+  {
+    "objectID": "project/roughnet/index.html",
+    "href": "project/roughnet/index.html",
+    "title": "roughnet",
+    "section": "",
+    "text": "GITHUB\n\n\nPKGDOWN"
+  },
+  {
+    "objectID": "project/stabilityAI/index.html",
+    "href": "project/stabilityAI/index.html",
+    "title": "stabilityAI",
     "section": "",
     "text": "GITHUB"
   },
   {
-    "objectID": "material/football-data/index.html#codebook",
-    "href": "material/football-data/index.html#codebook",
-    "title": "Soccer Data",
-    "section": "Codebook",
-    "text": "Codebook\n\n\n\n\n\n\n\nvariable\ndescription\n\n\n\n\nhome\nhome team name (not necessarily unique)\n\n\naway\naway team name (not necessarily unique)\n\n\ndate\ndate of match\n\n\ngh\ngoals for home team (including extra time and penalties)\n\n\nga\ngoals for away team (including extra time and penalties)\n\n\nfull_time\n“F”=game ended in 90’, “E”=extra time, “P”=penalty shoot-out\n\n\ncompetition\ncountry name of league or name of international competition\n\n\nhome_ident\nunique identifier of home team\n\n\naway_ident\nunique identifier of away team\n\n\nhome_country\ncountry of home team\n\n\naway_country\ncountry of away team\n\n\nhome_code\ncountry code of home team\n\n\naway_code\ncountry code of away team\n\n\nhome_continent\ncontinent of home team\n\n\naway_continent\ncontinent of away team\n\n\ncontinent\ncontinent of competition\n\n\nlevel\n“national”= domestic league, “international”= international cup"
+    "objectID": "project/quarto_nutshell/index.html",
+    "href": "project/quarto_nutshell/index.html",
+    "title": "Nutshell: Expandable Explanations",
+    "section": "",
+    "text": "GITHUB"
   },
   {
-    "objectID": "material/football-data/index.html#rscipts",
-    "href": "material/football-data/index.html#rscipts",
-    "title": "Soccer Data",
-    "section": "Rscipts",
-    "text": "Rscipts\nThe folder Rscripts contains some R code with basic analyses which could get you going:\n\n01_basic_stats.R: very simple stats (number of games, goals, etc)\n02_soccerverse.R: some code for figures on soccerverse.com"
+    "objectID": "project/snahelper/index.html",
+    "href": "project/snahelper/index.html",
+    "title": "snahelper",
+    "section": "",
+    "text": "GITHUB\n\n\nPKGDOWN"
   },
   {
-    "objectID": "material/football-data/index.html#disclaimer",
-    "href": "material/football-data/index.html#disclaimer",
-    "title": "Soccer Data",
-    "section": "Disclaimer",
-    "text": "Disclaimer\nThis dataset definitely contains errors, especially for older games, where sources are not as reliable. A big issue are teams that merge/split/dissolve over time, which (I think) I did not resolve consistently over time.\nI have gathered this dataset over the course of 8 years and put a lot of effort in it (see soccerverse.com). If you use the data for any kind of project, please drop me a line or ping me on twitter. I hapilly include your results on soccerverse.com too."
+    "objectID": "project/index.html",
+    "href": "project/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "R packages\n\n\n\n\n\n\n\n\n\n\ngraphlayouts\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetworkdata\n\n\nThe package contains a large collection of network dataset with different context. This includes social networks, animal networks and movie networks. All datasets are in ‘igraph’ format.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\n\n\n\n\nedgebundle\n\n\nImplements several algorithms for bundling edges in networks and flow and metro map layouts. This includes force directed edge bundling, a flow algorithm based on Steiner trees and a multicriteria optimization method for metro map layouts.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsignnet\n\n\nImplements methods for the analysis of signed networks. This includes several measures for structural balance, blockmodeling algorithms, various centrality indices, and projections of signed two-mode networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrtoot\n\n\nAn implementation of calls designed to collect and organize Mastodon data via its Application Program Interfaces (API), which can be found at the following URL: https://docs.joinmastodon.org/.\n\n\n\n\n\n\n\n\n\n\n\n\n\nrgraph6\n\n\nThis package implements several methods to encode networks as Encode network data as strings of printable ASCII characters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughnet\n\n\nVisualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\nPSAWR\n\n\nPushshift.io API Wrapper written in R for comment/submission search for Reddit.\n\n\n\n\n\n\n\n\n\n\n\n\n\nroughsf\n\n\nDraw maps using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like maps.\n\n\n\n\n\n\n\n\n\n\n\n\n\nadaR\n\n\nwrapper for ada-url a WHATWG-compliant and fast URL parser written in modern C++\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetUtils\n\n\nProvides a collection of network analytic (convenience) functions, missing in other standard packages. This includes forms of dyad and triad census with attributes and equivalence measures. All functions are build upon igraph\n\n\n\n\n\n\n\n\n\n\n\n\n\nRtumblr\n\n\nAn implementation of calls designed to collect Tumblr data via its Application Program Interfaces (API)\n\n\n\n\n\n\n\n\n\n\n\n\n\nwebBotparseR\n\n\nParse search engine results which have been scraped with the ‘WebBot’ browser extension\n\n\n\n\n\n\n\n\n\n\n\n\n\nwebtrackR\n\n\nImplements data structures and methods to work with web tracking data\n\n\n\n\n\n\n\n\n\n\n\n\n\nstabilityAI\n\n\nInteract with the API of stability.ai\n\n\n\n\n\n\n\n\n\n\n\n\n\ntimeless\n\n\nFast general purpose date time converter\n\n\n\n\n\n\n\n\n\n\n\n\n\ndialrs\n\n\nParsing phone numbers in different formats\n\n\n\n\n\n\n\n\n\n\n\n\n\nrokemon\n\n\nThis package implements several themes for ggplot to bring your data into the world of Pokemon.\n\n\n\n\n\n\n\n\n\n\n\n\n\nlevelnet\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n  \n\n\n\n\nQuarto material\n\n\n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDescription\n\n\ntype\n\n\n\n\n\n\nPersonal website\n\n\nMy personal webpage made with Quarto\n\n\nwebsite\n\n\n\n\nQuarto Academicons\n\n\nShortcodes to use academicons in quarto\n\n\nshortcodes\n\n\n\n\nBlackboard revealjs theme\n\n\nA blackboard styled theme for revealjs\n\n\nrevealjs\n\n\n\n\nSketchy HTML theme\n\n\nA sketchy theme for html documents\n\n\nhtml\n\n\n\n\nShare buttons for HTML documents\n\n\nQuarto extension to add share buttons\n\n\nfilter\n\n\n\n\nNutshell: Expandable Explanations\n\n\nInclude expandable explanations in documents\n\n\nfilter\n\n\n\n\nQuartocities\n\n\nGeocities template for websites\n\n\nwebsite\n\n\n\n\nGlossary with nutshell\n\n\nAutomatic glossary for webpages using nutshell\n\n\ncode\n\n\n\n\nCV templates\n\n\nCV/Resume templates for Quarto\n\n\nhtml\n\n\n\n\n\nNo matching items\n\n\n\n\nOthers\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n\n\n\nsoccerverse\n\n\nAnalyzing top tier soccer around the globe\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "project/rtoot/index.html",
+    "href": "project/rtoot/index.html",
+    "title": "rtoot",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/quarto_blackboard/index.html",
+    "href": "project/quarto_blackboard/index.html",
+    "title": "Blackboard revealjs theme",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/Rtumblr/index.html",
+    "href": "project/Rtumblr/index.html",
+    "title": "Rtumblr",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/netrankr/index.html",
+    "href": "project/netrankr/index.html",
+    "title": "netrankr",
+    "section": "",
+    "text": "GITHUB\n\n\nPKGDOWN"
+  },
+  {
+    "objectID": "project/timeless/index.html",
+    "href": "project/timeless/index.html",
+    "title": "timeless",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/graphlayouts/index.html",
+    "href": "project/graphlayouts/index.html",
+    "title": "graphlayouts",
+    "section": "",
+    "text": "GITHUB\n\n\nPKGDOWN"
+  },
+  {
+    "objectID": "project/quarto_webpage/index.html",
+    "href": "project/quarto_webpage/index.html",
+    "title": "Personal website",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/edgebundle/index.html",
+    "href": "project/edgebundle/index.html",
+    "title": "edgebundle",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/roughsf/index.html",
+    "href": "project/roughsf/index.html",
+    "title": "roughsf",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/quarto_sketchy/index.html",
+    "href": "project/quarto_sketchy/index.html",
+    "title": "Sketchy HTML theme",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/rokemon/index.html",
+    "href": "project/rokemon/index.html",
+    "title": "rokemon",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "schochastics",
+    "section": "",
+    "text": "👋 Hi, I’m David Schoch"
+  },
+  {
+    "objectID": "about/index.html#more-about-me",
+    "href": "about/index.html#more-about-me",
+    "title": "schochastics",
+    "section": "more about me",
+    "text": "more about me\nBefore joining GESIS, I was a Presidential Fellow at the University of Manchester in the Department of Sociology, affiliated with the The Mitchell Centre for Social Network Analysis.\nI received my PhD in Computer Science at the University of Konstanz as a fellow of the Graduate School of Decision Sciences. I also have a diploma in business mathematics from Karlsruhe Institute of Technology."
+  },
+  {
+    "objectID": "about/index.html#research-interests",
+    "href": "about/index.html#research-interests",
+    "title": "schochastics",
+    "section": "research interests",
+    "text": "research interests\nMy main research interests lie in the field of (social) network analysis. I have made technical and methodological contributions to topics such as network centrality, signed networks, and two-mode networks.\nI am also actively involved in research around political astroturfing on social media.\nSee my publications for all my scientific output."
+  },
+  {
+    "objectID": "about/index.html#soccerverse",
+    "href": "about/index.html#soccerverse",
+    "title": "schochastics",
+    "section": "soccerverse",
+    "text": "soccerverse\nIn an effort to combine a hobby with work, I created the football analytics website soccerverse together with some former colleagues. The project includes a world ranking of football clubs, close to the one FIFA uses for national teams. I developed most of my data science and R skills with this project, including scraping and cleaning data (i.e. collecting football results from various sources) and using the tidyverse to analyse the data.\nPart of the data is available on github."
+  },
+  {
+    "objectID": "about/index.html#science-slam",
+    "href": "about/index.html#science-slam",
+    "title": "schochastics",
+    "section": "science slam",
+    "text": "science slam\nI am a semi-active Science slammer, mostly slamming about networks and disinformation on social media. Some of my slams can be found on youtube (all in german)."
+  },
+  {
+    "objectID": "project/signnet/index.html",
+    "href": "project/signnet/index.html",
+    "title": "signnet",
+    "section": "",
+    "text": "GITHUB\n\n\nPKGDOWN"
+  },
+  {
+    "objectID": "project/webtrackR/index.html",
+    "href": "project/webtrackR/index.html",
+    "title": "webtrackR",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/quarto_academicons/index.html",
+    "href": "project/quarto_academicons/index.html",
+    "title": "Quarto Academicons",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/webBotparseR/index.html",
+    "href": "project/webBotparseR/index.html",
+    "title": "webBotparseR",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/networkdata/index.html",
+    "href": "project/networkdata/index.html",
+    "title": "networkdata",
+    "section": "",
+    "text": "GITHUB\n\n\nPKGDOWN"
+  },
+  {
+    "objectID": "project/levelnet/index.html",
+    "href": "project/levelnet/index.html",
+    "title": "levelnet",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/quarto_social-share/index.html",
+    "href": "project/quarto_social-share/index.html",
+    "title": "Share buttons for HTML documents",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/adaR/index.html",
+    "href": "project/adaR/index.html",
+    "title": "adaR",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/quarto_glossary/index.html",
+    "href": "project/quarto_glossary/index.html",
+    "title": "Glossary with nutshell",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/soccerverse/index.html",
+    "href": "project/soccerverse/index.html",
+    "title": "soccerverse",
+    "section": "",
+    "text": "LINK"
+  },
+  {
+    "objectID": "project/quarto_cv/index.html",
+    "href": "project/quarto_cv/index.html",
+    "title": "CV templates",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/PSAWR/index.html",
+    "href": "project/PSAWR/index.html",
+    "title": "PSAWR",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/quartocities/index.html",
+    "href": "project/quartocities/index.html",
+    "title": "Quartocities",
+    "section": "",
+    "text": "GITHUB\n\n\nDEMO"
+  },
+  {
+    "objectID": "project/rgraph6/index.html",
+    "href": "project/rgraph6/index.html",
+    "title": "rgraph6",
+    "section": "",
+    "text": "GITHUB\n\n(Main Author and maintainer: Michal Bojanowski)"
+  },
+  {
+    "objectID": "project/netUtils/index.html",
+    "href": "project/netUtils/index.html",
+    "title": "netUtils",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "project/dialrs/index.html",
+    "href": "project/dialrs/index.html",
+    "title": "dialrs",
+    "section": "",
+    "text": "GITHUB"
+  },
+  {
+    "objectID": "publications/prob_central/index.html",
+    "href": "publications/prob_central/index.html",
+    "title": "Centrality without indices: Partial rankings and rank probabilities in networks",
+    "section": "",
+    "text": "journal"
+  },
+  {
+    "objectID": "publications/prob_central/index.html#abstract",
+    "href": "publications/prob_central/index.html#abstract",
+    "title": "Centrality without indices: Partial rankings and rank probabilities in networks",
+    "section": "Abstract",
+    "text": "Abstract\nWe present an alternative approach to assess centrality in networks which does not rely on traditional indices. The work is based on neighborhood-inclusion, a partial ranking inducing relation of nodes, which was shown to be preserved by many existing centrality indices. As such, it can serve as the shared basis for centrality in networks. We argue that evaluating this partial ranking by itself allows for a generic assessment of centrality, avoiding several pitfalls that can arise when indices are applied. Additionally, we illustrate how to derive further partial rankings and introduce some probabilistic methods to, among others, compute expected centrality ranks of nodes.\nSocial Networks, 54:50-60"
+  },
+  {
+    "objectID": "publications/reconceptualizing_centrality/index.html",
+    "href": "publications/reconceptualizing_centrality/index.html",
+    "title": "Re-conceptualizing centrality in social networks",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/reconceptualizing_centrality/index.html#abstract",
+    "href": "publications/reconceptualizing_centrality/index.html#abstract",
+    "title": "Re-conceptualizing centrality in social networks",
+    "section": "Abstract",
+    "text": "Abstract\nIn the social sciences, networks are used to represent relationships between social actors, be they individuals or aggregates. The structural importance of these actors is assessed in terms of centrality indices which are commonly defined as graph invariants. Many such indices have been proposed, but there is no unifying theory of centrality. Previous attempts at axiomatic characterization have been focused on particular indices, and the conceptual frameworks that have been proposed alternatively do not lend themselves to mathematical treatment. We show that standard centrality indices, although seemingly distinct, can in fact be expressed in a common framework based on path algebras. Since, as a consequence, all of these indices preserve the neighbourhood-inclusion pre-order, the latter provides a conceptually clear criterion for the definition of centrality indices.\nEuropean Journal of Applied Mathematics, 27(6):971-985"
+  },
+  {
+    "objectID": "publications/proj_signed2mode/index.html",
+    "href": "publications/proj_signed2mode/index.html",
+    "title": "Projecting Signed Two-Mode Networks",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/proj_signed2mode/index.html#abstract",
+    "href": "publications/proj_signed2mode/index.html#abstract",
+    "title": "Projecting Signed Two-Mode Networks",
+    "section": "Abstract",
+    "text": "Abstract\nSigned two-mode networks have so far predominantly been analysed using blockmodeling techniques. In this work, we put forward the idea of projecting such networks onto its modes. Two projection methods are introduced which allow the application of known dichotomization tool for weighted networks to obtain a simple signed network. It turns out, however, that resulting networks may contain ambivalent ties, defined as conjunctions of positive and negative ties. We show that this requires the reformulation of matrices related to the network and introduce the complex adjacency and Laplacian matrix. These matrices are used to prove some properties related to balance theory including ambivalence.\nMathematical Sociology 45 (1), 37-50"
+  },
+  {
+    "objectID": "publications/penalty_shootout/index.html",
+    "href": "publications/penalty_shootout/index.html",
+    "title": "Penalty shootouts are tough, but the alternating order is fair",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/penalty_shootout/index.html#abstract",
+    "href": "publications/penalty_shootout/index.html#abstract",
+    "title": "Penalty shootouts are tough, but the alternating order is fair",
+    "section": "Abstract",
+    "text": "Abstract\nWe compare conversion rates of association football (soccer) penalties during regulation or extra time with those during shootouts. Our data consists of roughly 50,000 penalties from the eleven~most recent seasons in European men’s football competitions. About one third of the penalties are from more than 1,500 penalty shootouts. We find that shootout conversion rates are significantly lower, and attribute this to worse performance of shooters rather than better performance of goalkeepers. We also find that, statistically, there is no advantage for either team in the usual alternating shooting order. These main findings are complemented by a number of more detailed analyses.\nArxiv 2310.04797"
+  },
+  {
+    "objectID": "publications/joss_netrankr/index.html",
+    "href": "publications/joss_netrankr/index.html",
+    "title": "netrankr: An R package for total, partial, and probabilistic rankings in networks",
+    "section": "",
+    "text": "R package"
+  },
+  {
+    "objectID": "publications/joss_netrankr/index.html#abstract",
+    "href": "publications/joss_netrankr/index.html#abstract",
+    "title": "netrankr: An R package for total, partial, and probabilistic rankings in networks",
+    "section": "Abstract",
+    "text": "Abstract\nOne of the key concepts in network science is network centrality. Centrality seeks to provide the answer to the question of who (or what) is important in a network depending on the underlying process forming the network and the empirical phenomenon in question. In a nutshell, an actor in a network is more central if they have better relations, where the definition of better relations depends on the conceptualization of structural importance. Applications of centrality can be found in any field where networks arise. In social networks, we may simply be interested in finding the most popular user. In bioinformatics, centrality is used to detect essential proteins in protein-protein interaction networks (Jeong et al., 2001). Even in sports, centrality is applied to rank athletes or teams (Radicchi, 2011). A myriad of indices have been proposed, all with differing interpretations of what constitutes a central position within a network. Although netrankr offers this traditional approach to network centrality, its main focus lies on alternative assessments of centrality based on partial and probabilistic rankings in networks.\nJournal of Open Source Software 7 (77), 4563"
+  },
+  {
+    "objectID": "publications/joss_graphlayouts/index.html",
+    "href": "publications/joss_graphlayouts/index.html",
+    "title": "graphlayouts: Layout algorithms for network visualizations in R",
+    "section": "",
+    "text": "R package"
+  },
+  {
+    "objectID": "publications/joss_graphlayouts/index.html#abstract",
+    "href": "publications/joss_graphlayouts/index.html#abstract",
+    "title": "graphlayouts: Layout algorithms for network visualizations in R",
+    "section": "Abstract",
+    "text": "Abstract\nNetwork analysis offers a powerful set of methods to understand the relationships among entities, such as people, or organizations, and the patterns that emerge from these connections. It is increasingly popular in various fields, including sociology, biology, economics, and computer science, and has been used to study diverse phenomena including the spread of diseases, flow of information, and the structure of political organizations. Network visualization is a powerful tool for exploring, analyzing, and communicating network structures and patterns therein. However, in contrast to tabular data, nodes can technically be placed arbitrarily on the plane and it is easy to draw wrong conclusion based on an inadequate layout. To circumvent arbitrary placement of nodes, many different layout algorithms have been developed which optimize different stylistic features and can serve purposes in communicating structural properties. The package graphlayouts implements several state-of-the-art algorithms which are so far not available for R. This includes algorithms for large graphs, to emphasize hidden group structures, and important nodes within a network.\nJournal of Open Source Software 8 (84), 5238"
+  },
+  {
+    "objectID": "publications/centrality_lethality/index.html",
+    "href": "publications/centrality_lethality/index.html",
+    "title": "Centrality as a Predictor of Lethal Proteins: Performance and Robustness",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/centrality_lethality/index.html#abstract",
+    "href": "publications/centrality_lethality/index.html#abstract",
+    "title": "Centrality as a Predictor of Lethal Proteins: Performance and Robustness",
+    "section": "Abstract",
+    "text": "Abstract\nThe Centrality-Lethality Hypothesis states that proteins with a higher degree centrality are more likely to be lethal, i.e. proteins involved in more interactions are more likely to cause death when knocked off. This proposition gave rise to several new investigations in which stronger associations were obtained for other centrality measures. Most of this previous work focused on the well known protein-interaction network of Saccharomyces cerevisiae. In a recent study, however, it was found that degree and betweenness of lethal proteins is significantly above average across 20 different protein-interaction networks. Closeness centrality, on the other hand, did not perform as well. We replicate this study and show that the reported results are due largely to a misapplication of closeness to disconnected networks. A more suitable variant actually turns out to be a better predictor than betweenness and degree in most of the networks. Worse, we find that despite the different theoretical explanations they offer, the performance ranking of centrality indices varies across networks and depends on the somewhat arbitrary derivation of binary network data from unreliable measurements. Our results suggest that the celebrated hypothesis is not supported by data.\nIn MMB & DFT 2014: 11"
+  },
+  {
+    "objectID": "publications/polcomm_astroturfing/index.html",
+    "href": "publications/polcomm_astroturfing/index.html",
+    "title": "Political Astroturfing on Twitter: How to Coordinate a Disinformation Campaign",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/polcomm_astroturfing/index.html#abstract",
+    "href": "publications/polcomm_astroturfing/index.html#abstract",
+    "title": "Political Astroturfing on Twitter: How to Coordinate a Disinformation Campaign",
+    "section": "Abstract",
+    "text": "Abstract\nPolitical astroturfing, a centrally coordinated disinformation campaign in which participants pretend to be ordinary citizens acting independently, has the potential to influence electoral outcomes and other forms of political behavior. Yet, it is hard to evaluate the scope and effectiveness of political astroturfing without ground truth information, such as the verified identity of its agents and instigators. In this paper, we study the South Korean National Information Service’s (NIS) disinformation campaign during the presidential election in 2012, taking advantage of a list of campaign accounts published in court proceedings. Features that best distinguish these accounts from regular users in contemporaneously collected Twitter data are traces left by coordination among astroturfing agents, instead of the individual account characteristics typically used in related approaches such as social bot detection. We develop a methodology that exploits these distinct empirical patterns to identify additional likely astroturfing accounts and validate this detection strategy by analyzing their messages and current account status. However, an analysis relying on Twitter influence metrics shows that the known and suspect NIS accounts only had a limited impact on political social media discussions. By using the principal-agent framework to analyze one of the earliest revealed instances of political astroturfing, we improve on extant methodological approaches to detect disinformation campaigns and ground them more firmly in social science theory.\nPolitical Communication 37 (2), 256-280"
+  },
+  {
+    "objectID": "publications/social_stratification/index.html",
+    "href": "publications/social_stratification/index.html",
+    "title": "Social Stratification from Networks of Leveling Ties",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/social_stratification/index.html#abstract",
+    "href": "publications/social_stratification/index.html#abstract",
+    "title": "Social Stratification from Networks of Leveling Ties",
+    "section": "Abstract",
+    "text": "Abstract\nSocial networks can be made of various kinds of ties, but (often implicit) assumptions embodied in network-analytic tools do not necessarily apply to all of them. Centrality indices, or instance, build on the assumption that it is always beneficial to add more ties. While it has been noted that networks of ties with a negative sentiment require different concepts of centrality, we here highlight ties that are neither positive nor negative to have, but an indication of commonality. This is exemplified by the derivation of socio-economic status from networks that indicate common class membership.\nIn International Conference on Complex Networks and their Applications"
+  },
+  {
+    "objectID": "publications/political_astroturf_korea/index.html",
+    "href": "publications/political_astroturf_korea/index.html",
+    "title": "How to Manipulate Social Media: Analyzing Political Astroturfing Using Ground Truth Data from South Korea",
+    "section": "",
+    "text": "journal"
+  },
+  {
+    "objectID": "publications/political_astroturf_korea/index.html#abstract",
+    "href": "publications/political_astroturf_korea/index.html#abstract",
+    "title": "How to Manipulate Social Media: Analyzing Political Astroturfing Using Ground Truth Data from South Korea",
+    "section": "Abstract",
+    "text": "Abstract\nThis project investigates political astroturfing, i.e. hidden propaganda by powerful political actors aimed at mimicking grassroots activity, on social media. We focus on Twitter accounts used by the South Korean secret service to influence the 2012 presidential elections in favor of the eventual winner, Park Geun-hye. Two independent cluster analyses based on activity patterns of the Twitter accounts and textual features of tweets reliably reveal that there are three groups of NIS accounts, including one group that engages mostly in retweeting, and another group focused on posting news articles with a link. We show that these groups reflect different strategic agendas and correspond to several secret service agents identified in the court documents. We argue that these patterns of coordinated tweeting are consistent with predictions derived from principal-agent theory, and should therefore appear in other astroturfing campaigns as well.\nIn Eleventh International AAAI Conference on Web and Social Media"
+  },
+  {
+    "objectID": "publications/scirep_astroturfing/index.html",
+    "href": "publications/scirep_astroturfing/index.html",
+    "title": "Coordination patterns reveal online political astroturfing across the world",
+    "section": "",
+    "text": "oa journal"
+  },
+  {
+    "objectID": "publications/scirep_astroturfing/index.html#abstract",
+    "href": "publications/scirep_astroturfing/index.html#abstract",
+    "title": "Coordination patterns reveal online political astroturfing across the world",
+    "section": "Abstract",
+    "text": "Abstract\nOnline political astroturfing—hidden information campaigns in which a political actor mimics genuine citizen behavior by incentivizing agents to spread information online—has become prevalent on social media. Such inauthentic information campaigns threaten to undermine the Internet’s promise to more equitable participation in public debates. We argue that the logic of social behavior within the campaign bureaucracy and principal–agent problems lead to detectable activity patterns among the campaign’s social media accounts. Our analysis uses a network-based methodology to identify such coordination patterns in all campaigns contained in the largest publicly available database on astroturfing published by Twitter. On average, 74% of the involved accounts in each campaign engaged in a simple form of coordination that we call co-tweeting and co-retweeting. Comparing the astroturfing accounts to various systematically constructed comparison samples, we show that the same behavior is negligible among the accounts of regular users that the campaigns try to mimic. As its main substantive contribution, the paper demonstrates that online political astroturfing consistently leaves similar traces of coordination, even across diverse political and country contexts and different time periods. The presented methodology is a reliable first step for detecting astroturfing campaigns.\nScientific Reports 12, 4572"
+  },
+  {
+    "objectID": "publications/jap_centrality/index.html",
+    "href": "publications/jap_centrality/index.html",
+    "title": "What do centrality measures measure in psychological networks?",
+    "section": "",
+    "text": "preprint"
+  },
+  {
+    "objectID": "publications/jap_centrality/index.html#abstract",
+    "href": "publications/jap_centrality/index.html#abstract",
+    "title": "What do centrality measures measure in psychological networks?",
+    "section": "Abstract",
+    "text": "Abstract\nCentrality indices are a popular tool to analyze structural aspects of psychological networks. As centrality indices were originally developed in the context of social networks, it is unclear to what extent these indices are suitable in a psychological network context. In this article we critically examine several issues with the use of the most popular centrality indices in psychological networks: degree, betweenness, and closeness centrality. We show that problems with centrality indices discussed in the social network literature also apply to the psychological networks. Assumptions underlying centrality indices, such as presence of a flow and shortest paths, may not correspond with a general theory of how psychological variables relate to one another. Furthermore, the assumptions of node distinctiveness and node exchangeability may not hold in psychological networks. We conclude that, for psychological networks, betweenness and closeness centrality seem especially unsuitable as measures of node importance. We therefore suggest three ways forward: (a) using centrality measures that are tailored to the psychological network context, (b) reconsidering existing measures of importance used in statistical models underlying psychological networks, and (c) discarding the concept of node centrality entirely. Foremost, we argue that one has to make explicit what one means when one states that a node is central, and what assumptions the centrality measure of choice entails, to make sure that there is a match between the process under study and the centrality measure that is used.\nJournal of Abnormal Psychology 128 (8), 892"
+  },
+  {
+    "objectID": "index.html#selected-open-source-material",
+    "href": "index.html#selected-open-source-material",
+    "title": "schochastics",
+    "section": "Selected Open Source Material",
+    "text": "Selected Open Source Material\n\n\n\n\n\n\n\n\n\n\nNetwork Visualizations in R\n\n\nusing ggraph and graphlayouts\n\n\nTutorial for Network Visualization in R using ggraph and graphlayouts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBasic Network Analysis in R\n\n\nusing igraph and related packages\n\n\nTutorial for Network Analysis in R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Network Analysis in R\n\n\nusing the tidygraph package\n\n\nNetwork Analysis in R using tidygraph\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\nall open source material"
+  },
+  {
+    "objectID": "index.html#selected-projects",
+    "href": "index.html#selected-projects",
+    "title": "schochastics",
+    "section": "Selected Projects",
+    "text": "Selected Projects\n\n\n\n\n\n\n\n\n\n\ngraphlayouts\n\n\nAn R package for network visualization\n\n\nThe package implements several new layout algorithms to visualize networks which are not provided by standard graph packages. Most are based on the concept of stress majorization. Some more specific algorithms allow to emphasize hidden group structures in networks, focus on specific nodes or specific types of networks.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetrankr\n\n\nAn R package for network centrality\n\n\nImplements methods for centrality related analyses of networks. While the package includes the possibility to build more than 20 indices, its main focus lies on index-free assessment of centrality via partial rankings obtained by neighborhood-inclusion or positional dominance. These partial rankings can be analyzed with different methods, including probabilistic methods like computing expected node ranks and relative rank probabilitie.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsnahelper\n\n\nRstudio addins for network analysis\n\n\nRStudio addin which provides a GUI to visualize and analyse networks. After finishing a session, the code to produce the plot is inserted in the current script. Alternatively, the function SNAhelperGadget() can be used directly from the console. Additional addins include the Netreader() for reading network files, Netbuilder() to create small networks via point and click, and the Componentlayouter() to layout networks with many components manually.\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\nall projects"
+  },
+  {
+    "objectID": "index.html#last-publications",
+    "href": "index.html#last-publications",
+    "title": "schochastics",
+    "section": "Last Publications",
+    "text": "Last Publications\n\n\n\n\n\n\n\n\n\n\nPenalty shootouts are tough, but the alternating order is fair\n\n\nSilvan Vollmer and David Schoch and Ulrik Brandes\n\n\nWe compare conversion rates of association football (soccer) penalties during regulation or extra time with those during shootouts. Our data consists of roughly 50,000 penalties from the eleven~most recent seasons in European men’s football competitions \n\n\n\n\n\nOct 7, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nComputational Reproducibility in Computational Social Science\n\n\nDavid Schoch and Chung-hong Chan and Claudia Wagner and Arnim Bleier\n\n\nIn the last decade, replication and reproducibility crises have shaken the scientific landscape. As potential solutions, open science practices were heavily discussed and have been implemented with varying success in different disciplines. We argue, however, that the binary definition of reproducibility, specifically for computational-X disciplines such as computational social science, is insufficient since it is not explicit about the agents and conditions under which results can be…\n\n\n\n\n\nJul 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nThe interplay of structural features and observed dissimilarities among centrality indices\n\n\nDavid Schoch and Termeh Shafie\n\n\nAn abundance of centrality indices has been proposed which capture the importance of nodes in a network based on different structural features. While there remains a persistent belief that similarities in outcomes of indices is contingent on their technical definitions, a growing body of research shows that structural features affect observed similarities more than technicalities. \n\n\n\n\n\nJul 1, 2023\n\n\n\n\n\n\nNo matching items\n\n\n\nall publications"
+  },
+  {
+    "objectID": "material/30daymapchallenge/index.html",
+    "href": "material/30daymapchallenge/index.html",
+    "title": "30DayMapchallenge 2021",
+    "section": "",
+    "text": "Code\n\n\nDay 01 - Points\n\n  \n\n\n\nDay 02 - Lines\n\n  \n\n\n\nDay 03 - Polygons\n\n  \n\n\n\nDay 04 - Hexagons\n\n  \n\n\n\nDay 05 - Data challenge 1: OpenStreetMap\n\n  \n\n\n\nDay 06 - Red\n\n  \n\n\n\nDay 07 - Green\n\n  \n\n\n\nDay 08 - Blue\n\n  \n\n\n\nDay 09 - Monochrome\n\n  \n\n\n\nDay 10 - Raster\n\n  \n\n\n\nDay 11 - 3D\n\n  \n\n\n\nDay 12 - Population\n\n  \n\n\n\nDay 13 - Data challenge 2: Natural Earth\n\n  \n\n\n\nDay 14 - Map with a new tool\n\n  \n\n\n\nDay 15 - Map made without using a computer\n\n  \n\n\n\nDay 16 - Urban/rural\n\n  \n\n\n\nDay 17 - Land\n\n  \n\n\n\nDay 18 - Water\n\n  \n\n\n\nDay 19 - Island(s)\n\n  \n\n\n\nDay 20 - Movement\n\n  \n\n\n\nDay 21 - Elevation\n\n  \n\n\n\nDay 22 - Boundaries\n\n  \n\n\n\nDay 23 - Data challenge 3: GHSL Global Human Settlement Layer\n\n  \n\n\n\nDay 24 - Historical map\n\n  \n\n\n\nDay 26 - Choropleth map\n\n  \n\n\n\nDay 27 - Heatmap\n\n  \n\n\n\nDay 28 - The Earth is not flat\n\n  \n\n\n\nDay 29 - NULL\n\n  \n\n\n\nDay 30 - Metamapping day"
+  },
+  {
+    "objectID": "material/swaig/index.html",
+    "href": "material/swaig/index.html",
+    "title": "swAIg",
+    "section": "",
+    "text": "Designs"
   },
   {
     "objectID": "material/tidynetAnaR/index.html",

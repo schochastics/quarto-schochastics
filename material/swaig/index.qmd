@@ -1,0 +1,37 @@
+---
+author: David Schoch 
+categories:
+  - swag
+description: "nerdy designs partially generated with AI"
+title: "swAIg"
+subtitle: "AI generated code coture"
+priority: 7
+image: featured.png
+toc: false
+title-block-style: none
+lightbox: true
+format:
+  html:
+    page-layout: full
+---
+
+<style>
+img{
+    background-color: #444444;
+}
+</style>
+
+![](featured.png){fig-align="center"}
+
+# Designs
+
+![](debugging.png){.lightbox group="gallery"}
+![](foss_you_black.png){.lightbox group="gallery"}
+![](jit.png){.lightbox group="gallery"}
+![](panic.png){.lightbox group="gallery"}
+![](rtfm.png){.lightbox group="gallery"}
+![](sampling.png){.lightbox group="gallery"}
+![](shell_commander.png){.lightbox group="gallery"}
+![](slothware.png){.lightbox group="gallery"}
+![](technical_debt.png){.lightbox group="gallery"}
+
