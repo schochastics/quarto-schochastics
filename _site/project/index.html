@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,6 +47,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -142,12 +143,39 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../academicons.css">
 <meta property="og:title" content="schochastics - Projects">
 <meta property="og:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
 <meta property="og:image" content="https://mr.schochastics.net/project/static/img/avatar.png">
-<meta property="og:site-name" content="schochastics">
+<meta property="og:site_name" content="schochastics">
 <meta name="twitter:title" content="schochastics - Projects">
 <meta name="twitter:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
 <meta name="twitter:image" content="https://mr.schochastics.net/project/static/img/avatar.png">
@@ -160,9 +188,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../static/logo.png" alt="" class="navbar-logo">
     </a>
@@ -173,29 +201,29 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../publications/index.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="http://blog.schochastics.net" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="http://blog.schochastics.net"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../project/index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link active" href="../project/index.html" aria-current="page"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../material/index.html" rel="" target="">
- <span class="menu-text">Material</span></a>
+    <a class="nav-link" href="../material/index.html"> 
+<span class="menu-text">Material</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about/index.html" rel="" target="">
- <span class="menu-text">About me</span></a>
+    <a class="nav-link" href="../about/index.html"> 
+<span class="menu-text">About me</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -224,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -232,7 +260,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <div class="center">
 <p><img src="https://ghchart.rshah.org/137752/schochastics"></p>
@@ -241,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>R packages</h1>
 <div id="listing-rpkg" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1536703200000" data-listing-file-modified-sort="1693592382522" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1536703200000" data-listing-file-modified-sort="1693592382522" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
 <a href="../project/graphlayouts/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -258,7 +288,7 @@ The package implements several new layout algorithms to visualize networks which
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1494280800000" data-listing-file-modified-sort="1693592416090" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="1" data-listing-date-sort="1494280800000" data-listing-file-modified-sort="1693592416090" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
 <a href="../project/netrankr/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -275,7 +305,7 @@ Implements methods for centrality related analyses of networks. While the packag
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1575586800000" data-listing-file-modified-sort="1693592458358" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="2" data-listing-date-sort="1575586800000" data-listing-file-modified-sort="1693592458358" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
 <a href="../project/networkdata/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -292,7 +322,7 @@ The package contains a large collection of network dataset with different contex
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1548370800000" data-listing-file-modified-sort="1693592738717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="3" data-listing-date-sort="1548370800000" data-listing-file-modified-sort="1693592738717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
 <a href="../project/snahelper/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -309,7 +339,7 @@ RStudio addin which provides a GUI to visualize and analyse networks. After fini
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1607986800000" data-listing-file-modified-sort="1693592356485" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="4" data-listing-date-sort="1607986800000" data-listing-file-modified-sort="1693592356485" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/edgebundle/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -326,7 +356,7 @@ Implements several algorithms for bundling edges in networks and flow and metro 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-listing-date-sort="1565733600000" data-listing-file-modified-sort="1693592727057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="5" data-listing-date-sort="1565733600000" data-listing-file-modified-sort="1693592727057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
 <a href="../project/signnet/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -343,7 +373,7 @@ Implements methods for the analysis of signed networks. This includes several me
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-listing-date-sort="1667948400000" data-listing-file-modified-sort="1693592702077" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="6" data-listing-date-sort="1667948400000" data-listing-file-modified-sort="1693592702077" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/rtoot/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -360,7 +390,7 @@ rtoot
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-listing-date-sort="1371074400000" data-listing-file-modified-sort="1693592642100" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="7" data-listing-date-sort="1371074400000" data-listing-file-modified-sort="1693592642100" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
 <a href="../project/rgraph6/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -377,7 +407,7 @@ This package implements several methods to encode networks as Encode network dat
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="8" data-listing-date-sort="1593036000000" data-listing-file-modified-sort="1693592674076" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="8" data-listing-date-sort="1593036000000" data-listing-file-modified-sort="1693592674076" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
 <a href="../project/roughnet/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -394,7 +424,7 @@ Visualize networks using the javascript library roughjs. This allows to draw ske
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-listing-date-sort="1670281200000" data-listing-file-modified-sort="1693592968803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="9" data-listing-date-sort="1670281200000" data-listing-file-modified-sort="1693592968803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/PSAWR/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -411,7 +441,7 @@ PSAWR
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="10" data-listing-date-sort="1635980400000" data-listing-file-modified-sort="1693592683908" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="10" data-listing-date-sort="1635980400000" data-listing-file-modified-sort="1693592683908" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/roughsf/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -428,7 +458,7 @@ Draw maps using the javascript library roughjs. This allows to draw sketchy, han
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-listing-date-sort="1695506400000" data-listing-file-modified-sort="1695590003376" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="11" data-listing-date-sort="1695506400000" data-listing-file-modified-sort="1695590003376" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/adaR/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -445,7 +475,7 @@ wrapper for ada-url a WHATWG-compliant and fast URL parser written in modern C++
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="12" data-listing-date-sort="1564696800000" data-listing-file-modified-sort="1693592446386" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="12" data-listing-date-sort="1564696800000" data-listing-file-modified-sort="1693592446386" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/netUtils/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -462,7 +492,7 @@ Provides a collection of network analytic (convenience) functions, missing in ot
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="13" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1693592716097" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="13" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1693592716097" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/Rtumblr/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -479,7 +509,7 @@ An implementation of calls designed to collect Tumblr data via its Application P
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="14" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1693592791093" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="14" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1693592791093" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/webBotparseR/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -496,7 +526,7 @@ Parse search engine results which have been scraped with the ‘WebBot’ browse
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="15" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1693592811138" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="15" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1693592811138" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/webtrackR/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -513,7 +543,7 @@ Implements data structures and methods to work with web tracking data
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="16" data-listing-date-sort="1689976800000" data-listing-file-modified-sort="1693592774041" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="16" data-listing-date-sort="1689976800000" data-listing-file-modified-sort="1693592774041" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/stabilityAI/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -530,11 +560,45 @@ Interact with the API of stability.ai
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="17" data-listing-date-sort="1511823600000" data-listing-file-modified-sort="1695589942411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="17" data-listing-date-sort="1708556400000" data-listing-file-modified-sort="1709623195287" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
+<a href="../project/timeless/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top">
+<img src="../project/timeless/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+timeless
+</h5>
+<div class="card-text listing-description">
+Fast general purpose date time converter
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="18" data-listing-date-sort="1708556400000" data-listing-file-modified-sort="1709623093706" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
+<a href="../project/dialrs/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top">
+<img data-src="../project/dialrs/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+dialrs
+</h5>
+<div class="card-text listing-description">
+Parsing phone numbers in different formats
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="19" data-listing-date-sort="1511823600000" data-listing-file-modified-sort="1695589942411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/rokemon/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
-<img src="../project/rokemon/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
+<img data-src="../project/rokemon/featured-hex.png" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -547,7 +611,7 @@ This package implements several themes for ggplot to bring your data into the wo
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="18" data-listing-date-sort="1554328800000" data-listing-file-modified-sort="1693592395626" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="20" data-listing-date-sort="1554328800000" data-listing-file-modified-sort="1693592395626" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="../project/levelnet/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -558,6 +622,8 @@ This package implements several themes for ggplot to bring your data into the wo
 levelnet
 </h5>
 <div class="card-text listing-description">
+
+GITHUB
 
 </div>
 </div>
@@ -582,7 +648,6 @@ No matching items
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-
 <table class="quarto-listing-table table">
 <thead>
 <tr>
@@ -598,7 +663,7 @@ type
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1654812000000" data-listing-file-modified-sort="1693592611064" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Personal website" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-listing-date-sort="1654812000000" data-listing-file-modified-sort="1693592611064" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Personal website" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../project/quarto_webpage/index.html" class="title listing-title">Personal website</a>
 </td>
@@ -609,7 +674,7 @@ type
 <span class="listing-type">website</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1656972000000" data-listing-file-modified-sort="1693592498511" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Quarto Academicons" data-listing-filename-sort="index.qmd">
+<tr data-index="1" data-listing-date-sort="1656972000000" data-listing-file-modified-sort="1693592498511" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Quarto Academicons" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../project/quarto_academicons/index.html" class="title listing-title">Quarto Academicons</a>
 </td>
@@ -620,7 +685,7 @@ type
 <span class="listing-type">shortcodes</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1659391200000" data-listing-file-modified-sort="1693592511691" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Blackboard revealjs theme" data-listing-filename-sort="index.qmd">
+<tr data-index="2" data-listing-date-sort="1659391200000" data-listing-file-modified-sort="1693592511691" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Blackboard revealjs theme" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../project/quarto_blackboard/index.html" class="title listing-title">Blackboard revealjs theme</a>
 </td>
@@ -631,7 +696,7 @@ type
 <span class="listing-type">revealjs</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-date-sort="1659477600000" data-listing-file-modified-sort="1693592585715" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Sketchy HTML theme" data-listing-filename-sort="index.qmd">
+<tr data-index="3" data-listing-date-sort="1659477600000" data-listing-file-modified-sort="1693592585715" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Sketchy HTML theme" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../project/quarto_sketchy/index.html" class="title listing-title">Sketchy HTML theme</a>
 </td>
@@ -642,7 +707,7 @@ type
 <span class="listing-type">html</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-date-sort="1660082400000" data-listing-file-modified-sort="1693592598348" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Share buttons for HTML documents" data-listing-filename-sort="index.qmd">
+<tr data-index="4" data-listing-date-sort="1660082400000" data-listing-file-modified-sort="1693592598348" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Share buttons for HTML documents" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../project/quarto_social-share/index.html" class="title listing-title">Share buttons for HTML documents</a>
 </td>
@@ -653,7 +718,7 @@ type
 <span class="listing-type">filter</span>
 </td>
 </tr>
-<tr data-index="5" data-listing-date-sort="1660773600000" data-listing-file-modified-sort="1693592567183" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Nutshell: Expandable Explanations" data-listing-filename-sort="index.qmd">
+<tr data-index="5" data-listing-date-sort="1660773600000" data-listing-file-modified-sort="1693592567183" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Nutshell: Expandable Explanations" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../project/quarto_nutshell/index.html" class="title listing-title">Nutshell: Expandable Explanations</a>
 </td>
@@ -664,7 +729,7 @@ type
 <span class="listing-type">filter</span>
 </td>
 </tr>
-<tr data-index="6" data-listing-date-sort="1660860000000" data-listing-file-modified-sort="1693592628384" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Quartocities" data-listing-filename-sort="index.qmd">
+<tr data-index="6" data-listing-date-sort="1660860000000" data-listing-file-modified-sort="1693592628384" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Quartocities" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../project/quartocities/index.html" class="title listing-title">Quartocities</a>
 </td>
@@ -675,7 +740,7 @@ type
 <span class="listing-type">website</span>
 </td>
 </tr>
-<tr data-index="7" data-listing-date-sort="1674601200000" data-listing-file-modified-sort="1693592553327" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Glossary with nutshell" data-listing-filename-sort="index.qmd">
+<tr data-index="7" data-listing-date-sort="1674601200000" data-listing-file-modified-sort="1693592553327" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Glossary with nutshell" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../project/quarto_glossary/index.html" class="title listing-title">Glossary with nutshell</a>
 </td>
@@ -686,7 +751,7 @@ type
 <span class="listing-type">code</span>
 </td>
 </tr>
-<tr data-index="8" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1693592528543" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="CV templates" data-listing-filename-sort="index.qmd">
+<tr data-index="8" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1693592528543" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="CV templates" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../project/quarto_cv/index.html" class="title listing-title">CV templates</a>
 </td>
@@ -698,7 +763,6 @@ type
 </td>
 </tr>
 </tbody>
-
 </table>
 <div class="listing-no-matching d-none">
 No matching items
@@ -714,7 +778,6 @@ No matching items
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-
 <table class="quarto-listing-table table">
 <thead>
 <tr>
@@ -729,7 +792,7 @@ Description
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1693592749877" data-listing-reading-time-sort="1" data-listing-title-sort="soccerverse" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-listing-file-modified-sort="1693592749877" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="soccerverse" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img src="../project/soccerverse/featured-hex.png" style="height: 40px;"></span>
 </td>
@@ -741,7 +804,6 @@ Description
 </td>
 </tr>
 </tbody>
-
 </table>
 <div class="listing-no-matching d-none">
 No matching items
@@ -832,10 +894,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -845,8 +906,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -859,6 +929,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -902,6 +1091,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -927,6 +1117,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -989,8 +1205,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© 2022 David Schoch</div>   
-    <div class="nav-footer-center">powered by <a href="https://quarto.org">quarto</a></div>
+    <div class="nav-footer-left">
+<p>© 2022 David Schoch</p>
+</div>   
+    <div class="nav-footer-center">
+<p>powered by <a href="https://quarto.org">quarto</a></p>
+</div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -1006,18 +1226,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.de/citations?user=MFlgHdcAAAAJ&amp;hl=en"><i class="ai ai-google-scholar" role="img"></i></a>
+    <a class="nav-link" href="https://scholar.google.de/citations?user=MFlgHdcAAAAJ&amp;hl=en">
+<p><i class="ai ai-google-scholar" role="img"></i></p>
+</a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://orcid.org/0000-0003-2952-4812"><i class="ai ai-orcid" role="img"></i></a>
+    <a class="nav-link" href="https://orcid.org/0000-0003-2952-4812">
+<p><i class="ai ai-orcid" role="img"></i></p>
+</a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://fosstodon.org/@schochastics"><i class="bi bi-mastodon"></i></a>
+    <a class="nav-link" href="https://fosstodon.org/@schochastics">
+<p><i class="bi bi-mastodon"></i></p>
+</a>
   </li>  
 </ul>
     </div>
   </div>
 </footer>
+
 
 
 

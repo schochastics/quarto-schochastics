@@ -1,0 +1,13 @@
+---
+author: David Schoch
+date: "2024-02-22"
+description: "Parsing phone numbers in different formats"
+subtitle: ""
+title: dialrs
+image: featured-hex.png
+title-block-style: none
+toc: true
+priority: 17
+---
+
+<button type="button" class="btn btn-outline-success"><a href="https://github.com/schochastics/dialrs">GITHUB</a></button>

@@ -26,6 +26,8 @@ listing:
       - Rtumblr
       - stabilityAI
       - adaR
+      - dialrs
+      - timeless
     type: grid
     image-align: left
     sort: "priority asc"

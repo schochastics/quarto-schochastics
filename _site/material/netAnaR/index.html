@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,6 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -90,27 +91,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="../../academicons.css">
 <meta property="og:title" content="schochastics - Basic Network Analysis in R">
 <meta property="og:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
-<meta property="og:image" content="https://mr.schochastics.net/material/netAnaR/static/img/avatar.png">
-<meta property="og:site-name" content="schochastics">
+<meta property="og:image" content="https://mr.schochastics.net/material/netAnaR/featured.png">
+<meta property="og:site_name" content="schochastics">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
 <meta name="twitter:title" content="schochastics - Basic Network Analysis in R">
 <meta name="twitter:description" content="I’m the team lead for Transparent Social Analytics in the Department for Computational Social Science at GESIS and I develop tools in R.">
-<meta name="twitter:image" content="https://mr.schochastics.net/material/netAnaR/static/img/avatar.png">
+<meta name="twitter:image" content="https://mr.schochastics.net/material/netAnaR/featured.png">
 <meta name="twitter:creator" content="@schochastics">
 <meta name="twitter:site" content="@schochastics">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../static/logo.png" alt="" class="navbar-logo">
     </a>
@@ -121,29 +153,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../publications/index.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="http://blog.schochastics.net" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="http://blog.schochastics.net"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../project/index.html" rel="" target="">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../../project/index.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../material/index.html" rel="" target="">
- <span class="menu-text">Material</span></a>
+    <a class="nav-link" href="../../material/index.html"> 
+<span class="menu-text">Material</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about/index.html" rel="" target="">
- <span class="menu-text">About me</span></a>
+    <a class="nav-link" href="../../about/index.html"> 
+<span class="menu-text">About me</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -197,6 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+
 <p>(last update 2022-09-26)</p>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
@@ -240,7 +273,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The figure below shows how many packages on CRAN rely on those three packages (i.e.&nbsp;they are mentioned in <code>Depends</code>, <code>Imports</code>, or <code>Suggests</code>).</p>
 <div class="cell" data-hash="index_cache/html/crannet_depend_fbb1548adbf91cb4892b5a87402c6abc">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/crannet_depend-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/crannet_depend-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The figure was produced with the help of the <code>cranet</code> package (<a href="https://github.com/mbojan/cranet">link</a>). <code>igraph</code> seems to be clearly favored by the R community. So if you install a package for, say, signed network analysis, changes are high that it depends on the graph structures provided by <code>igraph</code>. Besides the data structures, the package offers a large variety of network analytic methods which are all implemented in C. The methods are well optimized and also work quite well for large graphs.</p>
@@ -295,7 +332,11 @@ Steve   1   1     0</code></pre>
 </div>
 <div class="cell" data-hash="index_cache/html/plot_greys_a543f65699ea5c317fe90e0b656bff96">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/plot_greys-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/plot_greys-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The “greys” network is part of the <code>networkdata</code> package and consists of most characters from the show “Grey’s Anatomy” and who hooked up with whom.</p>
@@ -353,7 +394,11 @@ NULL</code></pre>
 </div>
 <div class="cell" data-hash="index_cache/html/greys_shortest_path_8b50e108b52c59a7d983a4d6febaf813">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/greys_shortest_path-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/greys_shortest_path-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-hash="index_cache/html/distances_811c62f4901dbf72099aae8f30eeef69">
@@ -404,7 +449,11 @@ Henry Burton              Inf            0</code></pre>
 </div>
 <div class="cell" data-hash="index_cache/html/greys_diameter_2381ac0ce2ea2a4deebeffb1f32b1f04">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/greys_diameter-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/greys_diameter-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p><strong>Transitivity</strong> measures the probability that the neighbors of a node are also connected. This is also called the <strong>clustering coefficient</strong>.</p>
@@ -431,7 +480,11 @@ Henry Burton              Inf            0</code></pre>
 <p>About 76% of edges are reciprocated in the network. The figure below highlights the reciprocated edges.</p>
 <div class="cell" data-hash="index_cache/html/rhesus_net_740d6d8d24113ad4a734e187d664a6b8">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/rhesus_net-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/rhesus_net-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="use-case-triad-census" class="level2">
@@ -486,19 +539,31 @@ spain    20</code></pre>
 <p>SVDs are used to reduce the dimensionality of the data, but retaining most of the information. In our case, the data is 16 dimensional, which is impossible to visualize to compare the networks. With an SVD, we can reduce it to two dimensions and get a better visual overview.</p>
 <div class="cell" data-hash="index_cache/html/plot_svd_u_ea901587eb81b37f89cecf6763bb375e">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/plot_svd_u-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/plot_svd_u-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>How to interpret the dimensions? To investigate this question, we take a closer look at the first two dimensions and compare it to some network descriptives. For the sake of brevity, we here only look at the density and proportion of 030T triads. In general, any node/dyad/triad level statistic could be used.</p>
 <div class="cell" data-hash="index_cache/html/svd1_density_8bf42f43152d819aa77177c38eacb46b">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/svd1_density-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/svd1_density-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Density doesn’t really seem to be related to the first dimension in this case (in many cases it is!). Might be worthwhile to explore this further</p>
 <div class="cell" data-hash="index_cache/html/svd2_030T_e8c64a940183bfc402420964c3d5fed2">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/svd2_030T-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/svd2_030T-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>For the second dimension, we get a clearer association. It seems that the fraction of transitive triads is a good indicator for structural differences among leagues.</p>
@@ -531,7 +596,11 @@ spain    20</code></pre>
 </div>
 <div class="cell" data-hash="index_cache/html/dbces11_basic_plot_55ecdfa0d8840040ae00e15409a04c16">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/dbces11_basic_plot-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/dbces11_basic_plot-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p><strong>degree</strong> simply counts the number of neighbors a node has.</p>
@@ -544,7 +613,11 @@ spain    20</code></pre>
 </div>
 <div class="cell" data-hash="index_cache/html/degree_dbces11_plot_4903a49bccd607554dd1218dea8ac378">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/degree_dbces11_plot-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/degree_dbces11_plot-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p><strong>closeness</strong> computes the shortest path distances among nodes. The most central node has the minimum distance to all other nodes (Since high scores are associated with central nodes, the distances are inverted).</p>
@@ -571,7 +644,11 @@ spain    20</code></pre>
 <p>To get an intuition what it means to have a high betweenness, check the network below.</p>
 <div class="cell" data-hash="index_cache/html/betweenness_bridge_7aa3d8213cd8bcdcf13bd564239f028c">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/betweenness_bridge-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/betweenness_bridge-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Any shortest path from the right will pass through the red node and vice versa. The red note is thus a sort of “gatekeeper” for any information that is passed from left to right.</p>
@@ -599,7 +676,11 @@ spain    20</code></pre>
 <p>If we highlight the most central node for the calculated indices, we get the following.</p>
 <div class="cell" data-hash="index_cache/html/dbces11_plot_dbb3057381ad34ff46f7bde2f3ebb6c8">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/dbces11_plot-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/dbces11_plot-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>So each index picks a different node as most central. While this is just a toy example, it highlights how influential the choice of indices can be in empirical settings.</p>
@@ -653,7 +734,11 @@ Expand
 </div>
 <div class="cell" data-hash="index_cache/html/flo_plot_fc5a94ee1d45f405dba405717ded0e32">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/flo_plot-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/flo_plot-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Th network shows marriage ties among Renaissance Families in Florence. Marriages at that time were strategic to improve the standing of families in society. The size of the names is proportional to the wealth of the families. Although the Strozzi were the wealthiest family, it was ultimately the Medici who became the most powerful family. This is in part due to their central position within this marriage network.</p>
@@ -849,7 +934,11 @@ Expand
 <p>The figure below shows the network and the found maximal cliques.</p>
 <div class="cell" data-hash="index_cache/html/plot_clique_graph_e2d8e9fef3bd4ac0c9ae94e25356dd95">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/plot_clique_graph-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/plot_clique_graph-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Related to cliques is the <strong>k-core decomposition</strong> of a network. A k-core is a subgraph in which every node has at least k neighbors within the subgraph. A k-core is thus a relaxed version of a clique.<br>
@@ -863,19 +952,31 @@ The function <code>coreness()</code> can be used to calculate the k-core members
 </div>
 <div class="cell" data-hash="index_cache/html/kcore_plot_ef0ea278362c833bfa095aad8568a7b6">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/kcore_plot-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/kcore_plot-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Cliques are the prototypical and most strict definition of a cohesive subgroup of a graph. In empirical networks, however, we rarely encounter situations where we can partition the whole network into a set of cliques. A relaxed version of this problem is that of clustering, also referred to as <strong>comunity detection</strong>. A cluster is loosely defined as a group of nodes which are internally densely and externally sparsely connected. The network below shows an example for a network with a visible and intuitive cluster structure.</p>
 <div class="cell" data-hash="index_cache/html/clustered_graph_58046d190a40e3811e4bc9fea4c141ad">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/clustered_graph-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/clustered_graph-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>In contrast, the network below does not really seem to have any well defined cluster structure.</p>
 <div class="cell" data-hash="index_cache/html/random_graph_cafcf3c5ea81b37fc67167d44ffaec98">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/random_graph-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/random_graph-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The following algorithms for graph clustering are implemented in <code>igraph</code>.</p>
@@ -896,7 +997,11 @@ The function <code>coreness()</code> can be used to calculate the k-core members
 </div>
 <div class="cell" data-hash="index_cache/html/karate_plot_f73e1e92cc649cc64019bfec1b9ae096">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/karate_plot-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/karate_plot-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" data-hash="index_cache/html/cluster_ex_b5cf861324bb33da2b62229367d72542">
@@ -947,14 +1052,22 @@ $`4`
 <p>For the karate network, <code>cluster_spinglass()</code> produces the highest modularity score. The corresponding clustering is shown below.</p>
 <div class="cell" data-hash="index_cache/html/karate_plot_clu_114a6c32aaa696394a924cd7d0c667e4">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/karate_plot_clu-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/karate_plot_clu-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Modularity maximization is still widely considered as the state-of-the-art clustering method for networks. There are, however, some technical shortcomings that one should be aware of. One of those is the so called “resolution limit”. When modularity is being maximized, it can happen that smaller clusters are merged together to form bigger clusters. The prime example is the graph that consists of cliques connected in a ring.</p>
 <p>The figure below shows such a graph, consisting of 50 cliques of size 5.</p>
 <div class="cell" data-hash="index_cache/html/plot_K50_blank_64a7e3c18f210db6c07231e9546e6918">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/plot_K50_blank-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/plot_K50_blank-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Intuitively, any clustering method should return a cluster for each clique.</p>
@@ -982,7 +1095,11 @@ $`4`
 <p>The figure below shows the clusters computed with the louvain method in grey and the leiden method in red.</p>
 <div class="cell" data-hash="index_cache/html/plot_K50_clu_e1afda9915ef2e88abeb3e740c43c547">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/plot_K50_clu-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/plot_K50_clu-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>I’ll spare the technical details of the leiden method. If you are interested, check out the <a href="https://www.nature.com/articles/s41598-019-41695-z">original paper</a>.</p>
@@ -1019,7 +1136,11 @@ Expand
 </div>
 <div class="cell" data-hash="index_cache/html/southern_women_8c92fcf01fd466028bf820f9d3db6810">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/southern_women-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/southern_women-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The adjacency matrix of a two mode network is also referred to as an incidence matrix and can be obtained via <code>as_incidence_matrix()</code></p>
@@ -1097,7 +1218,11 @@ FLORA         1     1         1      1    2     1       1      2     2</code></p
 <p>This matrix can now be interpreted as a weighted network among the 18 women. Each entry corresponds to the number of times two women went to the same event.</p>
 <div class="cell" data-hash="index_cache/html/plot_weighted_proj_12aefbe399505a4241655fd0b5fbaf9a">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/plot_weighted_proj-1.png" class="img-fluid" style="width:100.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/plot_weighted_proj-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>As you can see, the network has become very dense. A very common step is now to binarize the network. In doing so, we basically turn the network into a simple undirected one-mode network. This makes all methods we described in the first few sections applicable to the network (at least in theory). The simplest way of binarizing a weighted projection is to define a global threshold and remove a tie if its weight is below the global threshold. This is simple but come with many undesirable structural problems. More sophisticated tools work with statistical models in the background which determine if an edge weight differs enough from the expected value. If so, the edge is kept in the binary “backbone” of the network.</p>
@@ -1327,10 +1452,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1340,8 +1464,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1354,6 +1487,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1397,6 +1649,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1422,6 +1675,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1486,8 +1765,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© 2022 David Schoch</div>   
-    <div class="nav-footer-center">powered by <a href="https://quarto.org">quarto</a></div>
+    <div class="nav-footer-left">
+<p>© 2022 David Schoch</p>
+</div>   
+    <div class="nav-footer-center">
+<p>powered by <a href="https://quarto.org">quarto</a></p>
+</div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -1503,18 +1786,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.de/citations?user=MFlgHdcAAAAJ&amp;hl=en"><i class="ai ai-google-scholar" role="img"></i></a>
+    <a class="nav-link" href="https://scholar.google.de/citations?user=MFlgHdcAAAAJ&amp;hl=en">
+<p><i class="ai ai-google-scholar" role="img"></i></p>
+</a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://orcid.org/0000-0003-2952-4812"><i class="ai ai-orcid" role="img"></i></a>
+    <a class="nav-link" href="https://orcid.org/0000-0003-2952-4812">
+<p><i class="ai ai-orcid" role="img"></i></p>
+</a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://fosstodon.org/@schochastics"><i class="bi bi-mastodon"></i></a>
+    <a class="nav-link" href="https://fosstodon.org/@schochastics">
+<p><i class="bi bi-mastodon"></i></p>
+</a>
   </li>  
 </ul>
     </div>
   </div>
 </footer>
+
 
 
 

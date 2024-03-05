@@ -22,6 +22,9 @@ listing:
     - arxiv_rang
     - joss_graphlayouts
     - mmc_rtoot
+    - css_reproducibility
+    - penalty_shootout
+    - dissimilarity_centrality
   type: default
   image-align: left
   sort: "date desc"

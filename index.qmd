@@ -51,6 +51,9 @@ listing:
     - publications/arxiv_rang
     - publications/joss_graphlayouts
     - publications/mmc_rtoot
+    - publications/css_reproducibility
+    - publications/penalty_shootout
+    - publications/dissimilarity_centrality
     type: default
     image-align: left
     max-items: 3

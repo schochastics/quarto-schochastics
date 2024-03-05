@@ -1,5 +1,5 @@
 /.quarto/
 .Rproj.user
 .htaccess
-
+_site
 /.luarc.json
