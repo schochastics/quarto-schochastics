@@ -9,6 +9,8 @@ toc: false
 priority: 1
 ---
 
+*I sold the domain soccerverse.com. The project is now available under worldclubratings.com*
+
 ![](logo_text.png)
 
-<button type="button" class="btn btn-outline-success"><a href="http://soccerverse.com">LINK</a></button>
+<button type="button" class="btn btn-outline-success"><a href="http://worldclubratings.com">LINK</a></button>
