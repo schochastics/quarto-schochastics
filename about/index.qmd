@@ -30,9 +30,9 @@ I am also actively involved in research around political astroturfing on social 
 
 See [my publications](/publications/) for all my scientific output.
 
-## soccerverse
+## worldclubratings
 
-In an effort to combine a hobby with work, I created the football analytics website [soccerverse](http://soccerverse.com/) together with some former colleagues.
+In an effort to combine a hobby with work, I created the football analytics website [worldclubratings](http://worldclubratings.com/) together with some former colleagues.
 The project includes a world ranking of football clubs, close to the one FIFA uses for [national teams](https://www.fifa.com/fifa-world-ranking/men?dateId=id13505). I developed most of my data science and R skills
 with this project, including scraping and cleaning data (i.e. collecting football results from various sources) and using the tidyverse to analyse the data. 
 

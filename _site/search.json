@@ -546,11 +546,11 @@
     "text": "research interests\nMy main research interests lie in the field of (social) network analysis. I have made technical and methodological contributions to topics such as network centrality, signed networks, and two-mode networks.\nI am also actively involved in research around political astroturfing on social media.\nSee my publications for all my scientific output."
   },
   {
-    "objectID": "about/index.html#soccerverse",
-    "href": "about/index.html#soccerverse",
+    "objectID": "about/index.html#worldclubratings",
+    "href": "about/index.html#worldclubratings",
     "title": "schochastics",
-    "section": "soccerverse",
-    "text": "soccerverse\nIn an effort to combine a hobby with work, I created the football analytics website soccerverse together with some former colleagues. The project includes a world ranking of football clubs, close to the one FIFA uses for national teams. I developed most of my data science and R skills with this project, including scraping and cleaning data (i.e. collecting football results from various sources) and using the tidyverse to analyse the data.\nPart of the data is available on github."
+    "section": "worldclubratings",
+    "text": "worldclubratings\nIn an effort to combine a hobby with work, I created the football analytics website worldclubratings together with some former colleagues. The project includes a world ranking of football clubs, close to the one FIFA uses for national teams. I developed most of my data science and R skills with this project, including scraping and cleaning data (i.e. collecting football results from various sources) and using the tidyverse to analyse the data.\nPart of the data is available on github."
   },
   {
     "objectID": "about/index.html#science-slam",
